@@ -1,0 +1,95 @@
+%%%%
+%%  Definindo o nível máximo de subseção a ser contabilizado
+%%%%
+\setcounter{secnumdepth}{5} % Ao escolher 5, até os subparagraph são numerados
+
+%Exemplo: \titleformat{command}[shape]{format}{label}{sep}{before-code}[after-code]
+
+%%%%
+%%  Configurando a formatação do título de seção
+%%%%
+%Exemplo: \titleformat{command}[shape]{format}{label}{sep}{before-code}[after-code]
+%Seção primária
+\titleformat{\section}[block]
+{\raggedright\normalfont\normalsize\bfseries}{\thesection}{1ex}{\MakeUppercase}
+
+%Seção secundária
+\titleformat{\subsection}[block]
+{\raggedright\normalfont\normalsize\MakeUppercase}{\thesubsection}{1ex}{\MakeUppercase}
+
+%Seção terciária
+\titleformat{\subsubsection}[block]
+{\raggedright\normalfont\normalsize\bfseries}{\thesubsubsection}{1ex}{}
+
+%Seção quaternária
+\titleformat{\paragraph}[block]
+{\raggedright\normalfont\normalsize\itshape}{\theparagraph}{1ex}{}
+% \titlespacing*{\paragraph}
+% {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%Seção quinária
+\titleformat{\subparagraph}[block]
+{\raggedright\normalfont\normalsize}{\thesubparagraph}{1ex}{}
+% \titlespacing*{\subparagraph}
+% {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+%%%%
+%%  Configurando o espaçamento entre título de seção e texto
+%%%%
+%Seção primária
+\titlespacing* % starred version: first paragraph is not indented
+    {\section} % <command>
+    {0cm} % <left>
+    {\baselineskip} % <before-sep>
+    {\baselineskip} % <after-sep>
+
+%Seção secundária
+\titlespacing* % starred version: first paragraph is not indented
+    {\subsection} % <command>
+    {0cm} % <left>
+    {\baselineskip} % <before-sep>
+    {\baselineskip} % <after-sep>
+
+%Seção terciária
+\titlespacing* % starred version: first paragraph is not indented
+    {\subsubsection} % <command>
+    {0cm} % <left>
+    {\baselineskip} % <before-sep>
+    {\baselineskip} % <after-sep>
+
+%Seção quaternária
+\titlespacing* % starred version: first paragraph is not indented
+    {\paragraph} % <command>
+    {0cm} % <left>
+    {\baselineskip} % <before-sep>
+    {\baselineskip} % <after-sep>
+
+%Seção quinária
+\titlespacing* % starred version: first paragraph is not indented
+    {\subparagraph} % <command>
+    {0cm} % <left>
+    {\baselineskip} % <before-sep>
+    {\baselineskip} % <after-sep>
+
+
+%%%%
+%%  Configurando a apresentação de apêndices
+%%%%
+\makeatletter
+\renewcommand{\@redotocentry@pp}[1]{%
+    \let\oldacl@pp=\addcontentsline
+    \def\addcontentsline##1##2##3{%
+    \def\@pptempa{##1}\def\@pptempb{toc}%
+    \ifx\@pptempa\@pptempb
+        \def\@pptempa{##2}\def\@pptempb{#1}%
+        \ifx\@pptempa\@pptempb
+        \oldacl@pp{\appendixname\space ##1}{##2}{##3}%
+        \else
+        \oldacl@pp{##1}{##2}{\chaptertitlename\space ##3}% added \chaptertitlename
+        \fi
+    \else
+        \oldacl@pp{##1}{##2}{##3}%
+    \fi}
+}
+\makeatother

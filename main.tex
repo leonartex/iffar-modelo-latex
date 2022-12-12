@@ -1,0 +1,134 @@
+%%%%%%%%%%%%%%
+% Modelo XXXXXXXXXXXXXXX
+% Autor: Leonardo Garcez Dalenogari Alba
+% Ano: 2022
+% Contato: leonardo.2017007421@aluno.iffar.edu.br
+
+% IMPORTANTE: 
+%   O modelo utiliza o compilador XeLaTex (talvez possam ser utilizados outros, mas não é garantido o correto funcionamento, porém, eu sei que alguns apresentam, sim, problemas)
+%   Se você estiver utilizando o Overleaf, com o documento aberto, clique em Menu, no canto superior esquerdo, e selecione o XeLaTex como compilador
+%   Também é utilizado o biber para gerenciar as referências bibliográficas
+%%%%%%%%%%%%%%
+
+\documentclass[
+    12pt, % Tamanho de fonte definido para 12, se você precisar utilizar um texto em tamanho 10, utilize o comando \footnotesize, que será impresso em tamanho 10
+    oneside,
+    %twoside, % A opção permite gerar o documento utilizando o verso das páginas, porém, ela não indica à impressora que você está utilizando isso ou que ela deva imprimir nos dois lados das folhas (fonte: https://en.wikibooks.org/wiki/LaTeX/Document_Structure)
+    %openany,
+    %openright,
+    a4paper,
+    english,
+    brazil
+]{article}
+
+% Pacotes que envolvem codificação do conteúdo. Essenciais.
+\usepackage[T1]{fontenc}
+% \usepackage[utf8]{inputenc} % Não é necessário se você estiver utilizando um compilador LaTeX baseado já em UTF-8
+
+% Responsável pela quebra silábica de palavras no final de linha de forma correta para o português
+\usepackage[brazil]{babel}
+% O pacote babel recomenda o uso do csquotes, para garantir que textos citados estejam escritos corretamente de acordo com as regras do seu idioma.
+\usepackage[portuguese=brazilian]{csquotes}
+
+%% Pacotes para formatação de fonte do documento
+\usepackage{fontspec}
+% Pode ser Times New Roman:
+% \setmainfont{Times New Roman} 
+% Ou pode ser Arial, também:
+\setmainfont{Arial}
+
+% Pacote responsável por adicionar símbolos matemáticos. Símbolos, por exemplo, também necessários para o correto referenciamento de leis e decretos
+\usepackage{amssymb}
+% Só que também é importante realizar a configuração para adicionar os comandos que imprimem esses símbolos associados aos caracteres que imprimem, assim, você pode adicionar o símbolo diretamente no texto
+\usepackage{newunicodechar} % Pacote que permite definir novos caracteres
+\usepackage{config/unicode-char} % Arquivo de configuração com a listagem desses caracteres
+
+%% Pacotes para formatação de conteúdo na página
+\usepackage[left=3cm,top=3cm,right=2cm,bottom=2cm]{geometry} % Pacote responsável por formatar as dimensões das margens das páginas.
+\usepackage{setspace} % Adiciona opções de espaçamento de texto
+\usepackage{ragged2e} % Adiciona opções mais completas para alinhamento de texto
+\usepackage{indentfirst} % Faz com que o primeiro parágrafo de cada item possua identação também
+
+% Pacote que permite criar estilos para o cabeçalho
+\usepackage{fancyhdr}
+\usepackage{config/cabecalho} % Cabeçalho customizado para o modelo
+
+% Permite customizar as notas de rodapé. Necessário para a identação das notas
+\usepackage[hang]{footmisc}
+\usepackage{config/rodape} % Filete do rodapé customizado para o padrão ABNT
+
+%% Adiciona o ambiente para apêndices, que resolve uns problemas
+\usepackage[titletoc]{appendix}
+%% Adiciona a possibilidade de customizar o sumário
+\usepackage{titletoc}
+\usepackage{config/sumario} % Importa o sumário feito para o modelo
+%% Adiciona a possibilidade de estilizar os títulos de seções, subseções e afins
+\usepackage{titlesec}
+\usepackage{config/titulo-sections} % Importa as estilizações feitas das seções e subseções para o modelo
+
+\usepackage{graphicx,graphicx} % Adiciona a capacidde de adicionar figuras.
+\graphicspath{ {./img/} } % Adiciona um caminho padrão para arquivo
+% Figuras podem ser imagens (SVG, por padrão, não funciona), mas documentos PDF também são compatíveis
+% Permite modificar a apresentação das legendas (caption) de figuras, quadros e tabelas
+\usepackage[labelsep=endash, font=footnotesize]{caption} % Modifica a separação da numeração da legenda com a descrição dela e também diminui o tamanho da fonte
+
+%% Pacotes para adicionar o uso de citações e referências no padrão ABNT
+% Usa o biber por ser uma versão mais parruda de biblatex, que é uma versão mais parruda do bibtex, ou algo assim. É importante por resolver uma quantia de erros por conta de caracteres, principalmente na URL das referências
+\usepackage[backend=biber, style=abnt]{biblatex}
+\addbibresource{bibliografia.bib}
+
+%Pacote responsável por permitir colocar url. Ele cria link de atalho no sumário, citações e referência de figuras, tabelas, etc.
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    unicode=true
+}
+\usepackage{url}
+
+\usepackage{lipsum} % Pacote meramente cosmético, para testes. Remova ele quando for utilizar o modelo.
+
+\begin{document}
+
+\justify
+\onehalfspacing
+
+\tableofcontents
+% \clearpage
+
+\setlength\parindent{1.25cm} % Configura o espaçamento da identação dos parágrafos
+\setlength{\parskip}{1.241pt} % Configura o espaço separação entre parágrafos. Deixo desativado por enquanto
+
+% Seção ilustrativa sobre seções e subseções
+\begingroup
+\section{Seção primária}
+\lipsum[1-1]
+
+\subsection{Seção secundária}
+\lipsum[2-4]
+
+\subsubsection{Seção terciária}
+\lipsum[3-3]
+
+\paragraph{Seção quaternária} % Utiliza-se paragraph para o nível hierarquico inferior à subsubsection. Contudo, foi necessário customizá-lo para apresentar como seção
+\lipsum[4-4]
+
+\subparagraph{Seção quinária} % O mesmo acontece com subparagraph
+\lipsum[5-5]
+\endgroup
+
+\begingroup
+\section{Uma segunda seção}
+
+Conforme o quadro no \ref{apendice:teste}
+
+\endgroup
+
+
+\begin{appendices}
+
+\section{Teste}\label{apendice:teste}
+
+\lipsum[6-7]
+\end{appendices}
+
+
+\end{document}

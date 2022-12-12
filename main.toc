@@ -1,0 +1,8 @@
+\babel@toc {brazil}{}\relax 
+\contentsline {section}{\numberline {1}Seção primária}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Seção secundária}{1}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Seção terciária}{2}{subsubsection.1.1.1}%
+\contentsline {paragraph}{\numberline {1.1.1.1}Seção quaternária}{2}{paragraph.1.1.1.1}%
+\contentsline {subparagraph}{\numberline {1.1.1.1.1}Seção quinária}{2}{subparagraph.1.1.1.1.1}%
+\contentsline {section}{\numberline {2}Uma segunda seção}{3}{section.2}%
+\contentsfinish 

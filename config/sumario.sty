@@ -1,0 +1,22 @@
+\addto\captionsbrazil{\renewcommand{\contentsname}{\hfill Sumário\hfill\vspace{1cm}}}
+
+\titlecontents{section}
+[0cm]             % left margin
+{}             % above code
+{\thecontentslabel\hspace{0.2em}}             % numbered format
+{}             % unnumbered format
+{ \titlerule*[1pc]{. . . . .}\contentspage \nobreak}             % filler-page-format, e.g dots
+
+\titlecontents{subsection}
+[0cm]
+{}
+{\thecontentslabel\hspace{0.2em}}
+{}
+{\titlerule*[1pc]{. . . . .}\contentspage \nobreak}
+
+\titlecontents{subsubsection}
+[0cm]
+{}
+{\thecontentslabel\hspace{0.2em}}
+{}
+{\titlerule*[1pc]{. . . . .}\contentspage \nobreak}

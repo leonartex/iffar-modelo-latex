@@ -1,0 +1,5 @@
+% remove <> in URLs according to abnt-6023:2018
+\DeclareFieldFormat{url}{\bibstring{urlfrom}\addcolon\addspace \url{#1}}
+\DeclareFieldFormat{urldate}{\bibstring{urlseen}\addcolon\addspace #1}%
+
+% Fonte: https://github.com/abntex/biblatex-abnt (dev-branch)
