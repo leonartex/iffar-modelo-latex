@@ -19,7 +19,7 @@
     a4paper,
     english,
     brazil
-]{article}
+]{report}
 
 % Pacotes que envolvem codificação do conteúdo. Essenciais.
 \usepackage[T1]{fontenc}
@@ -57,13 +57,24 @@
 \usepackage[hang]{footmisc}
 \usepackage{config/rodape} % Filete do rodapé customizado para o padrão ABNT
 
-%% Adiciona o ambiente para apêndices, que resolve uns problemas
-\usepackage[titletoc]{appendix}
-%% Adiciona a possibilidade de customizar o sumário
+%% Adiciono os pacotes para configurar e estilizar o sumário e as seções
 \usepackage{titletoc}
+\usepackage{titlesec}
+
+%% Criar as partes de Apêndice e Anexos para permitir a listagem
+% Fonte: https://tex.stackexchange.com/questions/394112/define-new-section
+%Crio o Apêndice
+\titleclass{\apendice}{straight}[\part]
+\newcounter{apendice}
+\renewcommand{\theapendice}{\Alph{apendice}}
+%Crio o Anexo
+\titleclass{\anexo}{straight}[\part]
+\newcounter{anexo}
+\renewcommand{\theanexo}{\Alph{anexo}}
+
+%% Agora customizo as seções e sumário para seguirem as normas do IFFar (itens adicionais do sumário também são configurados nesses arquivos)
 \usepackage{config/sumario} % Importa o sumário feito para o modelo
 %% Adiciona a possibilidade de estilizar os títulos de seções, subseções e afins
-\usepackage{titlesec}
 \usepackage{config/titulo-sections} % Importa as estilizações feitas das seções e subseções para o modelo
 
 \usepackage{graphicx,graphicx} % Adiciona a capacidde de adicionar figuras.
@@ -98,37 +109,39 @@
 \setlength{\parskip}{1.241pt} % Configura o espaço separação entre parágrafos. Deixo desativado por enquanto
 
 % Seção ilustrativa sobre seções e subseções
+% \chapter{Teste}
 \begingroup
-\section{Seção primária}
-\lipsum[1-1]
+  \chapter{Seção primária}
+  \lipsum[1-1]
 
-\subsection{Seção secundária}
-\lipsum[2-4]
+  \section{Seção secundária}
+  \lipsum[2-4]
 
-\subsubsection{Seção terciária}
-\lipsum[3-3]
+  \subsection{Seção terciária}
+  \lipsum[3-3]
 
-\paragraph{Seção quaternária} % Utiliza-se paragraph para o nível hierarquico inferior à subsubsection. Contudo, foi necessário customizá-lo para apresentar como seção
-\lipsum[4-4]
+  \subsubsection{Seção quaternária}
+  \lipsum[4-4]
 
-\subparagraph{Seção quinária} % O mesmo acontece com subparagraph
-\lipsum[5-5]
+  \paragraph{Seção quinária} % Utiliza-se paragraph para o nível hierarquico inferior à subsubsection. Contudo, foi necessário customizá-lo para apresentar corretamente como um nível de seção
+  \lipsum[5-5]
 \endgroup
 
 \begingroup
-\section{Uma segunda seção}
+  \chapter{Uma segunda seção}
 
-Conforme o quadro no \ref{apendice:teste}
+  Conforme o quadro no Apêndice \ref{apendice:teste}
 
 \endgroup
 
-
-\begin{appendices}
-
-\section{Teste}\label{apendice:teste}
-
+\begingroup
+\apendice{Teste}\label{apendice:teste}
 \lipsum[6-7]
-\end{appendices}
+\endgroup
 
+\begingroup 
+\anexo{Teste}\label{anexo:teste}
+\lipsum[6-7]
+\endgroup
 
 \end{document}
