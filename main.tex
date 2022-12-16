@@ -5,7 +5,7 @@
 % Contato: leonardo.2017007421@aluno.iffar.edu.br
 
 % IMPORTANTE: 
-%   O modelo utiliza o compilador XeLaTex (talvez possam ser utilizados outros, mas não é garantido o correto funcionamento, porém, eu sei que alguns apresentam, sim, problemas)
+%   O modelo utiliza o compilador XeLaTex (talvez possam ser utilizados outros, mas não é garantido o correto funcionamento, visto que seria necessário testar, porém, eu sei que alguns vão apresentar problemas na hora de compilar, como o pdflatex)
 %   Se você estiver utilizando o Overleaf, com o documento aberto, clique em Menu, no canto superior esquerdo, e selecione o XeLaTex como compilador
 %   Também é utilizado o biber para gerenciar as referências bibliográficas
 %%%%%%%%%%%%%%
@@ -47,7 +47,7 @@
 \usepackage[left=3cm,top=3cm,right=2cm,bottom=2cm]{geometry} % Pacote responsável por formatar as dimensões das margens das páginas.
 \usepackage{setspace} % Adiciona opções de espaçamento de texto
 \usepackage{ragged2e} % Adiciona opções mais completas para alinhamento de texto
-\usepackage{indentfirst} % Faz com que o primeiro parágrafo de cada item possua identação também
+\usepackage{indentfirst} % Faz com que o primeiro parágrafo de cada seção possua identação também
 
 % Pacote que permite criar estilos para o cabeçalho
 \usepackage{fancyhdr}
@@ -60,22 +60,80 @@
 %% Adiciono os pacotes para configurar e estilizar o sumário e as seções
 \usepackage{titletoc}
 \usepackage{titlesec}
+\usepackage{alphalph} % Permite lidar com contadores que possuam valor maior que 26 utilizando o alfabeto (o número de letras), ou seja, se passar de 26, vai utilizar AA, AB, AC... Nativamente o LaTeX não realiza esse controle
 
-%% Criar as partes de Apêndice e Anexos para permitir a listagem
-% Fonte: https://tex.stackexchange.com/questions/394112/define-new-section
-%Crio o Apêndice
-\titleclass{\apendice}{straight}[\part]
+%% Criar as seções de Apêndice e Anexos para permitir a listagem. No caso, existem duas abordagem que podem ser utilizadas:
+% A primeira cria um novo nível hierárquico abaixo de \part, que não é \chapter
+% Fonte: https://tex.stackexchange.com/a/394117
+% Crio o Apêndice
+% \titleclass{\apendice}{straight}[\part]
+% \newcounter{apendice}
+% \renewcommand{\theapendice}{\Alph{apendice}}
+% % Crio o Anexo
+% \titleclass{\anexo}{straight}[\part]
+% \newcounter{anexo}
+% \renewcommand{\theanexo}{\Alph{anexo}}
+
+% A segunda, que é a utilizada, cria um novo comando que utiliza um \chapter, mantendo a ordem hierárquica, sem bagunçar a estrutura
+% Fonte: https://tex.stackexchange.com/a/329928
+% Crio o Apêndice
 \newcounter{apendice}
-\renewcommand{\theapendice}{\Alph{apendice}}
-%Crio o Anexo
-\titleclass{\anexo}{straight}[\part]
+\renewcommand{\theapendice}{\AlphAlph{\value{apendice}}}
+\newcommand{\apendice}[1]{\refstepcounter{apendice}
+    \chapter*{Apêndice \theapendice\space--\space#1}
+    \addcontentsline{toc}{chapter}{Apêndice \theapendice\space--\space#1}
+  }
+% Crio o Anexo
 \newcounter{anexo}
-\renewcommand{\theanexo}{\Alph{anexo}}
+\renewcommand{\theanexo}{\AlphAlph{\value{anexo}}}
+\newcommand{\anexo}[1]{\refstepcounter{anexo}
+    \chapter*{Anexo \theanexo\space--\space#1}
+    \addcontentsline{toc}{chapter}{Anexo \theanexo\space--\space#1}
+  }
 
-%% Agora customizo as seções e sumário para seguirem as normas do IFFar (itens adicionais do sumário também são configurados nesses arquivos)
+%% Agora customizo as seções e sumário para seguirem as normas do IFFar (itens adicionais do sumário, como apêndice e anexos, também são configurados nesses arquivos)
 \usepackage{config/sumario} % Importa o sumário feito para o modelo
 %% Adiciona a possibilidade de estilizar os títulos de seções, subseções e afins
 \usepackage{config/titulo-sections} % Importa as estilizações feitas das seções e subseções para o modelo
+
+% Pacote para facilitar a customização de listas numeradas, que serão utilizadas para as alíneas e subalíneas
+\usepackage{enumitem}
+% Criando o contador de itens do enumerate usando letras (as alíneas), porém, usando os valores do pacote alphalph (que permite apresentar itens com letras dobradas quando todas as letras são esgotadas)
+% Fonte: https://tex.stackexchange.com/a/594860
+% Obs.: O contador criado atualmente utiliza um tamanho de 2 letras, que cria um tamanho visualmente semelhante ao utilizado no Guia de Normalização e na NBR 6024:2012, porém, se você for estourar o limite de 2 letras, o que é extremamente improvável, você também pode alterar a linha para: \AddEnumerateCounter{\alphalphFmt}{\@alphfmt}{aaa}. Isso possui função apenas estética para manter o padrão nas listas no documento inteiro, porque, sem realizar isso, a lista ainda vai apresentar corretamente os itens
+\makeatletter
+\newcommand{\AlphAlphFmt}[1]{\@alphfmt{#1}}  % Define the \alphalph wrapper for enumitem 
+\newcommand{\@alphfmt}[1]{\alphalph{\value{#1}}}  % Internal representation 
+\AddEnumerateCounter{\alphalphFmt}{\@alphfmt}{aa} % Register this new format
+\makeatother
+% Criando a lista genérica, para o usuário inserir o label que quiser, mas seguindo as mesmas margens das alíneas. Essa é a estrutura base utilizada para as alíneas e subalíneas
+\newenvironment{listaGenerica}[1]{
+  \begin{enumerate}[
+    label={#1\space}, 
+    align=left, 
+    labelindent=\parindent, 
+    labelwidth=0pt, 
+    labelsep=0pt, 
+    itemindent=0pt, 
+    leftmargin=*,
+    topsep=0pt,
+    partopsep=0pt,
+    parsep=0pt,
+    itemsep=0pt,
+    ]}
+{\end{enumerate}}
+% Criando o ambiente de alínea
+%[wide, label={\AlphAlphFmt*)}, leftmargin=\parindent]
+\newenvironment{alinea}%
+{\begin{listaGenerica}{\AlphAlphFmt*)}}{\end{listaGenerica}}
+% {\begin{enumerate}[label={\AlphAlphFmt*)\space}, align=left, labelindent=\parindent, labelwidth=0pt, labelsep=0pt, itemindent=0pt,leftmargin=*]}{\end{enumerate}}
+% Criando o ambiente de subalínea
+\newenvironment{subalinea}%
+{\begin{listaGenerica}{---}}{\end{listaGenerica}}
+% {\begin{enumerate}[label={---\space}, align=left, labelindent=\parindent, labelwidth=0pt, labelsep=0pt, itemindent=0pt,leftmargin=*]}{\end{enumerate}}
+\newenvironment{leiParagrafo}%
+{\begin{listaGenerica}[LOL]}{\end{listaGenerica}}
+
 
 \usepackage{graphicx,graphicx} % Adiciona a capacidde de adicionar figuras.
 \graphicspath{ {./img/} } % Adiciona um caminho padrão para arquivo
@@ -98,50 +156,76 @@
 \usepackage{lipsum} % Pacote meramente cosmético, para testes. Remova ele quando for utilizar o modelo.
 
 \begin{document}
-
-\justify
 \onehalfspacing
+\justify
+
+\setlength\parindent{1.25cm} % Configura o espaçamento da identação dos parágrafos
+\setlength{\parskip}{1.241pt} % Configura o espaço separação entre parágrafos.
+
 
 \tableofcontents
 % \clearpage
 
-\setlength\parindent{1.25cm} % Configura o espaçamento da identação dos parágrafos
-\setlength{\parskip}{1.241pt} % Configura o espaço separação entre parágrafos. Deixo desativado por enquanto
-
 % Seção ilustrativa sobre seções e subseções
 % \chapter{Teste}
 \begingroup
-  \chapter{Seção primária}
+  \chapter{Exemplo de seção primária}
   \lipsum[1-1]
 
-  \section{Seção secundária}
+  \section{Exemplo de seção secundária}
   \lipsum[2-4]
 
-  \subsection{Seção terciária}
-  \lipsum[3-3]
-
-  \subsubsection{Seção quaternária}
-  \lipsum[4-4]
-
-  \paragraph{Seção quinária} % Utiliza-se paragraph para o nível hierarquico inferior à subsubsection. Contudo, foi necessário customizá-lo para apresentar corretamente como um nível de seção
+  \subsection{Exemplo de seção terciária}
   \lipsum[5-5]
+
+  \subsubsection{Exemplo de seção quaternária}
+  \lipsum[6-6]
+
+  \paragraph{Exemplo de seção quinária} % Utiliza-se paragraph para o nível hierarquico inferior à subsubsection. Contudo, foi necessário customizá-lo para apresentar corretamente como um nível de seção
+  \lipsum[7-7]
+
+  \paragraph{Exemplo de título com indicação numérica que, ao ocupar mais de uma linha, deve ser, a partir da segunda linha, alinhado abaixo da primeira letra da primeira palavra do título}
+  \lipsum[8-8]
 \endgroup
 
 \begingroup
-  \chapter{Uma segunda seção}
+  \chapter{Exemplos de elementos comuns}
+  \section{Alíneas e subalíneas}
+  \lipsum[1-1]
+  \begin{alinea}
+    \item a matéria da alínea começa por letra minúscula, exceto quando se tratar de     substantivos próprios, e termina em ponto e vírgula, com exceção da última, que termina em ponto final; 
+    \item o trecho final da seção correspondente, anterior às alíneas, termina em
+    dois pontos;
+    \item asdasdsada: 
+    \begin{subalinea}
+      \item a matéria da alínea começa por letra minúscula, exceto quando se tratar de     substantivos próprios, e termina em ponto e vírgula, com exceção da última, que termina em ponto final; 
+      \item o trecho final da seção correspondente, anterior às alíneas, termina em
+      dois pontos;
+    \end{subalinea}
+    \item sdsdsdaa
+  \end{alinea}
 
-  Conforme o quadro no Apêndice \ref{apendice:teste}
+  Conforme o quadro no Apêndice \ref{apendice:teste} e o Anexo \ref{anexo:teste}. Citando \textcite{brasil-lei-11.892-2008}\
+  
+  Testesddsdfdfsd
 
 \endgroup
 
+%% Aqui são adicionados os apêndices e anexos. É essencial que eles estejam dentro desse ambiente, para formatar corretamente
+\begin{ApendicesAnexos} 
+%%
+% Se quiser mudar o comportamento do LaTeX de criar uma nova página para cada capítulo, no caso de Apêndices e Anexos, envelope o capítulo em um group e utilize o comando: \let\clearpage\relax, como demonstrado abaixo
 \begingroup
-\apendice{Teste}\label{apendice:teste}
+\let\clearpage\relax
+\apendice{Um exemplo de apêndice}\label{apendice:teste}
 \lipsum[6-7]
 \endgroup
 
 \begingroup 
-\anexo{Teste}\label{anexo:teste}
+\let\clearpage\relax
+\anexo{Um exemplo de anexo}\label{anexo:teste}
 \lipsum[6-7]
 \endgroup
+\end{ApendicesAnexos}
 
 \end{document}

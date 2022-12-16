@@ -8,4 +8,4 @@ Afazeres:
     - Testar e encontrar solução para caracteres diferentes nas URL (resolvido com XeLaTeX)
     - Adicionar metadados no arquivo PDF (nome de autor, etc.)
     - Estudar sobre pacote titleps para gerenciar header e footer
-    - Resolver o problema do sumário ao adicionar os apêndices e anexos
+    - Fazer a lista especial para leis de artigos e parágrafos (§)

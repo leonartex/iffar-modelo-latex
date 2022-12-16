@@ -1,7 +1,7 @@
 %%%%
 %%  Definindo o nível máximo de subseção a ser contabilizado
 %%%%
-\setcounter{secnumdepth}{7} % Ao escolher 5, no caso da documentclass book, até os paragraph são numerados, porém, como foram adicionados itens a mais na hierarquia de seção (apêndices e anexos), precisa somar ao valor o número de itens adicionados. Isso acontece porque os apêndices e anexos são criados em um nível abaixo de \part, que não encapsula igual os \chapter
+\setcounter{secnumdepth}{5} % Ao escolher 5, no caso da documentclass book, até os paragraph são numerados, porém, se forem adicionados itens a mais na hierarquia de seção (primeira alternativa de apêndices e anexos), precisa-se somar ao valor o número de itens adicionados. Isso acontece porque os apêndices e anexos são criados em um nível abaixo de \part, que não encapsula igual os \chapter
 
 %Exemplo: \titleformat{command}[shape]{format}{label}{sep}{before-code}[after-code]
 
@@ -9,30 +9,33 @@
 %%  Configurando a formatação do título de seção
 %%%%
 %Exemplo: \titleformat{command}[shape]{format}{label}{sep}{before-code}[after-code]
+% \RaggedRight = alinhamento à esquerda
+% Utiliza-se [hang] ao invés de [block] de acordo com o item i da seção 4.1 da NBR 6024:2012: "títulos com indicação numérica, que ocupem mais de uma linha, devem ser, a partir da segunda linha, alinhados abaixo da primeira letra da primeira palavra do título;".
 %Seção primária
-\titleformat{\chapter}[block]
-{\normalfont\normalsize\bfseries}{\thechapter\space}{0ex}{\MakeUppercase}
+\titleformat{\chapter}[hang]
+{\RaggedRight\normalfont\normalsize\bfseries}{\thechapter\space}{0ex}{\MakeUppercase}
 
 %Seção secundária
-\titleformat{\section}[block]
-{\normalfont\normalsize\MakeUppercase}{\thesection\space}{0ex}{\MakeUppercase}
+\titleformat{\section}[hang]
+{\RaggedRight\normalfont\normalsize\MakeUppercase}{\thesection\space}{0ex}{\MakeUppercase}
 
 %Seção terciária
-\titleformat{\subsection}[block]
-{\normalfont\normalsize\bfseries}{\thesubsection\space}{0ex}{}
+\titleformat{\subsection}[hang]
+{\RaggedRight\normalfont\normalsize\bfseries}{\thesubsection\space}{0ex}{}
 
 %Seção quaternária
-\titleformat{\subsubsection}[block]
-{\normalfont\normalsize\itshape}{\thesubsubsection\space}{0ex}{}
+\titleformat{\subsubsection}[hang]
+{\RaggedRight\normalfont\normalsize\itshape}{\thesubsubsection\space}{0ex}{}
 
 %Seção quinária
-\titleformat{\paragraph}[block]
-{\normalfont\normalsize}{\theparagraph\space}{0ex}{}
+\titleformat{\paragraph}[hang]
+{\RaggedRight\normalfont\normalsize}{\theparagraph\space}{0ex}{}
 
 
 %%%%
 %%  Configurando o espaçamento entre título de seção e texto
 %%%%
+%% \baselineskip = espaço de 1,5, já que foi setado no início do texto o \onehalfspacing
 %Seção primária
 \titlespacing* % starred version: first paragraph is not indented
     {\chapter} % <command>
@@ -72,18 +75,26 @@
 %%%%
 %%  Configurando a apresentação e espaçamento de apêndices e anexos
 %%%%
-\titleformat{\apendice}[block]
-  {\normalfont\normalsize\bfseries}{APÊNDICE \theapendice\space --\space}{0ex}{\MakeUppercase}
-\titlespacing* % starred version: first paragraph is not indented
-    {\apendice} % <command>
-    {0cm} % <left>
-    {\baselineskip} % <before-sep>
-    {\baselineskip} % <after-sep>
+%% Criando um ambiente para apendices e anexos, para poder centralizar o título deles
+\newenvironment{ApendicesAnexos}{%
+  \titleformat{\chapter}[hang]
+  {\Centering\normalfont\normalsize\bfseries}{\thechapter\space}{0ex}{\MakeUppercase}
+}{}
+%% Código da primeira alternativa, não utilizada
+% % Apêndice
+% \titleformat{\apendice}[hang]
+%   {\normalfont\normalsize\bfseries}{APÊNDICE \theapendice\space --\space}{0ex}{\MakeUppercase}
+% \titlespacing* % starred version: first paragraph is not indented
+%     {\apendice} % <command>
+%     {0cm} % <left>
+%     {\baselineskip} % <before-sep>
+%     {\baselineskip} % <after-sep>
 
-\titleformat{\anexo}[hang]
-  {\normalfont\normalsize\bfseries}{ANEXO \theapendice\space --\space}{0ex}{\MakeUppercase}
-\titlespacing* % starred version: first paragraph is not indented
-    {\anexo} % <command>
-    {0cm} % <left>
-    {\baselineskip} % <before-sep>
-    {\baselineskip} % <after-sep>
+% % Anexo
+% \titleformat{\anexo}[hang]
+%   {\normalfont\normalsize\bfseries}{ANEXO \theapendice\space --\space}{0ex}{\MakeUppercase}
+% \titlespacing* % starred version: first paragraph is not indented
+%     {\anexo} % <command>
+%     {0cm} % <left>
+%     {\baselineskip} % <before-sep>
+%     {\baselineskip} % <after-sep>

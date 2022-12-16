@@ -1,22 +1,27 @@
-\addto\captionsbrazil{\renewcommand{\contentsname}{\hfill Sumário\hfill\vspace{1cm}}}
+%%%%
+%%  Definindo o nível máximo de subseção a ser apresentado
+%%%%
+\setcounter{tocdepth}{5} % Ao escolher 5, no caso da documentclass book, até os paragraph são numerados, porém, se forem adicionados itens a mais na hierarquia de seção (primeira alternativa de apêndices e anexos), precisa-se somar ao valor o número de itens adicionados. Isso acontece porque os apêndices e anexos são criados em um nível abaixo de \part, que não encapsula igual os \chapter
 
-\titlecontents{section}
-[0cm]             % left margin
-{}             % above code
-{\thecontentslabel\hspace{0.2em}}             % numbered format
-{}             % unnumbered format
-{ \titlerule*[1pc]{. . . . .}\contentspage \nobreak}             % filler-page-format, e.g dots
+% \addto\captionsbrazil{\renewcommand{\contentsname}{\hfill Sumário\hfill\vspace{1cm}}}
 
-\titlecontents{subsection}
-[0cm]
-{}
-{\thecontentslabel\hspace{0.2em}}
-{}
-{\titlerule*[1pc]{. . . . .}\contentspage \nobreak}
+% \titlecontents{section}
+% [0cm]             % left margin
+% {}             % above code
+% {\thecontentslabel\hspace{0.2em}}             % numbered format
+% {}             % unnumbered format
+% { \titlerule*[1pc]{. . . . .}\contentspage \nobreak}             % filler-page-format, e.g dots
 
-\titlecontents{subsubsection}
-[0cm]
-{}
-{\thecontentslabel\hspace{0.2em}}
-{}
-{\titlerule*[1pc]{. . . . .}\contentspage \nobreak}
+% \titlecontents{subsection}
+% [0cm]
+% {}
+% {\thecontentslabel\hspace{0.2em}}
+% {}
+% {\titlerule*[1pc]{. . . . .}\contentspage \nobreak}
+
+% \titlecontents{subsubsection}
+% [0cm]
+% {}
+% {\thecontentslabel\hspace{0.2em}}
+% {}
+% {\titlerule*[1pc]{. . . . .}\contentspage \nobreak}
