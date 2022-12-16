@@ -10,3 +10,8 @@
 *.cb
 *.cb2
 .*.lb
+*.bbl
+*.bcf
+*.blg
+main.run.xml
+*.gz
