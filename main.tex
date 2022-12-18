@@ -53,43 +53,11 @@
 \usepackage{fancyhdr}
 \usepackage{config/cabecalho} % Cabeçalho customizado para o modelo
 
-% Permite customizar as notas de rodapé. Necessário para a identação das notas
-\usepackage[hang]{footmisc}
-\usepackage{config/rodape} % Filete do rodapé customizado para o padrão ABNT
-
 %% Adiciono os pacotes para configurar e estilizar o sumário e as seções
 \usepackage{titletoc}
 \usepackage{titlesec}
 \usepackage{alphalph} % Permite lidar com contadores que possuam valor maior que 26 utilizando o alfabeto (o número de letras), ou seja, se passar de 26, vai utilizar AA, AB, AC... Nativamente o LaTeX não realiza esse controle
-
-%% Criar as seções de Apêndice e Anexos para permitir a listagem. No caso, existem duas abordagem que podem ser utilizadas:
-% A primeira cria um novo nível hierárquico abaixo de \part, que não é \chapter
-% Fonte: https://tex.stackexchange.com/a/394117
-% Crio o Apêndice
-% \titleclass{\apendice}{straight}[\part]
-% \newcounter{apendice}
-% \renewcommand{\theapendice}{\Alph{apendice}}
-% % Crio o Anexo
-% \titleclass{\anexo}{straight}[\part]
-% \newcounter{anexo}
-% \renewcommand{\theanexo}{\Alph{anexo}}
-
-% A segunda, que é a utilizada, cria um novo comando que utiliza um \chapter, mantendo a ordem hierárquica, sem bagunçar a estrutura
-% Fonte: https://tex.stackexchange.com/a/329928
-% Crio o Apêndice
-\newcounter{apendice}
-\renewcommand{\theapendice}{\AlphAlph{\value{apendice}}}
-\newcommand{\apendice}[1]{\refstepcounter{apendice}
-    \chapter*{Apêndice \theapendice\space--\space#1}
-    \addcontentsline{toc}{chapter}{Apêndice \theapendice\space--\space#1}
-  }
-% Crio o Anexo
-\newcounter{anexo}
-\renewcommand{\theanexo}{\AlphAlph{\value{anexo}}}
-\newcommand{\anexo}[1]{\refstepcounter{anexo}
-    \chapter*{Anexo \theanexo\space--\space#1}
-    \addcontentsline{toc}{chapter}{Anexo \theanexo\space--\space#1}
-  }
+\usepackage{config/apendice-anexo} % Criação dos comandos para apêndice e anexo
 
 %% Agora customizo as seções e sumário para seguirem as normas do IFFar (itens adicionais do sumário, como apêndice e anexos, também são configurados nesses arquivos)
 \usepackage{config/sumario} % Importa o sumário feito para o modelo
@@ -112,11 +80,16 @@
 % Removo a contabilização de capítulo na numeração das figuras, tabelas e quadros (isso ocorre ao utilizar o documentclass de book ou report)
 \counterwithout{figure}{chapter} 
 \counterwithout{table}{chapter}
+\counterwithout{quadro}{chapter}
 
 %% Pacotes para adicionar o uso de citações e referências no padrão ABNT
+% Permite customizar as notas de rodapé. Necessário para a identação das notas
+\usepackage[hang]{footmisc}
+\usepackage{config/rodape} % Configurações das notas de rodapé
 % Usa o biber por ser uma versão mais parruda de biblatex, que é uma versão mais parruda do bibtex, ou algo assim. É importante por resolver uma quantia de erros por conta de caracteres, principalmente na URL das referências
 \usepackage[backend=biber, style=abnt]{biblatex}
-\addbibresource{bibliografia.bib}
+\addbibresource{bibliografia.bib} % Você pode adicionar mais de um arquivo.bib, apenas adicione outra linha com o nome do segundo arquivo
+\usepackage{config/bibliografia-abnt} % Ajustes necessários por causa que o pacote biblatex-abnt não foi atualizado para algumas das mais novas normas da ABNT
 
 %Pacote responsável por permitir colocar url. Ele cria link de atalho no sumário, citações e referência de figuras, tabelas, etc.
 \usepackage[hidelinks]{hyperref}
@@ -153,8 +126,17 @@
 
 \endgroup
 
-%% Aqui são adicionados os apêndices e anexos. É essencial que eles estejam dentro desse ambiente, para formatar corretamente
-\begin{ApendicesAnexos} 
+%% Aqui são adicionados as referências, apêndices e anexos. É essencial que eles estejam dentro desse ambiente, para formatar corretamente o título da seção deles
+\begin{SecoesNaoNumeradas}
+%% Aqui é impressa a lista de referências bibliográficas
+\begingroup
+  \begin{FlushLeft} % As referências devem apresentar justificação à esquerda
+    % heading=bibintoc imprime o nome da seção das referências sem numeração
+    % title=Referências modifica o nome da seção, que normalmente seria "Bibliografia", por conta que é o padrão utilizado pelos documentclass book e report
+    \printbibliography[heading=bibintoc, title=Referências]
+  \end{FlushLeft}
+\endgroup
+
 %%
 % Se quiser mudar o comportamento do LaTeX de criar uma nova página para cada capítulo, no caso de Apêndices e Anexos, envelope o capítulo em um group e utilize o comando: \let\clearpage\relax, como demonstrado abaixo
 \begingroup
@@ -168,6 +150,6 @@
 \anexo{Um exemplo de anexo}\label{anexo:teste}
 \lipsum[6-7]
 \endgroup
-\end{ApendicesAnexos}
+\end{SecoesNaoNumeradas}
 
 \end{document}

@@ -1,3 +1,7 @@
+Dúvidas:
+	- Verificar a questão de divergência na formatação das seções quaternárias e quinárias
+	- Verificar o espaço necessário entre a nota de rodapé e seu índice
+
 Afazeres: 
 
     - Testar se o usepackage para configurações deu certo
@@ -10,22 +14,23 @@ Afazeres:
     - Estudar sobre pacote titleps para gerenciar header e footer
     - Fazer a lista especial para leis de artigos e parágrafos (§):
 		- Permitir utilizar uma configuração que: soma a identação de listas dentro de listas; ou deixa todas as listas internas como se fosse uma coisa só
+	- Ajustas as referências para repetir o nome de autores, não utilizando o filete
 
 
 Afazeres:
 Formatação
-	Leiaute e formato
-		A4
+V	Leiaute e formato
+V		A4
 	Texto
-		Cor preta
-		Fonte Arial ou Times
+V		Cor preta
+V		Fonte Arial ou Times
 		Tamanho 12
 			Verificar todos os elementos que vai 12
 		Tamanho 10
 			Verificar todos os elementos que vai 10
 	Margens
-		No anverso (frente da folha): superior e esquerda de 3 cm; inferior e direita de 2 cm;
-		No verso: superior e direita de 3 cm; inferior e esquerda de 2 cm.
+V		No anverso (frente da folha): superior e esquerda de 3 cm; inferior e direita de 2 cm;
+V		No verso: superior e direita de 3 cm; inferior e esquerda de 2 cm.
 	Espaçamento entre linhas
 		1,5
 			Verificar todos os elementos que vai 1,5
@@ -47,29 +52,32 @@ Formatação
 		No anverso: no canto superior direito (distante 2 cm da borda superior, com o último algarismo a 2 cm da borda direita da folha);
 		No verso: no canto superior à esquerda (distante 2 cm da borda superior, com o último algarismo a 2 cm da borda esquerda da folha).
 	Títulos
-		5 níveis de seção
-		Usar algarismo arábico seguido de um espaço para separar do título
+V		5 níveis de seção
+V		Usar algarismo arábico seguido de um espaço para separar do título
 		Destaque usando negrito, itálico ou sublinhado, que deve aparecer no sumário
-		Alinhamento à esquerda
-		Espaçamento 1,5
-		Tamanho 12
-		Separação entre título e texto de 1,5
+V		Alinhamento à esquerda
+V		Espaçamento 1,5
+V		Tamanho 12
+V		Separação entre título e texto de 1,5
 
-		Identificação sequencial de itens: designados por seu nome específico, seguido de um espaço, um travessão, outro espaço e do respectivo título;
-		Apêndice e anexo: usar letra
-		Tabelas e ilustrações: algarismo arábico, espaço, travessão, espaço, título
+	Títulos e indicativos numéricos das seções (tabelas, figuras, anexos, etc.)
+V		Identificação sequencial de itens: designados por seu nome específico, seguido de um espaço, um travessão, outro espaço e do respectivo título;
+V		Apêndice e anexo: usar letra
+V		Tabelas e ilustrações: algarismo arábico, espaço, travessão, espaço, título
 
-		Formatação do título: alinhamento ao centro, recurso de negrito; caixa alta.
+V		Formatação do título: alinhamento ao centro, recurso de negrito; caixa alta.
 		Títulos sem indicativo numérico: errata, agradecimentos, listas em geral (de ilustrações, de abreviaturas e siglas, de símbolos, etc.), resumo, sumário, referências, glossário, apêndice(s), anexo(s) e índice(s);
 		Elementos sem título e sem indicativo numérico: folha de rosto, ficha catalográfica ou ficha de identificação da obra; folha de aprovação ou certificação, dedicatória e epígrafe(s).
 
-Alíneas e subalíneas
+V Alíneas e subalíneas
 
 Equações e fórmulas
 
-Ilustração
-Tabela
-Quadro
+V Ilustração
+V Tabela
+V Quadro
+
+V Nota de rodapé
 
 Capa
 Lombada?

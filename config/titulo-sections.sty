@@ -11,6 +11,14 @@
 %Exemplo: \titleformat{command}[shape]{format}{label}{sep}{before-code}[after-code]
 % \RaggedRight = alinhamento à esquerda
 % Utiliza-se [hang] ao invés de [block] de acordo com o item i da seção 4.1 da NBR 6024:2012: "títulos com indicação numérica, que ocupem mais de uma linha, devem ser, a partir da segunda linha, alinhados abaixo da primeira letra da primeira palavra do título;".
+% Observação GRAVE: O texto do Guia de Normalização diz:
+% e) para a seção quaternária, primeira letra do título em maiúsculo, seguida por
+% letras minúsculas, tudo sem destaque;
+% f) para a seção quinária, primeira letra do título em maiúsculo, seguida por
+% letras minúsculas, tudo em itálico;
+% Mas no exemplo dado na Figura 3 são invertidas as formatações entre os dois últimos níveis de seção.
+
+
 %Seção primária
 \titleformat{\chapter}[hang]
 {\RaggedRight\normalfont\normalsize\bfseries}{\thechapter\space}{0ex}{\MakeUppercase}
@@ -75,8 +83,8 @@
 %%%%
 %%  Configurando a apresentação e espaçamento de apêndices e anexos
 %%%%
-%% Criando um ambiente para apendices e anexos, para poder centralizar o título deles
-\newenvironment{ApendicesAnexos}{%
+%% Criando um ambiente para seções sem numeração no título, como referências, apêndices e anexos, para poder centralizar o título deles
+\newenvironment{SecoesNaoNumeradas}{%
   \titleformat{\chapter}[hang]
   {\Centering\normalfont\normalsize\bfseries}{\thechapter\space}{0ex}{\MakeUppercase}
 }{}

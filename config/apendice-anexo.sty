@@ -1,0 +1,28 @@
+%% Criar as seções de Apêndice e Anexos para permitir a listagem. No caso, existem duas abordagem que podem ser utilizadas:
+% A primeira cria um novo nível hierárquico abaixo de \part, que não é \chapter
+% Fonte: https://tex.stackexchange.com/a/394117
+% Crio o Apêndice
+% \titleclass{\apendice}{straight}[\part]
+% \newcounter{apendice}
+% \renewcommand{\theapendice}{\Alph{apendice}}
+% % Crio o Anexo
+% \titleclass{\anexo}{straight}[\part]
+% \newcounter{anexo}
+% \renewcommand{\theanexo}{\Alph{anexo}}
+
+% A segunda, que é a utilizada, cria um novo comando que utiliza um \chapter, mantendo a ordem hierárquica, sem bagunçar a estrutura
+% Fonte: https://tex.stackexchange.com/a/329928
+% Crio o Apêndice
+\newcounter{apendice}
+\renewcommand{\theapendice}{\AlphAlph{\value{apendice}}}
+\newcommand{\apendice}[1]{\refstepcounter{apendice}
+    \chapter*{Apêndice \theapendice\space--\space#1}
+    \addcontentsline{toc}{chapter}{Apêndice \theapendice\space--\space#1}
+  }
+% Crio o Anexo
+\newcounter{anexo}
+\renewcommand{\theanexo}{\AlphAlph{\value{anexo}}}
+\newcommand{\anexo}[1]{\refstepcounter{anexo}
+    \chapter*{Anexo \theanexo\space--\space#1}
+    \addcontentsline{toc}{chapter}{Anexo \theanexo\space--\space#1}
+  }

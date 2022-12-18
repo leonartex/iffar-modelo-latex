@@ -1,3 +1,13 @@
+% Remover a contabilização das notas de rodapé por capítulo, em outras palavras, adicionando uma contagem contínua (isso é necessário por conta dos documentclass de book e report)
+\counterwithout{footnote}{chapter}
+
+% A ABNT não define o espaço que separe a nota de rodapé de seu índice, então deixo comentado
+% \renewcommand{\footnotemargin}{1ex}
+
+% Adiciona o alinhamento à esquerda das notas de rodapé
+\renewcommand{\footnotelayout}{\RaggedRight}
+
+%% Crio o filete que deve aparecer no início da seção de notas de rodapé
 \renewcommand{\footnoterule}{%
   \kern -3pt
   \hrule width 5cm % O padrão ABNT exige que o filete (linha) que separa o espaço para notas de rodapé tenha 5cm
