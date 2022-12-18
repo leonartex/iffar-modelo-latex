@@ -8,7 +8,8 @@ Afazeres:
     - Testar e encontrar solução para caracteres diferentes nas URL (resolvido com XeLaTeX)
     - Adicionar metadados no arquivo PDF (nome de autor, etc.)
     - Estudar sobre pacote titleps para gerenciar header e footer
-    - Fazer a lista especial para leis de artigos e parágrafos (§)
+    - Fazer a lista especial para leis de artigos e parágrafos (§):
+		- Permitir utilizar uma configuração que: soma a identação de listas dentro de listas; ou deixa todas as listas internas como se fosse uma coisa só
 
 
 Afazeres:

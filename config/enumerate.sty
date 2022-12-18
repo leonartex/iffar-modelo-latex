@@ -1,0 +1,59 @@
+% Criando o contador de itens do enumerate usando letras (as alíneas), porém, usando os valores do pacote alphalph (que permite apresentar itens com letras dobradas quando todas as letras são esgotadas)
+% Fonte: https://tex.stackexchange.com/a/594860
+% Obs.: O contador criado atualmente utiliza um tamanho de 2 letras, que cria um tamanho visualmente semelhante ao utilizado no Guia de Normalização e na NBR 6024:2012, porém, se você for estourar o limite de 2 letras, o que é extremamente improvável, você também pode alterar a linha para: \AddEnumerateCounter{\alphalphFmt}{\@alphfmt}{aaa}. Isso possui função apenas estética para manter o padrão nas listas no documento inteiro, porque, sem realizar isso, a lista ainda vai apresentar corretamente os itens
+\makeatletter
+\newcommand{\AlphAlphFmt}[1]{\@alphfmt{#1}}  % Define the \alphalph wrapper for enumitem 
+\newcommand{\@alphfmt}[1]{\alphalph{\value{#1}}}  % Internal representation 
+\AddEnumerateCounter{\alphalphFmt}{\@alphfmt}{aa} % Register this new format
+\makeatother
+
+% Criando a lista genérica, para o usuário inserir o label que quiser, mas seguindo as mesmas margens das alíneas. Essa é a estrutura base utilizada para as alíneas e subalíneas
+\newenvironment{listaGenerica}[1]{
+  \begin{enumerate}[
+    label={#1}, 
+    align=left, 
+    labelindent=\parindent, 
+    labelwidth=0pt, 
+    labelsep=0pt, 
+    itemindent=0pt, 
+    leftmargin=*,
+    topsep=0pt,
+    partopsep=0pt,
+    parsep=0pt,
+    itemsep=0pt,
+    ]}
+{\end{enumerate}}
+
+% Criando o ambiente de alínea
+%[wide, label={\AlphAlphFmt*)}, leftmargin=\parindent]
+\newenvironment{alinea}%
+{\begin{listaGenerica}{\AlphAlphFmt*)\space}}{\end{listaGenerica}}
+% {\begin{enumerate}[label={\AlphAlphFmt*)\space}, align=left, labelindent=\parindent, labelwidth=0pt, labelsep=0pt, itemindent=0pt,leftmargin=*]}{\end{enumerate}}
+
+% Criando o ambiente de subalínea
+\newenvironment{subalinea}%
+{\begin{listaGenerica}{---\space}}{\end{listaGenerica}}
+% {\begin{enumerate}[label={---\space}, align=left, labelindent=\parindent, labelwidth=0pt, labelsep=0pt, itemindent=0pt,leftmargin=*]}{\end{enumerate}}
+
+
+% % Criando o contador de enumerate com a condicional para números ordinais, utilizado em lista de artigos e parágrafos de leis
+% \makeatletter
+% % Primeiro crio o comando específico para imprimir o º caso o número seja menor que 10
+% \newcommand{\ordinalFmt}[1]{%
+%   \ifnum\value{#1}<10%
+%   \textordmasculine%
+%   \fi
+% }
+% \newcommand{\LeiParagrafoFmt}[1]{\@leiparagrafo{#1}}
+% \newcommand{\@leiparagrafo}[1]{\S\space \value{#1}\ordinalFmt{#1}}
+% \AddEnumerateCounter{\leiparagrafoFmt}{\@leiparagrafo}{aaaa}
+% \makeatother
+
+% \makeatletter
+% \newcommand{\AlphAlphFmt}[1]{\@alphfmt{#1}}  % Define the \alphalph wrapper for enumitem 
+% \newcommand{\@alphfmt}[1]{\alphalph{\value{#1}}}  % Internal representation 
+% \AddEnumerateCounter{\alphalphFmt}{\@alphfmt}{aa} % Register this new format
+% \makeatother
+% \newcommand{\ordinalFmt}{\ifnum \value{enumi}<\value{10} \textordmasculine \fi}
+% \newenvironment{leiParagrafo}%
+% {\begin{listaGenerica}{\protect\ordinalFmt~\arabic*\space}}{\end{listaGenerica}}

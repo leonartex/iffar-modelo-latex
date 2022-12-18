@@ -98,48 +98,20 @@
 
 % Pacote para facilitar a customização de listas numeradas, que serão utilizadas para as alíneas e subalíneas
 \usepackage{enumitem}
-% Criando o contador de itens do enumerate usando letras (as alíneas), porém, usando os valores do pacote alphalph (que permite apresentar itens com letras dobradas quando todas as letras são esgotadas)
-% Fonte: https://tex.stackexchange.com/a/594860
-% Obs.: O contador criado atualmente utiliza um tamanho de 2 letras, que cria um tamanho visualmente semelhante ao utilizado no Guia de Normalização e na NBR 6024:2012, porém, se você for estourar o limite de 2 letras, o que é extremamente improvável, você também pode alterar a linha para: \AddEnumerateCounter{\alphalphFmt}{\@alphfmt}{aaa}. Isso possui função apenas estética para manter o padrão nas listas no documento inteiro, porque, sem realizar isso, a lista ainda vai apresentar corretamente os itens
-\makeatletter
-\newcommand{\AlphAlphFmt}[1]{\@alphfmt{#1}}  % Define the \alphalph wrapper for enumitem 
-\newcommand{\@alphfmt}[1]{\alphalph{\value{#1}}}  % Internal representation 
-\AddEnumerateCounter{\alphalphFmt}{\@alphfmt}{aa} % Register this new format
-\makeatother
-% Criando a lista genérica, para o usuário inserir o label que quiser, mas seguindo as mesmas margens das alíneas. Essa é a estrutura base utilizada para as alíneas e subalíneas
-\newenvironment{listaGenerica}[1]{
-  \begin{enumerate}[
-    label={#1\space}, 
-    align=left, 
-    labelindent=\parindent, 
-    labelwidth=0pt, 
-    labelsep=0pt, 
-    itemindent=0pt, 
-    leftmargin=*,
-    topsep=0pt,
-    partopsep=0pt,
-    parsep=0pt,
-    itemsep=0pt,
-    ]}
-{\end{enumerate}}
-% Criando o ambiente de alínea
-%[wide, label={\AlphAlphFmt*)}, leftmargin=\parindent]
-\newenvironment{alinea}%
-{\begin{listaGenerica}{\AlphAlphFmt*)}}{\end{listaGenerica}}
-% {\begin{enumerate}[label={\AlphAlphFmt*)\space}, align=left, labelindent=\parindent, labelwidth=0pt, labelsep=0pt, itemindent=0pt,leftmargin=*]}{\end{enumerate}}
-% Criando o ambiente de subalínea
-\newenvironment{subalinea}%
-{\begin{listaGenerica}{---}}{\end{listaGenerica}}
-% {\begin{enumerate}[label={---\space}, align=left, labelindent=\parindent, labelwidth=0pt, labelsep=0pt, itemindent=0pt,leftmargin=*]}{\end{enumerate}}
-\newenvironment{leiParagrafo}%
-{\begin{listaGenerica}[LOL]}{\end{listaGenerica}}
+\usepackage{config/enumerate}
 
-
-\usepackage{graphicx,graphicx} % Adiciona a capacidde de adicionar figuras.
-\graphicspath{ {./img/} } % Adiciona um caminho padrão para arquivo
+\usepackage{float} % Adiciona configurações adicionais para elementos float (figuras, tabelas, quadros, etc.)
+\usepackage{newfloat} % Permite criar floats, como o caso dos quadros, de forma prática
+\DeclareFloatingEnvironment{quadro} % Crio o elemento float Quadro
+\usepackage{tabularx} % Tabelas no LaTeX são limitadas em algumas características, este pacote resolve algumas dessas falhas
+\usepackage{graphicx} % Adiciona a capacidde de adicionar figuras, além de outras funcionalidade que podem ser utilizadas em quadros e tabelas.
 % Figuras podem ser imagens (SVG, por padrão, não funciona), mas documentos PDF também são compatíveis
+\graphicspath{ {./img/} } % Adiciona um caminho padrão para arquivo
 % Permite modificar a apresentação das legendas (caption) de figuras, quadros e tabelas
-\usepackage[labelsep=endash, font=footnotesize]{caption} % Modifica a separação da numeração da legenda com a descrição dela e também diminui o tamanho da fonte
+\usepackage[labelsep=endash, font=singlespacing, justification=centering]{caption} % Modifica a separação da numeração da legenda com a descrição dela
+% Removo a contabilização de capítulo na numeração das figuras, tabelas e quadros (isso ocorre ao utilizar o documentclass de book ou report)
+\counterwithout{figure}{chapter} 
+\counterwithout{table}{chapter}
 
 %% Pacotes para adicionar o uso de citações e referências no padrão ABNT
 % Usa o biber por ser uma versão mais parruda de biblatex, que é uma versão mais parruda do bibtex, ou algo assim. É importante por resolver uma quantia de erros por conta de caracteres, principalmente na URL das referências
@@ -169,43 +141,13 @@
 % Seção ilustrativa sobre seções e subseções
 % \chapter{Teste}
 \begingroup
-  \chapter{Exemplo de seção primária}
-  \lipsum[1-1]
-
-  \section{Exemplo de seção secundária}
-  \lipsum[2-4]
-
-  \subsection{Exemplo de seção terciária}
-  \lipsum[5-5]
-
-  \subsubsection{Exemplo de seção quaternária}
-  \lipsum[6-6]
-
-  \paragraph{Exemplo de seção quinária} % Utiliza-se paragraph para o nível hierarquico inferior à subsubsection. Contudo, foi necessário customizá-lo para apresentar corretamente como um nível de seção
-  \lipsum[7-7]
-
-  \paragraph{Exemplo de título com indicação numérica que, ao ocupar mais de uma linha, deve ser, a partir da segunda linha, alinhado abaixo da primeira letra da primeira palavra do título}
-  \lipsum[8-8]
+  \input{capitulos/exemplos-secoes.tex}
 \endgroup
 
 \begingroup
-  \chapter{Exemplos de elementos comuns}
-  \section{Alíneas e subalíneas}
-  \lipsum[1-1]
-  \begin{alinea}
-    \item a matéria da alínea começa por letra minúscula, exceto quando se tratar de     substantivos próprios, e termina em ponto e vírgula, com exceção da última, que termina em ponto final; 
-    \item o trecho final da seção correspondente, anterior às alíneas, termina em
-    dois pontos;
-    \item asdasdsada: 
-    \begin{subalinea}
-      \item a matéria da alínea começa por letra minúscula, exceto quando se tratar de     substantivos próprios, e termina em ponto e vírgula, com exceção da última, que termina em ponto final; 
-      \item o trecho final da seção correspondente, anterior às alíneas, termina em
-      dois pontos;
-    \end{subalinea}
-    \item sdsdsdaa
-  \end{alinea}
+  \input{capitulos/elementos-comuns.tex}    
 
-  Conforme o quadro no Apêndice \ref{apendice:teste} e o Anexo \ref{anexo:teste}. Citando \textcite{brasil-lei-11.892-2008}\
+  Conforme o quadro no Apêndice \ref{apendice:teste} e o Anexo \ref{anexo:teste}. Citando \textcite{brasil-lei-11.892-2008}
   
   Testesddsdfdfsd
 
