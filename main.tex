@@ -54,7 +54,8 @@
 \usepackage{config/cabecalho} % Cabeçalho customizado para o modelo
 
 %% Adiciono os pacotes para configurar e estilizar o sumário e as seções
-\usepackage{titletoc}
+% \usepackage{tocloft}
+\usepackage{titletoc} % Não consegui criar pelo titletoc a parte de todas as seções estarem alinhadas, então vou usar o tocloft
 \usepackage{titlesec}
 \usepackage{alphalph} % Permite lidar com contadores que possuam valor maior que 26 utilizando o alfabeto (o número de letras), ou seja, se passar de 26, vai utilizar AA, AB, AC... Nativamente o LaTeX não realiza esse controle
 \usepackage{config/apendice-anexo} % Criação dos comandos para apêndice e anexo
@@ -107,8 +108,9 @@
 \setlength\parindent{1.25cm} % Configura o espaçamento da identação dos parágrafos
 \setlength{\parskip}{1.241pt} % Configura o espaço separação entre parágrafos.
 
-
+\begin{SecoesNaoNumeradas}
 \tableofcontents
+\end{SecoesNaoNumeradas}
 % \clearpage
 
 % Seção ilustrativa sobre seções e subseções
