@@ -19,6 +19,7 @@ Afazeres:
 	- Ajustas as referências para repetir o nome de autores, não utilizando o filete
 	- Referência de mais de 3 linhas
 	- Formatar a lista de referências
+	- Dar exemplo dos variados tipos de representação de termos no Índice
 
 
 Afazeres:
@@ -107,7 +108,7 @@ Desenvolvimento
 Conclusão
 
 Referências
-Glossário
+V Glossário
 V Apêndice
 V Anexo
 Índice

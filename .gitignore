@@ -15,5 +15,8 @@
 *.blg
 main.run.xml
 *.gz
+*.idx
+*.ilg
+*.ind
 
 *.loquadro

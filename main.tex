@@ -67,7 +67,7 @@
 
 % Pacote para facilitar a customização de listas numeradas, que serão utilizadas para as alíneas e subalíneas
 \usepackage{enumitem}
-\usepackage{config/enumerate}
+\usepackage{config/enumerate} % Definição das listas de alíneas, subalíneas e índice
 
 \usepackage{float} % Adiciona configurações adicionais para elementos float (figuras, tabelas, quadros, etc.)
 \usepackage{tabularx} % Tabelas no LaTeX são limitadas em algumas características, este pacote resolve algumas dessas falhas
@@ -96,6 +96,10 @@
 \addbibresource{bibliografia.bib} % Você pode adicionar mais de um arquivo.bib, apenas adicione outra linha com o nome do segundo arquivo
 \usepackage{config/bibliografia-abnt} % Ajustes necessários por causa que o pacote biblatex-abnt não foi atualizado para algumas das mais novas normas da ABNT
 
+% Pacote responsável por permitir criar o índice. Se você não for utilizar índice, e provavelmente não vai, é só comentar essas duas linhas abaixo e o comando \printindex no final do documento
+\usepackage{imakeidx}
+\makeindex[columns=3, title=Índice]
+
 %Pacote responsável por permitir colocar url. Ele cria link de atalho no sumário, citações e referência de figuras, tabelas, etc.
 \usepackage[hidelinks]{hyperref}
 \hypersetup{
@@ -107,11 +111,13 @@
 
 \begin{document}
 \onehalfspacing
-\justify
+\justifying
+\setlength\parindent{1.25cm}% Configura o espaçamento da indentação dos parágrafos
+\setlength\parskip{1.241pt}% Configura o espaço separação entre parágrafos.
+\include{elementos/DADOS.tex}
 
-\setlength\parindent{1.25cm} % Configura o espaçamento da indentação dos parágrafos
-\setlength{\parskip}{1.241pt} % Configura o espaço separação entre parágrafos.
-
+\include{elementos/capa-tcc.tex}
+\include{elementos/folha-rosto.tex}
 \begin{SecoesNaoNumeradas}
   \include{elementos/dedicatoria.tex}
   \include{elementos/agradecimentos.tex}
@@ -130,8 +136,11 @@
 \end{SecoesNaoNumeradas}
 % \clearpage
 
+\begingroup
+  \input{capitulos/introducao.tex}
+\endgroup
+
 % Seção ilustrativa sobre seções e subseções
-% \chapter{Teste}
 \begingroup
   \input{capitulos/exemplos-secoes.tex}
 \endgroup
@@ -150,15 +159,18 @@
 %% Aqui é impressa a lista de referências bibliográficas
 \begingroup
   \begin{FlushLeft} % As referências devem apresentar justificação à esquerda
-    % heading=bibintoc imprime o nome da seção das referências sem numeração
+    % heading=bibintoc imprime o nome da seção das referências sem numeração e adiciona no sumário
     % title=Referências modifica o nome da seção, que normalmente seria "Bibliografia", por conta que é o padrão utilizado pelos documentclass book e report
     \printbibliography[heading=bibintoc, title=Referências]
   \end{FlushLeft}
 \endgroup
 
+\include{elementos/glossario.tex}
+
 %% Depois das referências, apresentam-se os apêndices e, depois, os anexos
 \begingroup
 \apendice{Um exemplo de apêndice}\label{apendice:teste}
+Alíneas\index{alínea}
 \lipsum[6-7]
 \endgroup
 
@@ -166,6 +178,10 @@
 \anexo{Um exemplo de anexo}\label{anexo:teste}
 \lipsum[6-7]
 \endgroup
+
+% \include{elementos/indice.tex}
+\printindex % Comente esta linha se não for utilizar índice
+
 \end{SecoesNaoNumeradas}
 
 \end{document}
