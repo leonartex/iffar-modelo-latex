@@ -1,0 +1,20 @@
+% Crio um elemento utilizado para listar cada símbolo e seu significado
+% Obs.: É a mesma lógica da lista de siglas. Ajuste o tamanho do comprimento da "caixinha" do símbolo conforme a sua necessidade
+% Fonte: https://tex.stackexchange.com/a/508154
+\newcommand\simboloTamanho{5ex} % Comprimento do espaço onde fica o símbolo
+\newcommand\simboloGap{1ex} % Comprimento do vão entre símbolo e seu nome, para dar uma folguinha no tamanho máximo
+\newcommand\simboloNomeTamanho{\dimexpr\linewidth-\simboloTamanho-\simboloGap\relax}
+\newcommand\simbolo[2]{\noindent\parbox[t]{\simboloTamanho}{#1\strut}%
+  \hspace{\simboloGap}%
+  \parbox[t]{\simboloNomeTamanho}{#2\strut}}
+
+\chapter*{Lista de símbolos}
+% Para adicionar uma abreviatura ou sigla na lista apenas precisa adicionar a sigla dentro do \makebox igual às 
+
+\simbolo{\S}{Parágrafo}
+
+\simbolo{$\Sigma$}{Somatória}
+
+\simbolo{$\sum_{n = 1}^{\infty}$}{Matemágica}
+
+\simbolo{xxxxx}{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et neque metus. Ut volutpat sem quis lacus rutrum, a viverra odio tincidunt}

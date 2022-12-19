@@ -1,0 +1,19 @@
+% Crio um elemento utilizado para listar cada abreviatura e sigla
+% Obs.: Dependendo do tamanho das siglas utilizadas, você pode querer aumentar ou diminuir o espaço entre a sigla e o seu significado, porém, mantendo o alinhamento, para isto, você modifica o comando \newcommand\siglaTamanho{10ex}, substituindo o 10ex pelo tamanho que você deseja
+% O tamanho 10ex suporta uma sigla de até mais ou menos 10 letras, visto que a unidade utiliza como referência o tamanho da letra "x". Você também pode utilizar a unidade "em", que utiliza como referência a letra "m", se quiser.
+% Fonte: https://tex.stackexchange.com/a/508154
+\newcommand\siglaTamanho{10ex} % Comprimento do espaço onde fica a sigla
+\newcommand\siglaGap{1ex} % Comprimento do vão entre sigla e seu significado, para dar uma folguinha no tamanho máximo
+\newcommand\significadoSiglaTamanho{\dimexpr\linewidth-\siglaTamanho-\siglaGap\relax}
+\newcommand\sigla[2]{\noindent\parbox[t]{\siglaTamanho}{#1\strut}%
+  \hspace{\siglaGap}%
+  \parbox[t]{\significadoSiglaTamanho}{#2\strut}}
+
+\chapter*{Lista de abreviaturas e siglas}
+% Para adicionar uma abreviatura ou sigla na lista apenas precisa adicionar a sigla dentro do \makebox igual às 
+
+\sigla{IBGE}{Instituto Brasileiro de Geografia e Estatística}
+
+\sigla{T}{Teste}
+
+\sigla{xxxxxxxxxx}{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et neque metus. Ut volutpat sem quis lacus rutrum, a viverra odio tincidunt}

@@ -8,13 +8,15 @@ Afazeres:
     - Testar o modelo em twoside (suspeito que o cabeçalho não fique certo)
     - Verificar se o cabeçalho segue as recomendações correta
     - Verificar se o rodapé segue as recomendações
-    - Criar os floats de Quadro, Apêndice e Anexo
     - Testar e encontrar solução para caracteres diferentes nas URL (resolvido com XeLaTeX)
     - Adicionar metadados no arquivo PDF (nome de autor, etc.)
     - Estudar sobre pacote titleps para gerenciar header e footer
     - Fazer a lista especial para leis de artigos e parágrafos (§):
-		- Permitir utilizar uma configuração que: soma a identação de listas dentro de listas; ou deixa todas as listas internas como se fosse uma coisa só
+		- Permitir utilizar uma configuração que: soma a identação de listas dentro de listas (padrão alínea); ou deixa todas as listas internas como se fosse uma coisa só (talvez usando wide)
+		- Configurar para a lista genérica receber o segundo argumento, que são as opções, como start e tals
+		- Configurar para a lista genérica receber argumentos opcionais, para alternar entre o modo wide ou padrão
 	- Ajustas as referências para repetir o nome de autores, não utilizando o filete
+	- Referência de mais de 3 linhas
 
 
 Afazeres:
@@ -91,12 +93,12 @@ Agradecimentos
 Epígrafe
 Resumo
 Abstract
-Lista de ilustrações
-Lista de tabelas
-Lista de quadros?
-Lista de abreviaturas e siglas
-Lista de símbolos
-Sumário
+V Lista de ilustrações
+V Lista de tabelas
+V Lista de quadros?
+V Lista de abreviaturas e siglas
+V Lista de símbolos
+V Sumário
 
 Introdução
 Desenvolvimento
