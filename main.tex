@@ -70,18 +70,22 @@
 \usepackage{config/enumerate}
 
 \usepackage{float} % Adiciona configurações adicionais para elementos float (figuras, tabelas, quadros, etc.)
-\usepackage{newfloat} % Permite criar floats, como o caso dos quadros, de forma prática
-\DeclareFloatingEnvironment{quadro} % Crio o elemento float Quadro
 \usepackage{tabularx} % Tabelas no LaTeX são limitadas em algumas características, este pacote resolve algumas dessas falhas
 \usepackage{graphicx} % Adiciona a capacidde de adicionar figuras, além de outras funcionalidade que podem ser utilizadas em quadros e tabelas.
 % Figuras podem ser imagens (SVG, por padrão, não funciona), mas documentos PDF também são compatíveis
 \graphicspath{ {./img/} } % Adiciona um caminho padrão para arquivo
 % Permite modificar a apresentação das legendas (caption) de figuras, quadros e tabelas
 \usepackage[labelsep=endash, font=singlespacing, justification=centering]{caption} % Modifica a separação da numeração da legenda com a descrição dela
+\usepackage{newfloat} % Permite criar floats, como o caso dos quadros, de forma prática
+\DeclareFloatingEnvironment[listname={Lista de quadros}, name={Quadro}]{quadro} % Crio o elemento float Quadro
 % Removo a contabilização de capítulo na numeração das figuras, tabelas e quadros (isso ocorre ao utilizar o documentclass de book ou report)
 \counterwithout{figure}{chapter} 
 \counterwithout{table}{chapter}
 \counterwithout{quadro}{chapter}
+% Obs.: Se você precisar criar outro elemento (e outra lista), como de gráficos ou de qualquer outro tipo, é, teoricamente, bastante simples: 
+%   - Você declara o novo ambiente com o \DeclareFloatingEnvironment, junto com o nome do elemento e o título de sua lista
+%   - Remove a contabilização do capítulo com o \counterwithout (apesar que acho que isso pode ser realizado no próprio \DeclareFloatingEnvironment)
+%   - E depois vai no final do arquivo config/sumario.sty e copia a estilização usada para os elementos de figura ou tabela, realizando a modificação do nome do elemento
 
 %% Pacotes para adicionar o uso de citações e referências no padrão ABNT
 % Permite customizar as notas de rodapé. Necessário para a identação das notas
@@ -109,7 +113,11 @@
 \setlength{\parskip}{1.241pt} % Configura o espaço separação entre parágrafos.
 
 \begin{SecoesNaoNumeradas}
-\tableofcontents
+  \listoffigures
+  \listoftables
+  \listofquadros
+
+  \tableofcontents
 \end{SecoesNaoNumeradas}
 % \clearpage
 
@@ -139,16 +147,13 @@
   \end{FlushLeft}
 \endgroup
 
-%%
-% Se quiser mudar o comportamento do LaTeX de criar uma nova página para cada capítulo, no caso de Apêndices e Anexos, envelope o capítulo em um group e utilize o comando: \let\clearpage\relax, como demonstrado abaixo
+%% Depois das referências, apresentam-se os apêndices e, depois, os anexos
 \begingroup
-\let\clearpage\relax
 \apendice{Um exemplo de apêndice}\label{apendice:teste}
 \lipsum[6-7]
 \endgroup
 
 \begingroup 
-\let\clearpage\relax
 \anexo{Um exemplo de anexo}\label{anexo:teste}
 \lipsum[6-7]
 \endgroup

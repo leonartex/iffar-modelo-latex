@@ -48,3 +48,30 @@
 {\contentslabel[\thecontentslabel]{10ex}} % numbered format
 {} % unnumbered format
 {\mdseries\titlerule*[1pc]{.}\contentspage} % filler-page-format, e.g dots
+
+%%%%
+%%  Estilizando listas de figuras, tabelas e quadros
+%%%%
+% Ajuste da formatação para a lista de figuras
+\titlecontents{figure}
+[0cm] % left margin
+{} % above code
+{Figura\space\thecontentslabel\space --\space} % numbered format
+{} % unnumbered format
+{\mdseries\titlerule*[1pc]{.}\contentspage} % filler-page-format, e.g dots
+
+% Ajuste da formatação para a lista de tabelas
+\titlecontents{table}
+[0cm] % left margin
+{} % above code
+{Tabela\space\thecontentslabel\space --\space} % numbered format
+{} % unnumbered format
+{\mdseries\titlerule*[1pc]{.}\contentspage} % filler-page-format, e.g dots
+
+% Ajuste da formatação para a lista de quadros
+\titlecontents{quadro}
+[0cm] % left margin
+{} % above code
+{Quadro\space\thecontentslabel\space --\space} % numbered format
+{} % unnumbered format
+{\mdseries\titlerule*[1pc]{.}\contentspage} % filler-page-format, e.g dots

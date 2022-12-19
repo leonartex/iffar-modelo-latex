@@ -15,3 +15,5 @@
 *.blg
 main.run.xml
 *.gz
+
+*.loquadro
