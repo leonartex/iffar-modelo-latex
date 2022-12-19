@@ -47,7 +47,7 @@
 \usepackage[left=3cm,top=3cm,right=2cm,bottom=2cm]{geometry} % Pacote responsável por formatar as dimensões das margens das páginas.
 \usepackage{setspace} % Adiciona opções de espaçamento de texto
 \usepackage{ragged2e} % Adiciona opções mais completas para alinhamento de texto
-\usepackage{indentfirst} % Faz com que o primeiro parágrafo de cada seção possua identação também
+\usepackage{indentfirst} % Faz com que o primeiro parágrafo de cada seção possua indentação também
 
 % Pacote que permite criar estilos para o cabeçalho
 \usepackage{fancyhdr}
@@ -88,7 +88,7 @@
 %   - E depois vai no final do arquivo config/sumario.sty e copia a estilização usada para os elementos de figura ou tabela, realizando a modificação do nome do elemento
 
 %% Pacotes para adicionar o uso de citações e referências no padrão ABNT
-% Permite customizar as notas de rodapé. Necessário para a identação das notas
+% Permite customizar as notas de rodapé. Necessário para a indentação das notas
 \usepackage[hang]{footmisc}
 \usepackage{config/rodape} % Configurações das notas de rodapé
 % Usa o biber por ser uma versão mais parruda de biblatex, que é uma versão mais parruda do bibtex, ou algo assim. É importante por resolver uma quantia de erros por conta de caracteres, principalmente na URL das referências
@@ -109,10 +109,16 @@
 \onehalfspacing
 \justify
 
-\setlength\parindent{1.25cm} % Configura o espaçamento da identação dos parágrafos
+\setlength\parindent{1.25cm} % Configura o espaçamento da indentação dos parágrafos
 \setlength{\parskip}{1.241pt} % Configura o espaço separação entre parágrafos.
 
 \begin{SecoesNaoNumeradas}
+  \include{elementos/dedicatoria.tex}
+  \include{elementos/agradecimentos.tex}
+  \include{elementos/epigrafe.tex}
+  \include{elementos/resumo.tex}
+  \include{elementos/abstract.tex}
+
   \listoffigures
   \listoftables
   \listofquadros

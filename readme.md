@@ -1,6 +1,7 @@
 Dúvidas:
 	- Verificar a questão de divergência na formatação das seções quaternárias e quinárias
 	- Verificar o espaço necessário entre a nota de rodapé e seu índice
+	- A margem de recuo, por exemplo, em citação de mais de 3 linhas, é em relação à margem da folha ou do documento (que possui margem de 3cm na esquerda)?
 
 Afazeres: 
 
@@ -12,11 +13,12 @@ Afazeres:
     - Adicionar metadados no arquivo PDF (nome de autor, etc.)
     - Estudar sobre pacote titleps para gerenciar header e footer
     - Fazer a lista especial para leis de artigos e parágrafos (§):
-		- Permitir utilizar uma configuração que: soma a identação de listas dentro de listas (padrão alínea); ou deixa todas as listas internas como se fosse uma coisa só (talvez usando wide)
+		- Permitir utilizar uma configuração que: soma a indentação de listas dentro de listas (padrão alínea); ou deixa todas as listas internas como se fosse uma coisa só (talvez usando wide)
 		- Configurar para a lista genérica receber o segundo argumento, que são as opções, como start e tals
 		- Configurar para a lista genérica receber argumentos opcionais, para alternar entre o modo wide ou padrão
 	- Ajustas as referências para repetir o nome de autores, não utilizando o filete
 	- Referência de mais de 3 linhas
+	- Formatar a lista de referências
 
 
 Afazeres:
@@ -88,11 +90,11 @@ Folha de rosto
 Ficha catalográfica?
 Errata
 Folha de aprovação e/ou Folha de certificação
-Dedicatória
-Agradecimentos
-Epígrafe
-Resumo
-Abstract
+V Dedicatória
+V Agradecimentos
+V Epígrafe
+V Resumo
+V Abstract
 V Lista de ilustrações
 V Lista de tabelas
 V Lista de quadros?
@@ -106,6 +108,6 @@ Conclusão
 
 Referências
 Glossário
-Apêndice
-Anexo
+V Apêndice
+V Anexo
 Índice
