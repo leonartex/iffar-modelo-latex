@@ -1,5 +1,5 @@
 \begin{Center}
-\autor
+\autorTrabalho
 
 \vspace*{\fill}
 
@@ -16,7 +16,17 @@
 \begin{minipage}{8cm}
     \footnotesize
 
-    \tccOuNao{Não é TCC hein...}{É TCC sim, garai...}
+    \tccOuNao{ 
+        % Natureza do trabalho para TCC
+        Trabalho de Conclusão de Curso de Graduação em \modalidadeCurso\space em \nomeCurso do \nomeCampus\space do Instituto Federal Farroupilha como requisito para a obtenção do título de \tituloCurso\space em \nomeCurso.\\
+        Orientador(a) \orientadorTitulacao\space \orientador
+        \isEmpty{\coorientador}{\\Coorientador(a) \coorientadorTitulacao \coorientador}
+    }{ 
+        % Natureza do trabalho para tese ou dissertação
+        \tipoTrabalho\space submetida ao Programa de \nomeCurso\space do Instituto Federal Farroupilha para a obtenção do título de \tituloCurso\space em [.............]\\
+        Orientador(a) \orientadorTitulacao\space \orientador
+        \isEmpty{\coorientador}{\\Coorientador(a) \coorientadorTitulacao \coorientador}
+    }
 \end{minipage}
 
 \vspace*{\fill}

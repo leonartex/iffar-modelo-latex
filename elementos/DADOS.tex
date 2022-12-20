@@ -1,40 +1,72 @@
-%IMPORTANTE
-\newcommand{\isTCC}{1} % Se o seu trabalho for TCC, coloque qualquer valor dentro, um letrinha só, se quiser. Mas se o seu trabalho não for um TCC, ou seja, é tese ou dissertação, deixe em branco. Esse comando é usado para verificar e então configurar algumas páginas, como capa, folha de rosto e folha de aprovação/certificação
+%%%%
+%%  IMPORTANTE
+%%%%
+\newcommand{\isTCC}{1} % Se o seu trabalho for TCC, coloque 1. Mas se o seu trabalho não for um TCC, ou seja, é tese ou dissertação, coloque 0. Esse comando é usado para verificar e então configurar algumas páginas, como capa, folha de rosto e folha de aprovação/certificação
+% Comando para imprimir um conteúdo para TCC e outro para quando for tese ou dissertação
 \newcommand{\tccOuNao}[2]{%
-    \ifnum \value{\isTCC}>0
-        #1
+    \ifnum\isTCC>0
+        #1 % Elemento para TCC
     \else
-        #2
+        #2 % Elemento para tese ou dissertação
     \fi
 }
 
+% Recebe dois parâmetros: o comando para se testar se está vazio (ex.: \coorientador); e o código para imprimir caso tenha conteúdo
+% Fonte: https://tex.stackexchange.com/a/53091
+\newcommand{\isEmpty}[2]{%
+    \setbox0=\hbox{#1\unskip}\ifdim\wd0=0pt
+        % Valor está vazio, então não faz nada
+    \else
+        #2% Se o valor não estiver vazio, então 
+    \fi
+}
+
+%%%%
+%%  Preenchimento dos dados do seu trabalho
+%%%%
 % Dados de identificação do trabalho
-\newcommand{\tituloTrabalho}{Modelo LaTeX}
+\newcommand{\tituloTrabalho}{Modelo LaTeX} % Título do seu trabalho
 \newcommand{\separadorTrabalho}{:\space} % Aqui você identifica o caractere que irá separar o título do subtítulo. Eu já vi trabalho que não utiliza dois pontos, então sei lá, deixei para permitir configuração, recomendo conversar com quem te orienta. Se não possuir subtítulo, deixar vazio, em branco (sem espaço)
-\newcommand{\subtituloTrabalho}{como é gostoso usar um template redondinho} % Se não possuir subtítulo, deixar vazio, em branco (sem espaço)
+\newcommand{\subtituloTrabalho}{como é gostoso usar um template completinho} % Subtítulo. Se não possuir subtítulo, deixar vazio, em branco (sem espaço)
 
 % O seu nome completo
-\newcommand{\autor}{Insira o Seu Nome Completo}
+\newcommand{\autorTrabalho}{[Insira o Seu Nome Completo]}
 
 % Os dados sobre a apresentação da defesa
-\newcommand{\cidadeDefesa}{Insira a cidade onde ocorre a defesa}
-\newcommand{\anoEntrega}{Ano de entrega} % O ano em que o trabalho foi entregue
-\newcommand{\diaDefesa}{Dia}
-\newcommand{\mesDefesa}{Mês por extenso}
-\newcommand{\anoDefesa}{Ano de defesa} % O ano em que o trabalho foi defendido (atente-se que pode ter diferença)
-\newcommand{\tituloCurso}{Insira o título de formação do seu curso}
-\newcommand{\nomeCurso}{Insira o nome do seu curso}
+\newcommand{\cidadeDefesa}{[Insira a cidade onde ocorre a defesa]}
+\newcommand{\anoEntrega}{[Ano de entrega]} % O ano em que o trabalho foi entregue
+\newcommand{\diaDefesa}{[Dia]}
+\newcommand{\mesDefesa}{[Mês por extenso]}
+\newcommand{\anoDefesa}{[Ano de defesa]} % O ano em que o trabalho foi defendido (atente-se que pode ter diferença)
+
+% ALERTA: Dependendo do curso pode ser que não fique tão redondinho o texto dependendo do valor preenchido. Por exemplo, o nome completo do curso foi pensado para situações como: \modalidadeCurso + \nomeCurso, tipo Bacharelado + em + Sistemas de Informação, mas talvez não funcione tão bem na folha de rosto, então, no pior dos casos, preencha manualmente esses dados nos arquivos. Eu tentei automatizar o máximo possível, para facilitar a vida do usuário, mas sempre existem situações que fogem do planejado.
+\newcommand{\tipoTrabalho}{[Insira o tipo de trabalho]} % ex.: Dissertação; Tese; Monografia (apesar que eu acho que não usa para a graduação)
+\newcommand{\modalidadeCurso}{[Insira a modalidade]} % ex.: Mestrado; Doutorado; Bacharelado; Licenciatura; Tecnologia
+\newcommand{\tituloCurso}{[Insira o título de formação]} % ex.: Bacharel ou Bacharela; Licenciado ou Licenciada; Tecnólogo ou Tecnóloga; Mestre ou Mestra; Doutor ou Doutora
+\newcommand{\nomeCurso}{[Insira o nome do seu curso ou Programa]} % Coloque o nome do seu curso ou Programa de Pós-graduação
+\newcommand{\nomeCampus}{[Insira o nome do seu Campus]} % Campus vai com C maiúsculo
 
 % Os dados de quem te orientou
-\newcommand{\orientador}{Insira o nome do(a) orientador(a)}
-\newcommand{\orientadorTitulacao}{Prof.(a) Dr.(a)}
-\newcommand{\coorientador}{Insira o nome do(a) coorientador(a)} % Deixe em branco se não possuir
-\newcommand{\coorientadorTitulacao}{Prof.(a) Dr.(a)}
+\newcommand{\orientador}{[Insira o nome do(a) orientador(a)]}
+\newcommand{\orientadorTitulacao}{[Prof.(a) Dr.(a)]}
+\newcommand{\orientadorInstituicao}{[Instituição do(a) orientador(a)]}
+
+\newcommand{\coorientador}{[Insira o nome do(a) coorientador(a)]} % Deixe vazio, em branco (sem espaço), se não possuir. O template configura certinho dessa maneira
+\newcommand{\coorientadorTitulacao}{[Prof.(a) Dr.(a)]}
+\newcommand{\coorientadorInstituicao}{[Instituição do(a) coorientador(a)]}
 
 % Os dados sobre a sua banca
-\newcommand{\bancaUm}{Insira o nome da primeira pessoa da banca}
-\newcommand{\bancaUmTitulacao}{Prof.(a) Dr.(a)}
-\newcommand{\bancaDois}{Insira o nome da segunda pessoa da banca}
-\newcommand{\bancaDoisTitulacao}{Prof.(a) Dr.(a)}
-\newcommand{\bancaTres}{Insira o nome da terceira pessoa da banca} % Deixe em branco a terceira pessoa da banca se for um TCC (ou tanto faz, não vai ser impresso de qualquer forma) 
-\newcommand{\bancaTresTitulacao}{Prof.(a) Dr.(a)}
+\newcommand{\bancaUm}{[Insira o nome da primeira pessoa da banca]}
+\newcommand{\bancaUmTitulacao}{[Prof.(a) Dr.(a)]}
+\newcommand{\bancaUmInstituicao}{[Instituição da primeira pessoa da banca]}
+
+\newcommand{\bancaDois}{[Insira o nome da segunda pessoa da banca]}
+\newcommand{\bancaDoisTitulacao}{[Prof.(a) Dr.(a)]}
+\newcommand{\bancaDoisInstituicao}{[Instituição da segunda pessoa da banca]}
+
+\newcommand{\bancaTres}{[Insira o nome da terceira pessoa da banca]} % Deixe em branco a terceira pessoa da banca se for um TCC (ou tanto faz, não vai ser impresso de qualquer forma) 
+\newcommand{\bancaTresTitulacao}{[Prof.(a) Dr.(a)]}
+\newcommand{\bancaTresInstituicao}{[Instituição da terceira pessoa da banca]}
+
+\newcommand{\coordenador}{[Insira o nome do(a) coordenador(a) do curso ou Programa]}
+\newcommand{\coordenadorTitulacao}{[Prof.(a) Dr.(a)]}

@@ -20,6 +20,7 @@ Afazeres:
 	- Referência de mais de 3 linhas
 	- Formatar a lista de referências
 	- Dar exemplo dos variados tipos de representação de termos no Índice
+	- Identificar todas as informações sobre o curso necessárias para Natureza de Trabalho e folha de aprovação
 
 
 Afazeres:
@@ -84,13 +85,13 @@ V Quadro
 
 V Nota de rodapé
 
-Capa
+V Capa
 Lombada?
 
-Folha de rosto
+V Folha de rosto
 Ficha catalográfica?
 Errata
-Folha de aprovação e/ou Folha de certificação
+V Folha de aprovação e/ou Folha de certificação
 V Dedicatória
 V Agradecimentos
 V Epígrafe
