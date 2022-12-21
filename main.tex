@@ -126,6 +126,7 @@
   \include{elementos/resumo.tex}
   \include{elementos/abstract.tex}
 
+  \renewcommand\addvspace[1]{} % Remove o espaço adicional nos títulos das listas de figuras, tabelas e quadros
   \listoffigures
   \listoftables
   \listofquadros
@@ -160,9 +161,12 @@
 %% Aqui é impressa a lista de referências bibliográficas
 \begingroup
   \begin{FlushLeft} % As referências devem apresentar justificação à esquerda
-    % heading=bibintoc imprime o nome da seção das referências sem numeração e adiciona no sumário
-    % title=Referências modifica o nome da seção, que normalmente seria "Bibliografia", por conta que é o padrão utilizado pelos documentclass book e report
-    \printbibliography[heading=bibintoc, title=Referências]
+    \begin{singlespace} % Referências usam espaço simples
+      \setlength\bibitemsep{\baselineskip} % Defino que o espaço para separar cada referência é o da altura de uma linha, conforme a ABNT exige
+      % heading=bibintoc imprime o nome da seção das referências sem numeração e adiciona no sumário
+      % title=Referências modifica o nome da seção, que normalmente seria "Bibliografia", por conta que é o padrão utilizado pelos documentclass book e report
+      \printbibliography[heading=bibintoc, title=Referências]
+    \end{singlespace}
   \end{FlushLeft}
 \endgroup
 

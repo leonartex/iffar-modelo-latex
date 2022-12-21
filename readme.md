@@ -1,7 +1,6 @@
 Dúvidas:
 	- Verificar a questão de divergência na formatação das seções quaternárias e quinárias
 	- Verificar o espaço necessário entre a nota de rodapé e seu índice
-	- A margem de recuo, por exemplo, em citação de mais de 3 linhas, é em relação à margem da folha ou do documento (que possui margem de 3cm na esquerda)?
 
 Afazeres: 
 
@@ -18,7 +17,6 @@ Afazeres:
 		- Configurar para a lista genérica receber argumentos opcionais, para alternar entre o modo wide ou padrão
 	- Ajustas as referências para repetir o nome de autores, não utilizando o filete
 	- Referência de mais de 3 linhas
-	- Formatar a lista de referências
 	- Dar exemplo dos variados tipos de representação de termos no Índice
 	- Identificar todas as informações sobre o curso necessárias para Natureza de Trabalho e folha de aprovação
 
@@ -108,7 +106,7 @@ Introdução
 Desenvolvimento
 Conclusão
 
-Referências
+V Referências
 V Glossário
 V Apêndice
 V Anexo
