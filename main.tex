@@ -116,30 +116,38 @@
 \setlength\parskip{1.241pt}% Configura o espaço separação entre parágrafos.
 \include{elementos/DADOS.tex}
 
-\include{elementos/capa.tex}
-\include{elementos/folha-rosto.tex}
-\include{elementos/folha-aprovacao.tex}
+\include{elementos/capa.tex} % ITEM OBRIGATÓRIO
+\include{elementos/folha-rosto.tex}  % ITEM OBRIGATÓRIO
+\include{elementos/folha-aprovacao.tex}  % ITEM OBRIGATÓRIO
 \begin{SecoesNaoNumeradas}
   \include{elementos/dedicatoria.tex}
   \include{elementos/agradecimentos.tex}
   \include{elementos/epigrafe.tex}
-  \include{elementos/resumo.tex}
-  \include{elementos/abstract.tex}
+  \include{elementos/resumo.tex} % ITEM OBRIGATÓRIO
+  \include{elementos/abstract.tex} % ITEM OBRIGATÓRIO
 
   \renewcommand\addvspace[1]{} % Remove o espaço adicional nos títulos das listas de figuras, tabelas e quadros
+  % Lista de figuras:
   \listoffigures
+  % Lista de tabelas:
   \listoftables
+  % Lista de quadros:
   \listofquadros
 
   \include{elementos/lista-siglas.tex}
   \include{elementos/lista-simbolos.tex}
 
-  \tableofcontents
+  %Sumário
+  \tableofcontents  % ITEM OBRIGATÓRIO
 \end{SecoesNaoNumeradas}
 % \clearpage
 
 \begingroup
-  \input{capitulos/introducao.tex}
+  \input{capitulos/1-introducao.tex}
+\endgroup
+
+\begingroup
+  \input{capitulos/2-configuracao.tex}
 \endgroup
 
 % Seção ilustrativa sobre seções e subseções
@@ -160,12 +168,12 @@
 \begin{SecoesNaoNumeradas}
 %% Aqui é impressa a lista de referências bibliográficas
 \begingroup
-  \begin{FlushLeft} % As referências devem apresentar justificação à esquerda
+  \begin{FlushLeft} % As referências devem apresentar alinhamento à esquerda
     \begin{singlespace} % Referências usam espaço simples
       \setlength\bibitemsep{\baselineskip} % Defino que o espaço para separar cada referência é o da altura de uma linha, conforme a ABNT exige
       % heading=bibintoc imprime o nome da seção das referências sem numeração e adiciona no sumário
-      % title=Referências modifica o nome da seção, que normalmente seria "Bibliografia", por conta que é o padrão utilizado pelos documentclass book e report
-      \printbibliography[heading=bibintoc, title=Referências]
+      % title=Referências modifica o nome da seção, que normalmente seria "Bibliografia", por conta que é o nome utilizado pelos documentclass book e report
+      \printbibliography[heading=bibintoc, title=Referências] % ITEM OBRIGATÓRIO
     \end{singlespace}
   \end{FlushLeft}
 \endgroup
