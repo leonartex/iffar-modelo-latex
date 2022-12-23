@@ -1,0 +1,192 @@
+\chapter{Exemplos de elementos comuns} % Exemplo de seção primária
+  Neste capítulo é apresentado um conjunto de elementos comuns que provavelmente serão utilizados em algum momento por todos os autores de trabalhos acadêmicos, como figuras e tabelas. Por questão de praticidade, no texto, não será discutido o código que leva à impressão de determinado elemento, talvez com algumas pequenas exceções. O objetivo deste capítulo é apresentar seus exemplos, realizando algumas observações sobre cada elemento, porém, tendo no código do capítulo, no arquivo \verb|capitulos/4-elementos-comuns.tex|, a exemplificação de como utilizar determinado elemento no \LaTeX, com comentários, para maiores explicações.
+
+  \section{Exemplos de seções} % Exemplo de seção secundária
+  Essa aqui é um exemplo de seção secundária, mas as seções, ao todo, podem apresentar até 5 (cinco) níveis de subdivisão. A seção primária, como pode ter sido observado, são os capítulos, mas, a seguir, apresentam-se as outras seções.
+
+  \subsection{Exemplo de seção terciária}
+  \lipsum[1]
+
+  \subsubsection{Exemplo de seção quaternária}
+  \lipsum[2]
+
+  \paragraph{Exemplo de seção quinária} % Utiliza-se paragraph para o nível hierarquico inferior à subsubsection. Contudo, foi necessário customizá-lo para apresentar corretamente como um nível de seção
+  \lipsum[3]
+
+  \paragraph{Exemplo de título com indicação numérica que, ao ocupar mais de uma linha, deve ser, a partir da segunda linha, alinhado abaixo da primeira letra da primeira palavra do título}
+  \lipsum[4]
+
+\section{Notas de rodapé}
+  As notas de rodapé devem apresentar tamanho 10, alinhamento à esquerda e espaçamento justificado, além de, ao utilizar mais de uma linha, deve ser alinhado abaixo da primeira letra da primeira palavra da primeira linha\footnote{\lipsum*[5]}. No \LaTeX{} existe um conjunto de comandos para utilizá-las, por exemplo, a nota pode ser adicionada no meio do parágrafo\footnote{Exatamente como a primeira nota}, porém, também pode ter apenas a sua marcação realizada no parágrafo\footnotemark, permitindo preencher o seu texto posteriormente.
+    \footnotetext{Exemplo de nota usando a marcação.}
+  
+  É importante relatar que existe um problema ao utilizar apenas a marcação: o comando para adicionar o texto à nota utiliza apenas o número da nota de rodapé mais recente\footnotemark, então, se você adicionar duas \verb|\footnotemark| seguidas\footnotemark, deixando os dois \verb|\footnotetext| para depois, será utilizada apenas o número da última nota criada, com as duas notas apresentando o mesmo número. 
+    \footnotetext{Nota relativa à primeira marcação.}
+    \footnotetext{Nota relativa à segunda marcação.}
+  Dessa forma, a recomendação é utilizar o \verb|\footnotemark| apenas quando o parágrafo possuir apenas uma nota ou adicionar o texto da marcação após o término da frase e não do parágrafo. Ou, então, não utilizar, realizando a quebra de linha se quiser deixar mais formatadinho o código no \LaTeX{}
+    \footnote{Um novo parágrafo só é criado quando existirem duas quebras de linhas seguidas, ou seja, uma linha em branco.}.
+
+\section{Alíneas e subalíneas}
+  As alíneas\index{alíneas} sempre devem vir a partir de um parágrafo que termine com dois pontos antes de iniciar a lista:
+  \begin{alinea}
+    \item a matéria da alínea começa por letra minúscula, exceto quando se tratar de substantivos próprios, e termina em ponto e vírgula, com exceção da última, que termina em ponto final;
+    \item o trecho final da seção correspondente, anterior às alíneas, termina em
+    dois pontos;
+    \item as alíneas são ordenadas por letras minúsculas seguidas de parênteses utilizando-se letras dobradas quando esgotadas as 26 (vinte e seis) letras que compõem o alfabeto brasileiro; 
+    \item as letras indicativas das alíneas são recuadas em relação à margem
+    esquerda, alinhadas com o parágrafo;
+    \item o texto da alínea deve terminar em dois pontos, se houver subalíneas\index{subalíneas}: 
+    \begin{subalinea}
+      \item a matéria da subalínea começa por letra minúscula e termina em ponto e
+      vírgula, e a última subalínea deve terminar em ponto final, se não houver
+      alínea subsequente; 
+      \item são iniciadas por travessão seguido de espaço;
+      \item devem apresentar recuo em relação à alínea;
+      \item a segunda linha e as demais que se seguem no texto da subalínea
+      começam sob a primeira letra do texto da própria subalínea.
+    \end{subalinea}
+    \item a segunda linha e as demais que se seguem no texto da alínea começam
+    sob a primeira letra do texto da própria alínea.
+  \end{alinea}
+E se você não quebrar a linha para iniciar um novo parágrafo, o \LaTeX{} continuará no mesmo parágrafo, não realizando a indentação, contudo, eu não sei se isso é algo desejado. Eu não encontrei nenhuma norma na ABNT que falasse sobre isso, nem algum exemplo no Guia de Normalização. Na dúvida, é só quebrar a linha duas vezes, para começar um novo parágrafo
+
+  % \subsection{Outros exemplos de listas numeradas}
+    % \begin{leiParagrafo}
+    %   \item a matéria da alínea começa por letra minúscula, exceto quando se tratar de     substantivos próprios, e termina em ponto e vírgula, com exceção da última, que termina em ponto final; 
+    %   \item o trecho final da seção correspondente, anterior às alíneas, termina em
+    %   dois pontos;
+    %   \item asdasdsada
+    %   \item sdsdsdaa
+    % \end{leiParagrafo}
+
+\section{Equações e fórmulas}
+
+\section{Figuras, tabelas e quadros}
+  Sobre elementos como as figuras\index{figura}, tabelas\index{tabela} e quadros\index{quadro}, é importante destacar que o comando utilizado para criar esses elementos é apenas um invólucro, onde você pode colocar o conteúdo que quiser dentro deles. E esse invólucro é apenas responsável por dar o ``tratamento'' como determinado item, e aí, dentro dele, são realizados os comandos que realmente adicionam os itens pertinentes ao respectivo elemento, como uma imagem, no caso de figuras.
+  
+\subsection{Figuras}
+  Para as figuras, podem ser utilizados os formatos de imagens mais populares, como \verb|.png| ou \verb|.jpg|\footnote{É válido pesquisar quais são todos os formatos aceitos}, porém, além de imagens, também podem ser adicionados documentos \verb|.pdf|. A vantagem de utilizar XXXXXXXXXXXXX (PDF) é que os textos contidos não perderão a qualidade, por não passarem por compressão, ao imprimir as palavras diretamente como texto, como ilustrado na Figura \ref{figura:pdf}. Porém, apesar de aceitar formatos populares de imagens, nativamente (e pelo pacote utilizado), imagens XXXXXXXXX (SVG) não são possiveis de serem utilizadas. Inclusive, até existem pacotes que adicionam a capacidade de imprimir SVGs nos documentos, mas eles possuem um conjunto de limitações\footnotemark. A seguir, na Figura \ref{figura:marca-iffar}, é apresentado um exemplo com a marca do IFFar.
+      \footnotetext{Dependendo do programa que você estiver usando, a figura pode ser exportada como PDF, então, conseguindo imprimir corretamente a imagem.}
+
+  \begin{figure}[H]
+    \Centering\singlespacing
+    \caption{Marca do IFFar}
+    \label{figura:marca-iffar} % Esse é o comando que permite referenciar a figura (ou qualquer outro elemento que você criar)
+    % Podem ser utilizados vários argumentos para adicionar a figura em seu devido tamanho, como: scale; width; ou height. No caso de scale, a escala, adiciona o valor em decimal representando a porcentagem da escala, já width ou height utiliza-se uma unidade de medida, como cm, px ou pt.
+    \includegraphics[width=10cm]{marca-iffar.png}\\
+    \footnotesize
+    Fonte: \textcite{iffar-identidade-visual-2021}.
+  \end{figure}
+
+  \begin{figure}[H]
+    \Centering\singlespacing
+    \caption{Exemplo utilizando documento PDF}
+    \label{figura:pdf}
+    \includegraphics[scale=1.0]{exemplo.pdf}\\
+    \footnotesize
+    Fonte: elaborado pelo autor (2023).
+  \end{figure}
+  
+\subsection{Tabelas}
+  Como citado anteriormente, os elementos das figuras, tabelas e quadros são apenas um invólucro, então, para tabelas (e quadros), podem ser utilizados um conjunto de alternativas para gerarem-se as tabelas. No caso deste modelo, pode ser utilizadas para gerar as tabelas as opções de \verb|tabular|, nativo do LaTeX, e \verb|tabularx|,adicionado através de um pacote e que permite criar tabelas com variados tamanhos de colunas. Existem também outros pacotes que permitam gerar tabelas e, então, pode ser útil pesquisar sobre eles. Na Tabela \ref{tabela:barbetta-2017-p248} é apresentada uma tabela utilizando \verb|tabular| e, na Tabela XXXXXX, utilizando \verb|tabularx|.
+
+  \begin{table}[H]
+    \Centering\singlespacing
+  
+    \caption{Classificação de pessoas segundo o nível de instrução e colaboração
+    com a coleta seletiva do lixo
+    }
+    \label{tabela:barbetta-2017-p248}
+    \begin{tabular}{l|c|c} % As pipelines "|" indicam onde deve haver uma linha separando as células e as letras indicam o alinhamento do conteúdo das células da coluna
+      \hline % Adiciona um traço horizontal na tabela
+      \multirow{2}{*}{Nível de instrução} & \multicolumn{2}{c}{Colabora com a coleta seletiva do lixo} \\ % Por causa do \multicolumn, essa linha não apresenta o último "&" para a última célula e o "\\" finaliza a linha
+      \cline{2-3} % Já que o \hline nessa linha iria desconfigurar por causa do \multirow, é necessário criar uma linha que inicie de determinada coluna e termine em outra coluna determinada
+      & \parbox{3cm}{\Centering sim} & \parbox{3cm}{\Centering não} \\  % Por conta do \multirow na linha acima, a primeira célula dessa linha fica em branco
+      \hline
+      nenhum ou fundamental & 22 & 13 \\
+      médio & 33 & 34 \\
+      superior & 39 & 36
+     \end{tabular}
+  
+  \hspace{\fill}
+  
+  \footnotesize
+  
+  Fonte: \textcite[p. 248]{barbetta-2017}.
+  \end{table}
+
+\begin{table}[H]
+  \Centering\singlespacing
+
+  \caption{Posições do IFFar no \textit{ranking} do painel de dados da LAI}
+  \label{tabela:cgu-iffar}
+  \begin{tabularx}{15cm} % A vantagem do tabularx é de poder definir o tamanho da tabela e ter as colunas ajustando os seus tamanhos
+    {X r r} % Definição das colunas
+    \hline
+    \multicolumn{1}{c}{\textbf{Categoria}}    &   
+    \multicolumn{1}{c}{\textbf{Posição}}  & 
+    \multicolumn{1}{c}{\textbf{Informação adicional}} \\
+    \hline
+
+    Transparência ativa &
+    252\textordmasculine{} &
+    24,49\% em cumprimento \\
+    %\hline
+
+    Pedidos recebidos &
+    192\textordmasculine{} &
+    807 pedidos \\
+    %\hline
+
+    Tempo médio de resposta para pedidos de informação       &   
+    154\textordmasculine{} &
+    14,91 dias \\
+    \hline
+
+  \end{tabularx}
+
+\hspace{\fill}
+
+\footnotesize
+
+Fonte: Gaba guba.
+\end{table}
+
+\subsection{Quadros}
+  Para apresentar um quadro, utiliza-se a mesma lógica das tabelas. Na verdade, as únicas coisas que diferenciam um quadro de uma tabela é o termo utilizado para criar o elemento, \verb|\begin{quadro}|, e o fato que quadros são todo cobertos por bordas, enquanto que tabelas não apresentam bordas nas extremidades laterais. E essa borda é impressa ao adicionar os \textit{pipelines} (``|'') nas extremidades, ao definir as colunas do \verb|tabular| (ex.: \verb|\begin{tabular}{|\textbf{|}\verb\c|c|c\\textbf{|}\verb|}|).
+  \begin{quadro}[H]
+    \Centering\singlespacing
+
+    \caption{Posições do IFFar no \textit{ranking} do painel de dados da LAI}
+    \label{quadro:cgu-iffar}
+    \begin{tabularx}{12cm}
+      {|X|r|r|} % Definição das colunas
+      \hline
+      \multicolumn{1}{|c|}{\textbf{Categoria}}    &   
+      \multicolumn{1}{c}{\textbf{Posição}}  & 
+      \multicolumn{1}{|c|}{\textbf{Informação adicional}} \\
+      \hline
+
+      Transparência ativa &
+      252\textordmasculine{} &
+      24,49\% em cumprimento \\
+      %\hline
+
+      Pedidos recebidos &
+      192\textordmasculine{} &
+      807 pedidos \\
+      %\hline
+
+      Tempo médio de resposta para pedidos de informação       &   
+      154\textordmasculine{} &
+      14,91 dias \\
+      \hline
+
+    \end{tabularx}
+
+  \hspace{\fill}
+
+  \footnotesize
+
+  Fonte: Gaba guba.
+  \end{quadro}

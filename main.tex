@@ -71,6 +71,13 @@
 
 \usepackage{float} % Adiciona configurações adicionais para elementos float (figuras, tabelas, quadros, etc.)
 \usepackage{tabularx} % Tabelas no LaTeX são limitadas em algumas características, este pacote resolve algumas dessas falhas
+\usepackage{multirow} % Permite criar células com múltiplas linhas nas tabelas
+\usepackage{colortbl} % Permite colorir as células de tabelas
+\usepackage[table]{xcolor} % Permite adicionar cores no LaTeX. Utilizado para colorir células no quadro do cronograma com cores específicas
+\definecolor{cinzaescurinho}{RGB}{38,38,38}
+\definecolor{cinzaclarinho}{RGB}{95,95,95}
+\definecolor{cinzadestaque}{RGB}{200,200,200}
+
 \usepackage{graphicx} % Adiciona a capacidde de adicionar figuras, além de outras funcionalidade que podem ser utilizadas em quadros e tabelas.
 % Figuras podem ser imagens (SVG, por padrão, não funciona), mas documentos PDF também são compatíveis
 \graphicspath{ {./img/} } % Adiciona um caminho padrão para arquivo
@@ -133,6 +140,7 @@
   \listoftables
   % Lista de quadros:
   \listofquadros
+  % Adicione aqui as outras listas que você criar, como lista de gráficos, fotos, etc.
 
   \include{elementos/lista-siglas.tex}
   \include{elementos/lista-simbolos.tex}
@@ -150,13 +158,8 @@
   \input{capitulos/2-configuracao.tex}
 \endgroup
 
-% Seção ilustrativa sobre seções e subseções
 \begingroup
-  \input{capitulos/exemplos-secoes.tex}
-\endgroup
-
-\begingroup
-  \input{capitulos/elementos-comuns.tex}    
+  \input{capitulos/4-elementos-comuns.tex}    
 
   Conforme o quadro no Apêndice \ref{apendice:teste} e o Anexo \ref{anexo:teste}. Citando \textcite{brasil-lei-11.892-2008}
   
