@@ -159,12 +159,20 @@
 \endgroup
 
 \begingroup
+  \input{capitulos/3-elementos-opcionais.tex}
+\endgroup
+
+\begingroup
   \input{capitulos/4-elementos-comuns.tex}    
 
   Conforme o quadro no Apêndice \ref{apendice:teste} e o Anexo \ref{anexo:teste}. Citando \textcite{brasil-lei-11.892-2008}
   
   Testesddsdfdfs
 
+\endgroup
+
+\begingroup
+  \input{capitulos/5-referencias.tex}
 \endgroup
 
 %% Aqui são adicionados as referências, apêndices e anexos. É essencial que eles estejam dentro desse ambiente, para formatar corretamente o título da seção deles
@@ -186,7 +194,6 @@
 %% Depois das referências, apresentam-se os apêndices e, depois, os anexos
 \begingroup
 \apendice{Um exemplo de apêndice}\label{apendice:teste}
-Alíneas\index{alínea}
 \lipsum[6-7]
 \endgroup
 
@@ -195,7 +202,6 @@ Alíneas\index{alínea}
 \lipsum[6-7]
 \endgroup
 
-% \include{elementos/indice.tex}
 \printindex % Comente esta linha se não for utilizar índice
 
 \end{SecoesNaoNumeradas}

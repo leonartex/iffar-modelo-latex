@@ -1,0 +1,24 @@
+% Comando para imprimir no texto a referência utilizada de exemplo
+% Fonte: https://github.com/abntex/biblatex-abnt/blob/dev/doc/biblatex-abnt.tex
+\newcommand{\singlecite}[1]{%
+%   \addtocategory{singleentries}{#1}%
+  \defbibcheck{key#1}{
+    \iffieldequalstr{entrykey}{#1}
+      {}
+      {\skipentry}}%
+  \begin{FlushLeft}%
+    \begin{singlespace}
+      \setlength\bibitemsep{\baselineskip} 
+      \printbibliography[heading=none,check=key#1]%
+    \end{singlespace}
+  \end{FlushLeft}
+}% <<<2
+
+\chapter{Citações e referências}
+Uma das características mais positivas do \LaTeX{} é a capacidade de gerenciar o uso de referências e citações, que podem ser referenciações de elementos presentes em seu texto ou citações de referências bibliográficas. E, para referências bibliográficas, este modelo utiliza o pacote \verb|biblatex|, junto com a sua opção de formatação da ABNT. Então, este capítulo busca trazer um conjunto de exemplos do uso dessas referências, levando em consideração o \verb|biblatex| para formatar corretamente, já que o pacote não tem como trazer a formatação dos inúmeros tipos de documentos, sendo necessário, às vezes, dar uma ``brincada'' para conseguir a formatação desejada.
+
+\section{Referênciação de elementos do texto}
+Um aspecto básico, e muitas vezes necessário, é a referênciação de elementos presentes pelo seu texto, como figuras ou seções. O comando que permite criar essa referência é o comando \verb|\label|\footnotemark, e, apesar de ser mais comum ver este comando preente apenas em figuras ou tabelas, também pode ser utilizado para referenciar seções, notas de rodapé e outros elementos que possuam contadores, como as tabelas, quadros, equações e outros elementos também criados, caso, por exemplo, você crie o elemento de Gráfico em seu trabalho. Depois, a citação é realizada através do comando \verb|\ref|.
+  \footnotetext{Uma dica é você criar um padrão nos nomes dos rótulos, iniciando com o nome do tipo de elemento que você está querendo referenciar e depois o nome do elemento, utilizando dois pontos para separá-los, como \texttt{tabela:nome-fonte} ou \texttt{figura:nome-figura}}
+
+\singlecite{brasil-lei-11.892-2008}
