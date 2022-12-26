@@ -38,7 +38,27 @@ Por conta da característica do comando de se ajustar automaticamente, a citaç�
 \blockcquote[tradução nossa]{filme:bee-movie}{De acordo com todas as leis conhecidas da aviação, não há como uma abelha poder voar. Suas asas são muito pequenas para tirar seu pequeno corpo gordo do chão. A abelha, obviamente, voa de qualquer maneira, porque abelhas não se importam com o que humanos pensam ser impossível}
 
 \subsubsection{Citação apud}
-O \texttt{biblatex-abnt} introduz um conjunto de comandos para citações apud. 
+O \texttt{biblatex-abnt} introduz um conjunto de comandos para citações apud, contudo, os comandos adicionam as duas fontes na bibliografia. Isso contradiz o estabelecido no Guia de Normalização, que indica que a fonte original, ao qual não se tem acesso, não é adicionada. Porém, esse problema é resolvido ao adicionar o campo \verb|keywords = {apud}| no registro da fonte original\footnote{Observe o registro do campo \texttt{keywords} do \texttt{exemplo:apud} no arquivo \texttt{bibliografia.bib}.}, já que a impressão da bibliografia foi configurada para filtrar os registros dessa maneira. Por exemplo, citando tem-se o resultado esperado, com a fonte original \texttt{exemplo:apud} não aparecendo na lista de referência.
+
+Os comandos presentes para as citações apud são \verb|\apud| e \verb|\textapud|:
+
+\verb|\apud[p. 79]{exemplo:apud}[p. 45]{batman}|
+
+\apud[p. 79]{exemplo:apud}[p. 45]{batman}\\
+
+\verb|\textapud{exemplo:apud}{batman}|
+
+\textapud{exemplo:apud}{batman}\\
+
+Também existem alternativas para caso não seja desejado ter o registro da fonte original no arquivo de bibliografia, \texttt{.bib}:
+
+\verb|\apud[Um Autor Imaginário][]{batman}|
+
+\apud[Um Autor Imaginário][]{batman}\\
+
+\verb|Um Autor Imaginário \apud[apud][p. 42]{batman}|
+
+Um Autor Imaginário \apud[apud][p. 42]{batman}
 
 \subsubsection{Citação por outros elementos da referência}
 Quando busca-se citar por alguns elementos diferentes da obra, como o título de uma obra, ou seu ano, podem ser utilizados determinados comandos para realizar tal função\footnotemark. Isso facilita o trabalho, por não precisar realizar a escrita manualmente, diminuindo as chances de erros, caso seja necessário atualizar algum dado da obra.
@@ -117,19 +137,21 @@ Acesso pelo serviço de streaming Netflix.},
 }
 \end{verbatim}
 
-\singlecite{seriado:fullmetal}
+\singlecite{serie:grande-familia}
 \begin{verbatim}
-@movie{seriado:fullmetal,
-title        = {Fullmetal Alchemist},
-subtitle     = {Brotherhood},
-edition      = {Criação: Hiromu Arakawa. Direção: Yasuhiro 
-Irie, Kiyomitsu Sato},
-location     = {Japão},
-publisher    = {Bones},
-year         = {2009},
-howpublished = {Temporada 1, episódio 4. Título do episódio: 
-A Angústia de um Alquimista.},
+@movie{serie:grande-familia,
+title        = {{A Grande} Família},
+edition      = {Direção: Maurício Farias. Intérpretes: 
+Marco Nanini, Marieta Severo, Lúcio Mauro Filho, Rogério 
+Cardoso, Pedro Cardoso, Guta Stresser, Marcos Oliveira.},
+location     = {Rio de Janeiro},
+publisher    = {TV Globo},
+year         = {2002},
+howpublished = {Temporada 2, 37 episódios.},
 }
 \end{verbatim}
 
 \subsection{Dando o jeitinho para conseguir a formatação desejada}
+Teste
+
+Às vezes é necessário que duas ou mais palavras sejam identificadas como um termo só e, no arquivo de bibliografia, isto é alcançado ao adicioná-las dentro de um outro par de chaves. Por exemplo, obras sem indicação de autoria, ou de responsabilidade, que necessitam deixar em caixa alta a primeira palavra, incluindo artigo ou palavra monossilábica inicial, como no caso de \citetitle{filme:bee-movie} ou \citetitle{serie:grande-familia}.

@@ -1,5 +1,5 @@
 % Criação de um comando para verificar se o documento está em oneside ou twoside
-% Sua utilização será praticamente para duas situações: garantir que a folha de rosto esteja no anverso do documento, usando \cleardoublepage ao invés de \clearpage; e escolher a configuração da paginação no cabeçalho (mostrar a numeração no canto direito, para oneside; mostrar paginação no canto direito em páginas ímpares e no esquerdo nas páginas pares, para twoside)
+% Sua utilização será praticamente para duas situações: garantir que a folha de rosto esteja no anverso do documento, usando \cleardoublepage ao invés de \clearpage; e escolher a configuração da paginação no cabeçalho (mostrar a numeração no canto direito, para oneside; mostrar paginação no canto direito em páginas ímpares e no esquerdo nas páginas pares, para twoside). Apesar disso, o próprio Guia de Normalização recomenda iniciar cada elemento pré-textual ou textual no anverso da folha, necessitando desse comando também, com exceção da ficha catalográfica ou de identificação de obra, que deve estar no verso da folha de rosto
 % Fonte: https://tex.stackexchange.com/a/360791
 \newcommand{\OnesideTwoside}[2]{
     \if@twoside%

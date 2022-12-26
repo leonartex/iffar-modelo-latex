@@ -41,8 +41,9 @@
 % A melhor situação seria se o biblatex-abnt adicionasse os campos de diretor, produtor, etc., estilo:
 % director = {Simon J. Smith and Steve Hickner}
 % O jeito é usar o edition como gambiarra
+% Bee é uma palavra monossilábica, logo, a palavra Movie vai junto
 @movie{filme:bee-movie,
-  title        = {Bee Movie},
+  title        = {{Bee Movie}},
   subtitle     = {A História de uma Abelha},
   edition      = {Direção: Simon J. Smith, Steve Hickner},
   location     = {Estados Unidos},
@@ -51,7 +52,7 @@
   howpublished = {1 vídeo (91min). Título original: Bee Movie. Acesso pelo serviço de streaming Netflix.},
 }
 
-@movie{seriado:fullmetal,
+@movie{serie:fullmetal,
   title        = {Fullmetal Alchemist},
   subtitle     = {Brotherhood},
   edition      = {Criação: Hiromu Arakawa. Direção: Yasuhiro Irie, Kiyomitsu Sato},
@@ -62,10 +63,25 @@
 }
 
 % A GRANDE Família
-
+@movie{serie:grande-familia,
+  title        = {{A Grande} Família},
+  edition      = {Direção: Maurício Farias. Intérpretes: Marco Nanini, Marieta Severo, Lúcio Mauro Filho, Rogério Cardoso, Pedro Cardoso, Guta Stresser, Marcos Oliveira.},
+  location     = {Rio de Janeiro},
+  publisher    = {TV Globo},
+  year         = {2002},
+  howpublished = {Temporada 2, 37 episódios.},
+}
 
 @misc{batman,
   author = {Batman},
   title = {Batman},
   year = {2023},
+}
+
+@misc{exemplo:apud,
+  author       = {{Senhor Apud}},
+  howpublished = {online},
+  title        = {Esse negócio não existe},
+  year         = {2077},
+  keywords = {apud},
 }

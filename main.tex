@@ -119,6 +119,8 @@
 
 \usepackage{lipsum} % Pacote meramente cosmético, para testes. Remova ele quando for utilizar o modelo.
 
+\removecitation{apud}
+
 \begin{document}
 \onehalfspacing
 \justifying
@@ -146,12 +148,21 @@
   % Lista de figuras:
   \listoffigures%
   \thispagestyle{empty}
+  % Recomendação do Guia de Normalização de iniciar cada elemento pré-textual e textual no anverso da página
+  \OnesideTwoside{\clearpage}{\cleardoublepage}
+  
   % Lista de tabelas:
   \listoftables%
   \thispagestyle{empty}
+  % Recomendação do Guia de Normalização de iniciar cada elemento pré-textual e textual no anverso da página
+  \OnesideTwoside{\clearpage}{\cleardoublepage}
+  
   % Lista de quadros:
   \listofquadros%
   \thispagestyle{empty}
+  % Recomendação do Guia de Normalização de iniciar cada elemento pré-textual e textual no anverso da página
+  \OnesideTwoside{\clearpage}{\cleardoublepage}
+  
   % Adicione aqui as outras listas que você criar, como lista de gráficos, fotos, etc.
 
   \include{elementos/lista-siglas.tex}
@@ -160,28 +171,40 @@
   %Sumário
   \tableofcontents  % ITEM OBRIGATÓRIO
   \thispagestyle{empty}
+  % Recomendação do Guia de Normalização de iniciar cada elemento pré-textual e textual no anverso da página
+  \OnesideTwoside{\clearpage}{\cleardoublepage}
 \end{SecoesNaoNumeradas}
 \clearpage
 
 \pagestyle{fancyplain}
 \begingroup
   \input{capitulos/1-introducao.tex}
+  % Recomendação do Guia de Normalização de iniciar cada elemento pré-textual e textual no anverso da página
+  \OnesideTwoside{\clearpage}{\cleardoublepage}
 \endgroup
 
 \begingroup
   \input{capitulos/2-configuracao.tex}
+  % Recomendação do Guia de Normalização de iniciar cada elemento pré-textual e textual no anverso da página
+  \OnesideTwoside{\clearpage}{\cleardoublepage}
 \endgroup
 
 \begingroup
   \input{capitulos/3-elementos-opcionais.tex}
+  % Recomendação do Guia de Normalização de iniciar cada elemento pré-textual e textual no anverso da página
+  \OnesideTwoside{\clearpage}{\cleardoublepage}
 \endgroup
 
 \begingroup
-  \input{capitulos/4-elementos-comuns.tex}    
+  \input{capitulos/4-elementos-comuns.tex}
+  % Recomendação do Guia de Normalização de iniciar cada elemento pré-textual e textual no anverso da página
+  \OnesideTwoside{\clearpage}{\cleardoublepage}
 \endgroup
 
 \begingroup
   \input{capitulos/5-referencias.tex}
+  % Recomendação do Guia de Normalização de iniciar cada elemento pré-textual e textual no anverso da página
+  \OnesideTwoside{\clearpage}{\cleardoublepage}
 \endgroup
 
 %% Aqui são adicionados as referências, apêndices e anexos. É essencial que eles estejam dentro desse ambiente, para formatar corretamente o título da seção deles
@@ -193,7 +216,7 @@
       \setlength\bibitemsep{\baselineskip} % Defino que o espaço para separar cada referência é o da altura de uma linha, conforme a ABNT exige
       % heading=bibintoc imprime o nome da seção das referências sem numeração e adiciona no sumário
       % title=Referências modifica o nome da seção, que normalmente seria "Bibliografia", por conta que é o nome utilizado pelos documentclass book e report
-      \printbibliography[heading=bibintoc, title=Referências] % ITEM OBRIGATÓRIO
+      \printbibliography[heading=bibintoc, title=Referências, notkeyword=apud] % ITEM OBRIGATÓRIO
     \end{singlespace}
   \end{FlushLeft}
 \endgroup
