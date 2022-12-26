@@ -1,19 +1,3 @@
-% Comando para imprimir no texto a referência utilizada de exemplo
-% Fonte: https://github.com/abntex/biblatex-abnt/blob/dev/doc/biblatex-abnt.tex
-\newcommand{\singlecite}[1]{%
-%   \addtocategory{singleentries}{#1}%
-  \defbibcheck{key#1}{
-    \iffieldequalstr{entrykey}{#1}
-      {}
-      {\skipentry}}%
-  \begin{FlushLeft}%
-    \begin{singlespace}
-      \setlength\bibitemsep{\baselineskip} 
-      \printbibliography[heading=none,check=key#1]%
-    \end{singlespace}
-  \end{FlushLeft}
-}% <<<2
-
 \chapter{Citações e referências}
 Uma das características mais positivas do \LaTeX{} é a capacidade de gerenciar o uso de referências e citações, que podem ser referenciações de elementos presentes em seu texto ou citações de referências bibliográficas. E, para referências bibliográficas\footnotemark, este modelo utiliza o pacote \verb|biblatex|, junto com a sua opção de formatação da ABNT. Então, este capítulo busca trazer um conjunto de exemplos do uso dessas referências, também levando em consideração o \verb|biblatex|, para formatar corretamente. O pacote não tem como possuir a formatação dos inúmeros tipos de documentos padronizados pela ABNT, sendo necessário, às vezes, dar uma adaptada para conseguir a formatação desejada.
   \footnotetext{Neste capítulo são apresentados exemplos de referências considerando especificamente o \LaTeX, contudo, se tiver maiores dúvidas referências, é essencial que você consulte o Guia de Normalização de trabalhos do IFFar ou a norma ABNT NBR 6023:2018. Os dois documentos trazem exemplos de referências, mas, principalmente, o Guia também traz um conjunto de exemplos de como as citações devem ser realizadas.}
@@ -50,10 +34,11 @@ Os dois comandos, \verb|\blockcquote| e \verb|\blockquote|%
 \footnote{Sendo justo, eu também não consegui fazer o \texttt{blockquote} funcionar corretamente com as citações do \texttt{biblatex}. Por isso recomendo o uso do \texttt{blockcquote}, que além de funcionar certinho, permite adicionar as informações anteriores e posteriores à obra citada.} 
 apresentam a mesma funcionalidade. Contudo, o \verb|\blockcquote| apresenta três argumentos para citações, permitindo adicionar informações adicionais anteriores e posteriores à fonte, como o número de páginas da citação direta, exigido pela ABNT. A grande vantagem de utilizar esse comando, é que ele cria o ambiente de citação de forma automática, ou seja, se o texto inserido possuir até três linhas, a citação aparece entre aspas no corpo do parágrafo, mas se apresentar mais de três linhas, é ajustado como o parágrafo com recuo e as outras formatações necessárias.
 
-Por conta da característica do comando de se ajustar automaticamente, a citação pode ser inserida no meio do parágrafo e, se ela tiver até três linhas, \blockcquote{batman}{aparece no mesmo parágrafo (você também pode apenas colocar o conteúdo entre aspas, `se quiser')}, porém, se possuir mais de três linhas, torna-se em um parágrafo separado:
-\blockcquote[tradução nossa]{filme:bee-movie-2007}{De acordo com todas as leis conhecidas da aviação, não há como uma abelha poder voar. Suas asas são muito pequenas para tirar seu pequeno corpo gordo do chão. A abelha, obviamente, voa de qualquer maneira, porque abelhas não se importam com o que humanos pensam ser impossível}
+Por conta da característica do comando de se ajustar automaticamente, a citação pode ser inserida no meio do parágrafo e, se ela tiver até três linhas, \blockcquote{batman}{aparece no mesmo parágrafo (você também pode apenas colocar o conteúdo entre aspas, `se quiser')}, porém, se possuir mais de três linhas, torna-se um parágrafo separado:
+\blockcquote[tradução nossa]{filme:bee-movie}{De acordo com todas as leis conhecidas da aviação, não há como uma abelha poder voar. Suas asas são muito pequenas para tirar seu pequeno corpo gordo do chão. A abelha, obviamente, voa de qualquer maneira, porque abelhas não se importam com o que humanos pensam ser impossível}
 
-\subsubsection{Citação \textit{apud}}
+\subsubsection{Citação apud}
+O \texttt{biblatex-abnt} introduz um conjunto de comandos para citações apud. 
 
 \subsubsection{Citação por outros elementos da referência}
 Quando busca-se citar por alguns elementos diferentes da obra, como o título de uma obra, ou seu ano, podem ser utilizados determinados comandos para realizar tal função\footnotemark. Isso facilita o trabalho, por não precisar realizar a escrita manualmente, diminuindo as chances de erros, caso seja necessário atualizar algum dado da obra.
@@ -103,21 +88,48 @@ Ou:
 
 \cite[Art. 1º, I ]{lei:brasil-lei-11.892-2008}\\
 
-Para as citações simultâneas ou citações \textit{apud} segue-se o mesmo padrão ao utilizar os colchetes:
+Para as citações simultâneas ou citações apud segue-se o mesmo padrão ao utilizar os colchetes:
 
 \verb|\cites[<info. fonte 1>]{<fonte 1>}[<info. fonte 2>]{<fonte 2>}|...
 
 \subsection{Exemplos de referências}
 
 \subsubsection{Documentos jurídicos}
-
-\subsubsection{Filmes, séries e tals}
-\singlecite{filme:bee-movie-2007}
-
-\singlecite{serie:fullmetal-brotherhood}
-
 \paragraph{Legislação em meio eletrônico}
 
-\subsection{Dando o jeitinho para conseguir a formatação desejada}
-
 \singlecite{lei:brasil-lei-11.892-2008}
+
+\subsubsection{Filmes, séries, vídeos, entre outros}
+Para filmes, séries, vídeos, entre outros é necessário dar uma adaptada. Existe o tipo de entrada \texttt{@movie}, contudo, que não possui configuração pelo \texttt{biblatex-abnt}. Nesse caso, isso não se torna em um problema, pois, mesmo utilizando o tipo sem formatação, garante-se a característica mais importante do padrão ABNT para este tipo de obra: deixar em caixa alta apenas o primeiro termo do título da obra. O resto das informações são adicionadas em campos que possuem a mesma posição na hora de impressão\footnotemark. Seguem-se os exemplos:
+  \footnotetext{Eu não consegui identificar quais seriam os atributos mais corretos para adicionar os dados. E isso é algo que acontece bastante.}
+
+\singlecite{filme:bee-movie}
+\begin{verbatim}
+@movie{filme:bee-movie,
+title        = {Bee Movie},
+subtitle     = {A História de uma Abelha},
+edition      = {Direção: Simon J. Smith, Steve Hickner},
+location     = {Estados Unidos},
+publisher    = {DreamWorks},
+year         = {2007},
+howpublished = {1 vídeo (91min). Título original: Bee Movie. 
+Acesso pelo serviço de streaming Netflix.},
+}
+\end{verbatim}
+
+\singlecite{seriado:fullmetal}
+\begin{verbatim}
+@movie{seriado:fullmetal,
+title        = {Fullmetal Alchemist},
+subtitle     = {Brotherhood},
+edition      = {Criação: Hiromu Arakawa. Direção: Yasuhiro 
+Irie, Kiyomitsu Sato},
+location     = {Japão},
+publisher    = {Bones},
+year         = {2009},
+howpublished = {Temporada 1, episódio 4. Título do episódio: 
+A Angústia de um Alquimista.},
+}
+\end{verbatim}
+
+\subsection{Dando o jeitinho para conseguir a formatação desejada}

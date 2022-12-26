@@ -38,25 +38,31 @@
 %%%%%%
 %%  Filmes, séries e tals
 %%%%%%
-@misc{filme:bee-movie-2007,
-  title        = {Bee},
-  titleaddon   = {Movie},
-  edition      = {Direção: Simon J. Smith and Steve Hickner},
+% A melhor situação seria se o biblatex-abnt adicionasse os campos de diretor, produtor, etc., estilo:
+% director = {Simon J. Smith and Steve Hickner}
+% O jeito é usar o edition como gambiarra
+@movie{filme:bee-movie,
+  title        = {Bee Movie},
+  subtitle     = {A História de uma Abelha},
+  edition      = {Direção: Simon J. Smith, Steve Hickner},
   location     = {Estados Unidos},
   publisher    = {DreamWorks},
   year         = {2007},
-  howpublished = {1 vídeo (91min). Acesso pelo serviço de streaming Netflix.},
+  howpublished = {1 vídeo (91min). Título original: Bee Movie. Acesso pelo serviço de streaming Netflix.},
 }
 
-@misc{serie:fullmetal-brotherhood,
+@movie{seriado:fullmetal,
   title        = {Fullmetal Alchemist},
   subtitle     = {Brotherhood},
-  edition      = {Direção: Simon J. Smith and Steve Hickner},
-  location     = {Estados Unidos},
-  publisher    = {DreamWorks},
-  year         = {2007},
-  howpublished = {64 episódios. Título original: Hagane no renkinjutsushi. Acesso pelo serviço de streaming Netflix.},
+  edition      = {Criação: Hiromu Arakawa. Direção: Yasuhiro Irie, Kiyomitsu Sato},
+  location     = {Japão},
+  publisher    = {Bones},
+  year         = {2009},
+  howpublished = {Temporada 1, episódio 4. Título do episódio: A Angústia de um Alquimista.},
 }
+
+% A GRANDE Família
+
 
 @misc{batman,
   author = {Batman},

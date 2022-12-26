@@ -14,6 +14,17 @@
   {\multicitedelim}
   {\usebibmacro{postnote}}
 
+% Comando para imprimir no texto a referência utilizada de exemplo
+% ATENÇÃO: Esse comando possui apenas função didática, específica para o capítulo sobre referências, apesar que você pode utilizar para "debug", verificando rapidamente como sua referência está sendo impressa. Se quiser, pode remover tranquilamente
+\newcommand{\singlecite}[1]{%
+  \begin{FlushLeft}%
+    \begin{singlespace}
+      \setlength\parskip{\baselineskip}
+      \noindent%
+      \fullcite{#1}%
+    \end{singlespace}
+  \end{FlushLeft}
+}
 
 % Remover o "<>" envolvendo as URLs
 % Fonte: https://github.com/abntex/biblatex-abnt (dev-branch)

@@ -20,6 +20,17 @@
     english,
     brazil
 ]{report}
+\makeatletter
+%preamble
+\if@twoside%
+   %%% put the stuff for true here (twoside=true)
+   \newcommand\side{stuff for twoside}
+\else%
+   %%% put the stuff for false here (twoside=false)
+   \newcommand\side{stuff for onside}
+\fi%  
+\makeatother
+
 
 % Pacotes que envolvem codificação do conteúdo. Essenciais.
 \usepackage[T1]{fontenc}
@@ -47,7 +58,7 @@
 %% Pacotes para formatação de conteúdo na página
 \usepackage[left=3cm,top=3cm,right=2cm,bottom=2cm]{geometry} % Pacote responsável por formatar as dimensões das margens das páginas.
 \usepackage{setspace} % Adiciona opções de espaçamento de texto
-\usepackage[skip=1.241pt, indent=1.25cm]{parskip}
+\usepackage[skip=1.241pt, indent=1.25cm]{parskip} % O recomendado é utilizar esse pacote para gerenciar o parskip e o parindent, ao invés de definir as unidades manualmente no documento, que pode levar a problemas de formatação
 \usepackage{ragged2e} % Adiciona opções mais completas para alinhamento de texto
 \usepackage{indentfirst} % Faz com que o primeiro parágrafo de cada seção possua indentação também
 
@@ -56,8 +67,7 @@
 \usepackage{config/cabecalho} % Cabeçalho customizado para o modelo
 
 %% Adiciono os pacotes para configurar e estilizar o sumário e as seções
-% \usepackage{tocloft}
-\usepackage{titletoc} % Não consegui criar pelo titletoc a parte de todas as seções estarem alinhadas, então vou usar o tocloft
+\usepackage{titletoc}
 \usepackage{titlesec}
 \usepackage{alphalph} % Permite lidar com contadores que possuam valor maior que 26 utilizando o alfabeto (o número de letras), ou seja, se passar de 26, vai utilizar AA, AB, AC... Nativamente o LaTeX não realiza esse controle
 \usepackage{config/apendice-anexo} % Criação dos comandos para apêndice e anexo
@@ -94,7 +104,7 @@
 % Obs.: Se você precisar criar outro elemento (e outra lista), como de gráficos ou de qualquer outro tipo, é, teoricamente, bastante simples: 
 %   - Você declara o novo ambiente com o \DeclareFloatingEnvironment, junto com o nome do elemento e o título de sua lista
 %   - Remove a contabilização do capítulo com o \counterwithout (apesar que acho que isso pode ser realizado no próprio \DeclareFloatingEnvironment)
-%   - E depois vai no final do arquivo config/sumario.sty e copia a estilização usada para os elementos de figura ou tabela, realizando a modificação do nome do elemento
+%   - E depois vai no final do arquivo config/sumario.sty e copia, e cola abaixo, a estilização usada para os elementos de figura ou tabela, realizando a modificação do nome do elemento
 
 %% Pacotes para adicionar o uso de citações e referências no padrão ABNT
 % Permite customizar as notas de rodapé. Necessário para a indentação das notas
@@ -121,14 +131,20 @@
 \begin{document}
 \onehalfspacing
 \justifying
-% \setlength\parindent{1.25cm}% Configura o espaçamento da indentação dos parágrafos
-% \setlength\parskip{1.241pt}% Configura o espaço separação entre parágrafos.
+
 \include{elementos/DADOS.tex}
 
+\pagestyle{empty}
 \include{elementos/capa.tex} % ITEM OBRIGATÓRIO
-\include{elementos/folha-rosto.tex}  % ITEM OBRIGATÓRIO
-\include{elementos/folha-aprovacao.tex}  % ITEM OBRIGATÓRIO
+
+\pagenumbering{arabic}
+\setcounter{page}{1} % Coloca para resetar a contagem daqui em diante, porém tem um problema: onde tiver capítulo, ele começa a contar as páginas, necessitando adicionar o comando \thispagestyle{empty} após cada um dos capítulos de seções pré-textuais
+% Não mostra a paginação
+% Fonte: https://texfaq.org/FAQ-nopageno
+\pagestyle{empty}
 \begin{SecoesNaoNumeradas}
+  \include{elementos/folha-rosto.tex}  % ITEM OBRIGATÓRIO
+  \include{elementos/folha-aprovacao.tex}  % ITEM OBRIGATÓRIO
   \include{elementos/dedicatoria.tex}
   \include{elementos/agradecimentos.tex}
   \include{elementos/epigrafe.tex}
@@ -137,11 +153,14 @@
 
   \renewcommand\addvspace[1]{} % Remove o espaço adicional nos títulos das listas de figuras, tabelas e quadros
   % Lista de figuras:
-  \listoffigures
+  \listoffigures%
+  \thispagestyle{empty}
   % Lista de tabelas:
-  \listoftables
+  \listoftables%
+  \thispagestyle{empty}
   % Lista de quadros:
-  \listofquadros
+  \listofquadros%
+  \thispagestyle{empty}
   % Adicione aqui as outras listas que você criar, como lista de gráficos, fotos, etc.
 
   \include{elementos/lista-siglas.tex}
@@ -149,9 +168,11 @@
 
   %Sumário
   \tableofcontents  % ITEM OBRIGATÓRIO
+  \thispagestyle{empty}
 \end{SecoesNaoNumeradas}
-% \clearpage
+\clearpage
 
+\pagestyle{fancyplain}
 \begingroup
   \input{capitulos/1-introducao.tex}
 \endgroup

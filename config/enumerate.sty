@@ -1,11 +1,11 @@
 % Criando o contador de itens do enumerate usando letras (as alíneas), porém, usando os valores do pacote alphalph (que permite apresentar itens com letras dobradas quando todas as letras são esgotadas)
 % Fonte: https://tex.stackexchange.com/a/594860
 % Obs.: O contador criado atualmente utiliza um tamanho de 2 letras, que cria um tamanho visualmente semelhante ao utilizado no Guia de Normalização e na NBR 6024:2012, porém, se você for estourar o limite de 2 letras, o que é extremamente improvável, você também pode alterar a linha para: \AddEnumerateCounter{\alphalphFmt}{\@alphfmt}{aaa}. Isso possui função apenas estética para manter o padrão nas listas no documento inteiro, porque, sem realizar isso, a lista ainda vai apresentar corretamente os itens
-\makeatletter
+% \makeatletter % Não precisa de \makeatletter em pacotes (vulgo .sty), sendo que, inclusive, pode levar a erros. Fonte: https://tex.stackexchange.com/a/62586
 \newcommand{\AlphAlphFmt}[1]{\@alphfmt{#1}}  % Define the \alphalph wrapper for enumitem 
 \newcommand{\@alphfmt}[1]{\alphalph{\value{#1}}}  % Internal representation 
 \AddEnumerateCounter{\alphalphFmt}{\@alphfmt}{aa} % Register this new format
-\makeatother
+% \makeatother
 
 % Criando a lista genérica, para o usuário inserir o label que quiser, mas seguindo as mesmas margens das alíneas. Essa é a estrutura base utilizada para as alíneas e subalíneas
 \newenvironment{listaGenerica}[1]{

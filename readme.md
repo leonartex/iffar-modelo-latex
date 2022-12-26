@@ -57,9 +57,9 @@ V		No verso: superior e direita de 3 cm; inferior e esquerda de 2 cm.
 		Recuo de 4cm
 		Alinhado no centro
 		Canto superior direito
-	Contagem de folhas
-		Ignorar capa
-		Sem contagem no pré-textual, mas contabilizando a partir da folha de rosto, exceto a errata (?), até o sumário
+V	Contagem de folhas
+V		Ignorar capa
+V		Sem contagem no pré-textual, mas contabilizando a partir da folha de rosto, exceto a errata (que é no material impresso, não tenho nada a ver), até o sumário
 	Numeração
 		Arábico
 		No anverso: no canto superior direito (distante 2 cm da borda superior, com o último algarismo a 2 cm da borda direita da folha);
