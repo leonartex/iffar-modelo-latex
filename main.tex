@@ -12,25 +12,16 @@
 
 \documentclass[
     12pt, % Tamanho de fonte definido para 12, se você precisar utilizar um texto em tamanho 10, utilize o comando \footnotesize, que será impresso em tamanho 10
-    oneside,
-    %twoside, % A opção permite gerar o documento utilizando o verso das páginas, porém, ela não indica à impressora que você está utilizando isso ou que ela deva imprimir nos dois lados das folhas (fonte: https://en.wikibooks.org/wiki/LaTeX/Document_Structure)
+    % oneside,
+    twoside, % A opção permite gerar o documento utilizando o verso das páginas, porém, ela não indica à impressora que você está utilizando isso ou que ela deva imprimir nos dois lados das folhas (fonte: https://en.wikibooks.org/wiki/LaTeX/Document_Structure)
     %openany,
     %openright,
     a4paper,
     english,
     brazil
 ]{report}
-\makeatletter
-%preamble
-\if@twoside%
-   %%% put the stuff for true here (twoside=true)
-   \newcommand\side{stuff for twoside}
-\else%
-   %%% put the stuff for false here (twoside=false)
-   \newcommand\side{stuff for onside}
-\fi%  
-\makeatother
-
+% Pacotinho básico só pra garantir que a folha de rosto esteja sempre no anverso do documento (no caso de twoside)
+\usepackage{config/onesidetwoside}
 
 % Pacotes que envolvem codificação do conteúdo. Essenciais.
 \usepackage[T1]{fontenc}

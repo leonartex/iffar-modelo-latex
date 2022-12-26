@@ -1,0 +1,13 @@
+% Criação de um comando para verificar se o documento está em oneside ou twoside
+% Sua utilização será praticamente para duas situações: garantir que a folha de rosto esteja no anverso do documento, usando \cleardoublepage ao invés de \clearpage; e escolher a configuração da paginação no cabeçalho (mostrar a numeração no canto direito, para oneside; mostrar paginação no canto direito em páginas ímpares e no esquerdo nas páginas pares, para twoside)
+% Fonte: https://tex.stackexchange.com/a/360791
+\newcommand{\OnesideTwoside}[2]{
+    \if@twoside%
+    % Se twoside=truw, é twoside, executa o segundo valor
+    #2
+    \else%
+    % Se twoside=false, é oneside, executa o primeiro valor
+    #1
+    \fi%
+}
+

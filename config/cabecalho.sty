@@ -1,7 +1,8 @@
 \pagestyle{fancyplain}
 \fancyhead{}
-\fancyhead[R]{\footnotesize\thepage} % Se você estiver utilizando a opção oneside
+% \fancyhead[R]{\footnotesize\thepage} % Se você estiver utilizando a opção oneside
 % \fancyhead[RO, LE]{\footnotesize\thepage} % Se você estiver utilizando a opção twoside
+\OnesideTwoside{\fancyhead[R]{\footnotesize\thepage}}{\fancyhead[RO, LE]{\footnotesize\thepage}} % Verifico automaticamente
 \fancyfoot{}
 \renewcommand{\headwidth}{16cm} % 16cm pois A4 tem 21cm de largura, retirando as margens, sobra 16cm
 \renewcommand{\headrulewidth}{0pt} % zera linha de cabeçalho
