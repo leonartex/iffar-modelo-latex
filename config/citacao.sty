@@ -1,0 +1,16 @@
+% Criação do ambiente para citações longas, seguindo as normas da ABNT
+% Recuo necessário: 4cm
+% Área total de escrita: 16cm
+% Espaço restante: 12cm
+\newenvironment{abntquote}{
+
+\begin{singlespace}%
+\footnotesize%
+\hspace{\fill}%
+\begin{minipage}{12cm}%
+}{
+\end{minipage}%
+\end{singlespace}
+
+}
+\SetBlockEnvironment{abntquote}

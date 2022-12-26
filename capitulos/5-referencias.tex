@@ -15,10 +15,109 @@
 }% <<<2
 
 \chapter{Citações e referências}
-Uma das características mais positivas do \LaTeX{} é a capacidade de gerenciar o uso de referências e citações, que podem ser referenciações de elementos presentes em seu texto ou citações de referências bibliográficas. E, para referências bibliográficas, este modelo utiliza o pacote \verb|biblatex|, junto com a sua opção de formatação da ABNT. Então, este capítulo busca trazer um conjunto de exemplos do uso dessas referências, levando em consideração o \verb|biblatex| para formatar corretamente, já que o pacote não tem como trazer a formatação dos inúmeros tipos de documentos, sendo necessário, às vezes, dar uma ``brincada'' para conseguir a formatação desejada.
+Uma das características mais positivas do \LaTeX{} é a capacidade de gerenciar o uso de referências e citações, que podem ser referenciações de elementos presentes em seu texto ou citações de referências bibliográficas. E, para referências bibliográficas\footnotemark, este modelo utiliza o pacote \verb|biblatex|, junto com a sua opção de formatação da ABNT. Então, este capítulo busca trazer um conjunto de exemplos do uso dessas referências, também levando em consideração o \verb|biblatex|, para formatar corretamente. O pacote não tem como possuir a formatação dos inúmeros tipos de documentos padronizados pela ABNT, sendo necessário, às vezes, dar uma adaptada para conseguir a formatação desejada.
+  \footnotetext{Neste capítulo são apresentados exemplos de referências considerando especificamente o \LaTeX, contudo, se tiver maiores dúvidas referências, é essencial que você consulte o Guia de Normalização de trabalhos do IFFar ou a norma ABNT NBR 6023:2018. Os dois documentos trazem exemplos de referências, mas, principalmente, o Guia também traz um conjunto de exemplos de como as citações devem ser realizadas.}
 
-\section{Referênciação de elementos do texto}
-Um aspecto básico, e muitas vezes necessário, é a referênciação de elementos presentes pelo seu texto, como figuras ou seções. O comando que permite criar essa referência é o comando \verb|\label|\footnotemark, e, apesar de ser mais comum ver este comando preente apenas em figuras ou tabelas, também pode ser utilizado para referenciar seções, notas de rodapé e outros elementos que possuam contadores, como as tabelas, quadros, equações e outros elementos também criados, caso, por exemplo, você crie o elemento de Gráfico em seu trabalho. Depois, a citação é realizada através do comando \verb|\ref|.
-  \footnotetext{Uma dica é você criar um padrão nos nomes dos rótulos, iniciando com o nome do tipo de elemento que você está querendo referenciar e depois o nome do elemento, utilizando dois pontos para separá-los, como \texttt{tabela:nome-fonte} ou \texttt{figura:nome-figura}}
+\section{Referênciação de elementos do texto}\label{section:referencia}
+Um aspecto básico, e muitas vezes necessário, é a referênciação de elementos presentes pelo seu texto, como figuras ou seções. O comando que permite criar essa referência é o comando \verb|\label|\footnote{\label{rodape:exemplo-ref}Uma dica é você criar um padrão nos nomes dos rótulos para facilitar a identificação e evitar o risco de repetir nomes, iniciando com o nome do tipo de elemento que você está querendo referenciar e depois o nome do elemento, utilizando dois pontos para separá-los, como \texttt{tabela:nome-tabela} ou \texttt{figura:nome-figura}.}, 
+e, apesar de ser mais comum ver este comando presente em figuras ou tabelas, também serve para referenciar seções, notas de rodapé e outros elementos que possuam contadores, como as equações, apêndices ou outros elementos criados pelo usuário\footnote{Os elementos criados, como os próprios quadros foram, mas também outros que forem criados pelo usuário, por exemplo, o elemento de Gráfico, também funcionarão se configurados corretamente.}. 
+Depois, a citação é realizada através do comando \verb|\ref|, porém, é importante citar de que o comando do rótulo apenas seleciona o número do elemento, necessitando escrever separadamente o nome do elemento citado, como, por exemplo, citando a nota de rodapé \ref{rodape:exemplo-ref}, a Figura \ref{figura:marca-iffar}, o Anexo \ref{anexo:teste} ou a seção \ref{section:referencia}\footnote{Nisso, a padronização dos nomes, citados na nota \ref{rodape:exemplo-ref}, facilita bastante a identificação do elemento quando citados, para não se confundir na escrita.}. %ou a alínea \ref{alinea:exemplo-ref}. % O \ref para alíneas faz vir com o ) no nome, então não é tão útil
 
-\singlecite{brasil-lei-11.892-2008}
+\section{Referências bibliográficas}
+O gerenciamento das referências bibliográficas é realizado através do \verb|biblatex|, e o mesmo apresenta um conjunto de funções que podem ser utilizadas para facilitar a escrita. A primeira, e bastante importante, é que as obras da seção de referências só serão impressas se invocadas ao menos uma vez no documento através de citação. E, para as citações, existe um grande conjunto de comandos para citar as obras\footnote{\label{nota:biblatex-cheatsheet}No arquivo \texttt{docs/biblatex.pdfXXXXXXXX} encontra-se a documentação de um conjunto de comandos e registros utilizados pelo \texttt{biblatex}. Utilize-o como uma referência, para quando não souber os campos a serem utilizados no registro da referência ou os comandos para citações. Este capítulo do modelo busca apenas trazer uma ideia geral, não documentar tudo.}.
+
+\subsection{Tipos e exemplos de citações}
+\subsubsection{Citação indireta}
+A citação indireta, que ocorre pela própria interpretação das palavras dos autores, pode ser realizada de duas formas: \verb|\cite| ou, para citar o autor diretamente no texto, \verb|\textcite|:
+
+  \cite{livro:dom-casmurro}.
+
+  \textcite{livro:dom-casmurro}.
+
+\paragraph{Citação simultânea de múltiplas obras}
+Existem situações em que também é necessário citar simultaneamente mais de uma obra e, nesses casos, podem, também, ser realizadas de duas formas: \verb|\cites| ou, citando diretamente no texto, \verb|\textcites|:
+
+\cites{site:iffar-identidade-visual-2021}{livro:dom-casmurro}.
+
+\textcites{site:iffar-identidade-visual-2021}{livro:dom-casmurro}.\\
+
+Contudo, é importante citar que o \verb|biblatex| não realiza o ordenamento alfabético das múltiplas obras citadas, sendo função do autor do trabalho realizar esse controle na ordenação das entradas.
+
+\subsubsection{Citação direta e citação direta longa}
+Para citações de mais de três linhas, é necessário adicioná-las a um novo parágrafo, com 4cm de recuo, espaçamento simples e fonte tamanho 10, sem a presença de aspas. No \LaTeX, isso é alcançado através do comando \verb|\blockcquote|, do pacote \verb|csquotes|, que ajusta automaticamente para o formato de citação longa quando ultrapassa as três linhas. Porém, aqui existe um alerta: o comando utilizado recomendado é o \texttt{blockcquote} e não o comando \texttt{blockquote}, tendo, então, a letra \textbf{c} entre \texttt{block} e \texttt{quote}.
+
+Os dois comandos, \verb|\blockcquote| e \verb|\blockquote|%
+\footnote{Sendo justo, eu também não consegui fazer o \texttt{blockquote} funcionar corretamente com as citações do \texttt{biblatex}. Por isso recomendo o uso do \texttt{blockcquote}, que além de funcionar certinho, permite adicionar as informações anteriores e posteriores à obra citada.} 
+apresentam a mesma funcionalidade. Contudo, o \verb|\blockcquote| apresenta três argumentos para citações, permitindo adicionar informações adicionais anteriores e posteriores à fonte, como o número de páginas da citação direta, exigido pela ABNT. A grande vantagem de utilizar esse comando, é que ele cria o ambiente de citação de forma automática, ou seja, se o texto inserido possuir até três linhas, a citação aparece entre aspas no corpo do parágrafo, mas se apresentar mais de três linhas, é ajustado como o parágrafo com recuo e as outras formatações necessárias.
+
+Por conta da característica do comando de se ajustar automaticamente, a citação pode ser inserida no meio do parágrafo e, se ela tiver até três linhas, \blockcquote{batman}{aparece no mesmo parágrafo (você também pode apenas colocar o conteúdo entre aspas, `se quiser')}, porém, se possuir mais de três linhas, torna-se em um parágrafo separado:
+\blockcquote[tradução nossa]{filme:bee-movie-2007}{De acordo com todas as leis conhecidas da aviação, não há como uma abelha poder voar. Suas asas são muito pequenas para tirar seu pequeno corpo gordo do chão. A abelha, obviamente, voa de qualquer maneira, porque abelhas não se importam com o que humanos pensam ser impossível}
+
+\subsubsection{Citação \textit{apud}}
+
+\subsubsection{Citação por outros elementos da referência}
+Quando busca-se citar por alguns elementos diferentes da obra, como o título de uma obra, ou seu ano, podem ser utilizados determinados comandos para realizar tal função\footnotemark. Isso facilita o trabalho, por não precisar realizar a escrita manualmente, diminuindo as chances de erros, caso seja necessário atualizar algum dado da obra.
+  \footnotetext{Como citado na nota \ref{nota:biblatex-cheatsheet}, o documento PDF traz um conjunto de comandos. Você pode consultá-lo para visualizar outros exemplos.}
+
+Para citar pelo título da obra, utiliza-se \verb|\citetitle|, ou, que também possui outras utilidades, \verb|\citefield|, por exemplo: 
+
+\verb|\citetitle{livro:dom-casmurro}| ou \\\verb|\citefield{livro:dom-casmurro}{title}|
+
+\citetitle{livro:dom-casmurro} ou \citefield{livro:dom-casmurro}{title}\\
+
+Para citar apenas o ano, \verb|\citeyear|, por exemplo: 
+
+\verb|\citeyear{livro:dom-casmurro} ou \citeyear*{livro:dom-casmurro}|
+
+\citeyear{livro:dom-casmurro} ou \citeyear*{livro:dom-casmurro}\\
+
+Para citar apenas os nomes dos autores existem várias opções, a primeira é o \verb|\citeauthor|, por exemplo: 
+
+\verb|\citeauthor{livro:dom-casmurro} ou \citeauthor*{livro:dom-casmurro}|\\
+
+Também pode-se utilizar o \verb|\citename|, com um conjunto de configurações: 
+
+\verb|\citename{livro:dom-casmurro}{author}| ou \\\verb|\citename{livro:dom-casmurro}[given-family]{author}|
+
+\citename{livro:dom-casmurro}{author} ou \citename{livro:dom-casmurro}[given-family]{author}\\
+
+Ou então utilizar o código criado para este modelo, \verb|\citeauthorfull|\footnotemark:
+\footnotetext{Não garanto o pleno funcionamento deste comando em todas as situações. Eu realizei a adaptação de dois códigos distintos e, sendo bem honesto, não entendo bem exatamente como funciona a parte lógica do \texttt{biblatex}. Eu só vou experimentando até uma hora funcionar.}
+
+\verb|\citeauthorfull{livro:dom-casmurro}|
+
+\citeauthorfull{livro:dom-casmurro}\\
+
+Também existe a opção de citar determinados campos dos registros das referências, como já mostrado anteriormente, através do comando \verb|\citefield|:
+
+\subsubsection{Elementos adicionais na citação}
+Existem muitas situações em que apenas citar o nome do autor e o ano não é o suficiente, e isso é facilmente resolvido no \verb|biblatex|. Utilizando-se de colchetes, informações sobre a citação podem ser adicionadas, como o número da página, essencial para citações diretas, a expressão ``tradução nossa'' para citações diretas traduzidas ou, então, artigos, parágrafos e incisos de textos jurídicos. Por exemplo:
+
+\verb|\textcite[p. 239]{livro:dom-casmurro}|
+
+\textcite[p. 239]{livro:dom-casmurro}\\
+
+Ou:
+
+\verb|\cite[Art. 1º, I ]{lei:brasil-lei-11.892-2008}|
+
+\cite[Art. 1º, I ]{lei:brasil-lei-11.892-2008}\\
+
+Para as citações simultâneas ou citações \textit{apud} segue-se o mesmo padrão ao utilizar os colchetes:
+
+\verb|\cites[<info. fonte 1>]{<fonte 1>}[<info. fonte 2>]{<fonte 2>}|...
+
+\subsection{Exemplos de referências}
+
+\subsubsection{Documentos jurídicos}
+
+\subsubsection{Filmes, séries e tals}
+\singlecite{filme:bee-movie-2007}
+
+\singlecite{serie:fullmetal-brotherhood}
+
+\paragraph{Legislação em meio eletrônico}
+
+\subsection{Dando o jeitinho para conseguir a formatação desejada}
+
+\singlecite{lei:brasil-lei-11.892-2008}

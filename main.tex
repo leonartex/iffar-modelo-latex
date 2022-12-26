@@ -27,8 +27,9 @@
 
 % Responsável pela quebra silábica de palavras no final de linha de forma correta para o português
 \usepackage[brazil]{babel}
-% O pacote babel recomenda o uso do csquotes, para garantir que textos citados estejam escritos corretamente de acordo com as regras do seu idioma.
-\usepackage[portuguese=brazilian]{csquotes}
+% O pacote babel recomenda o uso do csquotes, para garantir que textos citados estejam escritos corretamente de acordo com as regras do seu idioma. Mesmo assim foi necessário adaptar para o padrão ABNT.
+\usepackage[portuguese=brazilian, style=brazilian]{csquotes}
+\usepackage{config/citacao} % As configurações para que as citações longas sigam a ABNT
 
 %% Pacotes para formatação de fonte do documento
 \usepackage{fontspec}
@@ -46,6 +47,7 @@
 %% Pacotes para formatação de conteúdo na página
 \usepackage[left=3cm,top=3cm,right=2cm,bottom=2cm]{geometry} % Pacote responsável por formatar as dimensões das margens das páginas.
 \usepackage{setspace} % Adiciona opções de espaçamento de texto
+\usepackage[skip=1.241pt, indent=1.25cm]{parskip}
 \usepackage{ragged2e} % Adiciona opções mais completas para alinhamento de texto
 \usepackage{indentfirst} % Faz com que o primeiro parágrafo de cada seção possua indentação também
 
@@ -98,14 +100,14 @@
 % Permite customizar as notas de rodapé. Necessário para a indentação das notas
 \usepackage[hang]{footmisc}
 \usepackage{config/rodape} % Configurações das notas de rodapé
-% Usa o biber por ser uma versão mais parruda de biblatex, que é uma versão mais parruda do bibtex, ou algo assim. É importante por resolver uma quantia de erros por conta de caracteres, principalmente na URL das referências
-\usepackage[backend=biber, style=abnt]{biblatex}
+% Usa o biber por ser uma versão mais parruda do bibtex, adicionalmente, utilizando o pacote biblatex. É importante por resolver uma quantia de erros por conta de caracteres especiais, principalmente na URL das referências
+\usepackage[backend=biber, style=abnt, repeatfields]{biblatex}
 \addbibresource{bibliografia.bib} % Você pode adicionar mais de um arquivo.bib, apenas adicione outra linha com o nome do segundo arquivo
 \usepackage{config/bibliografia-abnt} % Ajustes necessários por causa que o pacote biblatex-abnt não foi atualizado para algumas das mais novas normas da ABNT
 
 % Pacote responsável por permitir criar o índice. Se você não for utilizar índice, e provavelmente não vai, é só comentar essas duas linhas abaixo e o comando \printindex no final do documento
 \usepackage{imakeidx}
-\makeindex[columns=3, title=Índice]
+\makeindex[columns=1, title=Índice]
 
 %Pacote responsável por permitir colocar url. Ele cria link de atalho no sumário, citações e referência de figuras, tabelas, etc.
 \usepackage[hidelinks]{hyperref}
@@ -119,8 +121,8 @@
 \begin{document}
 \onehalfspacing
 \justifying
-\setlength\parindent{1.25cm}% Configura o espaçamento da indentação dos parágrafos
-\setlength\parskip{1.241pt}% Configura o espaço separação entre parágrafos.
+% \setlength\parindent{1.25cm}% Configura o espaçamento da indentação dos parágrafos
+% \setlength\parskip{1.241pt}% Configura o espaço separação entre parágrafos.
 \include{elementos/DADOS.tex}
 
 \include{elementos/capa.tex} % ITEM OBRIGATÓRIO
@@ -164,11 +166,6 @@
 
 \begingroup
   \input{capitulos/4-elementos-comuns.tex}    
-
-  Conforme o quadro no Apêndice \ref{apendice:teste} e o Anexo \ref{anexo:teste}. Citando \textcite{brasil-lei-11.892-2008}
-  
-  Testesddsdfdfs
-
 \endgroup
 
 \begingroup

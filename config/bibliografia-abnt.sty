@@ -1,3 +1,20 @@
+% Código adaptado das duas fontes para citar o nome completo dos autores, sem deixar em caixa alta o último sobrenome (não garanto o correto funcionamento em todas as situações)
+% Fonte: https://tex.stackexchange.com/a/537722
+% Fonte: https://tex.stackexchange.com/a/179212
+\DeclareCiteCommand{\citeauthorfull}
+  {\DeclareNameAlias{labelname}{given-family}%
+   \renewcommand*{\mkbibnamefamily}[1]{####1}%
+   \boolfalse{citetracker}%
+   \boolfalse{pagetracker}%
+   \usebibmacro{prenote}}
+  {\ifciteindex
+     {\indexnames{labelname}}
+     {}%
+   \printnames{labelname}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+
 % Remover o "<>" envolvendo as URLs
 % Fonte: https://github.com/abntex/biblatex-abnt (dev-branch)
 \DeclareFieldFormat{url}{\bibstring{urlfrom}\addcolon\addspace \url{#1}}

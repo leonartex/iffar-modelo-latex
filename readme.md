@@ -5,6 +5,7 @@ Dúvidas:
 		A margem de 10cm é de 10cm de página inteira, restando 11cm dos 21cm da largura da A4? Ou é sobre a área do texto, restando 6cm dos 16cm, ao considerar a margem de 3cm à esquerda e 2cm à direita?
 		Utiliza indentação?
 		Para a epígrafe do início da monografia: Utiliza-se essas mesmas recomendações?
+	- FAZER O NEGÓCIO DA PAGINAÇÃO
 
 
 Afazeres: 
@@ -27,6 +28,9 @@ Afazeres:
 
 
 Afazeres:
+
+Paginação
+
 Formatação
 V	Leiaute e formato
 V		A4

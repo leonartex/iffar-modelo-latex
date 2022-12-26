@@ -23,8 +23,7 @@
   É importante relatar que existe um problema ao utilizar apenas a marcação: o comando para adicionar o texto à nota utiliza apenas o número da nota de rodapé mais recente\footnotemark, então, se você adicionar duas \verb|\footnotemark| seguidas\footnotemark, deixando os dois \verb|\footnotetext| para depois, será utilizada apenas o número da última nota criada, com as duas notas apresentando o mesmo número. 
     \footnotetext{Nota relativa à primeira marcação.}
     \footnotetext{Nota relativa à segunda marcação.}
-  Dessa forma, a recomendação é utilizar o \verb|\footnotemark| apenas quando o parágrafo possuir apenas uma nota ou adicionar o texto da marcação após o término da frase e não do parágrafo. Ou, então, não utilizar, realizando a quebra de linha se quiser deixar mais formatadinho o código no \LaTeX{}
-    \footnote{Um novo parágrafo só é criado quando existirem duas quebras de linhas seguidas, ou seja, uma linha em branco.}.
+  Dessa forma, a recomendação é utilizar o \verb|\footnotemark| apenas quando o parágrafo possuir apenas uma nota ou adicionar o texto da marcação após o término da frase e não do parágrafo. Ou, então, não utilizar, realizando a quebra de linha se quiser deixar mais formatadinho o código no \LaTeX\footnote{Um novo parágrafo só é criado quando existirem duas quebras de linhas seguidas, ou seja, uma linha em branco.}.
 
 \section{Alíneas e subalíneas}
   As alíneas\index{alíneas} sempre devem vir a partir de um parágrafo que termine com dois pontos antes de iniciar a lista:
@@ -32,7 +31,7 @@
     \item a matéria da alínea começa por letra minúscula, exceto quando se tratar de substantivos próprios, e termina em ponto e vírgula, com exceção da última, que termina em ponto final;
     \item o trecho final da seção correspondente, anterior às alíneas, termina em
     dois pontos;
-    \item as alíneas são ordenadas por letras minúsculas seguidas de parênteses utilizando-se letras dobradas quando esgotadas as 26 (vinte e seis) letras que compõem o alfabeto brasileiro; 
+    \item as alíneas são ordenadas por letras minúsculas seguidas de parênteses utilizando-se letras dobradas quando esgotadas as 26 (vinte e seis) letras que compõem o alfabeto brasileiro;\label{alinea:exemplo-ref}
     \item as letras indicativas das alíneas são recuadas em relação à margem
     esquerda, alinhadas com o parágrafo;
     \item o texto da alínea deve terminar em dois pontos, se houver subalíneas\index{subalíneas}: 
@@ -75,7 +74,7 @@ E se você não quebrar a linha para iniciar um novo parágrafo, o \LaTeX{} cont
     % Podem ser utilizados vários argumentos para adicionar a figura em seu devido tamanho, como: scale; width; ou height. No caso de scale, a escala, adiciona o valor em decimal representando a porcentagem da escala, já width ou height utiliza-se uma unidade de medida, como cm, px ou pt.
     \includegraphics[width=10cm]{marca-iffar.png}\\
     \footnotesize
-    Fonte: \textcite{iffar-identidade-visual-2021}.
+    Fonte: \textcite{site:iffar-identidade-visual-2021}.
   \end{figure}
 
   \begin{figure}[H]
