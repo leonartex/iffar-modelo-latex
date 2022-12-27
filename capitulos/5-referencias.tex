@@ -14,16 +14,24 @@ O gerenciamento das referências bibliográficas é realizado através do \verb|
 \subsubsection{Citação indireta}
 A citação indireta, que ocorre pela própria interpretação das palavras dos autores, pode ser realizada de duas formas: \verb|\cite| ou, para citar o autor diretamente no texto, \verb|\textcite|:
 
-  \cite{livro:dom-casmurro}.
+\verb|\cite{livro:dom-casmurro}|
 
-  \textcite{livro:dom-casmurro}.
+\cite{livro:dom-casmurro}
+
+\verb|\textcite{livro:dom-casmurro}|
+
+\textcite{livro:dom-casmurro}
 
 \paragraph{Citação simultânea de múltiplas obras}
 Existem situações em que também é necessário citar simultaneamente mais de uma obra e, nesses casos, podem, também, ser realizadas de duas formas: \verb|\cites| ou, citando diretamente no texto, \verb|\textcites|:
 
-\cites{site:iffar-identidade-visual-2021}{livro:dom-casmurro}.
+\verb|\cites{site:iffar-identidade-visual-2021}{livro:dom-casmurro}|
 
-\textcites{site:iffar-identidade-visual-2021}{livro:dom-casmurro}.\\
+\cites{site:iffar-identidade-visual-2021}{livro:dom-casmurro}\\
+
+\verb|\textcites{site:iffar-identidade-visual-2021}{livro:dom-casmurro}|
+
+\textcites{site:iffar-identidade-visual-2021}{livro:dom-casmurro}\\
 
 Contudo, é importante citar que o \verb|biblatex| não realiza o ordenamento alfabético das múltiplas obras citadas, sendo função do autor do trabalho realizar esse controle na ordenação das entradas.
 
@@ -93,10 +101,14 @@ Ou então utilizar o código criado para este modelo, \verb|\citeauthorfull|\foo
 
 \citeauthorfull{livro:dom-casmurro}\\
 
-Também existe a opção de citar determinados campos dos registros das referências, como já mostrado anteriormente, através do comando \verb|\citefield|:
+E também existe a opção de citar determinados campos dos registros das referências, como já mostrado anteriormente, através do comando \verb|\citefield|\footnote{Nem todos os campos funcionam, pois alguns são listas e, então, também apresenta comando específico para tal.}:
+
+\verb|\citefield{lei:brasil-lei-11.892-2008}{titleaddon}|
+
+\citefield{lei:brasil-lei-11.892-2008}{titleaddon}
 
 \subsubsection{Elementos adicionais na citação}
-Existem muitas situações em que apenas citar o nome do autor e o ano não é o suficiente, e isso é facilmente resolvido no \verb|biblatex|. Utilizando-se de colchetes, informações sobre a citação podem ser adicionadas, como o número da página, essencial para citações diretas, a expressão ``tradução nossa'' para citações diretas traduzidas ou, então, artigos, parágrafos e incisos de textos jurídicos. Por exemplo:
+Existem muitas situações em que apenas citar o nome do autor e o ano não é o suficiente, e isso é facilmente resolvido no \verb|biblatex|. Utilizando-se de colchetes, informações sobre a citação podem ser adicionadas, como o número da página, essencial para citações diretas, a expressão ``tradução nossa'' para citações diretas traduzidas ou, então, artigos, parágrafos e incisos de documentos jurídicos. Por exemplo:
 
 \verb|\textcite[p. 239]{livro:dom-casmurro}|
 
