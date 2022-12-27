@@ -16,7 +16,7 @@ A citação indireta, que ocorre pela própria interpretação das palavras dos 
 
 \verb|\cite{livro:dom-casmurro}|
 
-\cite{livro:dom-casmurro}
+\cite{livro:dom-casmurro}\\
 
 \verb|\textcite{livro:dom-casmurro}|
 
@@ -103,9 +103,9 @@ Ou então utilizar o código criado para este modelo, \verb|\citeauthorfull|\foo
 
 E também existe a opção de citar determinados campos dos registros das referências, como já mostrado anteriormente, através do comando \verb|\citefield|\footnote{Nem todos os campos funcionam, pois alguns são listas e, então, também apresenta comando específico para tal.}:
 
-\verb|\citefield{lei:brasil-lei-11.892-2008}{titleaddon}|
+\verb|\citefield{lei:brasil-11.892-2008}{titleaddon}|
 
-\citefield{lei:brasil-lei-11.892-2008}{titleaddon}
+\citefield{lei:brasil-11.892-2008}{titleaddon}
 
 \subsubsection{Elementos adicionais na citação}
 Existem muitas situações em que apenas citar o nome do autor e o ano não é o suficiente, e isso é facilmente resolvido no \verb|biblatex|. Utilizando-se de colchetes, informações sobre a citação podem ser adicionadas, como o número da página, essencial para citações diretas, a expressão ``tradução nossa'' para citações diretas traduzidas ou, então, artigos, parágrafos e incisos de documentos jurídicos. Por exemplo:
@@ -116,54 +116,123 @@ Existem muitas situações em que apenas citar o nome do autor e o ano não é o
 
 Ou:
 
-\verb|\cite[Art. 1º, I ]{lei:brasil-lei-11.892-2008}|
+\verb|\cite[Art. 1º, I ]{lei:brasil-11.892-2008}|
 
-\cite[Art. 1º, I ]{lei:brasil-lei-11.892-2008}\\
+\cite[Art. 1º, I ]{lei:brasil-11.892-2008}\\
 
 Para as citações simultâneas ou citações apud segue-se o mesmo padrão ao utilizar os colchetes:
 
 \verb|\cites[<info. fonte 1>]{<fonte 1>}[<info. fonte 2>]{<fonte 2>}|...
 
 \subsection{Exemplos de referências}
+O registro das referências é realizado
 
-\subsubsection{Documentos jurídicos}
-\paragraph{Legislação em meio eletrônico}
+\subsection{Livros, folhetos, etc.}
+\singlecite{livro:godinho-2014}
 
-\singlecite{lei:brasil-lei-11.892-2008}
+\singlecite{livro:bavaresco-2011}
 
-\subsubsection{Filmes, séries, vídeos, entre outros}
+\singlecite{livro:luck-2010}
+
+\subsubsection{Partes de livros, folhetos, etc.}
+\singlecite{parte:ex1}
+
+\singlecite{parte:ex2}
+
+\singlecite{parte:ex3}
+
+\subsubsection{Trabalhos acadêmicos}
+\singlecite{tese:aguiar-2009}
+
+\singlecite{tese:rodrigues-2009}
+
+\singlecite{tese:santos-2018}
+
+\subsubsection{Correspondência}
+\singlecite{correspondencia:ex1}
+
+\subsubsection{Publicação periódica}
+\paragraph{Coleção de publicação periódica}
+\singlecite{revista:ibge}
+
+\singlecite{revista:ufsc}
+
+\paragraph{Fascículo, suplemento e outros}
+\singlecite{revista:tres}
+
+\singlecite{revista:fgv}
+
+\paragraph{Artigo, seção e/ou matéria de publicação periódica}
+\singlecite{artigo:rocke-1985}\footnote{Atenção no arquivo de bibliografia, que usa o \texttt{issue} para adicionar a estação ao lado do ano. Isso pode ser usado para colocar o também mês, como algumas revistas colocam, ex.: \texttt{set./out.}}
+
+\singlecite{artigo:moore-2018}
+
+\singlecite{artigo:antunes-2018}
+
+\paragraph{Artigo e/ou matéria de jornal}
+\singlecite{noticia:credito-2014}
+
+\singlecite{noticia:verissimo-2010}
+
+\subsubsection{Patentes}
+O caso de referenciar patentes é um tanto confuso: a ABNT define como referenciar, porém, não foi localizado como que uma patente deve ser citada\footnote{Isso deve ser mais falha minha do que de outro alguém. Procurei, mas não achei nada pesquisando pela internet.}, por causa da questão do ano, que possui data de depósito e data de concessão. Qual delas deveria ser utilizada para citar? Porém, o próprio exemplo dado pela ABNT para a referência de patente em meio eletrônico, \cite{patente:eletronico}, apresenta as duas datas em um padrão em inglês\footnote{O próprio \LaTeX, na ausência do campo \texttt{date}, utilizou o ano do \texttt{urlaccessdate}.}. Então pode ser que os exemplos dados talvez não possam ser utilizados, não sem uma devida correção.
+
+\singlecite{patente:medidor}
+
+\singlecite{patente:embrapa}
+
+\singlecite{patente:eletronico}
+
+\subsubsection{Legislação}
+\singlecite{livro:constituicao-rs}
+
+\singlecite{lei:brasil-10.406-2002}
+
+\paragraph{Legislação no meio eletrônico}
+\singlecite{livro:constituicao-brasil}
+
+\singlecite{lei:brasil-11.892-2008}
+
+\subsubsection{Jurisprudência}
+\singlecite{jurisprudencia:ex1}
+
+\singlecite{jurisprudencia:ex2}
+
+\paragraph{Jurisprudência no meio eletrônico}
+\singlecite{jurisprudencia:eletronico}
+
+\subsubsection{Atos administrativos normativos}
+\singlecite{ato:ex1}
+
+\singlecite{ato:ex2}
+
+\subsubsection{Filmes, vídeos, entre outros}
 Para filmes, séries, vídeos, entre outros é necessário dar uma adaptada. Existe o tipo de entrada \texttt{@movie}, contudo, que não possui configuração pelo \texttt{biblatex-abnt}. Nesse caso, isso não se torna em um problema, pois, mesmo utilizando o tipo sem formatação, garante-se a característica mais importante do padrão ABNT para este tipo de obra: deixar em caixa alta apenas o primeiro termo do título da obra. O resto das informações são adicionadas em campos que possuem a mesma posição na hora de impressão\footnotemark. Seguem-se os exemplos:
   \footnotetext{Eu não consegui identificar quais seriam os atributos mais corretos para adicionar os dados. E isso é algo que acontece bastante.}
 
 \singlecite{filme:bee-movie}
-\begin{verbatim}
-@movie{filme:bee-movie,
-title        = {Bee Movie},
-subtitle     = {A História de uma Abelha},
-edition      = {Direção: Simon J. Smith, Steve Hickner},
-location     = {Estados Unidos},
-publisher    = {DreamWorks},
-year         = {2007},
-howpublished = {1 vídeo (91min). Título original: Bee Movie. 
-Acesso pelo serviço de streaming Netflix.},
-}
-\end{verbatim}
 
 \singlecite{serie:grande-familia}
-\begin{verbatim}
-@movie{serie:grande-familia,
-title        = {{A Grande} Família},
-edition      = {Direção: Maurício Farias. Intérpretes: 
-Marco Nanini, Marieta Severo, Lúcio Mauro Filho, Rogério 
-Cardoso, Pedro Cardoso, Guta Stresser, Marcos Oliveira.},
-location     = {Rio de Janeiro},
-publisher    = {TV Globo},
-year         = {2002},
-howpublished = {Temporada 2, 37 episódios.},
-}
-\end{verbatim}
 
-\subsection{Dando o jeitinho para conseguir a formatação desejada}
-Teste
+\subsection{Adaptando as referências para alcançar a formatação desejada}
+% Uso de tipos que dão a formatação mais próxima do desejado
+
+% Tirar proveito do editor e editortype
+  % Observar o tipo da entrada (alguns colocam em parênteses outro dois pontos)
+
+% Uso de nameaddon e titleaddon
+
+% Uso de @booklet para registro que use "Cidade, outra info, ainda outra  "
+
+% Uso de addendum e note
+
+% Uso de option
+%   labelnamefield
+%   labeltitlefield
+%   use<name>
+
+% Uso de comandos dentro de referências
+  % Usar \autocap
+  % Usar \nopunct
 
 Às vezes é necessário que duas ou mais palavras sejam identificadas como um termo só e, no arquivo de bibliografia, isto é alcançado ao adicioná-las dentro de um outro par de chaves. Por exemplo, obras sem indicação de autoria, ou de responsabilidade, que necessitam deixar em caixa alta a primeira palavra, incluindo artigo ou palavra monossilábica inicial, como no caso de \citetitle{filme:bee-movie} ou \citetitle{serie:grande-familia}.
