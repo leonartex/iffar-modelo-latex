@@ -1,6 +1,8 @@
 \chapter{Citações e referências}
-Uma das características mais positivas do \LaTeX{} é a capacidade de gerenciar o uso de referências e citações, que podem ser referenciações de elementos presentes em seu texto ou citações de referências bibliográficas. E, para referências bibliográficas\footnotemark, este modelo utiliza o pacote \verb|biblatex|, junto com a sua opção de formatação da ABNT. Então, este capítulo busca trazer um conjunto de exemplos do uso dessas referências, também levando em consideração o \verb|biblatex|, para formatar corretamente. O pacote não tem como possuir a formatação dos inúmeros tipos de documentos padronizados pela ABNT, sendo necessário, às vezes, dar uma adaptada para conseguir a formatação desejada.
-  \footnotetext{Neste capítulo são apresentados exemplos de referências considerando especificamente o \LaTeX, contudo, se tiver maiores dúvidas referências, é essencial que você consulte o Guia de Normalização de trabalhos do IFFar ou a norma ABNT NBR 6023:2018. Os dois documentos trazem exemplos de referências, mas, principalmente, o Guia também traz um conjunto de exemplos de como as citações devem ser realizadas.}
+Uma das características mais positivas do \LaTeX{} é a capacidade de gerenciar o uso de referências e citações, que podem ser referenciações de elementos presentes em seu texto ou citações de referências bibliográficas. E, para referências bibliográficas\footnotemark, este modelo utiliza o pacote \verb|biblatex|, junto com a sua opção de formatação da ABNT. Então, este capítulo busca trazer um conjunto de exemplos do uso dessas referências, também levando em consideração o \verb|biblatex|, para a correta formatação. O pacote não tem como possuir a formatação dos inúmeros tipos de documentos padronizados pela ABNT, sendo necessário, às vezes, dar uma adaptada para conseguir a formatação desejada.
+  \footnotetext{Neste capítulo são apresentados exemplos de referências considerando especificamente o uso no \LaTeX, contudo, se tiver maiores dúvidas sobre referências, é essencial que você consulte o Guia de Normalização de trabalhos do IFFar ou a norma ABNT NBR 6023:2018. Os dois documentos trazem um conjunto de exemplos de referências, mas, principalmente, o Guia também traz uma explicação e um conjunto de exemplos de como as citações devem ser realizadas.}
+
+  Na pasta \texttt{docs} desde modelo, também estão presentes um conjunto de documentos que podem ser usados para auxiliar no uso do \texttt{biblatex}: o primeiro é uma folha de consulta rápida trazendo os principais comandos utilizados no \texttt{biblatex}, o \texttt{biblatex-cheatsheet.pdf} \cite{pdf:biblatex-cheatsheet}; o segundo é a documentação do \texttt{biblatex-abnt}, com um conjunto de exemplos \cite{pdf:biblatex-abnt}; o terceiro é a documentação do próprio \texttt{biblatex} \cite{pdf:biblatex}; e o quarto é um arquivo \texttt{.bib} que traz um grande conjunto de exemplos de referências para o \texttt{biblatex-abnt}. Esse último é bastante útil para dar uma consultada, porém, o resultado de saída na impressão sempre deve levar como base a NBR 6023:2018, então use os exemplos sempre com alguma certa cautela\footnote{Assim como os próprios exemplos dados neste modelo. Eu sou apenas uma pessoa comum tentando fazer um bem maior. Eu não estou sendo pago. Eu cometo erros. Eu sou um ser humano. Imperfeito, mas sempre tentando dar o seu melhor.}.
 
 \section{Referênciação de elementos do texto}\label{section:referencia}
 Um aspecto básico, e muitas vezes necessário, é a referênciação de elementos presentes pelo seu texto, como figuras ou seções. O comando que permite criar essa referência é o comando \verb|\label|\footnote{\label{rodape:exemplo-ref}Uma dica é você criar um padrão nos nomes dos rótulos para facilitar a identificação e evitar o risco de repetir nomes, iniciando com o nome do tipo de elemento que você está querendo referenciar e depois o nome do elemento, utilizando dois pontos para separá-los, como \texttt{tabela:nome-tabela} ou \texttt{figura:nome-figura}.}, 
@@ -8,7 +10,7 @@ e, apesar de ser mais comum ver este comando presente em figuras ou tabelas, tam
 Depois, a citação é realizada através do comando \verb|\ref|, porém, é importante citar de que o comando do rótulo apenas seleciona o número do elemento, necessitando escrever separadamente o nome do elemento citado, como, por exemplo, citando a nota de rodapé \ref{rodape:exemplo-ref}, a Figura \ref{figura:marca-iffar}, o Anexo \ref{anexo:teste} ou a seção \ref{section:referencia}\footnote{Nisso, a padronização dos nomes, citados na nota \ref{rodape:exemplo-ref}, facilita bastante a identificação do elemento quando citados, para não se confundir na escrita.}. %ou a alínea \ref{alinea:exemplo-ref}. % O \ref para alíneas faz vir com o ) no nome, então não é tão útil
 
 \section{Referências bibliográficas}
-O gerenciamento das referências bibliográficas é realizado através do \verb|biblatex|, e o mesmo apresenta um conjunto de funções que podem ser utilizadas para facilitar a escrita. A primeira, e bastante importante, é que as obras da seção de referências só serão impressas se invocadas ao menos uma vez no documento através de citação. E, para as citações, existe um grande conjunto de comandos para citar as obras\footnote{\label{nota:biblatex-cheatsheet}No arquivo \texttt{docs/biblatex.pdfXXXXXXXX} encontra-se a documentação de um conjunto de comandos e registros utilizados pelo \texttt{biblatex}. Utilize-o como uma referência, para quando não souber os campos a serem utilizados no registro da referência ou os comandos para citações. Este capítulo do modelo busca apenas trazer uma ideia geral, não documentar tudo.}.
+O gerenciamento das referências bibliográficas é realizado através do \verb|biblatex|, e o mesmo apresenta um conjunto de funções que podem ser utilizadas para facilitar a escrita. A primeira, e bastante importante, é que as obras da seção de referências só serão impressas se invocadas ao menos uma vez no documento através de citação. E, para as citações, existe um grande conjunto de comandos para citar as obras.
 
 \subsection{Tipos e exemplos de citações}
 \subsubsection{Citação indireta}
@@ -40,7 +42,7 @@ Para citações de mais de três linhas, é necessário adicioná-las a um novo 
 
 Os dois comandos, \verb|\blockcquote| e \verb|\blockquote|%
 \footnote{Sendo justo, eu também não consegui fazer o \texttt{blockquote} funcionar corretamente com as citações do \texttt{biblatex}. Por isso recomendo o uso do \texttt{blockcquote}, que além de funcionar certinho, permite adicionar as informações anteriores e posteriores à obra citada.} 
-apresentam a mesma funcionalidade. Contudo, o \verb|\blockcquote| apresenta três argumentos para citações, permitindo adicionar informações adicionais anteriores e posteriores à fonte, como o número de páginas da citação direta, exigido pela ABNT. A grande vantagem de utilizar esse comando, é que ele cria o ambiente de citação de forma automática, ou seja, se o texto inserido possuir até três linhas, a citação aparece entre aspas no corpo do parágrafo, mas se apresentar mais de três linhas, é ajustado como o parágrafo com recuo e as outras formatações necessárias.
+apresentam a mesma funcionalidade. Contudo, o \verb|\blockcquote| apresenta três argumentos para citações, permitindo adicionar informações adicionais anteriores e posteriores à fonte, como o número das páginas das citações diretas, exigido pela ABNT. A grande vantagem de utilizar esse comando, é que ele cria o ambiente de citação de forma automática, ou seja, se o texto inserido possuir até três linhas, a citação aparece, já contendo as aspas, no corpo do parágrafo, mas, se apresentar mais de três linhas, é ajustado como o parágrafo com o recuo e as outras formatações necessárias.
 
 Por conta da característica do comando de se ajustar automaticamente, a citação pode ser inserida no meio do parágrafo e, se ela tiver até três linhas, \blockcquote{batman}{aparece no mesmo parágrafo (você também pode apenas colocar o conteúdo entre aspas, `se quiser')}, porém, se possuir mais de três linhas, torna-se um parágrafo separado:
 \blockcquote[tradução nossa]{filme:bee-movie}{De acordo com todas as leis conhecidas da aviação, não há como uma abelha poder voar. Suas asas são muito pequenas para tirar seu pequeno corpo gordo do chão. A abelha, obviamente, voa de qualquer maneira, porque abelhas não se importam com o que humanos pensam ser impossível}
@@ -101,7 +103,7 @@ Ou então utilizar o código criado para este modelo, \verb|\citeauthorfull|\foo
 
 \citeauthorfull{livro:dom-casmurro}\\
 
-E também existe a opção de citar determinados campos dos registros das referências, como já mostrado anteriormente, através do comando \verb|\citefield|\footnote{Nem todos os campos funcionam, pois alguns são listas e, então, também apresenta comando específico para tal.}:
+E também existe a opção de citar determinados campos dos registros das referências, como já mostrado anteriormente, através do comando \verb|\citefield|\footnote{Nem todos os campos funcionam, pois alguns são listas que, então, também possuem comando específico para tal.}:
 
 \verb|\citefield{lei:brasil-11.892-2008}{titleaddon}|
 
@@ -125,9 +127,11 @@ Para as citações simultâneas ou citações apud segue-se o mesmo padrão ao u
 \verb|\cites[<info. fonte 1>]{<fonte 1>}[<info. fonte 2>]{<fonte 2>}|...
 
 \subsection{Exemplos de referências}
-O registro das referências é realizado
+A seguir são apresentados exemplos de referências para variados tipos de documentos, porém, não leve os exemplos dados como os de melhor qualidade. Para alguns exemplos foi necessário realizar um conjunto de adaptações, que fogem da boa prática, para conseguir o resultado desejado. Será alertado no exemplo quando isso ocorrer, mas, recomenda-se sempre uma certa cautela ao seguir os exemplos, além de que alguns podem ter passado despercebido na revisão, para receber o alerta. Além de que, é claro, sempre é recomendado que se procure seguir as boas práticas contidas nas documentações dos pacotes sobre referências.
 
 \subsection{Livros, folhetos, etc.}
+\singlecite{livro:dom-casmurro}
+
 \singlecite{livro:godinho-2014}
 
 \singlecite{livro:bavaresco-2011}
@@ -174,8 +178,28 @@ O registro das referências é realizado
 
 \singlecite{noticia:verissimo-2010}
 
+\subsubsection{Evento}
+A referenciação de eventos é simples, mas possui algumas limitações seguindo os exemplos dados na NBR 6023:2018. Se for apenas um evento simples, de Anais e coisas do tipo, não tem complicação, porém, se for como os exemplos dados na NBR 6023, que apresentam dois eventos em uma mesma referência, surgem problemas. Nessa situação não foi identificada uma forma de fazer o correto registro das referências\footnote{Eu não consegui pensar em nada que não se baseasse em gambiarra.}.
+
+\paragraph{Evento no todo em monografia}
+\singlecite{evento:ex1}
+
+\singlecite{evento:ex2}
+
+\singlecite{evento:ex3}\footnote{Gambiarra}
+
+\paragraph{Evento no todo em publicação periódica}
+\singlecite{evento:ex4}\footnote{Gambiarra de verdade}
+
+\paragraph{Parte de evento}
+\singlecite{parte-evento:ex1}
+
+\singlecite{parte-evento:ex2}
+
+\singlecite{parte-evento:ex3}
+
 \subsubsection{Patentes}
-O caso de referenciar patentes é um tanto confuso: a ABNT define como referenciar, porém, não foi localizado como que uma patente deve ser citada\footnote{Isso deve ser mais falha minha do que de outro alguém. Procurei, mas não achei nada pesquisando pela internet.}, por causa da questão do ano, que possui data de depósito e data de concessão. Qual delas deveria ser utilizada para citar? Porém, o próprio exemplo dado pela ABNT para a referência de patente em meio eletrônico, \cite{patente:eletronico}, apresenta as duas datas em um padrão em inglês\footnote{O próprio \LaTeX, na ausência do campo \texttt{date}, utilizou o ano do \texttt{urlaccessdate}.}. Então pode ser que os exemplos dados talvez não possam ser utilizados, não sem uma devida correção.
+O caso de referenciar patentes é um tanto confuso: a ABNT define como referenciar, porém, não foi identificado como que uma patente deve ser citada no texto\footnote{Isso deve ser mais falha minha do que de qualquer outra pessoa. Procurei, mas não achei nada pesquisando pela internet.}, por causa da questão do ano, que possui data de depósito e data de concessão. Qual delas deveria ser utilizada para citar? Porém, o próprio exemplo dado pela ABNT para a referência de patente em meio eletrônico, \cite{patente:eletronico}, apresenta as duas datas em um padrão em inglês\footnote{O próprio \LaTeX, na ausência do campo \texttt{date}, utilizou o ano do \texttt{urlaccessdate}.}. Então pode ser que os exemplos dados talvez não possam ser utilizados, não sem uma devida correção.
 
 \singlecite{patente:medidor}
 
@@ -207,14 +231,38 @@ O caso de referenciar patentes é um tanto confuso: a ABNT define como referenci
 \singlecite{ato:ex2}
 
 \subsubsection{Filmes, vídeos, entre outros}
-Para filmes, séries, vídeos, entre outros é necessário dar uma adaptada. Existe o tipo de entrada \texttt{@movie}, contudo, que não possui configuração pelo \texttt{biblatex-abnt}. Nesse caso, isso não se torna em um problema, pois, mesmo utilizando o tipo sem formatação, garante-se a característica mais importante do padrão ABNT para este tipo de obra: deixar em caixa alta apenas o primeiro termo do título da obra. O resto das informações são adicionadas em campos que possuem a mesma posição na hora de impressão\footnotemark. Seguem-se os exemplos:
-  \footnotetext{Eu não consegui identificar quais seriam os atributos mais corretos para adicionar os dados. E isso é algo que acontece bastante.}
+Para filmes, séries, vídeos, entre outros é necessário dar uma adaptada. Existe o tipo de entrada \texttt{@movie}, contudo, que não possui configuração pelo \texttt{biblatex-abnt}. Nesse caso, isso não se torna em um problema, pois, mesmo utilizando o tipo sem formatação, garante-se a característica mais importante do padrão ABNT para obras sem uma clara autoria, ou responsabilidade: deixar em caixa alta apenas o primeiro termo do título da obra. O resto das informações são adicionadas em campos que possuem a mesma posição na hora de impressão. Seguem-se os exemplos:
 
 \singlecite{filme:bee-movie}
 
+\singlecite{serie:fullmetal}
+
 \singlecite{serie:grande-familia}
 
-\subsection{Adaptando as referências para alcançar a formatação desejada}
+\subsubsection{Documentos sonoros}
+\singlecite{sonoro:ex1}
+
+\singlecite{sonoro:ex2}
+
+\singlecite{sonoro:ex3}\footnote{Gambiarra}
+
+\singlecite{sonoro:ex4}
+
+\subsubsection{Documentos iconográficos}
+\singlecite{imagem:ex1}\footnote{Atenção para o uso do \texttt{noslsn} no campo \texttt{option}.}
+
+\singlecite{imagem:ex2}
+
+\singlecite{imagem:ex3}\footnote{Pequena gambiarra}
+
+\subsubsection{Documento de acesso exclusivo em meio eletrônico}
+\singlecite{software:ex1}
+
+\singlecite{software:ex2}
+
+\singlecite{tweet:ex1}
+
+\subsection{Ajustando as referências para alcançar a formatação desejada}
 % Uso de tipos que dão a formatação mais próxima do desejado
 
 % Tirar proveito do editor e editortype
@@ -234,5 +282,6 @@ Para filmes, séries, vídeos, entre outros é necessário dar uma adaptada. Exi
 % Uso de comandos dentro de referências
   % Usar \autocap
   % Usar \nopunct
+  % Usar \mkbibacro
 
-Às vezes é necessário que duas ou mais palavras sejam identificadas como um termo só e, no arquivo de bibliografia, isto é alcançado ao adicioná-las dentro de um outro par de chaves. Por exemplo, obras sem indicação de autoria, ou de responsabilidade, que necessitam deixar em caixa alta a primeira palavra, incluindo artigo ou palavra monossilábica inicial, como no caso de \citetitle{filme:bee-movie} ou \citetitle{serie:grande-familia}.
+Às vezes é necessário que duas ou mais palavras sejam identificadas como um termo só e, no arquivo de bibliografia, isto é alcançado ao adicioná-las dentro de um outro par de chaves. Por exemplo, isso acontece com: sobrenomes com designativo, como Neto, Filho, Júnior, etc.; ou obras sem indicação clara de autoria, ou de responsabilidade, que necessitam deixar em caixa alta a primeira palavra, incluindo artigo ou palavra monossilábica inicial, como no caso de \citetitle{filme:bee-movie} ou \citetitle{serie:grande-familia}.

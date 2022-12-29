@@ -10,26 +10,22 @@ Dúvidas:
 
 Afazeres: 
 
-    - Testar se o usepackage para configurações deu certo
-    - Testar o modelo em twoside (suspeito que o cabeçalho não fique certo)
-    - Verificar se o cabeçalho segue as recomendações correta
-    - Verificar se o rodapé segue as recomendações
-    - Testar e encontrar solução para caracteres diferentes nas URL (resolvido com XeLaTeX)
     - Adicionar metadados no arquivo PDF (nome de autor, etc.)
-    - Estudar sobre pacote titleps para gerenciar header e footer
     - Fazer a lista especial para leis de artigos e parágrafos (§):
 		- Permitir utilizar uma configuração que: soma a indentação de listas dentro de listas (padrão alínea); ou deixa todas as listas internas como se fosse uma coisa só (talvez usando wide)
 		- Configurar para a lista genérica receber o segundo argumento, que são as opções, como start e tals
 		- Configurar para a lista genérica receber argumentos opcionais, para alternar entre o modo wide ou padrão
 	- Ajustas as referências para repetir o nome de autores, não utilizando o filete
-	- Referência de mais de 3 linhas
 	- Dar exemplo dos variados tipos de representação de termos no Índice
 	- Identificar todas as informações sobre o curso necessárias para Natureza de Trabalho e folha de aprovação
+	- Adicionar o pacote para colocar descrição nas figuras
+	- Revisar os exemplos de referências para indicar as gambiarras
 
 
 Afazeres:
 
 Paginação
+	Tirar paginação das páginas em branco do final de cada capítulo (twoside)
 
 Formatação
 V	Leiaute e formato

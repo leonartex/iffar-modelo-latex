@@ -12,10 +12,10 @@
 
 \documentclass[
     12pt, % Tamanho de fonte definido para 12, se você precisar utilizar um texto em tamanho 10, utilize o comando \footnotesize, que será impresso em tamanho 10
-    % oneside,
-    twoside, % A opção permite gerar o documento utilizando o verso das páginas, porém, ela não indica à impressora que você está utilizando isso ou que ela deva imprimir nos dois lados das folhas (fonte: https://en.wikibooks.org/wiki/LaTeX/Document_Structure)
-    %openany,
-    %openright,
+    oneside, % Essa opção vem ativada por padrão, para imprimir em apenas um lado da folha. Comente esta e descomente a opção de baixo se quiser imprimir nos dois lados de uma folha.
+    % twoside, % A opção permite gerar o documento utilizando o verso das páginas, porém, ela não indica à impressora que você está utilizando isso ou que ela deva imprimir nos dois lados das folhas (fonte: https://en.wikibooks.org/wiki/LaTeX/Document_Structure)
+    openany,
+    % openright, % Essa seria uma opção válida, se não afetasse também os capítulos pós-textuais
     a4paper,
     english,
     brazil
@@ -104,7 +104,7 @@
 % Usa o biber por ser uma versão mais parruda do bibtex, adicionalmente, utilizando o pacote biblatex. É importante por resolver uma quantia de erros por conta de caracteres especiais, principalmente na URL das referências
 \usepackage[backend=biber, style=abnt, repeatfields]{biblatex}
 \addbibresource{bibliografia.bib} % Você pode adicionar mais de um arquivo.bib, apenas adicione outra linha com o nome do segundo arquivo
-\usepackage{config/bibliografia-abnt} % Ajustes necessários por causa que o pacote biblatex-abnt não foi atualizado para algumas das mais novas normas da ABNT
+\usepackage{config/bibliografia} % Ajustes necessários por causa que o pacote biblatex-abnt não foi atualizado para algumas das mais novas normas da ABNT
 
 % Pacote responsável por permitir criar o índice. Se você não for utilizar índice, e provavelmente não vai, é só comentar essas duas linhas abaixo e o comando \printindex no final do documento
 \usepackage{imakeidx}
@@ -116,6 +116,7 @@
     unicode=true
 }
 \usepackage{url}
+\urlstyle{same} % Para deixar os links com a mesma fonte do documento.
 
 \usepackage{lipsum} % Pacote meramente cosmético, para testes. Remova ele quando for utilizar o modelo.
 
@@ -203,8 +204,11 @@
 
 \begingroup
   \input{capitulos/5-referencias.tex}
-  % Recomendação do Guia de Normalização de iniciar cada elemento pré-textual e textual no anverso da página
-  \OnesideTwoside{\clearpage}{\cleardoublepage}
+  % Recomendação do Guia de Normalização de iniciar cada elemento pré-textual e textual no anverso da página:
+  % Por algum motivo, o \cleardoublepage aqui tá dando uma bugada nesse último capítulo, criando duas páginas em branco. Não tenho ideia do motivo. Faça o seguinte: utilize qualquer um dos dois, desde que a 1 página em branco necessária para as referências iniciar em uma página ímpar (nem sei se é realmente necessário)
+  % Talvez nem seja necessário um \clearpage aqui, por causa que o guia não fala nada sobre recomendar iniciar elemento pós-textual no anverso da folha, apesar que eu acho que seria legal iniciar apenas a referência (o primeiro elemento pós-textual). Sei lá, siga seu coração
+  % \OnesideTwoside{\clearpage}{\cleardoublepage}
+  \clearpage
 \endgroup
 
 %% Aqui são adicionados as referências, apêndices e anexos. É essencial que eles estejam dentro desse ambiente, para formatar corretamente o título da seção deles
