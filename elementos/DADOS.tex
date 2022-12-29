@@ -1,7 +1,7 @@
 %%%%
 %%  IMPORTANTE
 %%%%
-\newcommand{\isTCC}{1} % Se o seu trabalho for TCC, coloque 1. Mas se o seu trabalho não for um TCC, ou seja, é tese ou dissertação, coloque 0. Esse comando é usado para verificar e então configurar algumas páginas, como capa, folha de rosto e folha de aprovação/certificação
+\newcommand{\isTCC}{0} % Se o seu trabalho for TCC, coloque 1. Mas se o seu trabalho não for um TCC, ou seja, é tese ou dissertação, coloque 0. Esse comando é usado para verificar e então configurar algumas páginas, como capa, folha de rosto e folha de aprovação/certificação
 % Comando para imprimir um conteúdo para TCC e outro para quando for tese ou dissertação
 \newcommand{\tccOuNao}[2]{%
     \ifnum\isTCC>0
@@ -22,11 +22,12 @@
 }
 
 %%%%
-%%  Preenchimento dos dados do seu trabalho
+%%  Preenchimento dos dados gerais do seu trabalho
 %%%%
 % Dados de identificação do trabalho
 \newcommand{\tituloTrabalho}{Modelo LaTeX} % Título do seu trabalho
-\newcommand{\separadorTrabalho}{:\space} % Aqui você identifica o caractere que irá separar o título do subtítulo. Eu já vi trabalho que não utiliza dois pontos, então sei lá, deixei para permitir configuração, recomendo conversar com quem te orienta. Se não possuir subtítulo, deixar vazio, em branco (sem espaço)
+\newcommand{\separadorTrabalho}{:\space} % Aqui você identifica o caractere que irá separar o título do subtítulo. É bastante importante que o caractere de espaço (\space) esteja no comando, para não criar um espaço quando não houver subtítulo. 
+% Eu já vi trabalho que não utiliza dois pontos, então sei lá, deixei para permitir configuração. A ABNT estabelece que título e subtítulo deve ser separado por dois pontos, de qualquer forma. Então recomendo a você conversar com quem te orienta. Se não possuir subtítulo, deixar vazio, em branco (sem espaço)
 \newcommand{\subtituloTrabalho}{como é gostoso usar um template completinho} % Subtítulo. Se não possuir subtítulo, deixar vazio, em branco (sem espaço)
 
 % O seu nome completo
@@ -37,37 +38,90 @@
 \newcommand{\anoEntrega}{[Ano de entrega]} % O ano em que o trabalho foi entregue
 \newcommand{\diaDefesa}{[Dia]}
 \newcommand{\mesDefesa}{[Mês por extenso]}
-\newcommand{\anoDefesa}{[Ano de defesa]} % O ano em que o trabalho foi defendido (atente-se que pode ter diferença, sei lá, pode acontecer da pessoa só poder defender no outro ano, apesar de ter entregue no ano anterior. Eu não sei se acontece esse tipo de situação)
+\newcommand{\anoDefesa}{[Ano de defesa]} % O ano em que o trabalho foi defendido (atente-se que pode ter diferença, sei lá, vai que pode acontecer da pessoa só poder defender no outro ano, apesar de ter entregue no ano anterior. Eu não sei como funciona e muito menos se acontece esse tipo de situação, mas vai, é só um dadinho a mais para preencher, não tem estresse)
 
-% ALERTA: Dependendo do curso pode ser que não fique tão redondinho o texto dependendo do valor preenchido. Por exemplo, o nome completo do curso foi pensado para situações como: \modalidadeCurso + \nomeCurso, tipo Bacharelado + em + Sistemas de Informação, mas talvez não funcione tão bem na folha de rosto, então, no pior dos casos, preencha manualmente esses dados nos arquivos. Eu tentei automatizar o máximo possível, para facilitar a vida do usuário, mas sempre existem situações que fogem do planejado.
-\newcommand{\tipoTrabalho}{[Insira o tipo de trabalho]} % ex.: Dissertação; Tese; Monografia (apesar que eu acho que não usa para a graduação)
-\newcommand{\modalidadeCurso}{[Insira a modalidade]} % ex.: Mestrado; Doutorado; Bacharelado; Licenciatura; Tecnologia
-\newcommand{\tituloCurso}{[Insira o título de formação]} % ex.: Bacharel ou Bacharela; Licenciado ou Licenciada; Tecnólogo ou Tecnóloga; Mestre ou Mestra; Doutor ou Doutora
-\newcommand{\nomeCurso}{[Insira o nome do seu curso ou Programa]} % Coloque o nome do seu curso ou Programa de Pós-graduação
+
+%%%%
+%%  Preenchimento de dados da capa
+%%%%
+\newcommand{\nomeInstituicao}{Instituto Federal de Educação, Ciência e Tecnologia Farroupilha}
 \newcommand{\nomeCampus}{[Insira o nome do seu Campus]} % Campus vai com C maiúsculo
-\newcommand{\nomeInstituicao}{Instituto Federal de Educação, Ciência e Tecnologia Farroupilha} % Só pra poupar ajustes e tals
+\newcommand{\nomeCursoPrograma}{[Insira o nome do seu curso ou Programa]} % Coloque o nome do seu curso ou Programa de Pós-graduação
 
-% Os dados de quem te orientou
+%%%%
+%%  Preenchimento de dados específicos por tipo de trabalho
+%%%%
+%%
+% Para o caso de TCC
+%%
+\newcommand{\tccModalidadeCurso}{[Insira a modalidade]} % ex.: Bacharelado; Licenciatura; Tecnologia
+\newcommand{\tccNomeCurso}{[Insira o nome do seu curso]} % Coloque o nome do seu curso. Ex.: Sistemas de Informação; Matemática; Física
+\newcommand{\tccTituloCurso}{[Insira o título de formação]} % ex.: Bacharel ou Bacharela; Licenciado ou Licenciada; Tecnólogo ou Tecnóloga;
+% Não reutilizei o nome de curso utilizado na capa por causa que, sei lá, vai que, no caso de pós-graduação fique uma estrutura meio diferente. Melhor deixar como partes isoladas
+\newcommand{\tccNomeCursoCompleto}{\tccModalidadeCurso{} em \tccNomeCurso} % Não altere, no máximo o termo que conecta as duas partes (nem sei se tem curso com estrutura de nome diferente)
+\newcommand{\tccNomeCentroDept}{[Insira o nome do Centro/Departamento (Campus?)]} % Nome do centro/departamento. No caso de IFFar eu acho que só vai o nome do Campus mesmo.
+% \newcommand{\tccNomeCentroDept}{\nomeCampus} % Você pode utilizar esse comando aqui caso realmente seja o nome do Campus
+
+%%
+% Para o caso de Tese e Dissertação
+%%
+\newcommand{\teseTipoTrabalho}{[Insira o tipo de trabalho]} % ex.: Dissertação; Tese;
+\newcommand{\teseTitulo}{[Insira o título de formação]} % ex.: Mestre (ou Mestra? Eu não sei, me desculpem); Doutor ou Doutora
+\newcommand{\teseTipoFormacao}{[Insira o tipo de formação]} % ex.: Mestrado; Doutorado
+\newcommand{\teseNomePrograma}{[Insira o nome do seu Programa]}
+\newcommand{\teseFormacao}{[Insira o título de formação obtido pelo seu Programa]} % ex.: Sei lá, eu não sei muito disso, mas tô ligado que é bastante variado
+
+
+%%%%
+%%  Preenchimento de dados da banca examinadora
+%%%%
+%%
+% O tamanho do espaço vertical em branco dado para as assinaturas
+%%
+% Não tenha medo de ajustar o espaço utilizado, principalmente se você estiver utilizando a fonte Times New Roman ou não tiver coorientação. A Fonte Arial tem um tamanho maior, então tudo acaba ficando mais estreito e, então, fiz a folha de aprovação/certificação imaginando o cenário de usar essa fonte maior, junto com a ocorrência de coorientação
+\newcommand{\tamanhoAssinatura}{1cm}
+\tccOuNao{ % Tamanho dado para TCC (é mais apertadinho)
+    \renewcommand{\tamanhoAssinatura}{0.75cm}
+}{ % Tamanho dado para Teses e Dissertações
+    \renewcommand{\tamanhoAssinatura}{1.5cm}
+}
+
+%%
+% Os dados de quem te orientou:
+%%
 \newcommand{\orientador}{[Insira o nome do(a) orientador(a)]}
 \newcommand{\orientadorTitulacao}{[Prof.(a) Dr.(a)]}
 \newcommand{\orientadorInstituicao}{[Instituição do(a) orientador(a)]}
+\newcommand{\orientadorApresentacao}{Orientador(a)}
 
 \newcommand{\coorientador}{[Insira o nome do(a) coorientador(a)]} % Deixe vazio, em branco (sem espaço), se não possuir. O template configura certinho dessa maneira
 \newcommand{\coorientadorTitulacao}{[Prof.(a) Dr.(a)]}
 \newcommand{\coorientadorInstituicao}{[Instituição do(a) coorientador(a)]}
+\newcommand{\coorientadorApresentacao}{Coorientador(a)}
 
-% Os dados sobre a sua banca
+%%
+% Os dados sobre os examinadores da sua banca
+%%
+%% ATENÇÃO: Para o caso de TCC, utilize Avaliador(a) para a apresentação dos membros da banco e, para Tese ou Dissertação, utilize Examinador(a)
 \newcommand{\bancaUm}{[Insira o nome da primeira pessoa da banca]}
 \newcommand{\bancaUmTitulacao}{[Prof.(a) Dr.(a)]}
 \newcommand{\bancaUmInstituicao}{[Instituição da primeira pessoa da banca]}
+\newcommand{\bancaUmApresentacao}{Avaliador(a)}
 
 \newcommand{\bancaDois}{[Insira o nome da segunda pessoa da banca]}
 \newcommand{\bancaDoisTitulacao}{[Prof.(a) Dr.(a)]}
 \newcommand{\bancaDoisInstituicao}{[Instituição da segunda pessoa da banca]}
+\newcommand{\bancaDoisApresentacao}{Avaliador(a)}
 
-\newcommand{\bancaTres}{[Insira o nome da terceira pessoa da banca]} % Deixe em branco a terceira pessoa da banca se for um TCC (ou tanto faz, não vai ser impresso de qualquer forma) 
+\newcommand{\bancaTres}{[Insira o nome da terceira pessoa da banca]} % Deixe em branco a terceira pessoa da banca se for um TCC (ou tanto faz, não vai ser impresso) 
 \newcommand{\bancaTresTitulacao}{[Prof.(a) Dr.(a)]}
 \newcommand{\bancaTresInstituicao}{[Instituição da terceira pessoa da banca]}
+\newcommand{\bancaTresApresentacao}{Examinador(a)}
 
+%%
+% Os dados sobre a coordenação do seu curso ou Programa
+%%
+% Isso é realmente necessário? Estou seguindo o exemplo dado no Guia de Normalização, mas parece tão "informação demais", além de deixar muito pouco espaço para assinatura na folha de aprovação, utilizando fonte Arial. Isso sem contar que aí o maluco ainda tem que ir atrás de coordenador pra pegar assinatura (ele é obrigado a estar na defesa?). Sei não, só estou fazendo o que me mandam, sou apenas um trabalhador que por acaso gosta de usar LaTeX
 \newcommand{\coordenador}{[Insira o nome do(a) coordenador(a) do curso ou Programa]}
 \newcommand{\coordenadorTitulacao}{[Prof.(a) Dr.(a)]}
+\newcommand{\coordenadorApresentacao}{Coordenador(a)}

@@ -5,8 +5,8 @@
 % Contato: leonardo.2017007421@aluno.iffar.edu.br
 
 % IMPORTANTE: 
-%   O modelo utiliza o compilador XeLaTex (talvez possam ser utilizados outros, mas não é garantido o correto funcionamento, visto que seria necessário testar, porém, eu sei que alguns vão apresentar problemas na hora de compilar, como o pdflatex)
-%   Se você estiver utilizando o Overleaf, com o documento aberto, clique em Menu, no canto superior esquerdo, e selecione o XeLaTex como compilador
+%   O modelo utiliza o compilador XeLaTeX (talvez possam ser utilizados outros, mas não é garantido o correto funcionamento, visto que seria necessário testar, porém, eu sei que alguns vão apresentar problemas na hora de compilar, como o pdflatex)
+%   Se você estiver utilizando o Overleaf, com o documento aberto, clique em Menu, no canto superior esquerdo, e selecione o XeLaTeX como compilador
 %   Também é utilizado o biber para gerenciar as referências bibliográficas
 %%%%%%%%%%%%%%
 
@@ -104,7 +104,7 @@
 % Usa o biber por ser uma versão mais parruda do bibtex, adicionalmente, utilizando o pacote biblatex. É importante por resolver uma quantia de erros por conta de caracteres especiais, principalmente na URL das referências
 \usepackage[backend=biber, style=abnt, repeatfields]{biblatex}
 \addbibresource{bibliografia.bib} % Você pode adicionar mais de um arquivo.bib, apenas adicione outra linha com o nome do segundo arquivo
-\usepackage{config/bibliografia} % Ajustes necessários por causa que o pacote biblatex-abnt não foi atualizado para algumas das mais novas normas da ABNT
+\usepackage{config/bibliografia} % Ajustes necessários por causa que o pacote biblatex-abnt não foi atualizado para algumas das mais novas normas da NBR 6023:2018
 
 % Pacote responsável por permitir criar o índice. Se você não for utilizar índice, e provavelmente não vai, é só comentar essas duas linhas abaixo e o comando \printindex no final do documento
 \usepackage{imakeidx}
@@ -118,7 +118,7 @@
 \usepackage{url}
 \urlstyle{same} % Para deixar os links com a mesma fonte do documento.
 
-\usepackage{lipsum} % Pacote meramente cosmético, para testes. Remova ele quando for utilizar o modelo.
+\usepackage{lipsum} % Pacote meramente cosmético, para testes. Remova ele quando for utilizar o modelo e não tiver mais nenhum chamado para o comando \lipsum, mas só se quiser. Mal esse pacote não deve fazer.
 
 \removecitation{apud}
 
@@ -132,10 +132,10 @@
 \include{elementos/capa.tex} % ITEM OBRIGATÓRIO
 
 \pagenumbering{arabic}
-\setcounter{page}{1} % Coloca para resetar a contagem daqui em diante, porém tem um problema: onde tiver capítulo, ele começa a contar as páginas, necessitando adicionar o comando \thispagestyle{empty} após cada um dos capítulos de seções pré-textuais
+\setcounter{page}{1} % Coloca para resetar a contagem daqui em diante, porém tem um problema: onde tiver capítulo, ele começa a contar as páginas. Apesar que eu acho que só chamar o \pagenumbering{arabic} já reinicia a contagem.
 % Não mostra a paginação
 % Fonte: https://texfaq.org/FAQ-nopageno
-\pagestyle{empty}
+\pagestyle{empty} % Esse comando nem é necessário com a lógica booleana para ocultar o número da página, mas deixo por questão de segurança (me sinto mais seguro com ele, como se fosse um talismã)
 \begin{SecoesNaoNumeradas}
   \include{elementos/folha-rosto.tex}  % ITEM OBRIGATÓRIO
   \include{elementos/folha-aprovacao.tex}  % ITEM OBRIGATÓRIO
@@ -145,23 +145,18 @@
   \include{elementos/resumo.tex} % ITEM OBRIGATÓRIO
   \include{elementos/abstract.tex} % ITEM OBRIGATÓRIO
 
-  \renewcommand\addvspace[1]{} % Remove o espaço adicional nos títulos das listas de figuras, tabelas e quadros
+  \renewcommand\addvspace[1]{} % Remove o espaço adicional que tem nos títulos das listas de figuras, tabelas e quadros
   % Lista de figuras:
-  \listoffigures%
-  \thispagestyle{empty}
-  % Recomendação do Guia de Normalização de iniciar cada elemento pré-textual e textual no anverso da página
+  \listoffigures%  
+  % Recomendação do Guia de Normalização de iniciar cada elemento pré-textual e textual no anverso da página:
   \OnesideTwoside{\clearpage}{\cleardoublepage}
   
   % Lista de tabelas:
-  \listoftables%
-  \thispagestyle{empty}
-  % Recomendação do Guia de Normalização de iniciar cada elemento pré-textual e textual no anverso da página
+  \listoftables%  
   \OnesideTwoside{\clearpage}{\cleardoublepage}
   
   % Lista de quadros:
-  \listofquadros%
-  \thispagestyle{empty}
-  % Recomendação do Guia de Normalização de iniciar cada elemento pré-textual e textual no anverso da página
+  \listofquadros%  
   \OnesideTwoside{\clearpage}{\cleardoublepage}
   
   % Adicione aqui as outras listas que você criar, como lista de gráficos, fotos, etc.
@@ -170,45 +165,40 @@
   \include{elementos/lista-simbolos.tex}
 
   %Sumário
-  \tableofcontents  % ITEM OBRIGATÓRIO
-  \thispagestyle{empty}
-  % Recomendação do Guia de Normalização de iniciar cada elemento pré-textual e textual no anverso da página
+  \tableofcontents % ITEM OBRIGATÓRIO  
   \OnesideTwoside{\clearpage}{\cleardoublepage}
 \end{SecoesNaoNumeradas}
-\clearpage
+% \clearpage
 
+% Altero o comando \isPreTextual para sinalizar que agora não é mais a parte pré-textual, então, pode voltar a mostrar a paginação
+\renewcommand{\isPreTextual}{0}
 \pagestyle{fancyplain}
 \begingroup
   \input{capitulos/1-introducao.tex}
-  % Recomendação do Guia de Normalização de iniciar cada elemento pré-textual e textual no anverso da página
   \OnesideTwoside{\clearpage}{\cleardoublepage}
 \endgroup
 
 \begingroup
   \input{capitulos/2-configuracao.tex}
-  % Recomendação do Guia de Normalização de iniciar cada elemento pré-textual e textual no anverso da página
   \OnesideTwoside{\clearpage}{\cleardoublepage}
 \endgroup
 
 \begingroup
   \input{capitulos/3-elementos-opcionais.tex}
-  % Recomendação do Guia de Normalização de iniciar cada elemento pré-textual e textual no anverso da página
   \OnesideTwoside{\clearpage}{\cleardoublepage}
 \endgroup
 
 \begingroup
   \input{capitulos/4-elementos-comuns.tex}
-  % Recomendação do Guia de Normalização de iniciar cada elemento pré-textual e textual no anverso da página
   \OnesideTwoside{\clearpage}{\cleardoublepage}
 \endgroup
 
 \begingroup
-  \input{capitulos/5-referencias.tex}
-  % Recomendação do Guia de Normalização de iniciar cada elemento pré-textual e textual no anverso da página:
-  % Por algum motivo, o \cleardoublepage aqui tá dando uma bugada nesse último capítulo, criando duas páginas em branco. Não tenho ideia do motivo. Faça o seguinte: utilize qualquer um dos dois, desde que a 1 página em branco necessária para as referências iniciar em uma página ímpar (nem sei se é realmente necessário)
-  % Talvez nem seja necessário um \clearpage aqui, por causa que o guia não fala nada sobre recomendar iniciar elemento pós-textual no anverso da folha, apesar que eu acho que seria legal iniciar apenas a referência (o primeiro elemento pós-textual). Sei lá, siga seu coração
+  \input{capitulos/5-referencias.tex}:
+  % Por algum motivo, o \clearpage e o \cleardoublepage aqui tá dando uma bugada nesse último capítulo, criando duas páginas em branco. Não tenho ideia do motivo. Faça o seguinte: utilize qualquer um dos dois, desde que a 1 página em branco necessária para as referências iniciar em uma página ímpar (nem sei se é realmente necessário)
+  % Talvez nem seja necessário um \clearpage aqui, por causa que o guia fala sobre recomendar iniciar apenas elemento pré-textual e textual no anverso da folha, apesar que eu acho que seria legal iniciar apenas a referência (o primeiro elemento pós-textual). Sei lá, siga seu coração
   % \OnesideTwoside{\clearpage}{\cleardoublepage}
-  \clearpage
+  % \clearpage
 \endgroup
 
 %% Aqui são adicionados as referências, apêndices e anexos. É essencial que eles estejam dentro desse ambiente, para formatar corretamente o título da seção deles
@@ -241,5 +231,4 @@
 \printindex % Comente esta linha se não for utilizar índice
 
 \end{SecoesNaoNumeradas}
-
 \end{document}

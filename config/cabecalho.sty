@@ -1,8 +1,19 @@
+% Comandos para não mostrar a paginação enquanto estiver na parte pré-textual
+\newcommand{\isPreTextual}{1} % Basicamente uma variável booleana. 0 = não é pré-textual; 1 = parte pré-textual
+% Verifico se o valor for maior que 0 (ainda é pré-textual) para não mostrar o número da página
+\newcommand{\showPageNumber}{ 
+    \ifnum\isPreTextual>0%
+        % Significa que é pré-textual, logo, não mostra o número da página, ou seja, não faz nada
+    \else
+        \footnotesize\thepage % Se não é pré-textual, mostra o número da página
+    \fi
+}
+
 \pagestyle{fancyplain}
 \fancyhead{}
 % \fancyhead[R]{\footnotesize\thepage} % Se você estiver utilizando a opção oneside
 % \fancyhead[RO, LE]{\footnotesize\thepage} % Se você estiver utilizando a opção twoside
-\OnesideTwoside{\fancyhead[R]{\footnotesize\thepage}}{\fancyhead[RO, LE]{\footnotesize\thepage}} % Verifico automaticamente
+\OnesideTwoside{\fancyhead[R]{\showPageNumber}}{\fancyhead[RO, LE]{\showPageNumber}} % Verifico automaticamente o oneside ou twoside
 \fancyfoot{}
 \renewcommand{\headwidth}{16cm} % 16cm pois A4 tem 21cm de largura, retirando as margens, sobra 16cm
 \renewcommand{\headrulewidth}{0pt} % zera linha de cabeçalho
