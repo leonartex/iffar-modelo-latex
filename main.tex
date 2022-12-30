@@ -40,11 +40,23 @@
 % Ou pode ser Arial, também:
 \setmainfont{Arial}
 
-% Pacote responsável por adicionar símbolos matemáticos. Símbolos, por exemplo, também necessários para o correto referenciamento de leis e decretos
-\usepackage{amssymb}
+% Pacotes matemático (algébrico):
+\usepackage{amsmath}
+\usepackage{amssymb} % Pacote responsável por adicionar símbolos matemáticos. Símbolos, por exemplo, também necessários para o correto referenciamento de leis e decretos 
 % Só que também é importante realizar a configuração para adicionar os comandos que imprimem esses símbolos associados aos caracteres que imprimem, assim, você pode adicionar o símbolo diretamente no texto
 \usepackage{newunicodechar} % Pacote que permite definir novos caracteres
 \usepackage{config/unicode-char} % Arquivo de configuração com a listagem desses caracteres
+% \usepackage{unicode-math} % Pacote para deixar as expressões matemáticas com diferentes fontes
+% \defaultfontfeatures{ Scale=MatchLowercase, Ligatures = TeX }
+% \setmainfont{Arial}
+% \setsansfont{Arial}
+% \setmonofont{Andale Mono}
+% \setmathfont{GFSNeohellenicMath.otf}
+% \setmathfont[range=up]{Arial}
+% \setmathfont[range=it]{Arial Italic}
+% \setmathfont[range=bfup]{Arial Bold}
+% \setmathfont[range=bfit]{Arial Bold Italic}
+% \setmathfont[range=tt]{Andale Mono}
 
 %% Pacotes para formatação de conteúdo na página
 \usepackage[left=3cm,top=3cm,right=2cm,bottom=2cm]{geometry} % Pacote responsável por formatar as dimensões das margens das páginas.
@@ -72,6 +84,7 @@
 \usepackage{enumitem}
 \usepackage{config/enumerate} % Definição das listas de alíneas, subalíneas e índice
 
+\usepackage{rotating} % Adiciona a capacidade de rotacionar elementos (pode ser usado dentro de tabela)
 \usepackage{float} % Adiciona configurações adicionais para elementos float (figuras, tabelas, quadros, etc.)
 \usepackage{tabularx} % Tabelas no LaTeX são limitadas em algumas características, este pacote resolve algumas dessas falhas
 \usepackage{multirow} % Permite criar células com múltiplas linhas nas tabelas
@@ -92,6 +105,7 @@
 \counterwithout{figure}{chapter} 
 \counterwithout{table}{chapter}
 \counterwithout{quadro}{chapter}
+\counterwithout{equation}{chapter}
 % Obs.: Se você precisar criar outro elemento (e outra lista), como de gráficos ou de qualquer outro tipo, é, teoricamente, bastante simples: 
 %   - Você declara o novo ambiente com o \DeclareFloatingEnvironment, junto com o nome do elemento e o título de sua lista
 %   - Remove a contabilização do capítulo com o \counterwithout (apesar que acho que isso pode ser realizado no próprio \DeclareFloatingEnvironment)
@@ -196,7 +210,7 @@
 \endgroup
 
 \begingroup
-  \input{capitulos/5-referencias.tex}:
+  \input{capitulos/5-referencias.tex}
   % Por algum motivo, o \clearpage e o \cleardoublepage aqui tá dando uma bugada nesse último capítulo, criando duas páginas em branco. Não tenho ideia do motivo. Faça o seguinte: utilize qualquer um dos dois, desde que a 1 página em branco necessária para as referências iniciar em uma página ímpar (nem sei se é realmente necessário)
   % Talvez nem seja necessário um \clearpage aqui, por causa que o guia fala sobre recomendar iniciar apenas elemento pré-textual e textual no anverso da folha, apesar que eu acho que seria legal iniciar apenas a referência (o primeiro elemento pós-textual). Sei lá, siga seu coração
   % \OnesideTwoside{\clearpage}{\cleardoublepage}

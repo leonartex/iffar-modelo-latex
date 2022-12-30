@@ -66,13 +66,12 @@ Também existem alternativas para caso não seja desejado ter o registro da font
 
 \apud[Um Autor Imaginário][]{batman}\\
 
-\verb|Um Autor Imaginário \apud[apud][p. 42]{batman}|
+\verb|Um Autor Imaginário \cite[apud][p. 42]{batman}|
 
-Um Autor Imaginário \apud[apud][p. 42]{batman}
+Um Autor Imaginário \cite[apud][p. 42]{batman}
 
-\subsubsection{Citação por outros elementos da referência}
-Quando busca-se citar por alguns elementos diferentes da obra, como o título de uma obra, ou seu ano, podem ser utilizados determinados comandos para realizar tal função\footnotemark. Isso facilita o trabalho, por não precisar realizar a escrita manualmente, diminuindo as chances de erros, caso seja necessário atualizar algum dado da obra.
-  \footnotetext{Como citado na nota \ref{nota:biblatex-cheatsheet}, o documento PDF traz um conjunto de comandos. Você pode consultá-lo para visualizar outros exemplos.}
+\subsubsection{Citação de outros elementos da referência}
+Quando busca-se citar por alguns elementos diferentes da obra, como o título de uma obra, ou seu ano, podem ser utilizados determinados comandos para realizar tal função. Isso facilita o trabalho, por não precisar realizar a escrita manualmente, diminuindo as chances de erros, caso seja necessário atualizar algum dado da obra.
 
 Para citar pelo título da obra, utiliza-se \verb|\citetitle|, ou, que também possui outras utilidades, \verb|\citefield|, por exemplo: 
 
@@ -137,6 +136,10 @@ A seguir são apresentados exemplos de referências para variados tipos de docum
 \singlecite{livro:bavaresco-2011}{}
 
 \singlecite{livro:luck-2010}{}
+
+\singlecite{livro:iffar-guia-normalizacao-2022}{}
+
+\singlecite{livro:abnt-nbr6023:2018}{}
 
 \subsubsection{Partes de livros, folhetos, etc.}
 \singlecite{parte:ex1}{}
@@ -263,16 +266,30 @@ Para filmes, séries, vídeos, entre outros é necessário dar uma adaptada. Exi
 \singlecite{tweet:ex1}{}
 
 \subsection{Ajustando as referências para alcançar a formatação desejada}
-% Uso de tipos que dão a formatação mais próxima do desejado
+É muito importante que busque-se utilizar-se sempre da boa prática, ao realizar os registros de referências bibliográficas. Utilizar o tipo correto e os valores nos campos corretos é bastante relevante, pois, permite o uso das mesmas em outros padrões, contudo, nem sempre isso é possível. A ABNT apresenta algumas inconsistências em alguns exemplos e o \texttt{biblatex-abnt} também não prevê todos os casos de uso. Além disso, até o momento da escrita\footnote{30 de dezembro de 2022}, não está atualizado para todas as normas da segunda edição da NBR 6023, por isso é imporante saber adaptar, quando necessário. 
 
+Nos próprios exemplos apresentados anteriormente, foi realizada a anotação da ocorrência de adaptação, para alcançar a formatação necessária. Existem muitas formas de contornar as limitações das referências e, aqui, serão discutidas algumas delas. E esses métodos são são desde utilizar o tipo que formate o mais próximo possível até o desvirtuamento de campos, para inserir o valor formatado na posição desejada. Esse último, em especial, deve-se tomar bastante cuidado, para não afetar campos importantes na hora da citação, como o nome de autoria ou responsabilidade, título e data da referência.
+
+\subsubsection{Utilização de tipo que possua a formatação mais semelhante possível}
+% Uso de tipos que dão a formatação mais próxima do desejado
+O método de utilizar um tipo de entrada que formate próximo do formato desejado é fácil de entender. Por exemplo, o \texttt{biblatex-abnt} não formata corretamente o tipo \texttt{@letter} existente, neste caso, como observado em \textcite{correspondencia:ex1}, no caso, foi utilizado o tipo \texttt{@booklet}, assim, garantindo a formatação destacada na NBR 6023. 
+
+\subsubsection{Utilização dos campos editor e editortype}
 % Tirar proveito do editor e editortype
   % Observar o tipo da entrada (alguns colocam em parênteses outro dois pontos)
+Outro método, que, de certa forma, ainda mantém uma boa prática é a utilização dos campos \texttt{editor} e \texttt{editortype}. O \texttt{biblatex} também apresenta outras três variações (\texttt{editora}, \texttt{editorb} e \texttt{editorc}) que podem ser utilizado da mesma forma. No caso, o campo \texttt{editortype} possui um conjunto de valores previamente estabelecidos, como: \textit{organizer}, \textit{editor}, \textit{translator}, etc. O \texttt{biblatex-abnt} também está configurado para tal, contudo, tem o porém de utilizar a inicial maíuscula na sigla, além de deixar em caixa alta o último sobrenome dos nomes, em algumas situações. A boa prática pede que seja utilizado esses termos definidos, mas o usuário pode colocar o termo que quiser no campo.
 
-% Uso de nameaddon e titleaddon
+Um exemplo do método pode ser observado em \textcite{parte:ex1}, utilizado de forma a contornar a contornar a situação fora de padrão do nome do país entre parênteses\footnote{Também foi utilizado o \texttt{nameaddon} nessa situação.}. E o exemplo de contornar a formatação com inicial maíuscula da sigla pode ser visualizado em \textcite{parte:ex2} e \textcite{livro:iffar-guia-normalizacao-2022}. Porém, também existem tipo de entradas que adicionam os dados de \texttt{editor} antes de dois pontos, que seria a boa prática a se utilizar no caso de \textcite{filme:bee-movie} e \textcite{serie:grande-familia}, mas que, com o sobrenome ficando em caixa alta, foge da formatação utilizada na NBR 6023 para este tipo de documento.
 
-% Uso de @booklet para registro que use "Cidade, outra info, ainda outra  "
+\subsubsection{Utilização de nameaddon e titleaddon}
+% Uso de nameaddon e titleaddon (junto com \nopunct)
+Outra forma de contornar as limitações pode ser através do uso dos campos \texttt{nameaddon} e \texttt{titleaddon}: O primeiro adiciona informações após o nome do autor e o segundo após o título ou subtítulo. Junto com o método o comando \verb|\nopunct|, que retira a pontuação final de um campo para outro, aumenta ainda mais as possibilidades. E nos exemplos dados nas seções anteriores, são inúmeras as referências que utilizam, algumas por limitação, outras por necessidade.
 
+\subsubsection{Utilização de addendum e note}
 % Uso de addendum e note
+Utilizar addendum e note, para informações adicionais é uma necessidade para muitos documentos, principalmente para adicionar elementos complementares. Porém, além de permitir adicionar elementos complementares, pode ser utilizado para adicionar informações essenciais em que não foi identificada a melhor forma de realizar o registro.
+
+\cite{sonoro:ex4}
 
 % Uso de option
 %   labelnamefield
