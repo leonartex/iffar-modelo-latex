@@ -120,8 +120,6 @@
 
 \usepackage{lipsum} % Pacote meramente cosmético, para testes. Remova ele quando for utilizar o modelo e não tiver mais nenhum chamado para o comando \lipsum, mas só se quiser. Mal esse pacote não deve fazer.
 
-\removecitation{apud}
-
 \begin{document}
 \onehalfspacing
 \justifying
@@ -138,6 +136,7 @@
 \pagestyle{empty} % Esse comando nem é necessário com a lógica booleana para ocultar o número da página, mas deixo por questão de segurança (me sinto mais seguro com ele, como se fosse um talismã)
 \begin{SecoesNaoNumeradas}
   \include{elementos/folha-rosto.tex}  % ITEM OBRIGATÓRIO
+  \include{elementos/ficha-catalografica.tex}  % ITEM OBRIGATÓRIO
   \include{elementos/folha-aprovacao.tex}  % ITEM OBRIGATÓRIO
   \include{elementos/dedicatoria.tex}
   \include{elementos/agradecimentos.tex}

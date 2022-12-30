@@ -5,7 +5,9 @@ Dúvidas:
 		A margem de 10cm é de 10cm de página inteira, restando 11cm dos 21cm da largura da A4? Ou é sobre a área do texto, restando 6cm dos 16cm, ao considerar a margem de 3cm à esquerda e 2cm à direita?
 		Utiliza indentação?
 		Para a epígrafe do início da monografia: Utiliza-se essas mesmas recomendações?
-	- FAZER O NEGÓCIO DA PAGINAÇÃO
+	- Tirar dúvida sobre a ficha catalográfica e ficha de identificação
+		- A primeira, os dados são feitos pelo bibliotecário, mas é ele também quem adiciona no documento, ou o aluno pega esses dados e adiciona ao documento?
+		- A segunda, não tenho ideia de como seja estruturada
 
 
 Afazeres: 
@@ -20,6 +22,7 @@ Afazeres:
 	- Identificar todas as informações sobre o curso necessárias para Natureza de Trabalho e folha de aprovação
 	- Adicionar o pacote para colocar descrição nas figuras
 	- Revisar os exemplos de referências para indicar as gambiarras
+	- Resolver a virgula a mais nos negócio de evento
 
 
 Afazeres:
