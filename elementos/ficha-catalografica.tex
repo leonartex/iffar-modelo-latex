@@ -8,8 +8,11 @@
         Ficha catalográfica
 
         \hspace{\fill}
-        \fbox{
-            \begin{minipage}{12cm}
+        \setlength{\fboxrule}{1pt}
+        % \fcolorbox{black}{cinzadestaque}{% Se quiser uma caixinha colorida, use essa linha. Lembrando que você pode criar novas cores e utilizá-las aqui, igual eu fiz com essa atualmente no código
+        \fbox{ % Se não quiser caixinha colorida, use essa linha
+            \begin{minipage}[c]{12cm}
+            % \begin{minipage}[c][8cm]{8cm} % Eu não sei quais são as medidas utilizadas para a caixa com os dados. É só ajustar depois que eu descobrir
                 \vspace{\baselineskip}
                 \begin{flushleft}
                     \lipsum[1-2]

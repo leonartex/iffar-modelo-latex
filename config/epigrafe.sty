@@ -1,0 +1,17 @@
+% Largura da folha: 21cm
+% Margem à esquerda: 3cm
+% Margem à direita: 2cm
+% Espaço para texto: 16cm;
+% Margem à esquerda necessária: 10cm
+% Se for margem esquerda de 10cm da folha inteira, tamanho de: 9cm
+% Se for margem de 10cm considerando apenas a parte de texto: 6cm 
+\newenvironment{epigrafe}{
+    \hspace{\fill}
+    \begin{minipage}{6cm}
+        \begin{singlespace} % A epígrafe tem que usar espaçamento símples
+            \begin{flushright} % Tem que ser alinhado à direita
+}{
+            \end{flushright}
+        \end{singlespace}
+    \end{minipage}
+}
