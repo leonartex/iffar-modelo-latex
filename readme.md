@@ -11,6 +11,7 @@ Dúvidas:
 	- Exemplos de Censo do IBGE e normas da ABNT
 	- Figura com código de programação
 	- Deixar as expressões matemáticas com fonte Arial
+	- Visualizar se dá pra remover o pacote AlphAlph usando o \mknumalph do biblatex
 
 Afazeres: 
 

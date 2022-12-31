@@ -301,7 +301,7 @@
     eventdate       = {1984},
     venue           = {Valencia},
     title           = {Proceedings\nopunct},
-    titleaddon        = {[\ldots].},
+    titleaddon        = {\bibellipsis.},
     location        = {Valencia},
     publisher       = {Instituto de Agroquímica y Tecnología de Alimentos},
     date            = {1984},
@@ -314,8 +314,8 @@
       number          = {4},
       eventdate       = {1996},
       venue           = {Recife},
-      title           = {Anais eletrônicos\nopunct},
-      titleaddon      = {[\ldots].},
+      title           = {Anais eletrônicos \nopunct},
+      titleaddon      = {\bibellipsis.},
       location        = {Recife},
       publisher       = {UFPe},
       date            = {1996},
@@ -332,7 +332,7 @@
     eventyear       = {CONGRESSO DE SOJA DO MERCOSUL, 2009},
     venue           = {Goiânia},
     title           = {Anais\nopunct},
-    titleaddon        = {[\ldots].},
+    titleaddon        = {\bibellipsis.},
     location        = {Brasília, DF},
     publisher       = {Embrapa},
     year            = {2009},
@@ -363,7 +363,7 @@
       eventdate       = {1994},
       venue           = {São Paulo},
       booktitle       = {Anais\nopunct},
-      booktitleaddon  = {[\ldots].},
+      booktitleaddon  = {\bibellipsis.},
       location        = {São Paulo},
       publisher       = {\mkbibacro{USP}},
       date            = {1994},
@@ -376,7 +376,7 @@
     eventtitle      = {Congresso Brasileiro de Ciência do Solo},
     venue           = {Rio de Janeiro},
     booktitle       = {Resumos\nopunct},
-    booktitleaddon  = {[\ldots].},
+    booktitleaddon  = {\bibellipsis.},
     number          = {26},
     eventdate       = {1997},
     location        = {Rio de Janeiro},
@@ -623,6 +623,16 @@
     year = {1977},
     note = {1 CD, faixa 7}
   }
+  % Uma prova de que pode-se chegar no mesmo resultado tanto com gambiarra quanto sem (o melhor é tentar chegar sem gambiarra)
+  @inbook{sonoro:ex3-alt,
+    title = {Jura secreta},
+    titleaddon = {Intérprete: Simone. Compositores: S. Costa e A. Silva},
+    booktitle = {Face a face},
+    booktitleaddon = {Intérprete: Simone},
+    publisher = {Emi-Odeon Brasil},
+    year = {1977},
+    note = {1 CD, faixa 7. Versão alternativa da referência, sem muito desvirtuamento dos campos de texto, mais correta.}
+  }
 
   @audio{sonoro:ex4,
     title = {Anticast 66},
@@ -689,32 +699,37 @@
   @misc{tweet:ex1,
     author       = {{guizin Ohh +Brabo!!}},
     title        = {Pow Rabanada EH Bonzao Mas N Da Pra Come Com a Familia N Fi\nopunct},
-    titleaddon   = {[\ldots].},
+    titleaddon   = {\bibellipsis.},
     date         = {2020-12-24},
     note = {Twitter: @guizin{\_}jeferson},
     url = {https://twitter.com/guizin_jeferson},
     urlaccessdate = {2020-12-25},
-    options     = {nosn}
+    options      = {nosn}
   }
 
   @misc{site:iffar-identidade-visual-2021,
-    org-short     = {IFFar},
-    organization = {IFFar --- Instituto Federal Farroupilha},
-    howpublished = {\textit{online}},
-    title        = {Sobre a Secom},
-    publisher = {IFFar},
-    year         = {2021},
-    url          = {https://www.iffarroupilha.edu.br/comunica%C3%A7%C3%A3o/apresenta%C3%A7%C3%A3o#identidade-visual-do-iffar},
+    % org-short     = {IFFar},
+    organization  = {Instituto Federal Farroupilha},
+    nameaddon     = {Assessoria de Comunicação},
+    howpublished  = {\textit{online}},
+    title         = {Sobre a Secom},
+    location      = {Santa Maria},
+    publisher     = {IFFar},
+    year          = {2021},
+    url           = {https://www.iffarroupilha.edu.br/comunica%C3%A7%C3%A3o/apresenta%C3%A7%C3%A3o#identidade-visual-do-iffar},
     urlaccessdate = {2022-12-16}
   }
 
-  @online{site:latex-impressora,
-    author = {{Wikibooks}},
-    howpublished = {\textit{online}},
-    title        = {LaTeX/Document Structure},
-    publisher = {Wikibooks},
-    date         = {2022-10-06},
-    url          = {https://www.iffarroupilha.edu.br/comunica%C3%A7%C3%A3o/apresenta%C3%A7%C3%A3o#identidade-visual-do-iffar},
+  @inbook{site:latex-impressora,
+    howpublished  = {\textit{online}},
+    title         = {LaTeX/Document Structure},
+    booktitle = {Wikibooks},
+    booksubtitle  = {Open books for an open world},
+    location      = {[San Francisco, CA},
+    publisher     = {Wikimedia Foundation]},
+    date          = {2022-10-06},
+    year          = {2022},
+    url           = {https://en.wikibooks.org/wiki/LaTeX/Document_Structure},
     urlaccessdate = {2022-12-29}
   }
   
@@ -745,12 +760,23 @@
     url          = {https://www.ctan.org/pkg/biblatex},
     urlaccessdate= {2022-30-12}
   }
+  
+  @misc{bib:biblatex-abnt,
+    author       = {Meneghetti, Douglas De Rizzo},
+    title        = {NBR6023-2018.bib},
+    date         = {2020-07-25},
+    year         = {2020},
+    note         = {1 arquivo, extensão BIB (107KB).},
+    url          = {https://github.com/abntex/biblatex-abnt/blob/dev/bibtex/bib/biblatex-abnt/NBR6023-2018.bib},
+    urlaccessdate= {2022-30-12}
+  }
 
 @misc{batman,
   author = {Batman},
   title = {Batman},
-  year = {2023},
-  options = {noslsn}
+  year = {1940},
+  options = {noslsn},
+  note         = {Não leve a sério essa referência, era apenas para exemplificar o apud e eu tava com preguiça pra pesquisar uma citação apud verdadeira.},
 }
 
 @misc{exemplo:apud,
