@@ -20,7 +20,6 @@ Afazeres:
 		- Configurar para a lista genérica receber argumentos opcionais, para alternar entre o modo wide ou padrão
 	- Ajustas as referências para repetir o nome de autores, não utilizando o filete
 	- Dar exemplo dos variados tipos de representação de termos no Índice
-	- Identificar todas as informações sobre o curso necessárias para Natureza de Trabalho e folha de aprovação
 	- Adicionar o pacote para colocar descrição nas figuras
 	- Revisar os exemplos de referências para indicar as gambiarras
 	- Resolver a virgula a mais nos negócio de evento

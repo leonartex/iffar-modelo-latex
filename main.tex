@@ -98,7 +98,7 @@
 % Figuras podem ser imagens (SVG, por padrão, não funciona), mas documentos PDF também são compatíveis
 \graphicspath{ {./img/} } % Adiciona um caminho padrão para arquivo
 % Permite modificar a apresentação das legendas (caption) de figuras, quadros e tabelas
-\usepackage[labelsep=endash, font=singlespacing, justification=centering]{caption} % Modifica a separação da numeração da legenda com a descrição dela
+\usepackage[labelsep=endash, font=singlespacing, justification=centering, skip=2pt]{caption} % Modifica a separação da numeração da legenda com a descrição dela
 \usepackage{newfloat} % Permite criar floats, como o caso dos quadros, de forma prática
 \DeclareFloatingEnvironment[listname={Lista de quadros}, name={Quadro}]{quadro} % Crio o elemento float Quadro
 % Removo a contabilização de capítulo na numeração das figuras, tabelas e quadros (isso ocorre ao utilizar o documentclass de book ou report)
