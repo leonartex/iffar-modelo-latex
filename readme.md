@@ -4,14 +4,12 @@ Dúvidas:
 	- Sobre epígrafes: "Sugere-se digitar com fonte 12, itálico, espaçamento simples, com recuo de 10 cm da margem esquerda, alinhado pela margem direita. O autor pode ser destacado em negrito."
 		A margem de 10cm é de 10cm de página inteira, restando 9cm dos 21cm da largura da A4? Ou é sobre a área do texto, restando 6cm dos 16cm que se tem ao considerar a margem de 3cm à esquerda e 2cm à direita?
 		Utiliza indentação?
-		Para a epígrafe do início da monografia: Utiliza-se essas mesmas recomendações?
+		Para a epígrafe do início da monografia: Utilizam-se essas mesmas recomendações?
 	- Tirar dúvida sobre a ficha catalográfica e ficha de identificação
 		- A primeira, os dados são feitos pelo bibliotecário, mas é ele também quem adiciona no documento, ou o aluno pega esses dados e adiciona ao documento?
 		- A segunda, não tenho ideia de como seja estruturada
-	- Exemplos de Censo do IBGE e normas da ABNT
-	- Figura com código de programação
-	- Deixar as expressões matemáticas com fonte Arial
-	- Visualizar se dá pra remover o pacote AlphAlph usando o \mknumalph do biblatex
+	- Quais são as margens utilizados nos elementos de capa e folha de rosto?
+		- A natureza do trabalho deve iniciar em uma altura determinada da folha, ou apenas preencho o espaço que restar entre os outros elementos da folha? O mesmo vale pra título e tals.
 
 Afazeres: 
 
@@ -26,6 +24,10 @@ Afazeres:
 	- Adicionar o pacote para colocar descrição nas figuras
 	- Revisar os exemplos de referências para indicar as gambiarras
 	- Resolver a virgula a mais nos negócio de evento
+	- Exemplos de Censo do IBGE e normas da ABNT
+	- Figura com código de programação
+	- Deixar as expressões matemáticas com fonte Arial
+	- Verificar se dá pra remover o pacote AlphAlph usando o \mknumalph do biblatex
 
 
 Afazeres:

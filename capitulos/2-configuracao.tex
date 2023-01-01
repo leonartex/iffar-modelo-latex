@@ -9,14 +9,14 @@ Importante ressaltar de que, no caso de não existir coorientação, o comando \
 \section{Ajustando outros espaçamentos}
 Outros elementos que podem receber o ajuste em determinados espaçamentos são: sumário; lista de siglas; lista de símbolos; e a margem das notas de rodapé. Neles foram utilizados a unidade \textbf{ex}, que usa como referência o tamanho de uma letra \textit{x}, mas você pode utilizar qualquer outra medida aceita pelo \LaTeX. Isso é algo extremamente opcional de se realizar, porém, podem existir situações que necessitam disso, pois o espaço utilizado ou é muito grande, ou muito pequeno.
 
-Para ajustar o espaçamento do \textbf{sumário}: Acesse o arquivo \\\texttt{config/sumario.sty} e altere todas as linhas que tiverem ``\verb|\contentslabel|\\\verb|[\thecontentslabel]{10ex}|''. O \texttt{10ex} representa o espaço utilizado, que foi definido considerando um possível número de seções, que chegam até o quinto nível.
+Para ajustar o espaçamento do \textbf{sumário}: Acesse o arquivo \\\texttt{config/sumario.sty} e altere o comando \verb|\espacoAlinhamentoSumario|. O \texttt{10ex} representa o espaço utilizado, que foi definido considerando um possível número de seções, que chegam até o quinto nível.
 
 Para ajustar as listas de \textbf{símbolos} e de \textbf{siglas}: Acesso os respectivos arquivos de cada uma dessas duas listas, na pasta \texttt{elementos/}, alterando o espaço definido nos comandos \verb|\simboloLargura| e \verb|\siglaLargura|, respectivamente.
 
 O ajuste do espaçamento do algarismo da nota de rodapé pode ser alterado no arquivo \texttt{config/rodape.sty}. Só descomentar a linha indicada no arquivo e escolher o tamanho do espaçamento para alinhamento. Não foi identificado em nenhum lugar, ou passou despercebido, a indicação de qual deveria ser a margem entre o algarismo e a nota, então, a configuração foi deixada intocada.
 
 \section{Escolha de fonte}
-No início do arquivo \texttt{main.tex} você pode optar entre utilizar fonte Arial ou Times New Roman. Isso é realizado pelo o comando \verb|\setmainfont|. Você apenas precisa comentar uma dessas linhas e descomentar a fonte escolhida no início do arquivo.
+No início do arquivo \texttt{main.tex} você pode optar entre utilizar fonte Arial ou Times New Roman. Isso é realizado pelo o comando \verb|\setmainfont|, você apenas precisa localizar esses comandos, comentar uma dessas linhas e descomentar a fonte escolhida no início do arquivo.
 
 \section{Criação de novos elementos de ilustração e listas}\label{section:novos-elementos}
 Uma característica que pode ser necessária em seu trabalho é a criação de novos elementos de ilustração para listagem. Por exemplo, você pode necessitar criar um elemento Gráfico, ou Fotografias, junto com suas respectivas listas. E isso é facilmente realizavel no arquivo \texttt{main.tex}: abaixo da importação do pacote \texttt{newfloat} estão contidas as instruções para realizar tal ajuste.

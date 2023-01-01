@@ -68,8 +68,8 @@
   }
 
   @book{livro:abnt-nbr6023:2018,
-    org-short      = {ABNT},
-    organization   = {ABNT --- Associação Brasileira de Normas Técnicas},
+    % org-short      = {ABNT},
+    organization   = {Associação Brasileira de Normas Técnicas},
     title          = {NBR 6023},
     subtitle       = {Informação e documentação: Referências: Elaboração},
     location       = {Santa Maria},
@@ -310,7 +310,7 @@
   % Fonte: https://github.com/abntex/biblatex-abnt/blob/dev/bibtex/bib/biblatex-abnt/NBR6023-2018.bib#L626
   @proceedings{evento:ex2,
       keywords        = {7.6.3},
-      organization    = {Congresso de Iniciação Científica da {UFPe}},
+      eventtitle    = {Congresso de Iniciação Científica da {UFPe}},
       number          = {4},
       eventdate       = {1996},
       venue           = {Recife},
@@ -323,7 +323,7 @@
       urldate         = {1997-01-21},
   }
 
-  % Sem condições. A ABNT dá uns exemplos esquisitos de "evento dentro de evento" (?). Eu não sei o que fazer para imprimir certo, se não uma boa de uma gambiarra
+  % Sem condições. A ABNT dá uns exemplos esquisitos de "evento dentro de evento" (?) ou evento duplo. Eu não sei o que fazer para imprimir certo, sem uma boa de uma gambiarra
   @proceedings{evento:ex3,
     org-short = {CBSOJA},
     organization    = {Congresso Brasileiro de Soja},
@@ -343,8 +343,9 @@
     organization    = {Congresso Brasileiro de Olericultura},
     number          = {41.;\nopunct},
     eventyear       = {ENCONTRO SOBRE PLANTAS MEDICINAIS, AROMÁTICAS E CONDIMENTARES, 1., 2009},
-    venue           = {Brasília, DF: Apresentação, artigos, palestras, instruções...\nopunct},
-    title       = {Horticultura Brasileira},
+    venue           = {Brasília, DF},
+    maintitle       = {Horticultura Brasileira},
+    chapter       = {Apresentação, artigos, palestras, instruções...},
     location        = {Brasília, DF},
     publisher       = {Sociedade de Olericultura do Brasil, v. 19, n. 2},
     date            = {2001-07},
@@ -769,6 +770,18 @@
     note         = {1 arquivo, extensão BIB (107KB).},
     url          = {https://github.com/abntex/biblatex-abnt/blob/dev/bibtex/bib/biblatex-abnt/NBR6023-2018.bib},
     urlaccessdate= {2022-30-12}
+  }
+
+  @misc{pdf:resumo-aluisio,
+    author       = {Aluísio, Sanda M.},
+    title        = {A Escrita de resumos em Português e Inglês e suas ferramentas de apoio},
+    location     = {São Carlos},
+    publisher    = {ICMC},
+    date         = {2015},
+    year         = {[2015]},
+    note         = {1 arquivo, extensão PDF (2,11MB).},
+    url          = {https://escritacientifica.sc.usp.br/wp-content/uploads/MPCC_4_Resumos.pdf},
+    urlaccessdate= {2022-31-12}
   }
 
 @misc{batman,

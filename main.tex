@@ -143,14 +143,11 @@
 
 \include{elementos/DADOS.tex}
 
-\pagestyle{empty}
+\pagestyle{empty} % Tô deixando esse comando mais por hábito, ele não é necessário para a lógica utilizada para ocultar a paginação e também ela deixa de ter efeito em elementos que contenham capítulos, como alguns pré-textuais possuem
+\pagenumbering{jujuba} % Valor fictício para não realizar a contagem da capa
 \include{elementos/capa.tex} % ITEM OBRIGATÓRIO
 
-\pagenumbering{arabic}
-\setcounter{page}{1} % Coloca para resetar a contagem daqui em diante, porém tem um problema: onde tiver capítulo, ele começa a contar as páginas. Apesar que eu acho que só chamar o \pagenumbering{arabic} já reinicia a contagem.
-% Não mostra a paginação
-% Fonte: https://texfaq.org/FAQ-nopageno
-\pagestyle{empty} % Esse comando nem é necessário com a lógica booleana para ocultar o número da página, mas deixo por questão de segurança (me sinto mais seguro com ele, como se fosse um talismã)
+\pagenumbering{arabic} % Aqui volta-se a ter a contagem de páginas
 \begin{SecoesNaoNumeradas}
   \include{elementos/folha-rosto.tex}  % ITEM OBRIGATÓRIO
   \include{elementos/ficha-catalografica.tex}  % ITEM OBRIGATÓRIO

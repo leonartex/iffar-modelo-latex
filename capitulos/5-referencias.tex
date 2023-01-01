@@ -1,4 +1,4 @@
-\chapter{Citações e referências}
+\chapter{Citações e referências}\label{capitulo:referencias}
 Uma das características mais positivas do \LaTeX{} é a capacidade de gerenciar o uso de referências e citações, que podem ser referenciações de elementos presentes em seu texto ou citações de referências bibliográficas. E, para referências bibliográficas\footnotemark, este modelo utiliza o pacote \verb|biblatex|, junto com a sua opção de formatação da ABNT. Então, este capítulo busca trazer um conjunto de exemplos do uso dessas referências, também levando em consideração o \verb|biblatex|, para a correta formatação. O pacote não tem como possuir a formatação dos inúmeros tipos de documentos padronizados pela ABNT, sendo necessário, às vezes, dar uma adaptada para conseguir a formatação desejada.
   \footnotetext{Neste capítulo são apresentados exemplos de referências considerando especificamente o uso no \LaTeX, contudo, se tiver maiores dúvidas sobre referências, é essencial que você consulte o Guia de Normalização de trabalhos do IFFar ou a norma ABNT NBR 6023:2018. Os dois documentos trazem um conjunto de exemplos de referências, mas, principalmente, o Guia também traz uma explicação e um conjunto de exemplos de como as citações devem ser realizadas.}
 
@@ -190,6 +190,7 @@ A referenciação de eventos é simples, mas possui algumas limitações seguind
 \singlecite{evento:ex2}{}
 
 \singlecite{evento:ex3}{\footnote{Gambiarra}}
+\cite{evento:ex3}
 
 \paragraph{Evento no todo em publicação periódica}
 \singlecite{evento:ex4}{\footnote{Gambiarra de verdade}}
@@ -267,10 +268,11 @@ Para filmes, séries, vídeos, entre outros é necessário dar uma adaptada. Exi
 
 \singlecite{site:latex-impressora}{\footnote{Essa é a mesma formatação utilizada para citar artigos da Wikipédia.}}
 
-\subsection{Ajustando as referências para alcançar a formatação desejada}
-É muito importante que busque-se utilizar-se sempre da boa prática, ao realizar os registros de referências bibliográficas. Utilizar o tipo correto e os valores nos campos corretos é bastante relevante, pois, permite o uso das mesmas em outros padrões, contudo, nem sempre isso é possível. A ABNT apresenta algumas inconsistências em alguns exemplos e o \texttt{biblatex-abnt} também não prevê todos os casos de uso. Além disso, até o momento da escrita\footnote{30 de dezembro de 2022}, não está atualizado para todas as normas da segunda edição da NBR 6023, por isso é imporante saber adaptar, quando necessário. 
 
-Nos próprios exemplos apresentados anteriormente, foi realizada a anotação da ocorrência de adaptação, para alcançar a formatação necessária. Existem muitas formas de contornar as limitações das referências e, aqui, serão discutidas algumas delas. E esses métodos são são desde utilizar o tipo que formate o mais próximo possível até o desvirtuamento de campos, para inserir o valor formatado na posição desejada. Esse último, em especial, deve-se tomar bastante cuidado, para não afetar campos importantes na hora da citação, como o nome de autoria ou responsabilidade, título e data da referência.
+\subsection{Ajustando as referências para alcançar a formatação desejada}
+É muito importante que busque-se utilizar-se sempre da boa prática, ao realizar os registros de referências bibliográficas. Utilizar o tipo correto e os valores nos campos corretos é bastante relevante, pois, permite o uso das mesmas em outros padrões, contudo, nem sempre isso é possível. A ABNT apresenta algumas peculiaridades que fogem do comum em alguns exemplos e o \texttt{biblatex-abnt} também não prevê todos os casos de uso\footnote{Na maioria das vezes não vai ter mistério na hora de registrar a referência, é só mesmo que algumas situações são um tanto nebulosas por causa da ABNT e aí fica essa necessidade de fazer gambiarra, até mesmo por falta de algum conhecimento mais profundo sobre o \texttt{biblatex} e o \texttt{biblatex-abnt} (a documentação do pacote não é das melhores).}. Além disso, até o momento da escrita\footnote{30 de dezembro de 2022}, não está atualizado para todas as normas da segunda edição da NBR 6023, por isso é imporante saber adaptar, quando necessário. 
+
+Nos próprios exemplos apresentados anteriormente, foi realizada a anotação da ocorrência de adaptação, para alcançar a formatação necessária. Existem muitas formas de contornar as limitações das referências e, aqui, serão discutidas algumas delas. E esses métodos são são desde utilizar um tipo que formate o mais próximo possível até o desvirtuamento de campos, para inserir o valor formatado na posição desejada. Esse último, em especial, deve-se tomar bastante cuidado, para não afetar campos importantes na hora da citação, como o nome de autoria ou responsabilidade, título e data da referência.
 
 \subsubsection{Utilização de tipo que possua a formatação mais semelhante possível}
 % Uso de tipos que dão a formatação mais próxima do desejado

@@ -6,46 +6,47 @@
 %%%%
 %%  Estilizando o sumário
 %%%%
-% Obs.: Se, por conta do número muito grande de seções em vários níveis, o número das seções estiverem desconfigurando o sumário, pode ser necessário aumentar o tamanho da margem entre o índice e o título das seções. Para isso, dê um ctrl+f e substitua o 10ex por um número maior, ou, se você utilizar poucos níveis de seções, você também pode diminuir o número para diminuir a margem (10ex significa o comprimento da impressão de 10 letras x)
+% Obs.: Se, por conta do número muito grande de seções em vários níveis, o número das seções estiverem desconfigurando o sumário, pode ser necessário aumentar o tamanho da margem entre o índice e o título das seções. Para isso, substitua o 10ex do comando \espacoAlinhamentoSumario por um número maior, ou, se você utilizar poucos níveis de seções, você também pode diminuir o número para diminuir a margem (10ex significa o comprimento da impressão de 10 letras x)
+\newcommand{\espacoAlinhamentoSumario}{10ex}
 
 % Ajuste da formatação para seções primárias (capítulos)
 \titlecontents{chapter}
-[10ex] % left margin
+[\espacoAlinhamentoSumario] % left margin
 {\bfseries} % above code
-{\contentslabel[\thecontentslabel]{10ex}\MakeUppercase}
+{\contentslabel[\thecontentslabel]{\espacoAlinhamentoSumario}\MakeUppercase}
 % {\thecontentslabel\MakeUppercase} % numbered format %{\contentslabel[\MakeUppercase{\chaptername}~\thecontentslabel]{7em}\MakeUppercase}%
 {\MakeUppercase} % unnumbered format
 {\mdseries\upshape\titlerule*[1pc]{.}\contentspage} % filler-page-format, e.g dots
 
 % Ajuste da formatação para seções secundárias
 \titlecontents{section}
-[10ex] % left margin
+[\espacoAlinhamentoSumario] % left margin
 {} % above code
-{\contentslabel[\thecontentslabel]{10ex}\MakeUppercase} % numbered format
+{\contentslabel[\thecontentslabel]{\espacoAlinhamentoSumario}\MakeUppercase} % numbered format
 {\MakeUppercase} % unnumbered format
 {\mdseries\upshape\titlerule*[1pc]{.}\contentspage} % filler-page-format, e.g dots
 
 % Ajuste da formatação para seções terciárias
 \titlecontents{subsection}
-[10ex] % left margin
+[\espacoAlinhamentoSumario] % left margin
 {\bfseries} % above code
-{\contentslabel[\thecontentslabel]{10ex}} % numbered format
+{\contentslabel[\thecontentslabel]{\espacoAlinhamentoSumario}} % numbered format
 {} % unnumbered format
 {\mdseries\upshape\titlerule*[1pc]{.}\contentspage} % filler-page-format, e.g dots
 
 % Ajuste da formatação para seções quaternárias
 \titlecontents{subsubsection}
-[10ex] % left margin
+[\espacoAlinhamentoSumario] % left margin
 {\itshape} % above code
-{\contentslabel[\thecontentslabel]{10ex}} % numbered format
+{\contentslabel[\thecontentslabel]{\espacoAlinhamentoSumario}} % numbered format
 {} % unnumbered format
 {\mdseries\upshape\titlerule*[1pc]{.}\contentspage} % filler-page-format, e.g dots
 
 % Ajuste da formatação para seções quinárias
 \titlecontents{paragraph}
-[10ex] % left margin
+[\espacoAlinhamentoSumario] % left margin
 {} % above code
-{\contentslabel[\thecontentslabel]{10ex}} % numbered format
+{\contentslabel[\thecontentslabel]{\espacoAlinhamentoSumario}} % numbered format
 {} % unnumbered format
 {\mdseries\upshape\titlerule*[1pc]{.}\contentspage} % filler-page-format, e.g dots
 
