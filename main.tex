@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%
 % Modelo XXXXXXXXXXXXXXX
 % Autor: Leonardo Garcez Dalenogari Alba
-% Ano: 2022
+% Ano: 2023
 % Contato: leonardo.2017007421@aluno.iffar.edu.br
 
 % IMPORTANTE: 
@@ -25,7 +25,7 @@
 
 % Pacotes que envolvem codificação do conteúdo. Essenciais.
 \usepackage[T1]{fontenc}
-% \usepackage[utf8]{inputenc} % Não é necessário se você estiver utilizando um compilador LaTeX baseado já em UTF-8
+% \usepackage[utf8]{inputenc} % Não é necessário se você estiver utilizando um compilador LaTeX baseado já em UTF-8, como o XeLaTeX
 
 % Responsável pela quebra silábica de palavras no final de linha de forma correta para o português
 \usepackage[brazil]{babel}
@@ -37,14 +37,14 @@
 \usepackage{fontspec}
 % Pode ser Times New Roman:
 % \setmainfont{Times New Roman} 
-% Ou pode ser Arial, também:
+% Ou pode ser Arial:
 \setmainfont{Arial}
 
-% Pacotes matemático (algébrico):
+% Pacotes matemáticos (algébrico):
 \usepackage{amsmath}
 \usepackage{amssymb} % Pacote responsável por adicionar símbolos matemáticos. Símbolos, por exemplo, também necessários para o correto referenciamento de leis e decretos 
 % Só que também é importante realizar a configuração para adicionar os comandos que imprimem esses símbolos associados aos caracteres que imprimem, assim, você pode adicionar o símbolo diretamente no texto
-\usepackage{newunicodechar} % Pacote que permite definir novos caracteres
+\usepackage{newunicodechar} % Pacote que permite definir novos caracteres, esses caracteres, depois, podem ser digitados diretamente no arquivo .tex, não necessitando mais chamar o comando do símbolo definido todas as vezes.
 \usepackage{config/unicode-char} % Arquivo de configuração com a listagem desses caracteres
 % \usepackage{unicode-math} % Pacote para deixar as expressões matemáticas com diferentes fontes
 % \defaultfontfeatures{ Scale=MatchLowercase, Ligatures = TeX }
@@ -84,7 +84,7 @@
 \usepackage{enumitem}
 \usepackage{config/enumerate} % Definição das listas de alíneas, subalíneas e índice
 
-\usepackage{rotating} % Adiciona a capacidade de rotacionar elementos (pode ser usado dentro de tabela)
+\usepackage{rotating} % Adiciona a capacidade de rotacionar elementos (pode ser usado dentro de tabela). SE NÃO FOR UTILIZAR, PODE COMENTAR A LINHA PARA NÃO IMPORTAR
 \usepackage{float} % Adiciona configurações adicionais para elementos float (figuras, tabelas, quadros, etc.)
 \usepackage{tabularx} % Tabelas no LaTeX são limitadas em algumas características, este pacote resolve algumas dessas falhas
 \usepackage{multirow} % Permite criar células com múltiplas linhas nas tabelas
@@ -123,10 +123,6 @@
 \addbibresource{bibliografia.bib} % Você pode adicionar mais de um arquivo.bib, apenas adicione outra linha com o nome do segundo arquivo
 \usepackage{config/bibliografia} % Ajustes necessários por causa que o pacote biblatex-abnt não foi atualizado para algumas das mais novas normas da NBR 6023:2018
 
-% Pacote responsável por permitir criar o índice. Se você não for utilizar índice, e provavelmente não vai, é só comentar essas duas linhas abaixo e o comando \printindex no final do documento
-\usepackage{imakeidx}
-\makeindex[columns=1, title=Índice]
-
 %Pacote responsável por permitir colocar url. Ele cria link de atalho no sumário, citações e referência de figuras, tabelas, etc.
 \usepackage[hidelinks]{hyperref}
 \hypersetup{
@@ -135,7 +131,16 @@
 \usepackage{url}
 \urlstyle{same} % Para deixar os links com a mesma fonte do documento.
 
-\usepackage{lipsum} % Pacote meramente cosmético, para testes. Remova ele quando for utilizar o modelo e não tiver mais nenhum chamado para o comando \lipsum, mas só se quiser. Mal esse pacote não deve fazer.
+% É necessário que o pacote do índice fique após o pacote hyperref, por causa que ele afeta a identificação dos comandos \see e \seealso como próximos caracteres, para a impressão de vírgula ou não. Por um lado, sacrifica-se a praticidade dos links (o que seria muito bom), por outro, não seguiria corretamente o padrão NBR 6034 (que nem mesmo a ABNT segue exatamente como padroniza, como está presente no índice da NBR 6023:2018)
+% Ob.: O pacote imakeidx é um tanto limitado em determinados recursos, então, o usuário está limitado a citar o número da página para os itens dos índices. Além disso, ele não sabe ordenar corretamente quando existem caracteres "especiais", como letras acentuadas, aí tem todo um ajuste para fazer, que pode ser visto nos exemplos dados.
+% Pacote responsável por permitir criar o índice. 
+% ATENÇÃO: Se você não for utilizar índice, e provavelmente não vai, comente essas linhas abaixo relacionadas ao pacote e o comando \printindex no final do documento. Pelas poucas impressões que pude ter, parece que o tempo de compilação demora bem mais quando se utiliza índice. 
+% Outros pacotes podem ter o mesmo efeito, então atente-se, caso você não utilize-os. Não precisa excluir, apenas comentar as linhas, para voltar atrás caso se arrependa (ou dê erro).
+\usepackage{imakeidx}
+\makeindex[columns=1, title=Índice, intoc, options=-s config/indice.ist]
+\usepackage{config/indice}
+
+\usepackage{lipsum} % Pacote meramente cosmético, para testes. Remova ele quando for utilizar o modelo e não tiver mais nenhum chamado para o comando \lipsum, mas só se quiser. Mal esse pacote não deve fazer, mas quanto menos pacotes, menos dor de cabeça.
 
 \begin{document}
 \onehalfspacing

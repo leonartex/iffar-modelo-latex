@@ -26,7 +26,7 @@
   Dessa forma, a recomendação é utilizar o \verb|\footnotemark| apenas quando o parágrafo possuir apenas uma nota ou adicionar o texto da marcação após o término da frase e não do parágrafo. Ou, então, não utilizar, realizando a quebra de linha se quiser deixar mais formatadinho o código no \LaTeX\footnote{Um novo parágrafo só é criado quando existirem duas quebras de linhas seguidas, ou seja, uma linha em branco.}.
 
 \section{Alíneas e subalíneas}
-  As alíneas\index{alíneas} sempre devem vir a partir de um parágrafo que termine com dois pontos antes de iniciar a lista:
+  As alíneas\index{Alineas@Alíneas} sempre devem vir a partir de um parágrafo que termine com dois pontos antes de iniciar a lista:
   \begin{alinea}
     \item a matéria da alínea começa por letra minúscula, exceto quando se tratar de substantivos próprios, e termina em ponto e vírgula, com exceção da última, que termina em ponto final;
     \item o trecho final da seção correspondente, anterior às alíneas, termina em
@@ -34,7 +34,7 @@
     \item as alíneas são ordenadas por letras minúsculas seguidas de parênteses utilizando-se letras dobradas quando esgotadas as 26 (vinte e seis) letras que compõem o alfabeto brasileiro;\label{alinea:exemplo-ref}
     \item as letras indicativas das alíneas são recuadas em relação à margem
     esquerda, alinhadas com o parágrafo;
-    \item o texto da alínea deve terminar em dois pontos, se houver subalíneas\index{subalíneas}: 
+    \item o texto da alínea deve terminar em dois pontos, se houver subalíneas\index{Alineas@Alíneas!Subalineas@Subalíneas}: 
     \begin{subalinea}
       \item a matéria da subalínea começa por letra minúscula e termina em ponto e
       vírgula, e a última subalínea deve terminar em ponto final, se não houver
@@ -106,7 +106,7 @@ E se você não quebrar a linha para iniciar um novo parágrafo, o \LaTeX{} cont
   A ABNT prevê também, e de maneira opcional, a possibilidade de realizar a numeração das equações. Como é observável, o próprio elemento \texttt{equation} do \LaTeX{} já apresenta sua própria numeração, além de alguns outros elementos do \texttt{amsmath} porém, também existem maneiras de desativar essa função\footnote{Posso ter entendido errado, mas o equation* do \texttt{amsmath} tem a exata diferença de não ter numeração.}.
 
 \section{Figuras, tabelas e quadros}
-  Sobre elementos como as figuras\index{figura}, tabelas\index{tabela} e quadros\index{quadro}, é importante destacar que o comando utilizado para criar esses elementos é apenas um invólucro, onde você pode colocar o conteúdo que quiser dentro deles. E esse invólucro é apenas responsável por dar o ``tratamento'' como determinado item, e aí, dentro dele, são realizados os comandos que realmente adicionam os itens pertinentes ao respectivo elemento, como uma imagem, no caso de figuras.
+  Sobre elementos como as figuras\index{Figura}, tabelas\index{Tabela} e quadros\index{Quadro}, é importante destacar que o comando utilizado para criar esses elementos é apenas um invólucro, onde você pode colocar o conteúdo que quiser dentro deles. E esse invólucro é apenas responsável por dar o ``tratamento'' como determinado item, e aí, dentro dele, são realizados os comandos que realmente adicionam os itens pertinentes ao respectivo elemento, como uma imagem, no caso de figuras.
   
 \subsection{Figuras}
   Para as figuras, podem ser utilizados os formatos de imagens mais populares, como \verb|.png| ou \verb|.jpg|\footnote{É válido pesquisar quais são todos os formatos aceitos}, porém, além de imagens, também podem ser adicionados documentos \verb|.pdf|. A vantagem de utilizar um \textit{Portable Document Format} (PDF) é que os textos contidos não perderão a qualidade, por não passarem por compressão, ao imprimir as palavras diretamente como texto, como ilustrado na Figura \ref{figura:pdf}. Porém, apesar de aceitar formatos populares de imagens, nativamente (e pelo pacote utilizado), imagens \textit{Scalable Vector Graphics} (SVG) não são possiveis de serem utilizadas. Inclusive, até existem pacotes que adicionam a capacidade de imprimir SVGs nos documentos, porém, eles possuem um conjunto de limitações\footnotemark. A seguir, na Figura \ref{figura:marca-iffar}, é apresentado um exemplo com a marca do IFFar.

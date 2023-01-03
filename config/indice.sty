@@ -1,0 +1,12 @@
+% Renomeio o texto do \see e \seealso para seguir o padrão da NBR 6034
+\renewcommand*{\see}[2]{\textbf{ver} #1}
+\renewcommand*{\seealso}[2]{\textbf{ver também} #1}
+% A boa prática seria renomear os nomes do \see e \seealso. Infelizmente não consegui fazer a troca funcionar por aqui, pois, aparentemente o pacote babel traduz o nome do comando e aí não sei como fazer. Então vai no bruto:
+% \renewcommand{\seename}{ver}
+% \renewcommand{\alsoname}{ver também}
+
+% Verifico se o próximo caractere é o \see, senão, verifico se é o \seealso. Se não for nenhum deles, imprime a vírgula com o p.
+% Fonte: https://tex.stackexchange.com/a/584428
+\def\idxBdelim{\@ifnextchar{\see}{\space}{%
+\@ifnextchar{\seealso}{\space}{, p.\space}
+}}

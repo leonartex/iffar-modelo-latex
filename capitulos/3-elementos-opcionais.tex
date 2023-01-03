@@ -6,7 +6,7 @@
 \end{epigrafe}
 
 %Falar as observações contidas no Guia
-O Guia de normalização, com base na NBR 14724, estabelece um conjunto de elementos, opcionais e obrigatórios, que podem constar em um trabalho acadêmico. A organização desses elementos, divididos em elementos pré-textuais, textuais e pós-textuais, pode ser observada na Figura \ref{figura:elementos-guia}. E, neste capítulo, serão discutidas algumas observações sobre esses elementos, principalmente pré-textuais e pós-textuais, envolvendo suas particularidades no \LaTeX{}, neste modelo. Entretanto, a descrição, e melhor detalhamento, sobre o que deve estar contido em cada elemento estão no \citetitle{livro:iffar-guia-normalizacao-2022}, recomendando-se que faça-se a sua leitura.
+O Guia de normalização, com base na NBR 14724, estabelece um conjunto de elementos, opcionais\index{Elementos opcionais} e obrigatórios, que podem constar em um trabalho acadêmico. A organização desses elementos, divididos em elementos pré-textuais, textuais e pós-textuais, pode ser observada na Figura \ref{figura:elementos-guia}. E, neste capítulo, serão discutidas algumas observações sobre esses elementos, principalmente pré-textuais e pós-textuais, envolvendo suas particularidades no \LaTeX{}, neste modelo. Entretanto, a descrição, e melhor detalhamento, sobre o que deve estar contido em cada elemento estão no \citetitle{livro:iffar-guia-normalizacao-2022}, recomendando-se que faça-se a sua leitura.
 
 \begin{figure}[H]
     \Centering\singlespacing
@@ -86,7 +86,7 @@ O Guia de normalização, com base na NBR 14724, estabelece um conjunto de eleme
 
     Em \texttt{main.tex}, comente a linha \verb|\include{elementos/epigrafe.tex}| para não adicionar o elemento.
 
-\subsection{Resumo na língua vernácula (obrigatório)}
+\subsection{Resumo na língua vernácula (obrigatório)}\index{Elementos obrigatorios@Elementos obrigatórios!Resumo!na lingua vernacula@na língua vernácula}
     Arquivo: \texttt{elementos/resumo.tex}
 
     O resumo em língua portuguesa. Não é necessário configurar nada, apenas realizar a escrita\footnote{Que, inclusive, gostaria de recomendar o material desenvolvido por \textcite{pdf:resumo-aluisio}, caso você tenha dúvidas sobre como escrever um resumo.}.
@@ -115,7 +115,7 @@ O Guia de normalização, com base na NBR 14724, estabelece um conjunto de eleme
 
     Em \texttt{main.tex}, comente a linha \verb|\listofquadros| para não adicionar o elemento.
 
-\subsection{Lista de abreviaturas e siglas(opcional)}
+\subsection{Lista de abreviaturas e siglas (opcional)}
     Arquivo: \texttt{elementos/lista-siglas.tex}
 
     A ordenação de abreviaturas e siglas deve ser realizada alfabeticamente, manualmente pelo usuário, contudo, na primeira vez citada no texto, a sigla ou abreviatura deve ser apresentada entre parênteses precedido pela sua designação. E, para adicionar uma sigla à lista, no arquivo \texttt{elementos/lista-siglas.tex} utiliza-se o comando \verb|\sigla|.
@@ -168,7 +168,7 @@ O Guia de normalização, com base na NBR 14724, estabelece um conjunto de eleme
     \blockcquote[p. 33]{livro:iffar-guia-normalizacao-2022}{Trata-se de uma relação de palavras ou expressões técnicas utilizadas no texto, de uso restrito ou de múltiplos sentidos, acompanhadas das respectivas definições. Os termos especificados são apresentados em ordem alfabética, seguidos de dois pontos, de um espaço e da
     explicação.}
 
-\subsection{Apêndices (opcional)}
+\subsection{Apêndices (opcional)}\index{Apendice@Apêndice|see{Elementos opcionais}}
     Arquivo: \texttt{main.tex}
     
     Apêndices são elementos, como documentos e outros materiais, elaborados pelo próprio autor do trabalho. Eles devem ser adicionados dentro do ambiente \texttt{SecoesNaoNumeradas}, após as referências bibliográficas, e são criados através do comando \verb|\apendice|, que funciona exatamente como um capítulo, porém, com as adaptações exigidas pelo Guia de Normalização.
@@ -180,7 +180,7 @@ O Guia de normalização, com base na NBR 14724, estabelece um conjunto de eleme
     
     Anexos, diferentemente dos apêndices, são documentos elaborados por terceiros, utilizados pelos autores para complementar seus trabalhos. Apresentam a mesma lógica dos apêndices para a utilização no modelo, contudo, usando o comando \verb|\anexo| para criar a seção específica do anexo. A mesma recomendação sobre criar um arquivo específico para apêndice é válida para os anexos, melhorando a organização do trabalho.
 
-\subsection{Índice (opcional)}
+\subsection{Índice (opcional)}\index{Indice@Índice|seealso{Elementos opcionais}}
     Arquivo: \texttt{main.tex}
 
 --- Índice\\
