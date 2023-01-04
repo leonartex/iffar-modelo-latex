@@ -1,4 +1,4 @@
-\chapter{Organização de elementos do trabalho acadêmico}
+\chapter{Organização de elementos do trabalho acadêmico}\index{Carlos}
 %Exemplo de epígrafe de início de capítulo:
 \begin{epigrafe}
     % Seu texto recomenda-se em itálico e autor em negrito
@@ -183,7 +183,39 @@ O Guia de normalização, com base na NBR 14724, estabelece um conjunto de eleme
 \subsection{Índice (opcional)}\index{Indice@Índice|seealso{Elementos opcionais}}
     Arquivo: \texttt{main.tex}
 
+    O índice é utilizado para apresentar onde determinados termos e temas são abordados em um trabalho. Podem ser utilizados diversos elementos para apresentar a localização, como página, seção, elementos como anexos, contudo, existem algumas limitações do que pôde ser implementado para este modelo.
+    
+    Para a implementação do índice foi utilizado o pacote \texttt{imakeidx}, e ele apresenta limitações em alguns aspectos. A primeira limitação no modelo é que o índice possui a capacidade de apenas poder apresentar a página de onde encontra-se o termo, não sendo possível, de forma prática, apresentar seções ou outros elementos. Um segunda limitação é a de que o \texttt{imakeidx} não sabe lidar com caracteres especiais, como caracteres acentuados, ou também de outros idiomas além do padrão Latin XXXXX, para realizar o ordenamento alfabético. Isso significa que quando o termo possuir uma letra acentuada, por exemplo, é necessário utilizar o comando de uma forma alternativa. Além dessas limitações do pacote, também houve a implementação apenas para a apresentação do índice por ordem alfabética. Outras formas de índice, estabelecidas pela NBR 6034, como ordem sistemática, ou cronológica, e de enfoque especial, ficam a critério de serem implementadas pelo usuário\footnote{E nem sei o quão prático seria implementar, pois, acredito que seria necessário ter que utilizar outro pacote ou tecnologia para gerar o índice (o \texttt{imakeidx} suporta algumas outras para gerar e formatar índices)}.
+
 --- Índice\\
     - Mostrar como usar os comandos, alertando que ele não imprime na tela a palavra
     - Mostrar as palavras ``nested''
+
+    Testar se consegue ter mais de 3 níveis de itens
+    Falar que implementou apenas a forma alfabética de índice, fica por conta da pessoa formatar para outras formas
+    Testar range de páginas (--)
+    Falar dos caracteres acentuados (e de outros idiomas, se o usuário for tentar)
+    Falar da limitação de apenas apresentar o número de página
+    Falar de cabeçalho simples (1 só) e cabeçalho composto (nested)
+    Remissivas (duplicar para o caso de ver também)
+        Limitação da remissiva ver também (quebrar a linha e repetir o item )
+    Recomendar criar comandos para imprimir sempre as mesmas entradas
+        Criar no início dos capítulos, ou no início do documento, ou criar um arquivo específico para entradas no índice
+        É muito fácil se confundir e digitar uma letrinha diferente, com um espaço diferente, principalmente se tiver caracteres acentuados
+    Se quiser, utilizar um comando que tanto cria o índice quanto escreve na tela
+    Use apenas 1 ver também ou ver por termo
+
+    % \index{<palavra para ordenar>!<palavra impressa>}
+
+    \iindex{Carlos} Teste
+    
+    \index{Carlosa@Carlos|seealso{Rogério}}
+    
+    \indexsee{Carlos}{Glauber}{}{}Teste2
+    
+    \indexsee{Índice}{Glauber}{Perere!}{Indice}Teste2
+    
+    \indexseealso{Carlos}{Mané}{}{}Teste3
+
+    \ifEmpty{Não}{Não vazio}{Vazioo}
     

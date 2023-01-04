@@ -20,12 +20,18 @@
     english,
     brazil
 ]{report}
-% Pacotinho básico só pra garantir que a folha de rosto esteja sempre no anverso do documento (no caso de twoside)
-\usepackage{config/onesidetwoside}
+% Pacotinho básico para adicionar algumas funcionalidades úteis
+\usepackage{config/funcoes}
 
-% Pacotes que envolvem codificação do conteúdo. Essenciais.
-\usepackage[T1]{fontenc}
-% \usepackage[utf8]{inputenc} % Não é necessário se você estiver utilizando um compilador LaTeX baseado já em UTF-8, como o XeLaTeX
+%% Pacotes para formatação de fonte do documento
+% Obs.: Usando XeLaTeX, não é necessário usar os pacotes fontenc e inputenc
+\usepackage{fontspec}
+% Pode ser Times New Roman:
+% \setmainfont{Times New Roman} 
+% Ou pode ser Arial:
+\setmainfont{Arial}
+
+\usepackage{keyval}
 
 % Responsável pela quebra silábica de palavras no final de linha de forma correta para o português
 \usepackage[brazil]{babel}
@@ -33,16 +39,9 @@
 \usepackage[portuguese=brazilian, style=brazilian]{csquotes}
 \usepackage{config/citacao} % As configurações para que as citações longas sigam a ABNT
 
-%% Pacotes para formatação de fonte do documento
-\usepackage{fontspec}
-% Pode ser Times New Roman:
-% \setmainfont{Times New Roman} 
-% Ou pode ser Arial:
-\setmainfont{Arial}
-
 % Pacotes matemáticos (algébrico):
 \usepackage{amsmath}
-\usepackage{amssymb} % Pacote responsável por adicionar símbolos matemáticos. Símbolos, por exemplo, também necessários para o correto referenciamento de leis e decretos 
+\usepackage{amssymb} % Pacote responsável por adicionar um conjunto de símbolos, principalmente matemáticos. Símbolos, por exemplo, também necessários para o correto referenciamento de leis e decretos 
 % Só que também é importante realizar a configuração para adicionar os comandos que imprimem esses símbolos associados aos caracteres que imprimem, assim, você pode adicionar o símbolo diretamente no texto
 \usepackage{newunicodechar} % Pacote que permite definir novos caracteres, esses caracteres, depois, podem ser digitados diretamente no arquivo .tex, não necessitando mais chamar o comando do símbolo definido todas as vezes.
 \usepackage{config/unicode-char} % Arquivo de configuração com a listagem desses caracteres
@@ -131,16 +130,15 @@
 \usepackage{url}
 \urlstyle{same} % Para deixar os links com a mesma fonte do documento.
 
-% É necessário que o pacote do índice fique após o pacote hyperref, por causa que ele afeta a identificação dos comandos \see e \seealso como próximos caracteres, para a impressão de vírgula ou não. Por um lado, sacrifica-se a praticidade dos links (o que seria muito bom), por outro, não seguiria corretamente o padrão NBR 6034 (que nem mesmo a ABNT segue exatamente como padroniza, como está presente no índice da NBR 6023:2018)
-% Ob.: O pacote imakeidx é um tanto limitado em determinados recursos, então, o usuário está limitado a citar o número da página para os itens dos índices. Além disso, ele não sabe ordenar corretamente quando existem caracteres "especiais", como letras acentuadas, aí tem todo um ajuste para fazer, que pode ser visto nos exemplos dados.
-% Pacote responsável por permitir criar o índice. 
+% É necessário que o pacote do índice fique após o pacote hyperref, por causa que ele afeta a identificação dos comandos \see e \seealso como próximos caracteres, para a impressão de vírgula ou não. Por um lado, sacrifica-se a praticidade dos links (o que seria muito bacana de ter), por outro, não seguiria corretamente o padrão NBR 6034 (que nem mesmo a ABNT parece seguir exatamente como padroniza, como no índice da NBR 6023:2018?)
+% Ob.: O pacote imakeidx é um tanto limitado em determinados recursos, então, o usuário está limitado a citar o número da página para os itens dos índices. Além disso, ele não sabe ordenar corretamente quando existem caracteres "especiais", como letras acentuadas, aí tem todo um ajuste para fazer, que pode ser visto nos exemplos dados pelo documento.
 % ATENÇÃO: Se você não for utilizar índice, e provavelmente não vai, comente essas linhas abaixo relacionadas ao pacote e o comando \printindex no final do documento. Pelas poucas impressões que pude ter, parece que o tempo de compilação demora bem mais quando se utiliza índice. 
 % Outros pacotes podem ter o mesmo efeito, então atente-se, caso você não utilize-os. Não precisa excluir, apenas comentar as linhas, para voltar atrás caso se arrependa (ou dê erro).
-\usepackage{imakeidx}
+\usepackage{imakeidx} % Pacote responsável por permitir criar o índice
 \makeindex[columns=1, title=Índice, intoc, options=-s config/indice.ist]
-\usepackage{config/indice}
+\usepackage{config/indice} % Configurações, como a substituição dos termos para as remissivas de acordo com a NBR 6034
 
-\usepackage{lipsum} % Pacote meramente cosmético, para testes. Remova ele quando for utilizar o modelo e não tiver mais nenhum chamado para o comando \lipsum, mas só se quiser. Mal esse pacote não deve fazer, mas quanto menos pacotes, menos dor de cabeça.
+\usepackage{lipsum} % Pacote meramente cosmético, para testes. Remova ele quando for utilizar o modelo e não tiver mais nenhum chamado para o comando \lipsum, mas só se quiser. Mal esse pacote não deve fazer, mas quanto menos pacotes, menos dor de cabeça e mais rápida compilação.
 
 \begin{document}
 \onehalfspacing

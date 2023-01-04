@@ -11,16 +11,6 @@
     \fi
 }
 
-% Recebe dois parâmetros: o comando para se testar se está vazio (ex.: \coorientador); e o código para imprimir caso tenha conteúdo
-% Fonte: https://tex.stackexchange.com/a/53091
-\newcommand{\isEmpty}[2]{%
-    \setbox0=\hbox{#1\unskip}\ifdim\wd0=0pt
-        % Valor está vazio, então não faz nada
-    \else
-        #2% Se o valor não estiver vazio, então 
-    \fi
-}
-
 %%%%
 %%  Preenchimento dos dados gerais do seu trabalho
 %%%%

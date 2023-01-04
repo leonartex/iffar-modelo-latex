@@ -1,12 +1,28 @@
+% Altero o destaque para utilizar negrito (a NBR 6034 permite utilizar outros tipos de recursos tipográficos, como o itálico que já vem no imakeidx, porém, escolhi o negrito pois torna mais clara a distinção)
+\renewcommand*{\see}[2]{\textbf{\seename} #1}
+\renewcommand*{\seealso}[2]{\textbf{\alsoname} #1}
 % Renomeio o texto do \see e \seealso para seguir o padrão da NBR 6034
-\renewcommand*{\see}[2]{\textbf{ver} #1}
-\renewcommand*{\seealso}[2]{\textbf{ver também} #1}
-% A boa prática seria renomear os nomes do \see e \seealso. Infelizmente não consegui fazer a troca funcionar por aqui, pois, aparentemente o pacote babel traduz o nome do comando e aí não sei como fazer. Então vai no bruto:
-% \renewcommand{\seename}{ver}
-% \renewcommand{\alsoname}{ver também}
+% Obs.: por conta do babel, a mudança de termo é diferente
+\addto\captionsbrazil{\renewcommand{\seename}{ver}}
+\addto\captionsbrazil{\renewcommand{\alsoname}{ver também}}
 
 % Verifico se o próximo caractere é o \see, senão, verifico se é o \seealso. Se não for nenhum deles, imprime a vírgula com o p.
 % Fonte: https://tex.stackexchange.com/a/584428
 \def\idxBdelim{\@ifnextchar{\see}{\space}{%
 \@ifnextchar{\seealso}{\space}{, p.\space}
 }}
+
+% Crio um comando alternativo para que a remissiva ver e ver também venha como uma nova linha, abaixo da entrada original, igual no índice da NBR 6023:2018. No termo de ordenamento é adicionada várias letras "a", para que o elemento sempre fique abaixo da entrada original
+% Os comandos recebem: 
+% #1 = Termo do cabeçalho; 
+% #2 = Termo ao qual o cabeçalho direciona pela remissiva;
+% #3 = String utilizada para definir como subcabeçalho;
+% #4 = Versão sem caracteres especiais do termo do cabeçalho, para ordenamento.
+% Deixe vazio o que não for utilizar
+\newcommand{\indexsee}[4]{\index{#3#1aaaaaaaa@#1|see{#2}}}
+\newcommand{\indexseealso}[4]{\index{#1aaaaaaab@#1|seealso{#2}}}
+
+% Crio um comando alternativo para adicionar o índice e imprimir o termo no texto (também são criadas as versões alternativas para os comandos das remissivas)
+\newcommand{\iindex}[2]{#1\index{#1}}
+\newcommand{\iindexsee}[3]{#1\indexsee{#1}{#2}}
+\newcommand{\iindexseealso}[3]{#1\indexseealso{#1}{#2}}
