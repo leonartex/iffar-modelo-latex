@@ -26,7 +26,7 @@ O Guia de normalização, com base na NBR 14724, estabelece um conjunto de eleme
 
     É configurado automaticamente pelo arquivo \texttt{elementos/DADOS.tex}. Selecione se o seu trabalho é TCC ou Tese e Dissertação e preencha os dados restantes com os valores necessários.
 
-    O Guia de Normalização estabelece que a capa deve conter \blockcquote[p. 30]{livro:iffar-guia-normalizacao-2022}{nome da instituição (opcional), título do trabalho e nome do(a) autor(a)}, o mesmo estabelecido pela NBR 14724 \cite{livro:abnt-nbr:14724}, porém, nos seus exemplos visuais mostram-se dados adicionais\footnote{Eu implementei conforme o ilustrado, apesar de não saber sobre a definição de margens.}.
+    O Guia de Normalização estabelece que a capa deve conter \blockcquote[p. 30]{livro:iffar-guia-normalizacao-2022}{nome da instituição (opcional), título do trabalho e nome do(a) autor(a)}, o mesmo estabelecido pela NBR 14724 \cite{livro:abnt-nbr-14724:2011}, porém, nos seus exemplos visuais mostram-se dados adicionais\footnote{Eu implementei conforme o ilustrado, apesar de não saber sobre a definição de margens.}.
 
     \subsection{Lombada (opcional)}
     É utilizado para trabalhos impressos e, por isso, este modelo não abrange tal elemento.
@@ -193,7 +193,7 @@ O Guia de normalização, com base na NBR 14724, estabelece um conjunto de eleme
     
     Para a implementação do índice foi utilizado o pacote \texttt{imakeidx}, que usa o \texttt{makeidx} como a ferramenta para criar o índica, e ele apresenta limitações em alguns aspectos. A primeira limitação no modelo é que o índice possui a capacidade de apenas poder apresentar a página de onde encontra-se o termo, não sendo possível, de forma prática, apresentar seções ou outros elementos. Uma segunda limitação é a de que o \texttt{makeidx} não sabe lidar com caracteres especiais, como caracteres acentuados, ou também de outros idiomas além do padrão ASCII, para realizar o ordenamento alfabético. Isso significa que quando o termo possuir uma letra acentuada, por exemplo, é necessário utilizar o comando de uma forma alternativa.
     
-    Além das limitações do pacote, também houve a implementação apenas para a apresentação do índice por ordem alfabética. Outras formas de índice, estabelecidas pela NBR 6034, como ordem sistemática, ou cronológica, e de enfoque especial, ficam a critério do usuário, para serem implementadas.
+    Além das limitações do pacote, também houve a implementação apenas para a apresentação do índice por ordem alfabética. Outras formas de índice, estabelecidas pela NBR 6034 \cite{livro:abnt-nbr6034:2004}, como ordem sistemática, ou cronológica, e de enfoque especial, ficam a critério do usuário para serem implementadas.
 
     O comando básico para se criar uma entrada no índice\index{Indice@Índice}, chamada pela ABNT de cabeçalho\index{Cabecalho@Cabeçalho}, é o \verb|\index|. Porém, ele não imprime o texto no documento, apenas registra a entrada no índice. O comando apresenta-se da seguinte maneira:
 \begin{verbatim}

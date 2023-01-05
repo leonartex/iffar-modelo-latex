@@ -63,9 +63,7 @@ E se você não quebrar a linha para iniciar um novo parágrafo, o \LaTeX{} cont
 
   Para a apresentação de expressões matemáticas, o \LaTeX{} apresenta muitas maneiras para se utilizar, podendo ocorrer de dois modos: \textit{inline} e \textit{display}. O primeiro é para expressões que fazem parte de um parágrafo e o segundo é utilizado em um bloco de texto exclusivo para a expressão. Seguem-se exemplos:
 
-  No modo \textit{inline} pode ser escrito expressões de várias formas, como: \(E=mc^2\); $ 2 \times 2 = 4 $; e, também, \begin{math} x^2 + y^2 = z^2 \end{math}. Contudo, o Guia de Normalização estabelece que equações e fórmulas devem aparecer \blockcquote[p. 23]{livro:iffar-guia-normalizacao-2022}{destacadas no texto, a fim de facilitar sua leitura}.
-  
-  E, para o modo \textit{display}, também existem múltiplas formas de adicionar uma expressão ao texto:
+  No modo \textit{inline} pode ser escrito expressões de várias formas\footnote{No código são utilizadas várias maneiras de se apresentar expressões matemáticas \textit{inline}.}, como: \(E=mc^2\); $ 2 \times 2 = 4 $; e, também, \begin{math} x^2 + y^2 = z^2 \end{math}. Contudo, o Guia de Normalização estabelece que equações e fórmulas devem aparecer \blockcquote[p. 23]{livro:iffar-guia-normalizacao-2022}{destacadas no texto, a fim de facilitar sua leitura}, para isto existe o modo \textit{display}. E, para o modo \textit{display}, também existem múltiplas formas de adicionar uma expressão ao texto\footnote{Observe no código as diversas formas de se criar uma expressão matemática em modo \textit{display}.}:
   \[ x^n + y^n = z^n \]
   
   Ou:
@@ -78,7 +76,7 @@ E se você não quebrar a linha para iniciar um novo parágrafo, o \LaTeX{} cont
     e^{\pi i} + 1 = 0
   \end{equation}
 
-  Também existe o ambiente \texttt{equation*}, provido pelo pacote \texttt{amsmath}\footnote{Esse exemplo foi extraído do pacote, para mostrar as possibilidades. Recomendo demais a leitura (olhadinha rápida) da documentação do pacote, caso tenha interesse.}:
+  Também existe o ambiente \texttt{equation*}, provido pelo pacote \texttt{amsmath}\footnote{Esse exemplo foi extraído do pacote, para mostrar as possibilidades. Recomendo a leitura da documentação do pacote, caso tenha interesse.}:
   \begin{equation*}
     \left.\begin{aligned}
     B’&=-\partial\times E,\\
@@ -117,7 +115,8 @@ E se você não quebrar a linha para iniciar um novo parágrafo, o \LaTeX{} cont
     \caption{Marca do IFFar}
     \label{figura:marca-iffar} % Esse é o comando que permite referenciar a figura (ou qualquer outro elemento que você criar)
     % Podem ser utilizados vários argumentos para adicionar a figura em seu devido tamanho, como: scale; width; ou height. No caso de scale, a escala, adiciona o valor em decimal representando a porcentagem da escala, já width ou height utiliza-se uma unidade de medida, como cm, px ou pt.
-    \includegraphics[width=10cm]{marca-iffar.png}\\
+    \includegraphics[width=10cm]{marca-iffar.png}
+
     \footnotesize
     Fonte: \textcite{site:iffar-identidade-visual-2021}.
   \end{figure}
@@ -126,7 +125,8 @@ E se você não quebrar a linha para iniciar um novo parágrafo, o \LaTeX{} cont
     \Centering\singlespacing
     \caption{Exemplo utilizando documento PDF}
     \label{figura:pdf}
-    \includegraphics[scale=1.0]{exemplo.pdf}\\
+    \includegraphics[scale=1.0]{exemplo.pdf}
+
     \footnotesize
     Fonte: elaborado pelo autor (2023).
   \end{figure}
@@ -227,5 +227,5 @@ Fonte: \textcite[p. 248]{livro:barbetta-2017}.
   
     % A quebra de linha é essencial entre o \hspace e outras linhas
     \footnotesize
-    Fonte: elaborado pelo autor (2022).
+    Fonte: elaborado pelo autor (2023).
   \end{quadro}

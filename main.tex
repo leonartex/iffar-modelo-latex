@@ -1,14 +1,16 @@
 %%%%%%%%%%%%%%
-% Modelo XXXXXXXXXXXXXXX
+% Modelo de Trabalho Acadêmico-Científico do IFFar
 % Autor: Leonardo Garcez Dalenogari Alba
 % Ano: 2023
-% Contato: leonardo.2017007421@aluno.iffar.edu.br
+% Repositório: https://github.com/leonartex/iffar-modelo-latex
+% Acesso pelo Overleaf: XXXXXXXXXXXXXXXXXXXXX
 
 % IMPORTANTE: 
-%   O modelo utiliza o compilador XeLaTeX (talvez possam ser utilizados outros, mas não é garantido o correto funcionamento, visto que seria necessário testar, porém, eu sei que alguns vão apresentar problemas na hora de compilar, como o pdflatex)
-%   Se você estiver utilizando o Overleaf, com o documento aberto, clique em Menu, no canto superior esquerdo, e selecione o XeLaTeX como compilador
+%   O modelo utiliza o compilador XeLaTeX (talvez possam ser utilizados outros, mas não é garantido o correto funcionamento, visto que seria necessário testar, porém, eu sei que alguns vão apresentar problemas na hora de compilar, como o pdflatex) e a edição do LaTeX de 2022
+%   Se você estiver utilizando o Overleaf, com o documento aberto, clique em Menu, no canto superior esquerdo, e selecione o XeLaTeX como compilador caso ele  não esteja selecionado
+%   Se estiver no PC, tenha certeza de estar na versão mais atualizada da instância LaTeX utilizada
 %   Também é utilizado o biber para gerenciar as referências bibliográficas
-%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% 
 
 \documentclass[
     12pt, % Tamanho de fonte definido para 12, se você precisar utilizar um texto em tamanho 10, utilize o comando \footnotesize, que será impresso em tamanho 10
@@ -30,6 +32,8 @@
 % \setmainfont{Times New Roman} 
 % Ou pode ser Arial:
 \setmainfont{Arial}
+\setsansfont{Arial}
+\setmonofont{Andale Mono} % Fonte utilizada no comando \verb, etc. É de uso opcional. Tem suporte no Overleaf
 
 \usepackage{keyval}
 
@@ -45,17 +49,21 @@
 % Só que também é importante realizar a configuração para adicionar os comandos que imprimem esses símbolos associados aos caracteres que imprimem, assim, você pode adicionar o símbolo diretamente no texto
 \usepackage{newunicodechar} % Pacote que permite definir novos caracteres, esses caracteres, depois, podem ser digitados diretamente no arquivo .tex, não necessitando mais chamar o comando do símbolo definido todas as vezes.
 \usepackage{config/unicode-char} % Arquivo de configuração com a listagem desses caracteres
-% \usepackage{unicode-math} % Pacote para deixar as expressões matemáticas com diferentes fontes
-% \defaultfontfeatures{ Scale=MatchLowercase, Ligatures = TeX }
-% \setmainfont{Arial}
-% \setsansfont{Arial}
-% \setmonofont{Andale Mono}
-% \setmathfont{GFSNeohellenicMath.otf}
-% \setmathfont[range=up]{Arial}
-% \setmathfont[range=it]{Arial Italic}
-% \setmathfont[range=bfup]{Arial Bold}
-% \setmathfont[range=bfit]{Arial Bold Italic}
-% \setmathfont[range=tt]{Andale Mono}
+\usepackage{unicode-math} % Pacote para deixar as expressões matemáticas com diferentes fontes
+\defaultfontfeatures{ Scale=MatchLowercase, Ligatures = TeX }
+% Configuração de fonte matemática para utilizar no caso de Times New Roman:
+% \setmathfont{Latin Modern Math}
+% \setmathfont[range=up/{latin,Latin,num}]{Times New Roman}
+% \setmathfont[range=it/{latin,Latin,num}]{Times New Roman Italic}
+% \setmathfont[range=bfup/{latin,Latin,num}]{Times New Roman Bold}
+% \setmathfont[range=bfit/{latin,Latin,num}]{Times New Roman Bold Italic}
+
+% % Configuração de fonte matemática para utilizar no caso de Arial:
+\setmathfont{FiraMath-Regular} % Tem suporte no Overleaf
+\setmathfont[range=up/{latin,Latin,greek,Greek,num}]{Arial}
+\setmathfont[range=it/{latin,Latin,greek,Greek,num}]{Arial Italic}
+\setmathfont[range=bfup/{latin,Latin,greek,Greek,num}]{Arial Bold}
+\setmathfont[range=bfit/{latin,Latin,greek,Greek,num}]{Arial Bold Italic}
 
 %% Pacotes para formatação de conteúdo na página
 \usepackage[left=3cm,top=3cm,right=2cm,bottom=2cm]{geometry} % Pacote responsável por formatar as dimensões das margens das páginas.
@@ -130,8 +138,14 @@
 
 %Pacote responsável por permitir colocar url. Ele cria link de atalho no sumário, citações e referência de figuras, tabelas, etc.
 \usepackage[hidelinks]{hyperref}
+% Adicione aqui os metadados do seu trabalho (os comandos não funcionam aqui):
+\include{elementos/DADOS.tex}
 \hypersetup{
-    unicode=true
+  unicode=true,
+  pdftitle={\tituloTrabalho\separadorTrabalho\subtituloTrabalho},
+  pdfsubject={[Insira o assunto/tema de seu trabalho (talvez um resuminho rápido?) Deve ser válido citar que se trata de um TCC, tese ou dissertação, de determinado curso, do IFFar. Esse tipo de coisa]},
+  pdfauthor={\autorTrabalho},
+  pdfkeywords={[Insira suas palavras chaves]}
 }
 
 \usepackage{url}
@@ -142,8 +156,6 @@
 \begin{document}
 \onehalfspacing
 \justifying
-
-\include{elementos/DADOS.tex}
 
 \pagestyle{empty} % Tô deixando esse comando mais por hábito, ele não é necessário para a lógica utilizada para ocultar a paginação e também ela deixa de ter efeito em elementos que contenham capítulos, como alguns pré-textuais possuem
 \pagenumbering{jujuba} % Valor fictício para não realizar a contagem da capa

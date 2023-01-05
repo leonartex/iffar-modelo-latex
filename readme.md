@@ -13,7 +13,6 @@ Dúvidas:
 
 Afazeres: 
 
-    - Adicionar metadados no arquivo PDF (nome de autor, etc.)
     - Fazer a lista especial para leis de artigos e parágrafos (§):
 		- Permitir utilizar uma configuração que: soma a indentação de listas dentro de listas (padrão alínea); ou deixa todas as listas internas como se fosse uma coisa só (talvez usando wide)
 		- Configurar para a lista genérica receber o segundo argumento, que são as opções, como start e tals
@@ -25,7 +24,6 @@ Afazeres:
 	- Resolver a virgula a mais nos negócio de evento
 	- Exemplos de Censo do IBGE e normas da ABNT
 	- Figura com código de programação
-	- Deixar as expressões matemáticas com fonte Arial
 	- Verificar se dá pra remover o pacote AlphAlph usando o \mknumalph do biblatex
 
 	- Criar um índice bonitinho, cobrindo todo o modelo
