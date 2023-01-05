@@ -26,7 +26,7 @@
         \orientadorInstituicao
 
         % Verifico se o coorientador está preenchido, para imprimir
-        \isEmpty{\coorientador}{
+        \notEmpty{\coorientador}{
             \vspace{\tamanhoAssinatura}
             \rule{6.5cm}{1pt}\\
             \coorientadorTitulacao\space \coorientador\\
@@ -63,7 +63,7 @@
         \orientadorInstituicao
 
         % Verifico se o coorientador está preenchido, para imprimir
-        \isEmpty{\coorientador}{
+        \notEmpty{\coorientador}{
             \vspace{\baselineskip}
             % \rule{6.5cm}{1pt}\\
             \coorientadorTitulacao\space \coorientador\space - \MakeLowercase{\coorientadorApresentacao}\\    

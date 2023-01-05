@@ -12,8 +12,11 @@
 }
 
 % Recebe dois parâmetros: o comando para se testar se está vazio (ex.: \coorientador); e o código para imprimir caso tenha conteúdo
+% #1 = Valor a se testar se está vazio
+% #2 = Valor a se executar se não estiver vazio
+% Obs.: Só funciona com texto impresso
 % Fonte: https://tex.stackexchange.com/a/53091
-\newcommand{\isEmpty}[2]{%
+\newcommand{\notEmpty}[2]{%
     \setbox0=\hbox{#1\unskip}\ifdim\wd0=0pt
         % Valor está vazio, então não faz nada
     \else
@@ -21,10 +24,14 @@
     \fi
 }
 
+% #1 = Valor a se testar se está vazio
+% #2 = Valor a se executar se estiver vazio
+% #3 = Valor a se executar se não estiver vazio
+% Obs.: Só funciona com texto impresso
 \newcommand{\ifEmpty}[3]{%
     \setbox0=\hbox{#1\unskip}\ifdim\wd0=0pt
-        #3% Se o valor estiver vazio
+        #2% Se o valor estiver vazio
     \else
-        #2% Se o valor não estiver vazio 
+        #3% Se o valor não estiver vazio 
     \fi
 }

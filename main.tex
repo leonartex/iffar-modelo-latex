@@ -122,21 +122,20 @@
 \addbibresource{bibliografia.bib} % Você pode adicionar mais de um arquivo.bib, apenas adicione outra linha com o nome do segundo arquivo
 \usepackage{config/bibliografia} % Ajustes necessários por causa que o pacote biblatex-abnt não foi atualizado para algumas das mais novas normas da NBR 6023:2018
 
+% Obs.: O pacote imakeidx é um tanto limitado em determinados recursos, então, o usuário está limitado a citar o número da página para os itens dos índices. Além disso, ele não sabe ordenar corretamente quando existem caracteres "especiais", como letras acentuadas, aí tem todo um ajuste para fazer, que pode ser visto nos exemplos dados pelo documento.
+% ATENÇÃO: Se você não for utilizar índice, e provavelmente não vai, comente essas linhas abaixo relacionadas ao pacote e o comando \printindex no final do documento. Pelas poucas impressões que pude ter, parece que o tempo de compilação demora bem mais quando se utiliza índice. 
+% Outros pacotes podem ter o mesmo efeito, então atente-se, caso você não utilize-os. Não precisa excluir, apenas comentar as linhas, para voltar atrás caso se arrependa (ou dê erro).
+\usepackage{imakeidx} % Pacote responsável por permitir criar o índice
+\usepackage{config/indice} % Configurações, como a substituição dos termos para as remissivas de acordo com a NBR 6034
+
 %Pacote responsável por permitir colocar url. Ele cria link de atalho no sumário, citações e referência de figuras, tabelas, etc.
 \usepackage[hidelinks]{hyperref}
 \hypersetup{
     unicode=true
 }
+
 \usepackage{url}
 \urlstyle{same} % Para deixar os links com a mesma fonte do documento.
-
-% É necessário que o pacote do índice fique após o pacote hyperref, por causa que ele afeta a identificação dos comandos \see e \seealso como próximos caracteres, para a impressão de vírgula ou não. Por um lado, sacrifica-se a praticidade dos links (o que seria muito bacana de ter), por outro, não seguiria corretamente o padrão NBR 6034 (que nem mesmo a ABNT parece seguir exatamente como padroniza, como no índice da NBR 6023:2018?)
-% Ob.: O pacote imakeidx é um tanto limitado em determinados recursos, então, o usuário está limitado a citar o número da página para os itens dos índices. Além disso, ele não sabe ordenar corretamente quando existem caracteres "especiais", como letras acentuadas, aí tem todo um ajuste para fazer, que pode ser visto nos exemplos dados pelo documento.
-% ATENÇÃO: Se você não for utilizar índice, e provavelmente não vai, comente essas linhas abaixo relacionadas ao pacote e o comando \printindex no final do documento. Pelas poucas impressões que pude ter, parece que o tempo de compilação demora bem mais quando se utiliza índice. 
-% Outros pacotes podem ter o mesmo efeito, então atente-se, caso você não utilize-os. Não precisa excluir, apenas comentar as linhas, para voltar atrás caso se arrependa (ou dê erro).
-\usepackage{imakeidx} % Pacote responsável por permitir criar o índice
-\makeindex[columns=1, title=Índice, intoc, options=-s config/indice.ist]
-\usepackage{config/indice} % Configurações, como a substituição dos termos para as remissivas de acordo com a NBR 6034
 
 \usepackage{lipsum} % Pacote meramente cosmético, para testes. Remova ele quando for utilizar o modelo e não tiver mais nenhum chamado para o comando \lipsum, mas só se quiser. Mal esse pacote não deve fazer, mas quanto menos pacotes, menos dor de cabeça e mais rápida compilação.
 

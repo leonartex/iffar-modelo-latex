@@ -108,7 +108,7 @@ E também existe a opção de citar determinados campos dos registros das refer�
 
 \citefield{lei:brasil-11.892-2008}{titleaddon}
 
-\subsubsection{Elementos adicionais na citação}\index{Referencias bibliograficas@Referências bibliográficas!Citar elementos adicionais}
+\subsubsection{Elementos adicionais na citação}
 Existem muitas situações em que apenas citar o nome do autor e o ano não é o suficiente, e isso é facilmente resolvido no \verb|biblatex|. Utilizando-se de colchetes, informações sobre a citação podem ser adicionadas, como o número da página, essencial para citações diretas, a expressão ``tradução nossa'' para citações diretas traduzidas ou, então, artigos, parágrafos e incisos de documentos jurídicos. Por exemplo:
 
 \verb|\textcite[p. 239]{livro:dom-casmurro}|
@@ -121,7 +121,7 @@ Ou:
 
 \cite[Art. 1º, I ]{lei:brasil-11.892-2008}\\
 
-Para as citações simultâneas\index{Citacao simultanea@Citação simultânea|seealso{Citar elementos adicionais}} ou citações apud\index{Apud|seealso{Citar elementos adicionais}} segue-se o mesmo padrão ao utilizar os colchetes:
+Para as citações simultâneas ou citações apud segue-se o mesmo padrão ao utilizar os colchetes:
 
 \verb|\cites[<info. fonte 1>]{<fonte 1>}[<info. fonte 2>]{<fonte 2>}|...
 
@@ -293,7 +293,7 @@ Outra forma de contornar as limitações pode ser através do uso dos campos \te
 % Uso de addendum e note
 Utilizar addendum e note, para informações adicionais é uma necessidade para muitos documentos, principalmente para adicionar elementos complementares. Porém, além de permitir adicionar elementos complementares, em algumas situação, pode ser utilizado para adicionar informações essenciais em que não foi identificada a melhor forma de realizar o registro.
 
-\section{Uso de comandos dentro das referências}
+\subsubsection{Uso de comandos dentro das referências}
 No registro de referências, muitos comandos continuam sendo válidos de se executar, podendo-se adicionar símbolos ou até mesmo formatar o conteúdo, em negrito ou itálico, por exemplo. Essa formatação deve sempre ser utilizada com bastante cuidado, principalmente se o objetivo for maquiar uma adaptação\footnote{Leia-se: ``gambiarra''.} de referência. Um exemplo desse tipo de ``adaptação'' pode ser observado em \textcite{sonoro:ex3}, quando não foi identificado como alcançar a formatação utilizando o tipo \texttt{@audio}, mas, que, porém, poderia ser melhor representado utilizando o \texttt{@inbook}, como no exemplo alternativo \textcite{sonoro:ex3-alt}:
 
 \singlecite{sonoro:ex3-alt}{}

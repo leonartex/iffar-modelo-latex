@@ -1,3 +1,6 @@
+% Crio o cabeçalho
+\makeindex[columns=1, title=Índice, intoc, options=-s config/indice.ist]
+
 % Altero o destaque para utilizar negrito (a NBR 6034 permite utilizar outros tipos de recursos tipográficos, como o itálico que já vem no imakeidx, porém, escolhi o negrito pois torna mais clara a distinção)
 \renewcommand*{\see}[2]{\textbf{\seename} #1}
 \renewcommand*{\seealso}[2]{\textbf{\alsoname} #1}
@@ -8,21 +11,58 @@
 
 % Verifico se o próximo caractere é o \see, senão, verifico se é o \seealso. Se não for nenhum deles, imprime a vírgula com o p.
 % Fonte: https://tex.stackexchange.com/a/584428
-\def\idxBdelim{\@ifnextchar{\see}{\space}{%
-\@ifnextchar{\seealso}{\space}{, p.\space}
-}}
+% \def\idxBdelim{\@ifnextchar{\see}{\space}{%
+% \@ifnextchar{\seealso}{\space}{, p.\space}}}
+% Versão utilizada caso esteja usando o hyperhef:
+% \def\idxBdelim{\@ifnextchar{\hyperindexformat}{\space}{, p.\space}}
+% Versão mista, pode ter hyperref ou não:
+\def\idxBdelim{\@ifnextchar{\hyperindexformat}{\space}{%
+\@ifnextchar{\see}{\space}{%
+\@ifnextchar{\seealso}{\space}{, p.\space}%
+}}%
+}
 
-% Crio um comando alternativo para que a remissiva ver e ver também venha como uma nova linha, abaixo da entrada original, igual no índice da NBR 6023:2018. No termo de ordenamento é adicionada várias letras "a", para que o elemento sempre fique abaixo da entrada original
+% Criado um comando alternativo para que a remissiva ver e ver também venha como uma nova linha, abaixo da entrada original, igual no índice da NBR 6023:2018. No termo de ordenamento é adicionada várias letras "a", para que o elemento sempre fique abaixo da entrada original
 % Os comandos recebem: 
-% #1 = Termo do cabeçalho; 
-% #2 = Termo ao qual o cabeçalho direciona pela remissiva;
-% #3 = String utilizada para definir como subcabeçalho;
-% #4 = Versão sem caracteres especiais do termo do cabeçalho, para ordenamento.
-% Deixe vazio o que não for utilizar
-\newcommand{\indexsee}[4]{\index{#3#1aaaaaaaa@#1|see{#2}}}
-\newcommand{\indexseealso}[4]{\index{#1aaaaaaab@#1|seealso{#2}}}
+    % #1 = Termo do cabeçalho; 
+    % #2 = Termo ao qual o cabeçalho direciona pela remissiva;
+    % #3 = String utilizada para definir como subcabeçalho;
+% Foi necessário criar uma versão para caracteres acentuados. E a versão dos comandos para caracteres acentuados recebe, adicionalmente:
+    % #4 = Versão sem caracteres especiais do termo do cabeçalho, para ordenamento.
+% Deixe vazio o que não for utilizar, para o caso de #3 e #4 (string vazia não altera o resultado final)
+\newcommand{\indexsee}[4]{%
+\ifEmpty{#4}{%
+\index{#3#1aaaaaaaa@#1|see{#2}}%
+}{% Se a versão alternativa sem caracteres especiais estiver preenchida:
+\index{#3#4aaaaaaaa@#1|see{#2}}%
+}%
+}
 
-% Crio um comando alternativo para adicionar o índice e imprimir o termo no texto (também são criadas as versões alternativas para os comandos das remissivas)
-\newcommand{\iindex}[2]{#1\index{#1}}
-\newcommand{\iindexsee}[3]{#1\indexsee{#1}{#2}}
-\newcommand{\iindexseealso}[3]{#1\indexseealso{#1}{#2}}
+\newcommand{\indexseealso}[4]{%
+\ifEmpty{#4}{%
+\index{#3#1aaaaaaab@#1|seealso{#2}}%
+}{% Se a versão alternativa sem caracteres especiais estiver preenchida:
+\index{#3#4aaaaaaab@#1|seealso{#2}}%
+}%
+}
+
+% Criado um comando alternativo para adicionar o índice e imprimir o termo no texto (também foram criadas versões alternativas para os comandos das remissivas, apesar de não ser tão necessário, visto que recomenda-se que remissivas sejam criadas próximo ao fim do documento, por organização, já que não utilizam número de página)
+% \iindex recebe:
+    % #1 = termo do cabeçalho
+    % #2 = item opcional (deixe vazio se não usar) para adicionar tanto os termos para torná-lo em subcabeçalho quanto para adicionar o termo usado para ordenamento, para o caso de caracteres acentuados
+    % ex.: \iindex{Gráfico}{Ilustracao@Ilustração!Grafico@}
+% Os outros comandos recebem os mesmos valores dos seus comandos originais, com a diferença de imprimir o termo principal do cabeçalho
+\newcommand{\iindex}[2]{#1\index{#2#1}}
+\newcommand{\iindexsee}[4]{#1\indexsee{#1}{#2}{#3}{#4}}
+\newcommand{\iindexseealso}[4]{#1\indexseealso{#1}{#2}{#3}{#4}}
+
+%%%
+%% Entradas do índice
+%%%
+% Obs.: Quando chamar o comando, sempre adicione um par de chaves, para que o LaTeX identifique se existe um espaço depois e imprimi-lo. Ex.: \myIdxSubcabecalho{}
+% Isso é necessário, pois, senão o texto que vier depois vem "colado" junto, sem espaço. 
+% Ex.: \myIdxSubcabecalho utiliza = Subcabeçalhoutiliza
+%      \myIdxSubcabecalho{} utiliza = Subcabeçalho utiliza
+\newcommand{\myIdxSubcabecalho}{\index{Cabecalho@Cabeçalho!Subcabecalho@Subcabeçalho}}
+\newcommand{\myIdxResumoVernac}{\index{Elementos obrigatorios@Elementos obrigatórios!Resumo!na lingua vernacula@na língua vernácula}}
+\newcommand{\myIdxAbstract}{\index{Elementos obrigatorios@Elementos obrigatórios!Resumo!na lingua estrangeira@na língua estrangeira}}
