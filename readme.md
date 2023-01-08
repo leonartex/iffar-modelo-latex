@@ -1,4 +1,5 @@
 Dúvidas:
+
 	- Verificar a questão de divergência na formatação das seções quaternárias e quinárias
 	- Verificar o espaço necessário entre a nota de rodapé e seu índice
 	- Sobre epígrafes: "Sugere-se digitar com fonte 12, itálico, espaçamento simples, com recuo de 10 cm da margem esquerda, alinhado pela margem direita. O autor pode ser destacado em negrito."
