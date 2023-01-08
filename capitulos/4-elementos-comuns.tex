@@ -47,7 +47,7 @@
     \item a segunda linha e as demais que se seguem no texto da alínea começam
     sob a primeira letra do texto da própria alínea.
   \end{alinea}
-E se você não quebrar a linha para iniciar um novo parágrafo, o \LaTeX{} continuará no mesmo parágrafo, não realizando a indentação, contudo, eu não sei se isso é algo desejado. Eu não encontrei nenhuma norma na ABNT que falasse sobre isso, nem algum exemplo no Guia de Normalização. Na dúvida, é só quebrar a linha duas vezes, para começar um novo parágrafo
+E se não for quebrada a linha, para iniciar um novo parágrafo, o \LaTeX{} continuará no mesmo parágrafo, não realizando a indentação, contudo, não foi identificado pelo autor se essa característica é algo desejado. Não foi encontrada nenhuma norma na ABNT que tratasse especificamente sobre isso, nem algum exemplo no Guia de Normalização. Na dúvida, é só quebrar a linha duas vezes, para começar um novo parágrafo
 
   % \subsection{Outros exemplos de listas numeradas}
     % \begin{leiParagrafo}
@@ -59,11 +59,11 @@ E se você não quebrar a linha para iniciar um novo parágrafo, o \LaTeX{} cont
     % \end{leiParagrafo}
 
 \section{Equações e fórmulas}
-  Existe um grande número de pacotes para a impressão de elementos e símbolos matemáticos\footnote{Vou ser bem honesto, isso aqui não é nem um pouco a minha área. Estou citando aqui por causa que é um ponto importante, mas não tenho ideia direito do que estou falando.}. Este modelo, por exemplo, já tem importado o pacote \texttt{amssymb}, para a adição de símbolos, e o \texttt{amsmath}\footnote{Adicionei só para ajudar quem não conhece sobre, se você não utilizar nada ``matemático demais'', esse pacote pode ser tranquilamente removido.}, para maiores funcionalidade com elementos matemáticos, mas nada impede a adição de outros pacotes. Porém, deve-se atentar com o  conflito de pacotes. Dependendo do que os pacotes fazem, principalmente se tiverem funcionalidades muito semelhantes, pode ocorrer conflito, levando a erros na compilação. E isto é uma recomendação geral sobre pacotes. Não é necessário ter receio de adicionar outros pacotes, porém, eles devem ser adicionados com atenção, visualizando quais pacotes o modelo já utiliza.
+  Existe um grande número de pacotes para a impressão de elementos e símbolos matemáticos\footnote{Vou ser bem honesto, isso aqui não é nem um pouco a minha área. Estou citando aqui por causa que é um ponto importante, mas não tenho ideia direito do que estou falando.}. Este modelo, por exemplo, já tem importado o pacote \texttt{amssymb}, para a adição de símbolos, e o \texttt{amsmath}\footnote{Adicionei só para ajudar quem não conhece sobre, se você não utilizar nada ``matemático demais'', esse pacote pode ser tranquilamente removido.}, para maiores funcionalidade com elementos matemáticos, mas nada impede a adição de outros pacotes. Porém, deve-se atentar com o  conflito de pacotes. Dependendo do que os pacotes fazem, principalmente se tiverem funcionalidades muito semelhantes, pode ocorrer conflito, levando a erros na compilação. E isto é uma recomendação geral sobre pacotes. Não é necessário ter receio de adicionar outros pacotes, porém, eles devem ser adicionados com atenção, visualizando quais pacotes o modelo já utiliza\footnote{Muitos pacotes apresentam em suas documentações uma lista de pacotes conhecidos por darem conflitos. Alguns conflitos são de total incompatibilidade, porém, outros podem ser apenas em determinados elementos, que vão se comportar de uma maneira errônea.}.
 
   Para a apresentação de expressões matemáticas, o \LaTeX{} apresenta muitas maneiras para se utilizar, podendo ocorrer de dois modos: \textit{inline} e \textit{display}. O primeiro é para expressões que fazem parte de um parágrafo e o segundo é utilizado em um bloco de texto exclusivo para a expressão. Seguem-se exemplos:
 
-  No modo \textit{inline} pode ser escrito expressões de várias formas\footnote{No código são utilizadas várias maneiras de se apresentar expressões matemáticas \textit{inline}.}, como: \(E=mc^2\); $ 2 \times 2 = 4 $; e, também, \begin{math} x^2 + y^2 = z^2 \end{math}. Contudo, o Guia de Normalização estabelece que equações e fórmulas devem aparecer \blockcquote[p. 23]{livro:iffar-guia-normalizacao-2022}{destacadas no texto, a fim de facilitar sua leitura}, para isto existe o modo \textit{display}. E, para o modo \textit{display}, também existem múltiplas formas de adicionar uma expressão ao texto\footnote{Observe no código as diversas formas de se criar uma expressão matemática em modo \textit{display}.}:
+  No modo \textit{inline} pode ser escrito expressões de várias formas\footnote{No código são utilizadas várias maneiras de se apresentar expressões matemáticas \textit{inline}.}, como: \(E=mc^2\); $ 2 \times 2 = 4 $; e, também, \begin{math} x^2 + y^2 = z^2 \end{math}. Contudo, o Guia de Normalização estabelece que equações e fórmulas devem aparecer \blockcquote[p. 23]{livro:iffar-guia-normalizacao-2022}{destacadas no texto, a fim de facilitar sua leitura}, para isto existe o modo \textit{display}\footnote{Eu não pesquisei como deixar as expressões mais alinhadas à esquerda, deixando de ficar centralizada, dando um pequeno recuo para o destaque. Uma alternativa é utilizar o modo \textit{inline} isolado como um único parágrafo, assim a aplica a indentação e realiza o destaque.}. E, para o modo \textit{display}, também existem múltiplas formas de adicionar uma expressão ao texto\footnote{Observe no código as diversas formas de se criar uma expressão matemática em modo \textit{display}.}:
   \[ x^n + y^n = z^n \]
   
   Ou:
@@ -104,11 +104,11 @@ E se você não quebrar a linha para iniciar um novo parágrafo, o \LaTeX{} cont
   A ABNT prevê também, e de maneira opcional, a possibilidade de realizar a numeração das equações. Como é observável, o próprio elemento \texttt{equation} do \LaTeX{} já apresenta sua própria numeração, além de alguns outros elementos do \texttt{amsmath} porém, também existem maneiras de desativar essa função\footnote{Posso ter entendido errado, mas o equation* do \texttt{amsmath} tem a exata diferença de não ter numeração.}.
 
 \section{Figuras, tabelas e quadros}
-  Sobre elementos como as figuras, tabelas e quadros, é importante destacar que o comando utilizado para criar esses elementos é apenas um invólucro, onde você pode colocar o conteúdo que quiser dentro deles. E esse invólucro é apenas responsável por dar o ``tratamento'' como determinado item, e aí, dentro dele, são realizados os comandos que realmente adicionam os itens pertinentes ao respectivo elemento, como uma imagem, no caso de figuras.
+  Sobre elementos ilustrativos, é importante destacar que o comando utilizado para criar esses elementos é apenas um invólucro, onde você pode colocar o conteúdo que quiser dentro deles. E esse invólucro é apenas responsável por dar o ``tratamento'' como determinado item, e aí, dentro dele, são realizados os comandos que realmente adicionam os itens pertinentes ao respectivo elemento, como uma imagem, no caso de figuras.
   
 \subsection{Figuras}
-  Para as figuras, podem ser utilizados os formatos de imagens mais populares, como \verb|.png| ou \verb|.jpg|\footnote{É válido pesquisar quais são todos os formatos aceitos}, porém, além de imagens, também podem ser adicionados documentos \verb|.pdf|. A vantagem de utilizar um \textit{Portable Document Format} (PDF) é que os textos contidos não perderão a qualidade, por não passarem por compressão, ao imprimir as palavras diretamente como texto, como ilustrado na Figura \ref{figura:pdf}. Porém, apesar de aceitar formatos populares de imagens, nativamente (e pelo pacote utilizado), imagens \textit{Scalable Vector Graphics} (SVG) não são possiveis de serem utilizadas. Inclusive, até existem pacotes que adicionam a capacidade de imprimir SVGs nos documentos, porém, eles possuem um conjunto de limitações\footnotemark. A seguir, na Figura \ref{figura:marca-iffar}, é apresentado um exemplo com a marca do IFFar.
-      \footnotetext{Dependendo do programa que você estiver usando, você pode exportar a figura como PDF, logo, conseguindo imprimir corretamente a imagem, eu acho.}
+  Para as figuras, podem ser utilizados os formatos de imagens mais populares, como \verb|.png| ou \verb|.jpg|\footnote{É válido pesquisar quais são todos os formatos aceitos.}, porém, além de imagens, também podem ser adicionados documentos \verb|.pdf|. A vantagem de utilizar um \textit{Portable Document Format} (PDF) é que os textos contidos não perderão a qualidade, por não passarem por compressão, ao imprimir as palavras diretamente como texto, como ilustrado na Figura \ref{figura:pdf}. Porém, apesar de aceitar formatos populares de imagens, nativamente (e pelo pacote utilizado), imagens \textit{Scalable Vector Graphics} (SVG) não são possiveis de serem utilizadas. Inclusive, até existem pacotes que adicionam a capacidade de imprimir SVGs nos documentos, porém, eles possuem um conjunto de limitações\footnotemark. A seguir, na Figura \ref{figura:marca-iffar}, é apresentado um exemplo com a marca do IFFar.
+      \footnotetext{Dependendo do programa que for utilizado, existe a opção de exportar a figura como PDF, logo, imprimindo corretamente a imagem.}
 
   \begin{figure}[H]
     \Centering\singlespacing
@@ -132,7 +132,7 @@ E se você não quebrar a linha para iniciar um novo parágrafo, o \LaTeX{} cont
   \end{figure}
   
 \subsection{Tabelas}
-  Como citado anteriormente, os elementos das figuras, tabelas e quadros são apenas um invólucro, então, para tabelas (e quadros), podem ser utilizados um conjunto de alternativas para gerarem-se as tabelas. No caso deste modelo, pode ser utilizadas para gerar as tabelas as opções de \verb|tabular|, nativo do LaTeX, e \verb|tabularx|,adicionado através de um pacote e que permite criar tabelas com variados tamanhos de colunas. Existem também outros pacotes que permitam gerar tabelas e, então, pode ser útil pesquisar sobre eles. Na Tabela \ref{tabela:barbetta-2017-p248} é apresentada uma tabela utilizando \verb|tabular| e, na Tabela \ref{tabela:exemplo-caracteres}, utilizando \verb|tabularx|.
+  Como citado anteriormente, os elementos das figuras, tabelas e quadros são apenas um invólucro, então, para tabelas (e quadros), podem ser utilizados um conjunto de alternativas para gerarem-se as tabelas. No caso deste modelo, pode ser utilizadas para gerar as tabelas as opções de \verb|tabular|, nativo do LaTeX, e \verb|tabularx|,adicionado através do pacote homônimo, que permite criar tabelas com tamanhos variáveis de colunas. Existem também outros pacotes que permitam gerar tabelas e, então, pode ser útil pesquisar sobre eles. Na Tabela \ref{tabela:barbetta-2017-p248} é apresentada uma tabela utilizando \verb|tabular| e, na Tabela \ref{tabela:exemplo-caracteres}, utilizando \verb|tabularx|.
 
 \begin{table}[H]
   \Centering\singlespacing
@@ -166,7 +166,7 @@ Fonte: \textcite[p. 248]{livro:barbetta-2017}.
   \caption{Exemplos de caracteres especiais no LaTeX}
   \label{tabela:exemplo-caracteres}
 
-  \begin{tabularx}{0.65\textwidth} { 
+  \begin{tabularx}{0.85\textwidth} { 
     >{\centering\arraybackslash}X 
     | >{\centering\arraybackslash}X}
     \hline
@@ -194,18 +194,16 @@ Fonte: \textcite[p. 248]{livro:barbetta-2017}.
   \footnotesize
   Fonte: elaborado pelo autor (2023).
 
-  Nota: há a exceção, específica para este modelo, dos caracteres º e ª, pois eles foram definidos como símbolos \textit{unicode} aceitos, no arquivo \texttt{config/unicode-char.sty}. O mesmo pode ser realizado para alguns outros exemplos, se optado, como o \textregistered{} ou \copyright. Além disso, o --- e o -- também podem ser realizados através de 3 e 2 híphens seguidos, respectivamente.
+  Nota: há a exceção dos caracteres º e ª, pois eles foram definidos como símbolos \textit{unicode} aceitos, no arquivo \texttt{config/unicode-char.sty}, contudo, talvez nem seja necessário realizar tal configuração, pois, o XeLaTeX compila em UTF-8. O mesmo pode ser realizado para alguns outros exemplos, se optado, como o \textregistered{} ou \copyright. Além disso, o --- e o -- também podem ser realizados através de 3 e 2 híphens seguidos, respectivamente.
 \end{table}
 
 \subsection{Quadros}
   Para apresentar um quadro, utiliza-se a mesma lógica das tabelas. Na verdade, as únicas coisas que diferenciam um quadro de uma tabela é o termo utilizado para criar o elemento, \verb|\begin{quadro}|, e o fato que quadros são todo cobertos por bordas, enquanto que tabelas não apresentam bordas nas extremidades laterais. E essa borda é impressa ao adicionar os \textit{pipelines} (``|'') nas extremidades, ao definir as colunas do \verb|tabular[x]| (ex.: \verb|\begin{tabular}{|\textbf{|}\verb\c|c|c\\textbf{|}\verb|}|). A seguir, no Quadro \ref{quadro:exemplo}, isso pode ser visualizado.
 
   \begin{quadro}[H]
-    \Centering\singlespacing
-  
+    \Centering\singlespacing  
     \caption{Exemplo de quadro com múltiplas linhas e colunas}
     \label{quadro:exemplo}
-  
     \begin{tabularx}{0.65\textwidth}
       {|c|r|l|X|} % Definição das colunas
       \hline

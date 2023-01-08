@@ -2,14 +2,17 @@
 %Exemplo de epígrafe de início de capítulo:
 \begin{epigrafe}
     % Seu texto recomenda-se em itálico e autor em negrito
-    \textit{O Guia de Normalização diz que você pode utilizar, se quiser, epígrafes no início de cada uma das seções primárias (capítulos). Eis aqui o exemplo. O Guia diz que você pode, mas será se você deve? Eu vou ser honesto, acho um pouco esquisitinho.} \textbf{Leonardo Garcez Dalenogari Alba}
+    \textit{O Guia de Normalização diz que você pode utilizar, se quiser, epígrafes no início de cada uma das seções primárias (capítulos). O Guia diz que pode, mas, será se você deve? Eu vou ser honesto, acho um pouco esquisitinho.} 
+    
+    (\textbf{\MakeUppercase{Alba}}, 2023)
 \end{epigrafe}
 
 %Falar as observações contidas no Guia
-O Guia de normalização, com base na NBR 14724, estabelece um conjunto de elementos, opcionais e obrigatórios, que podem constar em um trabalho acadêmico. A organização desses elementos, divididos em elementos pré-textuais, textuais e pós-textuais, pode ser observada na Figura \ref{figura:elementos-guia}. E, neste capítulo, serão discutidas algumas observações sobre esses elementos, principalmente pré-textuais e pós-textuais, envolvendo suas particularidades no \LaTeX{}, neste modelo. Entretanto, a descrição, e melhor detalhamento, sobre o que deve estar contido em cada elemento estão no \citetitle{livro:iffar-guia-normalizacao-2022}, recomendando-se que faça-se a sua leitura.
+O Guia de normalização, com base na NBR 14724, estabelece um conjunto de elementos, opcionais e obrigatórios, que podem constar em um trabalho acadêmico. A organização desses elementos, divididos em elementos pré-textuais, textuais e pós-textuais, pode ser observada na Figura \ref{figura:elementos-guia}. E, neste capítulo, serão discutidas algumas observações sobre esses elementos, principalmente pré-textuais e pós-textuais, envolvendo suas particularidades no \LaTeX{} e neste modelo. Entretanto, a descrição e melhor detalhamento sobre o que deve estar contido em cada elemento estão no \citefield{livro:iffar-guia-normalizacao-2022}{title} \cite{livro:iffar-guia-normalizacao-2022}, recomendando-se que faça-se a sua leitura.
 
 \begin{figure}[H]
     \Centering\singlespacing
+
     \caption{Organização dos elementos do Trabalho Acadêmico-Científico}
     \label{figura:elementos-guia}
     \includegraphics[width=10cm]{guia-elementos.png}
@@ -24,15 +27,15 @@ O Guia de normalização, com base na NBR 14724, estabelece um conjunto de eleme
 
     Não é computada na contagem das folhas.
 
-    É configurado automaticamente pelo arquivo \texttt{elementos/DADOS.tex}. Selecione se o seu trabalho é TCC ou Tese e Dissertação e preencha os dados restantes com os valores necessários.
+    É configurado automaticamente pelo arquivo \texttt{elementos/DADOS.tex}. Nele, selecione se o seu trabalho é TCC ou Tese e Dissertação e preencha os dados restantes com os valores necessários.
 
-    O Guia de Normalização estabelece que a capa deve conter \blockcquote[p. 30]{livro:iffar-guia-normalizacao-2022}{nome da instituição (opcional), título do trabalho e nome do(a) autor(a)}, o mesmo estabelecido pela NBR 14724 \cite{livro:abnt-nbr-14724:2011}, porém, nos seus exemplos visuais mostram-se dados adicionais\footnote{Eu implementei conforme o ilustrado, apesar de não saber sobre a definição de margens.}.
+    O Guia de Normalização estabelece que a capa deve conter \blockcquote[p. 30]{livro:iffar-guia-normalizacao-2022}{nome da instituição (opcional), título do trabalho e nome do(a) autor(a)}, o mesmo estabelecido pela NBR 14724 \cite{livro:abnt-nbr-14724:2011}, porém, nos seus exemplos visuais mostram-se dados adicionais\footnote{Foi implementado conforme o ilustrado nos exemplos, apesar de não saber detalhes sobre a definição de margem vertical entre cada elemento.}.
 
     \subsection{Lombada (opcional)}
     É utilizado para trabalhos impressos e, por isso, este modelo não abrange tal elemento.
 
 \section{Elementos pré-textuais}
-    Para o caso do uso da configuração \textbf{twoside}, para uso de verso e anverso das folhas: recomenda-se que seus elementos, com exceção da ficha catalográfica/de identificação, iniciem no anverso das folhas (parte da frente da folha, página ímpar). O modelo detecta e realiza a configuração para o início desses elementos\footnote{Porém, podem acontecer \textit{bugs}, pois o \texttt{cleardoublepage} é considerado um comando frágil pelo \LaTeX{}.}, você pode optar por desativar, comentando ou removendo os comandos \verb|\OnesideTwoside| no fim de cada elemento, apesar da utilização de pelo menos um \verb|\clearpage| ser recomendada\footnote{Mas também não acontece nenhum problema se não existir o comando}.
+    Para o caso do uso da configuração \textbf{twoside}, para uso de verso e anverso das folhas: recomenda-se que seus elementos, com exceção da ficha catalográfica/de identificação, iniciem no anverso das folhas (parte da frente da folha, página ímpar). O modelo detecta e realiza a configuração para o início desses elementos\footnote{Porém, podem acontecer \textit{bugs}, pois o \texttt{cleardoublepage} é considerado um comando frágil pelo \LaTeX{}.}, você pode optar por desativar, comentando ou removendo os comandos \verb|\OnesideTwoside| no fim de cada elemento, apesar da utilização de pelo menos um \verb|\clearpage| ser recomendada\footnote{Pode não acontecer nenhum problema se não existir o comando, porém, segue a recomendação da utilização.}.
 
 \subsection{Folha de rosto (obrigatório)}
     Arquivo: \texttt{elementos/folha-rosto.tex}
@@ -41,16 +44,16 @@ O Guia de normalização, com base na NBR 14724, estabelece um conjunto de eleme
 
     Para o caso do trabalho estar configurado como \textbf{twoside}, para a impressão no verso e anverso, configure, no final de seu arquivo, o uso do \verb|\clearpage|:
     \begin{alinea}
-        \item se existir a ficha catalográfica\footnote{Que nem ao menos sei como que é realizado o processo, se o autor que adiciona no documento \LaTeX{} ou se o(a) bibliotecário(a) é responsável tanto por criar os dados quanto anexar depois no documento.}/identificação de obra, altere o comando \verb|\OnesideTwoside| e utilize \verb|\clearpage|, pois a ficha deve estar no verso;
+        \item se existir a ficha catalográfica/identificação de obra, altere o comando \verb|\OnesideTwoside| e utilize \verb|\clearpage|, pois a ficha deve estar contida no verso;
         \item se ainda não possuir a ficha, seja qual for, deixe o comando \verb|\OnesideTwoside| decidir pelo \verb|\cleardoublepage|.
     \end{alinea}
 
 \subsection{Ficha catalográfica ou ficha de identificação (obrigatório)}
     Arquivo: \texttt{elementos/ficha-catalografica.tex}
 
-    A ficha catalográfica é elaborada pelos bibliotecários da instituição e a ficha de identificação é produzida pelos autores dos trabalhos, \blockcquote[p. 15]{livro:iffar-guia-normalizacao-2022}{partir de um sistema gerador que a instituição utilize}\footnote{Não tenho ideia alguma sobre esse sistema.}.
+    A ficha catalográfica é elaborada pelos bibliotecários da instituição\footnote{Eles são responsáveis por elaborar a ficha, porém, não sei como que é realizado o processo, se o autor que adiciona no documento, pelo \LaTeX{}, ou se o(a) bibliotecário(a) é responsável tanto por criar os dados quanto anexar, depois de entregue, no documento.} e a ficha de identificação é produzida pelos autores dos trabalhos\footnote{O Guia não apresenta um exemplo de ficha de identificação de obra e não indica qual seria o sistema utilizado pela instituição.}, \blockcquote[p. 15]{livro:iffar-guia-normalizacao-2022}{a partir de um sistema gerador que a instituição utilize}\footnote{Não tenho ideia alguma sobre esse sistema.}.
 
-    Obrigatoriamente deve estar contida no verso da folha de rosto\footnote{Até mesmo utilizando \textbf{oneside}? Se for, acho que será necessário criar uma lógica diferente, pois assim não sei como que fica a contagem de páginas para este elemento.}.
+    Obrigatoriamente deve estar contida no verso da folha de rosto\footnote{Até mesmo utilizando \textbf{oneside}? Se for, talvez seja necessário criar uma lógica diferente, pois a contagem de páginas pode ficar confusa se realizada a impressão do trabalho (talvez deva-se imprimir um documento sem esta página, assim, não sendo considerada na contagem e, depois, imprimir no verso da folha de rosto).}.
     
 \subsection{Errata (opcional)}
     Ocorre após a impressão do trabalho e, por isso, o modelo não abrange tal elemento. Se necessário, pode-se utilizar outra ferramenta de texto para gerar a errata, visto que só deve ser necessário manter a mesma fonte utilizada no trabalho.
@@ -94,12 +97,12 @@ O Guia de normalização, com base na NBR 14724, estabelece um conjunto de eleme
 \subsection{Resumo em língua estrangeira (obrigatório)}\myIdxAbstract
     Arquivo: \texttt{elementos/abstract.tex}
 
-    A presença deste elemento é obrigatória e o modelo traz seu exemplo para a língua inglesa, \textit{abstract}, porém, o resumo pode ser realizado em qualquer outro idioma de divulgação internacional\footnote{Recomendo a utilização do tradutor Deepl (\url{https://deepl.com/}) como ferramenta de apoio, se considerar necessário.}, apenas necessitanto editar seu arquivo, como o título traduzido para seu devido idioma.
+    A presença deste elemento é obrigatória e o modelo traz seu exemplo para a língua inglesa, \textit{abstract}, porém, o resumo pode ser realizado em qualquer outro idioma de divulgação internacional\footnote{Recomendo a utilização do tradutor DeepL (\url{https://deepl.com/}) como ferramenta de apoio, se considerar necessário.}, apenas necessitanto editar seu arquivo, como o título traduzido para seu devido idioma.
 
 \subsection{Lista de ilustrações (opcional)}
     Arquivo: \texttt{main.tex}
 
-    O Guia de Normalização \cite{livro:iffar-guia-normalizacao-2022} estabelece a utilização de lista de ilustrações\footnote{Eu sempre fico medidor confuso com a distinção de lista de ilustrações e lista de figuras. São o mesmo?}, recomendando-se a criação de listas distintas para cada tipo, caso haja mais de cinco elementos do tipo, (figuras, quadros, gráficos, desenhos, fotografias, organogramas, gravuras e outros). No arquivo \texttt{main.tex}, algumas linhas abaixo de \verb|\usepackage{newfloat}|, estão contidas as instruções para a criação de outros elementos e suas listas.
+    O Guia de Normalização \cite{livro:iffar-guia-normalizacao-2022} estabelece a utilização de lista de ilustrações, ou figuras\footnote{Ambos os termos representam a mesma coisa, designando de forma genérica uma imagem.}, recomendando-se a criação de listas distintas para cada tipo, caso haja mais de cinco elementos do tipo, (figuras, quadros, gráficos, desenhos, fotografias, organogramas, gravuras e outros). No arquivo \texttt{main.tex}, algumas linhas abaixo de \verb|\usepackage{newfloat}|, estão contidas as instruções para a criação de outros elementos e suas listas.
 
     Em \texttt{main.tex}, comente as linhas das listas, como \verb|\listoffigures|, \\\verb|\listofquadros|, \verb|\listofgraficos|, etc., para não adicionar os elementos.
 
@@ -111,7 +114,7 @@ O Guia de normalização, com base na NBR 14724, estabelece um conjunto de eleme
 \subsection{Lista de quadros (opcional)}
     Arquivo: \texttt{main.tex}
 
-    Apesar de ser definido como elemento de ilustração, sua lista, de acordo com o Guia de Normalização, na Figura \ref{figura:elementos-guia}, é apresentada depois da lista de tabelas, que não é citada como exemplo de elemento de ilustração. Não foi identificado no Guia de Normalização a ordem de apresentação caso houvesse a criação de outras listas.
+    Apesar de ser definido como elemento de ilustração, sua lista, de acordo com o Guia de Normalização, na Figura \ref{figura:elementos-guia}, é apresentada depois da lista de tabelas, que não é citada como um exemplo de elemento de ilustração. Outro aspecto, geral para os elementos de ilustração, é que não foi identificado no Guia de Normalização se existe alguma ordem de apresentação dessas listas, caso houvesse a criação de outras, além da lista de quadros.
 
     Em \texttt{main.tex}, comente a linha \verb|\listofquadros| para não adicionar o elemento.
 
@@ -138,7 +141,10 @@ O Guia de normalização, com base na NBR 14724, estabelece um conjunto de eleme
 \subsection{Sumário (obrigatório)}
     Arquivo: \texttt{main.tex}
 
-    O espaçamento utilizado para o alinhamento do número da seção e seu título pode ser alterado modificando a unidade de medida do comando \verb|\espacoAlinhamentoSumario|.
+    O espaçamento utilizado para o alinhamento do número da seção e seu título pode ser alterado modificando a unidade de medida do comando:
+\begin{verbatim}
+    \espacoAlinhamentoSumario
+\end{verbatim}
     
 
 \section{Elementos textuais}
@@ -177,9 +183,9 @@ O Guia de normalização, com base na NBR 14724, estabelece um conjunto de eleme
 \subsection{Apêndices (opcional)}\index{Apendice@Apêndice|see{Elementos opcionais}}
     Arquivo: \texttt{main.tex}
     
-    Apêndices são elementos, como documentos e outros materiais, elaborados pelo próprio autor do trabalho. Eles devem ser adicionados dentro do ambiente \texttt{SecoesNaoNumeradas}, após as referências bibliográficas, e são criados através do comando \verb|\apendice|, que funciona exatamente como um capítulo, porém, com as adaptações exigidas pelo Guia de Normalização.
+    Apêndices são elementos, como documentos e outros materiais, elaborados pelo próprio autor do trabalho. Eles devem ser adicionados dentro do ambiente \\\texttt{SecoesNaoNumeradas}, após as referências bibliográficas, e são criados através do comando \verb|\apendice|, que funciona exatamente como um capítulo, porém, com as adaptações exigidas pelo Guia de Normalização.
 
-    Se o usuário quiser, pode criar um arquivo \texttt{.tex}, exatamente como os capítulos, e importá-los no arquivo principal, para manter o arquivo principal mais organizado.
+    Se o usuário quiser, pode criar um arquivo \texttt{.tex}, exatamente como os capítulos, e importá-los no arquivo principal, para manter maior organização.
 
 \subsection{Anexos (opcional)}
     Arquivo: \texttt{main.tex}
@@ -189,9 +195,9 @@ O Guia de normalização, com base na NBR 14724, estabelece um conjunto de eleme
 \subsection{Índice (opcional)}\index{Indice@Índice|(}\indexseealso{Índice}{Elementos opcionais}{}{Indice}
     Arquivo: \texttt{config/indice.sty}
 
-    O índice é utilizado para apresentar onde determinados termos e temas são abordados em um trabalho. Podem ser utilizados diversos elementos para apresentar a localização, como página, seção, elementos como anexos, contudo, existem algumas limitações do que pôde ser implementado para este modelo, especialmente neste aspecto.
+    O índice é utilizado para apresentar onde determinados termos e temas são abordados em um trabalho. Podem ser utilizados diversos elementos para apresentar a localização, como página, seção e elementos como anexos, contudo, existem algumas limitações do que pôde ser implementado para este modelo, especialmente neste aspecto.
     
-    Para a implementação do índice foi utilizado o pacote \texttt{imakeidx}, que usa o \texttt{makeidx} como a ferramenta para criar o índica, e ele apresenta limitações em alguns aspectos. A primeira limitação no modelo é que o índice possui a capacidade de apenas poder apresentar a página de onde encontra-se o termo, não sendo possível, de forma prática, apresentar seções ou outros elementos. Uma segunda limitação é a de que o \texttt{makeidx} não sabe lidar com caracteres especiais, como caracteres acentuados, ou também de outros idiomas além do padrão ASCII, para realizar o ordenamento alfabético. Isso significa que quando o termo possuir uma letra acentuada, por exemplo, é necessário utilizar o comando de uma forma alternativa.
+    Para a implementação do índice foi utilizado o pacote \texttt{imakeidx}, que usa o \texttt{makeidx} como a ferramenta para criar o índice, e ele apresenta limitações em alguns aspectos. A primeira limitação no modelo é que o índice possui a capacidade de apenas poder apresentar a página de onde encontra-se o termo, não sendo possível, de forma prática, apresentar seções ou outros elementos. Uma segunda limitação é a de que o \texttt{makeidx} não sabe lidar com caracteres especiais, como caracteres acentuados, ou também de outros idiomas além do padrão ASCII, para realizar o ordenamento alfabético. Isso significa que quando o termo possuir uma letra acentuada, por exemplo, é necessário utilizar o comando com parâmetros adicionais.
     
     Além das limitações do pacote, também houve a implementação apenas para a apresentação do índice por ordem alfabética. Outras formas de índice, estabelecidas pela NBR 6034 \cite{livro:abnt-nbr6034:2004}, como ordem sistemática, ou cronológica, e de enfoque especial, ficam a critério do usuário para serem implementadas.
 
@@ -222,14 +228,14 @@ O Guia de normalização, com base na NBR 14724, estabelece um conjunto de eleme
     
     Por exigir a exata entrada no comando, é extremamente importante que \textbf{não utilize comandos dentro do conteúdo do índice}. Isso é importante, pois, o \texttt{makeidx} lê a entrada considerando o nome do comando como a entrada, não o seu conteúdo que ele entregaria. Porém, comandos podem ser utilizados dentro caso haja uma versão do cabeçalho para ordenamento, usando @. 
 
-    A mesma preocupação com espaços deve existir para onde se invoca o comando de índice. Deve-se sempre adicionar o comando o mais próximo possível da palavra desejada, seja o comando invocado antes ou depois do elemento. E adionando-o exatamente ao lado, quando possível, porém, nem sempre é possível. Isso acontece com índices mirando títulos de seções, legendas de figuras, comandos de \textit{environment}, etc. Existem situações em que pode ocorrer da palavra estar no final de uma página, mas o seu todo finalizar na página seguinte, levando ao número da página no índice apresentar uma página adiante, ou o inverso, caso o índice seja posicionado antes do elemento. Em situações que existem quebras de linha, é bastante importante que não existam \textit{tabs} nas linhas seguintes e que tenham caracteres de comentário no fim de cada uma linha (exceto a final), por exemplo:
+    A mesma preocupação com espaços deve existir para onde se invoca o comando de índice. Deve-se sempre adicionar o comando o mais próximo possível da palavra desejada, seja o comando invocado antes ou depois do elemento. E adionando-o exatamente ao lado quando possível, porém, nem sempre é possível. Isso acontece com índices mirando títulos de seções, legendas de figuras, comandos de \textit{environment}, etc. Existem situações em que pode ocorrer da palavra estar no final de uma página, mas o seu todo finalizar na página seguinte, levando ao número da página no índice apresentar uma página adiante, ou o inverso, caso o índice seja posicionado antes do elemento. Em situações que existem quebras de linha, é bastante importante que não existam \textit{tabs} nas linhas seguintes e que tenham caracteres de comentário no fim de cada uma linha (exceto a final), por exemplo:
 \begin{verbatim}
     \section{Uma seção}%
     \index{Secao@Seção}
 \end{verbatim}%
 Isso faz com que o \LaTeX{} considere ainda como a mesma linha e não haja caractere de espaço entre os comandos. Essa mesma dica é válida para outras situações, como criação de parágrafos, notas de rodapé, etc., sem relação com o índice.
 
-    \subsubsection{Remissivas}
+\subsubsection{Remissivas}
     Também podem ser criadas as remissivas \textbf{ver} e \textbf{ver também}, de acordo com a ABNT. O comando básico para criar remissivas é\footnote{Nas remissivas não é necessário se preocupar com caracteres especiais.}:
 \begin{verbatim}
     \index{<cabeçalho>|see{cabeçalho para ver}}
@@ -237,27 +243,29 @@ Isso faz com que o \LaTeX{} considere ainda como a mesma linha e não haja carac
 \end{verbatim}%
 Contudo, existem algumas limitações: 
 \begin{alinea}
-    \item primeiro, recomenda-se que cada cabeçalho possua apenas uma remissiva ver e apenas uma remissiva ver também, contudo, o \texttt{makeidx} repete o termo ``ver'' ou ``ver também'' para comando \verb|\index| que possuir remissiva; 
-    \item e, segundo, seguindo o índice da NBR 6023:2018 como o exemplo a ser seguido, as remissivas devem aparecer como uma nova entrada de cabeçalho, repetindo o termo, porém, o \texttt{makeidx} não possui a capacidade de repetir a entrada para remissivas de forma automática\footnote{Quer dizer, eu não identifiquei, se existe, não sei. Eu gastei um dia inteiro tentando achar uma solução para realizar isso de forma automática, para deixar o texto usando os comandos mais naturais possíveis, mas não deu. O jeito foi criar comandos específicos para tal.}.
+    \item primeiro, recomenda-se que cada cabeçalho possua apenas uma remissiva ver e apenas uma remissiva ver também, apresentando os outros elementos usando vírgula, contudo, o \texttt{makeidx} repete o termo ``ver'' ou ``ver também'' para cada comando \verb|\index| que possuir uma remissiva; 
+    \item e, segundo, seguindo o índice da NBR 6023:2018 como o exemplo a ser seguido, as remissivas devem aparecer como uma nova entrada de cabeçalho, repetindo o termo, porém, o \texttt{makeidx} não possui a capacidade de repetir a entrada para remissivas de forma automática\footnote{Pelo menos, para essa funcionalidade, não foi possível identifir uma solução para realizar isso de forma automática, para deixar o texto usando os comandos mais naturais possíveis. Então foi necessário criar comandos específicos para contornar a limitação.}.
 \end{alinea}
 
     Para contornar a limitação de quando um cabeçalho cobrir mais de um item em sua remissiva, pede-se que adicione todos os termos em apenas um comando de índice com remissiva, separando-os por vírgula, como a seguir:
 \begin{verbatim}
-    \index{<cabeçalho>|see{cabeçalho para ver 1, cabeçalho para ver 2}}
+    \index{<cabeçalho>|see{cabeçalho para ver 1,
+    cabeçalho para ver 2}}
 \end{verbatim}%
 
-    Para contornar a limitação de repetir o cabeçalho para suas remissivas, foi necessário a criação de um comando específico para cada remissiva. As remissivas não registram o número da página quando invocadas e, então, essa característica permite até utilizar normalmente o comando \verb|\index| quando o índice não é repetido em nenhum outro lugar. Porém, se o índice for repetido, ou seja, também registrar o número de uma outra página, ele será impresso ao lado da página. Para contornar isso, foram criados os comandos \verb|\indexsee| e \verb|\indexseealso|\footnote{Eles contornam essa limitação ao utilizar um termo para ordenação que adiciona um conjunto de letras ``a'' adicionais (e um ``b'' no final, para o caso do ver também), assim, repetindo-se o cabeçalho para a remissiva, de forma ordenada, sem o risco de existir um outro cabeçalho com o mesmo nome.}.
+    Para contornar a limitação de repetir o cabeçalho para suas remissivas, foi necessário a criação de um comando específico para cada remissiva. As remissivas não registram o número da página quando invocadas, permitindo até utilizar normalmente o comando \verb|\index| quando o índice não é repetido em nenhum outro lugar, porém, se o índice for repetido, ou seja, também registrar o número de uma outra página, ele será impresso ao lado da página. Para contornar isso, foram criados os comandos \verb|\indexsee| e \verb|\indexseealso|\footnote{Eles contornam essa limitação ao utilizar um termo para ordenação que adiciona um conjunto de letras ``a'' ao final do termo (e um ``b'' no final, para o caso do ver também), assim, repetindo-se o cabeçalho para a remissiva, de forma ordenada, sem o risco de existir um outro cabeçalho com o mesmo nome.}.
 
     Exemplo e descrição de uso do \verb|\indexsee|:\indexsee{Subcabeçalho}{Índice, Elementos opcionais}{Cabecalho@Cabeçalho!}{Subcabecalho}
 \begin{verbatim}
 Desc.:\indexsee{<termo impresso>}{<termos a que direciona>}
-               {<cabeçalhos superiores>!}{<termo alternativo para ordenação>}
+{<cabeçalhos superiores>!}{<termo alternativo para ordenação>}
+
 Ex.:  \indexsee{Subcabeçalho}{Índice, Elementos opcionais}
                {Cabecalho@Cabeçalho!}{Subcabecalho}
 \end{verbatim}%
-E o \verb|\indexseealso| segue a exata estrutura, com a diferença de mudar a remissiva. 
+E o \verb|\indexseealso| segue a exata estrutura, com a diferença de mudar a remissiva para ver também. 
 
-    Observação: Para o caso de cabeçalhos superiores: devem ser adicionados os pontos de exclamação para cada nível (máximo 2); e se não for usar, deixar vazio (sem espaços). E para o caso do termo alternativo para ordenação: deixar vazio se não for utilizar.
+    Observação: Para o caso de cabeçalhos superiores: devem ser adicionados os pontos de exclamação para cada nível (3 níveis, 2 pontos de exclamação); e se não for usar, deixar vazio (sem espaços). E para o caso do termo alternativo para ordenação: deixar vazio se não for utilizar.
 
     Como citado anteriormente, o comando \verb|\index| não imprime no texto o termo, apenas adiciona-o ao índice, mas, se a impressão for desejada, foram criados comandos para tal: \verb|\iindex| e as alternativas para remissivas \verb|\iindexsee| e \verb|\iindexseealso|. A descrição de como utilizá-los está contida no arquivo \texttt{config/indice.sty}.
 

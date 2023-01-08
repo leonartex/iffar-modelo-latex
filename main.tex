@@ -117,6 +117,10 @@
 %   - Você declara o novo ambiente com o \DeclareFloatingEnvironment, junto com o nome do elemento e o título de sua lista
 %   - Remove a contabilização do capítulo com o \counterwithout (apesar que acho que isso pode ser realizado no próprio \DeclareFloatingEnvironment)
 %   - E depois vai no final do arquivo config/sumario.sty e copia, e cola abaixo, a estilização usada para os elementos de figura ou tabela, realizando a modificação do nome do elemento
+% Configurando o espaço entre os floats (figura, tabelas, quadro, etc.). Por algum motivo, utilizar \baselineskip faz ficar com um baita espaço
+\setlength{\textfloatsep}{0.5\baselineskip}
+\setlength{\floatsep}{0.5\baselineskip}
+\setlength{\intextsep}{0.5\baselineskip}
 
 %% Pacotes para adicionar o uso de citações e referências no padrão ABNT
 % Permite customizar as notas de rodapé. Necessário para a indentação das notas
