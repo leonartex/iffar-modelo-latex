@@ -10,7 +10,7 @@ e, apesar de ser mais comum ver este comando presente em figuras ou tabelas, tam
 Depois, a citação é realizada através do comando \verb|\ref|, porém, é importante citar de que o comando do rótulo apenas seleciona o número do elemento, necessitando escrever separadamente o nome do elemento citado, como, por exemplo, citando a nota de rodapé \ref{rodape:exemplo-ref}, a Figura \ref{figura:marca-iffar}, o Anexo \ref{anexo:teste} ou a seção \ref{section:referencia}\footnote{Nesse aspecto, a padronização dos nomes, citados na nota \ref{rodape:exemplo-ref}, facilita bastante a identificação do elemento quando citado, para não se confundir na escrita.}. %ou a alínea \ref{alinea:exemplo-ref}. % O \ref para alíneas faz vir com o ) no nome, então não é tão útil
 
 \section{Referências bibliográficas}\index{Referencias bibliograficas@Referências bibliográficas}
-O gerenciamento das referências bibliográficas é realizado através do \verb|biblatex|, e o mesmo apresenta um conjunto de funções que podem ser utilizadas para facilitar a escrita. A primeira, e bastante importante, é que as obras da seção de referências só serão impressas se invocadas ao menos uma vez no documento através de citação. Outra funcionalidade que possuie é a de gerenciar os anos das obras quando elas possuem mesmo ano e mesmos autores, que precisam ter letras adicionadas ao final. E, para realizar as citações, existe um grande conjunto de comandos para citar as obras.
+O gerenciamento das referências bibliográficas é realizado através do \verb|biblatex|, e o mesmo apresenta um conjunto de funções que podem ser utilizadas para facilitar a escrita. A primeira, e bastante importante, é que as obras da seção de referências só serão impressas se invocadas ao menos uma vez no documento através de citação. Outra funcionalidade que possui é a de gerenciar os anos das obras quando elas possuem mesmo ano e mesmos autores, que precisam ter letras adicionadas ao final. E, para realizar as citações, existe um grande conjunto de comandos para citar as obras.
 
 \subsection{Tipos e exemplos de citações}
 \subsubsection{Citação indireta}\index{Referencias bibliograficas@Referências bibliográficas!Citacao indireta@Citação indireta}
@@ -69,20 +69,20 @@ Os comandos presentes para as citações apud são \verb|\apud| e \verb|\textapu
 
 \textapud{apud:obra-original}{apud:obra-acessada}\\
 
-Também existem alternativas para caso não seja desejado ter o registro da fonte original no arquivo de bibliografia, \texttt{.bib}:
+Também existem alternativas para caso não se tenha ou não seja desejado ter o registro da fonte original no arquivo de bibliografia \texttt{.bib}:
 
-\verb|\apud[Um Autor Imaginário][]{batman}|
+\verb|\apud[IBGE, 1993][]{livro:abnt-nbr-14724:2011}|
 
-\apud[IBGE][]{livro:abnt-nbr-14724:2011}\\
+\apud[IBGE, 1993][]{livro:abnt-nbr-14724:2011}\\
 
-\verb|IBGE \cite[apud][]{livro:abnt-nbr-14724:2011}|
+\verb|IBGE \cite[1993 apud][]{livro:abnt-nbr-14724:2011}|
 
-IBGE \cite[apud][]{livro:abnt-nbr-14724:2011}
+IBGE \cite[1993 apud][]{livro:abnt-nbr-14724:2011}
 
 \subsubsection{Citação de outros elementos da referência}
-Quando busca-se citar por alguns elementos diferentes da obra, como o título de uma obra, ou seu ano, podem ser utilizados determinados comandos para realizar tal função. Isso facilita o trabalho, por não precisar realizar a escrita manualmente, diminuindo as chances de erros, caso seja necessário atualizar algum dado da obra. Dos exemplos a seguir, muitos dos comandos imprimem o ano ao lado, contudo, para a correta citação, por exemplo, de um título de uma obra, ainda é necessário citar os autores e o ano.
+Quando busca-se citar alguns elementos diferentes da obra, como o seu título ou seu ano, podem ser utilizados comandos específicos para realizar tal função. Isso facilita o trabalho, por não necessitar realizar a escrita manualmente, diminuindo as chances de erros caso seja necessário atualizar algum dado da obra. Dos exemplos a seguir, muitos dos comandos imprimem o ano junto, contudo, para a correta citação, por exemplo, de um título de uma obra, ainda é necessário citar os autores e o ano.
 
-Para citar o título da obra, utiliza-se \verb|\citetitle|, ou, que também possui outras utilidades, \verb|\citefield|, por exemplo: 
+Para citar o título da obra, utiliza-se \verb|\citetitle|, ou \verb|\citefield|, que também possui outras utilidades. Exemplo: 
 
 \verb|\citetitle{livro:dom-casmurro}| ou \\\verb|\citefield{livro:dom-casmurro}{title}|
 
@@ -104,21 +104,21 @@ Também pode-se utilizar o \verb|\citename|, com alguns parâmetros de configura
 
 \citename{livro:dom-casmurro}{author} ou \citename{livro:dom-casmurro}[given-family]{author}\\
 
-Ou então utilizar o comando criado para este modelo, \verb|\citeauthorfull|\footnotemark:
-\footnotetext{O funcionamento pleno deste comando em todas as situações não é garantido. Foi realizada a adaptação de dois códigos distintos e, sendo bem honesto, não entendo exatamente bem como funciona a parte lógica do \texttt{biblatex}.}
+Ou, então, utilizar o comando criado para este modelo, \verb|\citeauthorfull|\footnotemark:
+\footnotetext{O funcionamento pleno deste comando em todas as situações não é garantido pois não foi amplamente testado. Para a sua criação, foi realizada a adaptação de dois códigos distintos e, sendo bem honesto, não entendo exatamente bem como funciona a parte lógica do \texttt{biblatex}.}
 
 \verb|\citeauthorfull{livro:dom-casmurro}|
 
 \citeauthorfull{livro:dom-casmurro}\\
 
-E também existe a opção de citar determinados campos dos registros das referências, como já mostrado anteriormente, através do comando \verb|\citefield|\footnote{Nem todos os campos funcionam, pois alguns são listas que, então, também possuem comando específico para tal.}:
+E também existe a opção de citar determinados campos dos registros das referências, como já mostrado anteriormente, através do comando \verb|\citefield|\footnote{Nem todos os campos funcionam, pois alguns são listas que, logo, também possuem comando específico para impressão.}:
 
 \verb|\citefield{lei:brasil-11.892-2008}{titleaddon}|
 
 \citefield{lei:brasil-11.892-2008}{titleaddon}
 
 \subsubsection{Elementos adicionais na citação}
-Existem muitas situações em que apenas citar o nome do autor e o ano não é o suficiente, e isso é facilmente resolvido no \verb|biblatex|. Utilizando-se de colchetes, informações sobre a citação podem ser adicionadas, como o número da página, essencial para citações diretas, a expressão ``tradução nossa'' para citações diretas traduzidas ou, então, artigos, parágrafos e incisos de documentos jurídicos. Por exemplo:
+Existem muitas situações em que é necessário adicionar outras informações sobre a citação, e isso é facilmente resolvido no \verb|biblatex|. Utilizando-se de colchetes, informações sobre a citação podem ser adicionadas, como o número da página, essencial para citações diretas, a expressão ``tradução nossa'' para citações diretas traduzidas ou, então, artigos, parágrafos e incisos de documentos jurídicos. Por exemplo:
 
 \verb|\textcite[p. 239]{livro:dom-casmurro}|
 
@@ -130,95 +130,224 @@ Ou:
 
 \cite[Art. 1º, I ]{lei:brasil-11.892-2008}\\
 
-Para as citações simultâneas ou citações apud segue-se o mesmo padrão ao utilizar os colchetes:
+Para as citações simultâneas ou citações apud segue-se o mesmo padrão ao utilizar os colchetes: %
+\begin{verbatim}
+  \cites[<info. fonte 1>]{<fonte 1>}
+  [<info. fonte 2>]{<fonte 2>}...
+\end{verbatim}
 
-\verb|\cites[<info. fonte 1>]{<fonte 1>}[<info. fonte 2>]{<fonte 2>}|...
-
-\subsection{Exemplos de referências}
+\section{Exemplos de referências bibliográficas}
 A seguir são apresentados exemplos de referências para variados tipos de documentos, porém, não leve os exemplos dados como os de melhor qualidade. Para alguns exemplos foi necessário realizar um conjunto de adaptações, que fogem da boa prática, para conseguir o resultado desejado. Será alertado no exemplo quando isso ocorrer, mas, recomenda-se sempre uma certa cautela ao seguir os exemplos, além de que alguns podem ter passado despercebido na revisão, para receber o alerta. Além de que, é claro, sempre é recomendado que se procure seguir as boas práticas contidas nas documentações dos pacotes sobre referências.
 
-\subsection{Livros, folhetos, etc.}
-\singlecite{livro:dom-casmurro}{}
+\subsection{Monografia no todo}
+\subsubsection{Livro e/ou folheto}
+  \exEssencial
+  \singlecite{livro:luck-2010:essencial}{}
 
-\singlecite{livro:godinho-2014}{}
+  \exComplementar
+  \singlecite{livro:luck-2010:complementar}{}
 
-\singlecite{livro:bavaresco-2011}{}
-
-\singlecite{livro:luck-2010}{}
-
-\singlecite{livro:iffar-guia-normalizacao-2022}{}
-
-\singlecite{livro:abnt-nbr6023:2018}{}
-
-\subsubsection{Partes de livros, folhetos, etc.}
-\singlecite{parte:ex1}{}
-
-\singlecite{parte:ex2}{}
-
-\singlecite{parte:ex3}{}
+  \exOutros
+  \singlecite{livro:dom-casmurro}{}
+  \singlecite{livro:iffar-guia-normalizacao-2022}{\footnote{Adaptação em \texttt{editortype}.}}
+  \singlecite{livro:abnt-nbr6023:2018}{}
 
 \subsubsection{Trabalhos acadêmicos}
-\singlecite{tese:aguiar-2009}{}
+  \exEssencial
+  \singlecite{tese:rodrigues-2009:essencial}{}
 
-\singlecite{tese:rodrigues-2009}{}
+  \exComplementar
+  \singlecite{tese:rodrigues-2009:complementar}{}
 
-\singlecite{tese:santos-2018}{}
+  \exOutros
+  \singlecite{tese:aguiar-2009}{}
+  \singlecite{tcc:alves-2008}{}
 
-\subsubsection{Correspondência}
-\singlecite{correspondencia:ex1}{}
+\subsection{Monografia no todo em meio eletrônico}
+\subsubsection{Documentos em meio eletrônico}
+  \exEssencial
+  \singlecite{livro:koogan-1998}{\footnote{Adaptação em \texttt{editortype}.}}
 
-\subsubsection{Publicação periódica}
-\paragraph{Coleção de publicação periódica}
-\singlecite{revista:ibge}{}
+  \exOutros
+  \singlecite{livro:godinho-2014}{}
+  
+\subsubsection{Documentos disponíveis online}
+  \exEssencial
+  \singlecite{livro:bavaresco-2011:essencial}{\footnote{Adaptação em \texttt{editortype}.}}
 
-\singlecite{revista:ufsc}{}
+  \exComplementar
+  \singlecite{livro:bavaresco-2011:complementar}{\footnote{Adaptação em \texttt{editortype} e \texttt{pages}.}}
 
-\paragraph{Fascículo, suplemento e outros}
-\singlecite{revista:tres}{}
+  \exOutros
+  \singlecite{tese:coelho-2009}{}
+  \singlecite{tese:santos-2018}{}
 
-\singlecite{revista:fgv}{}
+\subsection{Parte de monografia}
+  \exEssencial
+  \singlecite{parte:romano:essencial}{\footnote{Adaptação em \texttt{editortype}.}}
 
-\paragraph{Artigo, seção e/ou matéria de publicação periódica}
-\singlecite{artigo:rocke-1985}{\footnote{Atenção no arquivo de bibliografia, que usa o \texttt{issue} para adicionar a estação ao lado do ano. Isso pode ser usado para colocar o também mês, como algumas revistas colocam, ex.: \texttt{set./out.}}}
+  \exComplementar
+  \singlecite{parte:romano:complementar}{\footnote{Adaptação em \texttt{editortype}.}}
 
-\singlecite{artigo:moore-2018}{}
+  \exOutros
+  \singlecite{parte:manfroi-2010}{\footnote{Adaptação em \texttt{editortype}. Atenção no sobrenome do coordenador terminado em Filho.}}
+  \singlecite{parte:santos-1994}{}
 
-\singlecite{artigo:antunes-2018}{}
+\subsection{Parte de monografia em meio eletrônico}
+  \exEssencial
+  \singlecite{parte:cancer-2010}{\footnote{Adaptação em \texttt{authortype} e \texttt{editortype}.}}
 
-\paragraph{Artigo e/ou matéria de jornal}{}
-\singlecite{noticia:credito-2014}{}
+  \exOutros
+  \singlecite{parte:politica-1998}{}
 
-\singlecite{noticia:verissimo-2010}{}
+\subsection{Correspondência}
+  \exEssencial
+  \singlecite{correspondencia:pilla:essencial}{\footnote{O mais correto seria utilizar o tipo \texttt{@letter}, mas, aparentemente, não foi implementado o tipo para as normas da ABNT.}}
 
-\subsubsection{Evento}
-A referenciação de eventos é simples, mas possui algumas limitações seguindo os exemplos dados na NBR 6023:2018. Se for apenas um evento simples, de Anais e coisas do tipo, não tem complicação, porém, se for como os exemplos dados na NBR 6023, que apresentam dois eventos em uma mesma referência, surgem problemas. Nessa situação não foi identificada uma forma de fazer o correto registro das referências\footnote{Eu não consegui pensar em nada que não se baseasse em gambiarra.}.
+  \exComplementar
+  \singlecite{correspondencia:pilla:complementar}{}
 
-\paragraph{Evento no todo em monografia}
-\singlecite{evento:ex1}{}
+\subsection{Correspondência disponível em meio eletrônico}
+  \exEssencial
+  \singlecite{correspondencia:lispector}{}
 
-\singlecite{evento:ex2}{}
+\subsection{Publicação periódica} % 7.7
+\subsubsection{Coleção de publicação periódica} % 7.7.1
+  \exEssencial
+  \singlecite{revista:ibge:essencial}{\footnote{Atenção no ano da obra utilizado.}}
 
-\singlecite{evento:ex3}{\footnote{Gambiarra}}
-\cite{evento:ex3}
+  \exComplementar
+  \singlecite{revista:ibge:complementar}{}
 
-\paragraph{Evento no todo em publicação periódica}
-\singlecite{evento:ex4}{\footnote{Gambiarra de verdade}}
+  \exOutros
+  \singlecite{revista:nursing-1998}{\footnote{É muito comum o \& passar despercebido e causar erro se não for utilizado o seu comando.}}
+  \singlecite{revista:nursing-1929}{}
 
-\paragraph{Parte de evento}
-\singlecite{parte-evento:ex1}{}
+\subsubsection{Coleção de publicação periódica em meio eletrônico} % 7.7.2
+  \exEssencial
+  \singlecite{revista:acta-1997:essencial}{\footnote{Adaptação em \texttt{issn}.}}
 
-\singlecite{parte-evento:ex2}{}
+  \exComplementar
+  \singlecite{revista:acta-1997:complementar}{}
 
-\singlecite{parte-evento:ex3}{}
+  \exOutros
+  \singlecite{revista:ufsc}{}
 
-\subsubsection{Patentes}
-O caso de referenciar patentes é um tanto confuso: a ABNT define como referenciar, porém, não foi identificado como que uma patente deve ser citada no texto\footnote{Isso deve ser mais falha minha do que de qualquer outra pessoa. Procurei, mas não achei nada pesquisando pela internet.}, por causa da questão do ano, que possui data de depósito e data de concessão. Qual delas deveria ser utilizada para citar? Porém, o próprio exemplo dado pela ABNT para a referência de patente em meio eletrônico, \cite{patente:eletronico}, apresenta as duas datas em um padrão em inglês\footnote{O próprio \LaTeX{}, na ausência do campo \texttt{date}, utilizou o ano do \texttt{urlaccessdate}.}. Então pode ser que os exemplos dados talvez não possam ser utilizados, não sem uma devida correção.
+\subsubsection{Parte de coleção de publicação periódica} % 7.7.3
+  \exEssencial
+  \singlecite{revista:ibge:parte}{}
+  
+\subsubsection{Fascículo, suplemento e outros} % 7.7.4
+  \exEssencial
+  \singlecite{revista:tres}{}
 
-\singlecite{patente:medidor}{}
+  \exOutros
+  \singlecite{revista:fgv}{\footnote{Adaptação grande de tipo e em \texttt{titleaddon} e \texttt{publisher}.}}
 
-\singlecite{patente:embrapa}{}
+% ABNT 7.7.5
+\subsubsection{Artigo, seção e/ou matéria de publicação periódica} % 7.7.5
+  \exEssencial
+  \singlecite{artigo:lucca-2009}{\footnote{Adaptação em \texttt{issue}. O correto seria adicionar duas datas separadas por /, ou usar as variantes de campos de data para marcar períodos, porém a barra não é impressa, mas sim um travessão.}}
 
-\singlecite{patente:eletronico}{}
+  \exOutros
+  \singlecite{artigo:rocke-1985}{\footnote{Adaptação em \texttt{issue}. Novamente, o correto seria utilizar os campos de divisão do ano, porém também traduzindo os campos, além de utilizar a barra.}}
+  \singlecite{artigo:costa-1998}{\footnote{Atenção para o uso de subtítulo no nome do periódico.}}
+
+% ABNT 7.7.6
+\subsubsection{Artigo, seção e/ou matéria de publicação periódica em meio eletrônico} % 7.7.6
+  \exEssencial
+  \singlecite{artigo:vieira-1994}{\footnote{Atenção no uso de \texttt{yeardivision} para imprimir a estação do ano.}}
+
+  \exOutros
+  \singlecite{artigo:alexandrescu-2009}{\footnote{Adaptação em \texttt{location}, para a impressão do sine loco em um artigo.}}
+  \singlecite{artigo:moore-2018}{\footnote{Adaptação em \texttt{location}.}}
+  \singlecite{artigo:antunes-2018}{\footnote{Adaptação em \texttt{location}.}}
+
+% ABNT 7.7.7
+\subsubsection{Artigo e/ou matéria de jornal} % 7.7.7
+  Atenção no posicionamento da página do artigo/matéria, pois, \blockcquote[p. 15]{livro:abnt-nbr6023:2018}{quando não houver seção, caderno ou parte, a paginação do artigo ou matéria precede a data.}
+
+  \exEssencial
+  \singlecite{noticia:otta-2010}{\footnote{Adaptação em \texttt{note}.}}
+  
+  \exOutros
+  \singlecite{noticia:credito-2014}{\footnote{Adaptação em \texttt{pages}.}}
+
+% ABNT 7.7.8
+\subsubsection{Artigo e/ou matéria de jornal em meio eletrônico} % 7.7.8
+  \exEssencial
+  \singlecite{noticia:verissimo-2010}{}
+
+  \exOutros
+  \singlecite{noticia:professores-2010}{\footnote{Adaptação em \texttt{note}.}}
+
+% ABNT 7.8
+\subsection{Evento} % 7.8
+A referenciação de eventos é simples, mas possui algumas limitações seguindo alguns exemplos dados na NBR 6023:2018. Se for apenas um evento simples, de Anais e coisas do tipo, não tem complicação, porém, se for como alguns exemplos dados na NBR 6023, que apresentam dois eventos em uma mesma referência\footnote{Interpretação do autor.}, surgem problemas. Nessa situação não foi possível identificar uma forma de fazer o registro seguindo as boas práticas.
+
+% ABNT 7.8.1
+\subsubsection{Evento no todo em monografia} % 7.8.1
+  \exEssencial
+  \singlecite{evento:chemical-1984}{\footnote{Adaptação em \texttt{titleaddon}, para não deixar em negrito os colchetes com reticências. Isso talvez leve a problemas caso a intenção seja de imprimir seu título no texto.}}
+
+  \exOutros
+  \singlecite{evento:ines-2009}{\footnote{Adaptação em \texttt{number} e \texttt{eventyear}. Atenção no uso do \texttt{addendum} ao invés de \texttt{note}}}
+
+% ABNT 7.8.2
+\subsubsection{Evento no todo em publicação periódica} % 7.8.2
+  \exEssencial
+  \singlecite{evento:pet-2006}{\footnote{Adaptação em \texttt{number}, \texttt{eventyear}, \texttt{venue} e \texttt{publisher}. Exemplo extremamente imprudente, não siga-o.}}
+
+  \exOutros
+  \singlecite{evento:olericultura-2001}{\footnote{Adaptação em \texttt{number}, \texttt{eventyear}, \texttt{venue} e \texttt{publisher}. Exemplo extremamente imprudente, não siga-o.}}
+
+% ABNT 7.8.3
+\subsubsection{Evento no todo em meio eletrônico} % 7.8.3
+  \exEssencial
+  \singlecite{evento:ufpe-1996}{}
+
+  \exOutros
+  \singlecite{evento:hotel-2004}{\footnote{Atenção no uso de colchetes em torno do ano de publicação.}}
+  \singlecite{evento:soja-2009}{\footnote{Adaptação em \texttt{number} e \texttt{eventyear}. Outro exemplo que vai totalmente contra às boas práticas.}}
+
+% ABNT 7.8.4
+\subsubsection{Parte de evento} % 7.8.4
+% ABNT 7.8.4.1
+\paragraph{Parte de evento em monografia} % 7.8.4.1
+  \exEssencial
+  \singlecite{parte-evento:brayner-1994}{}
+
+  \exOutros
+  \singlecite{parte-evento:martin-neto-1997}{\footnote{Adaptação em \texttt{note}.}}
+
+% ABNT 7.8.4.2
+\paragraph{Parte de evento em publicação periódica} % 7.8.4.2
+  \exEssencial
+  \singlecite{parte-evento:goncalves-2006}{}
+
+% ABNT 7.8.5
+\paragraph{Parte de evento em meio eletrônico} % 7.8.5
+  \exEssencial
+  \singlecite{parte-evento:guncho-1998}{}
+
+  \exOutros
+  \singlecite{parte-evento:badke-2006}{}
+  \singlecite{parte-evento:goncalves-2000}{\footnote{Adaptação em \texttt{note}.}}
+
+% ABNT 7.9
+\subsection{Patente} % 7.9
+O caso de referenciar patentes é um tanto confuso: a ABNT define como referenciar, porém, não foi identificado como que uma patente deve ser citada no texto\footnote{Isso deve ser mais falha minha do que de qualquer outra pessoa. Procurei, mas não achei nada pesquisando pela internet.}, por causa da questão do ano, que possui data de depósito e data de concessão. Considerando essa incerteza, sobre a citação do ano\footnote{O \texttt{biblate-abnt} também adiciona o campo de data logo depois de \texttt{location}, dificultando identificar a boa prática.}, serão disponibilizadas duas alternativas de adaptação utilizando o campo de data, além de uma outra sem data definida.
+  \exEssencial
+  \singlecite{patente:bertazzoli}{\footnote{Alternativa 1: utilizando a data de depósito para referência. Adaptação em \texttt{titleaddon}.}}
+
+  \exOutros
+  \singlecite{patente:vicente}{\footnote{Alternativa 2: utilizando a data de concessão para referência. Adaptação em \texttt{titleaddon}.}}
+  \singlecite{patente:oliveira}{\footnote{Alternativa 3: não utilizando data. Atenção no uso do campo \texttt{number}.}}
+
+% ABNT 7.10
+\subsection{Patente em meio eletrônico} % 7.10
+  \exEssencial
+  \singlecite{patente:galembeck}{\footnote{Ao não utilizar o campo de data, o \LaTeX{} utiliza a data de acesso na referência.}}
 
 \subsubsection{Legislação}
 \singlecite{livro:constituicao-rs}{}

@@ -1,6 +1,35 @@
+Alguns dos exemplos dados, que são apresentados na NBR 6023:2018, foram extraídos de:
+MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/biblatex-abnt/blob/dev/bibtex/bib/biblatex-abnt/NBR6023-2018.bib. Acesso em: 9 jan. 2023.
+
 %%%%%%
 %%  Livros, folhetos, etc.
 %%%%%%
+  @book{livro:luck-2010:essencial,
+    keywords       = {7.1,7.1.1},
+    author         = {Luck, Heloisa},
+    title          = {Liderança em gestão escolar},
+    edition        = {4},
+    address        = {Petrópolis},
+    publisher      = {Vozes},
+    year           = {2010},
+  }
+
+  @book{livro:luck-2010:complementar,
+    keywords       = {7.1,7.1.1},
+    author         = {Luck, Heloisa},
+    title          = {Liderança em gestão escolar},
+    edition        = {4},
+    address        = {Petrópolis},
+    publisher      = {Vozes},
+    year           = {2010},
+    pagetotal      = {165},
+    dimensions     = {18~cm},
+    series         = {Cadernos de gestão},
+    number         = {v. 4},
+    note           = {Bibliografia: p. 149--155},
+    isbn           = {978-85-3263-62-01},
+  }
+
   @book{livro:dom-casmurro,
     author         = {Machado de Assis},
     title          = {Dom Casmurro},
@@ -12,45 +41,12 @@
     urlaccessdate  = {2022-03-14}
   }
 
-  @book{livro:godinho-2014,
-    author         = {Godinho, Thais},
-    title          = {Vida organizada},
-    subtitle       = {como defnir prioridades e transformar seus sonhos em objetivos},
-    address        = {São Paulo},
-    publisher      = {Gente},
-    year           = {2014},
-    howpublished   = {\textit{E-book}},
-  }
-
-  @book{livro:bavaresco-2011,
-    editor = {Bavaresco, Agemir and Barbosa, Evandro and Etcheverry, Katia Martin},
-    editortype = {org.},
-    title          = {Projetos de filosofia},
-    address        = {Porto Alegre},
-    publisher      = {EDIPUCRS},
-    year           = {2011},
-    howpublished   = {\textit{E-book}},
-    url            = {http://ebooks.pucrs.br/edipucrs/projetosdeflosofa.pdf},
-    urlaccessdate  = {2011-07-21}
-  }
-
-  @book{livro:luck-2010,
-    author         = {Luck, Heloisa},
-    title          = {Liderança em gestão escolar},
-    edition        = {4},
-    address        = {Petrópolis},
-    publisher      = {Vozes},
-    year           = {2010},
-    note           = {165p., 18cm. (Cadernos de gestão, v. 4) Bibliografa: p. 149--155},
-    isbn           = {978-85-3263-62-01},
-  }
-
   @book{livro:iffar-guia-normalizacao-2022,
     editor         = {Borba, Diego dos Santos and Fucks, Patrícia Marasca and Cruz, Franciele Scaglioni da},
     editortype     = {org.},
     title          = {Guia de normalização de trabalhos acadêmico-científicos},
     location       = {Santa Maria},
-    publisher      = {IFFar},
+    publisher      = {\mkbibacro{IFFar}},
     year           = {2022},
     pagetotal      = {78},
     isbn           = {978-65-990723-3-8},
@@ -61,42 +57,42 @@
     title          = {Estatística aplicada às Ciências Sociais},
     edition        = {9},
     location       = {Florianópolis},
-    publisher      = {Ed. da UFSC},
+    publisher      = {Ed. da \mkbibacro{UFSC}},
     year           = {2017},
     pagetotal      = {315},
-    note           = {(Coleção Didática)},
+    series         = {Coleção Didática},
   }
 
   @book{livro:abnt-nbr6023:2018,
-    author         = {{ABNT}},
-    title          = {NBR 6023},
+    author         = {\mkbibacro{ABNT}},
+    title          = {\mkbibacro{NBR} 6023},
     subtitle       = {Informação e documentação: Referências: Elaboração},
     edition        = {2},
     location       = {Rio de Janeiro},
-    publisher      = {ABNT},
+    publisher      = {\mkbibacro{ABNT}},
     year           = {2018},
     pagetotal      = {68},
     isbn           = {978-85-07-07757-2},
   }
 
   @book{livro:abnt-nbr6034:2004,
-    author         = {{ABNT}},
-    title          = {NBR 6034},
+    author         = {\mkbibacro{ABNT}},
+    title          = {\mkbibacro{NBR} 6034},
     subtitle       = {Informação e documentação: Índice: Apresentação},
     edition        = {2},
     location       = {Rio de Janeiro},
-    publisher      = {ABNT},
+    publisher      = {\mkbibacro{ABNT}},
     year           = {2004},
     pagetotal      = {4},
   }
 
   @book{livro:abnt-nbr-14724:2011,
-    author         = {{ABNT}},
-    title          = {NBR 14724},
+    author         = {\mkbibacro{ABNT}},
+    title          = {\mkbibacro{NBR} 14724},
     subtitle       = {Informação e documentação: Trabalhos acadêmicos: Apresentação},
     edition        = {3},
     location       = {Rio de Janeiro},
-    publisher      = {ABNT},
+    publisher      = {\mkbibacro{ABNT}},
     year           = {2011},
     pagetotal      = {11},
     isbn           = {978-85-07-02680-8},
@@ -105,15 +101,125 @@
 %%%%%%
 %%  Trabalhos acadêmicos
 %%%%%%
+  @mastersthesis{tese:rodrigues-2009:essencial,
+    keywords        = {7.1,7.1.2},
+    author          = {Ana Lúcia Aquilas Rodrigues},
+    title           = {Impacto de um programa de exercícios no local de trabalho sobre o nível de atividade física e o estágio de prontidão para a mudança de comportamento},
+    date            = {2009},
+    type            = {Dissertação (Mestrado em Fisiopatologia Experimental)},
+    institution     = {Faculdade de Medicina, Universidade de São Paulo},
+    location        = {São Paulo},
+    eventdate       = {2009},
+  }
+
+  @mastersthesis{tese:rodrigues-2009:complementar,
+    keywords        = {7.1,7.1.2},
+    author          = {Ana Lúcia Aquilas Rodrigues},
+    title           = {Impacto de um programa de exercícios no local de trabalho sobre o nível de atividade física e o estágio de prontidão para a mudança de comportamento},
+    titleaddon      = {Orientador: Mario Ferreira Junior},
+    date            = {2009},
+    type            = {Dissertação (Mestrado em Fisiopatologia Experimental)},
+    pagetotal       = {82},
+    bookpagination  = {sheet},
+    institution     = {Faculdade de Medicina, Universidade de São Paulo},
+    location        = {São Paulo},
+    eventdate       = {2009},
+  }
+
   @thesis{tese:aguiar-2009,
-    author = {Aguiar, André Andrade de},
-    title = {Avaliação da microbiota bucal em pacientes sob uso crônico de
+    keywords        = {7.1,7.1.2},
+    author          = {Aguiar, André Andrade de},
+    title           = {Avaliação da microbiota bucal em pacientes sob uso crônico de
   penicilina e benzatina},
-    type = {Tese (Doutorado em Cardiologia)},
-    institution = {Faculdade de Medicina, Universidade de São Paulo},
-    location = {São Paulo},
-    year = {2009},
-    eventyear = {2009}
+    type            = {Tese (Doutorado em Cardiologia)},
+    institution     = {Faculdade de Medicina, Universidade de São Paulo},
+    location        = {São Paulo},
+    year            = {2009},
+    eventyear       = {2009}
+  }
+
+  @thesis{tcc:alves-2008,
+    keywords        = {7.1,7.1.2},
+    author          = {Daian Péricles Alves},
+    title           = {Implementação de conceitos de manufatura colaborativa},
+    subtitle        = {um projeto virtual},
+    date            = {2008},
+    type            = {Trabalho de Conclusão de Curso (Bacharelado em Engenharia Industrial Mecânica)},
+    institution     = {Universidade Tecnológica Federal do Paraná},
+    location        = {Curitiba},
+    eventdate       = {2008},
+  }
+
+%%%%%%
+%%  Monografia no todo em meio eletrônico
+%%%%%%
+  @book{livro:koogan-1998,
+    keywords       = {7.2,7.2.1},
+    editor         = {André Koogan and Antonio Houaiss},
+    editortype     = {ed.},
+    title          = {Enciclopédia e dicionário digital 98},
+    location       = {São Paulo},
+    publisher      = {Delta: Estadão},
+    date           = {1998},
+    note           = {5 \mkbibacro{CD-ROM}},
+    % O correto seria utilizar editor, mas o biblatex-abnt ainda está deixando em maiúsculo a inicial
+  }
+
+  @book{livro:godinho-2014,
+    keywords       = {7.2,7.2.1},
+    author         = {Thais Godinho},
+    title          = {Vida organizada},
+    subtitle       = {como definir prioridades e transformar seus sonhos em objetivos},
+    address        = {São Paulo},
+    publisher      = {Gente},
+    year           = {2014},
+    howpublished   = {\textit{E-book}},
+  }
+
+  @book{livro:bavaresco-2011:essencial,
+    keywords       = {7.2,7.2.2},
+    editor         = {Agemir Bavaresco and Evandro Barbosa and Karia Martin Etcheverry},
+    % editortype   = {organizer},
+    editortype     = {org.},
+    title          = {Projetos de filosofia},
+    location       = {Porto Alegre},
+    publisher      = {\mkbibacro{EDIPUCRS}},
+    year           = {2011},
+    howpublished   = {\textit{E-book}},
+    url            = {http://ebooks.pucrs.br/edipucrs/projetosdefilosofia.pdf},
+    urldate        = {2011-08-21},
+    % O melhor seria usar organizer, contudo, o biblatex-abnt ainda deixa a inicial maiúscula da abreviação
+  }
+
+  @book{livro:bavaresco-2011:complementar,
+    keywords       = {7.2,7.2.2},
+    editor         = {Agemir Bavaresco and Evandro Barbosa and Karia Martin Etcheverry},
+    editortype     = {org.},
+    title          = {Projetos de filosofia},
+    location       = {Porto Alegre},
+    publisher      = {\mkbibacro{EDIPUCRS}},
+    year           = {2011},
+    % howpublished   = {\textit{E-book} (213 p.)},
+    pages          = {\textit{\autocap{E}-book} (213 p.).},
+    series         = {Coleção Filosofia},
+    isbn           = {978-85-397-0073-8},
+    url            = {http://ebooks.pucrs.br/edipucrs/projetosdefilosofia.pdf},
+    urldate        = {2011-08-21},
+    % Nesse exemplo, o tipo de mídia e o número de páginas veio em um padrão diferente do habitual. Não consigo pensar em alguma forma correta de apresentar o registro. O \autocap é necessário para deixar a primeira letra maiúscula
+  }
+
+  @mastersthesis{tese:coelho-2009,
+    keywords        = {7.2,7.2.2},
+    author          = {Ana Cláudia Coelho},
+    title           = {Fatores determinantes de qualidade de vida física e mental em pacientes com doença pulmonar intersticial},
+    subtitle        = {uma análise multifatorial},
+    date            = {2009},
+    type            = {Dissertação (Mestrado em Ciências Médicas)},
+    institution     = {Faculdade de Medicina, Universidade Federal do Rio Grande do Sul},
+    location        = {Porto Alegre},
+    eventdate       = {2009},
+    url             = {http://www.lume.ufrgs.br/bitstream/handle/10183/16359/000695147.pdf?sequence=1},
+    urldate         = {2009-09-04},
   }
 
   @thesis{tese:santos-2018,
@@ -126,68 +232,117 @@
     year              = {2018},
     eventyear         = {2018},
     pagetotal         = {164},
+    bookpagination    = {sheet},
     url               = {https://repositorio.unb.br/handle/10482/34772},
     urlaccessdate     = {2022-01-31}
-  }
-
-  @thesis{tese:rodrigues-2009,
-    author = {Rodrigues, Ana Lúcia Aquilas},
-    title = {Impacto de um programa de exercícios no local de trabalho sobre o nível de atividade física e o estágio de prontidão para a mudança de comportamento},
-    titleaddon = {Orientador: Mario Ferreira Junior},
-    type = {Dissertação (Mestrado em Fisiopatologia Experimental)},
-    institution = {Faculdade de Medicina, Universidade de São Paulo},
-    location = {São Paulo},
-    year = {2009},
-    eventyear = {2009},
-    pagestotal = {82},
   }
 
 %%%%%%
 %%  Partes de monografias, livros, coleções
 %%%%%%
-  @collection{parte:ex1,
-    author = {{Instituto Nacional do Câncer}\nopunct},
-    nameaddon = {(Brasil)},
-    title = {Estômago},
-    editor = {{Instituto Nacional do Câncer}\nopunct},
-    editortype = {Brasil},
-    maintitle = {Tipos de câncer},
-    publisher = {Instituto Nacional do Câncer},
-    location = {Brasília, DF},
-    year = {2010},
-    url = {http://www2.inca.gov.br/wps/wcm/connect/tiposdecancer/site/home/estomago/defnicao},
-    urlaccessdate = {2010-03-18},
+  @incollection{parte:romano:essencial,
+    keywords        = {7.3},
+    author          = {Giovanni Romano},
+    title           = {Imagens da juventude na era moderna},
+    editor          = {G. Levi and J. Schmidt},
+    % editortype      = {organizer},
+    editortype      = {org.},
+    booktitle       = {História dos jovens 2},
+    booksubtitle    = {a época contemporânea},
+    location        = {São Paulo},
+    publisher       = {Companhia das Letras},
+    date            = {1996},
+    pages           = {7-16},
+    % O correto seria usar organizer
   }
 
-  @incollection{parte:ex2,
-    author = {Manfroi, V.},
-    title = {Vinho branco},
-    editor = {{Venturini Filho}, W. G.},
-    editortype = {coord.},
-    maintitle = {Bebidas alcoólicas},
-    mainsubtitle = {ciência e tecnologia},
-    location = {São Paulo},
-    publisher = {Blucher},
-    year = {2010},
-    volume = {1},
-    chapter = {7},
-    pages = {143--163}
+  @incollection{parte:romano:complementar,
+    keywords        = {7.3},
+    author          = {Giovanni Romano},
+    title           = {Imagens da juventude na era moderna},
+    editor          = {G. Levi and J. Schmidt},
+    % editortype      = {organizer},
+    editortype      = {org.},
+    booktitle       = {História dos jovens 2},
+    booksubtitle    = {a época contemporânea},
+    location        = {São Paulo},
+    publisher       = {Companhia das Letras},
+    date            = {1996},
+    pages           = {7-16},
+    isbn            = {85-7164-555-8},
   }
 
-  @incollection{parte:ex3,
-    booktitle      = {Dicionário da língua portuguesa},
-    title          = {Política},
-    location       = {Lisboa},
-    publisher      = {Priberam Informática},
-    year           = {1998},
-    url            = {http://www.priberam.pt/dlDLPO},
-    urlaccessdate  = {1999-03-08}
+  @incollection{parte:manfroi-2010,
+    keywords        = {7.3},
+    author          = {Manfroi, V.},
+    title           = {Vinho branco},
+    editor          = {{Venturini Filho}, W. G.},
+    % editortype      = {coordinator},
+    editortype      = {coord.},
+    maintitle       = {Bebidas alcoólicas},
+    mainsubtitle    = {ciência e tecnologia},
+    location        = {São Paulo},
+    publisher       = {Blucher},
+    year            = {2010},
+    volume          = {1},
+    chapter         = {7},
+    pages           = {143-163}
+  }
+
+  @inbook{parte:santos-1994,
+    keywords        = {7.3},
+    author          = {F. R. Santos},
+    title           = {A colonização da terra do Tucujús},
+    booktitle       = {História do Amapá, 1º grau},
+    bookauthor      = {F. R. Santos},
+    edition         = {2},
+    location        = {Macapá},
+    publisher       = {Valcan},
+    date            = {1994},
+    pages           = {15-24},
+  }
+
+  @incollection{parte:politica-1998,
+    keywords        = {7.4},
+    booktitle       = {Dicionário da língua portuguesa},
+    title           = {Política},
+    location        = {Lisboa},
+    publisher       = {Priberam Informática},
+    year            = {1998},
+    url             = {http://www.priberam.pt/dlDLPO},
+    urlaccessdate   = {1999-03-08}
+  }
+
+  @collection{parte:cancer-2010,
+    keywords        = {7.4},
+    author          = {{Instituto Nacional do Câncer}},
+    authortype      = {Brasil},
+    title           = {Estômago},
+    editor          = {{Instituto Nacional do Câncer}},
+    editortype      = {Brasil},
+    maintitle       = {Tipos de câncer},
+    publisher       = {Instituto Nacional do Câncer},
+    location        = {[Brasília, DF]},
+    year            = {2010},
+    url             = {http://www2.inca.gov.br/wps/wcm/connect/tiposdecancer/site/home/estomago/defnicao},
+    urlaccessdate   = {2010-03-18},
   }
 
 %%%%%%
 %%  Correspondência
 %%%%%%
-  @booklet{correspondencia:ex1,
+  @booklet{correspondencia:pilla:essencial,
+    keywords       = {7.5},
+    author         = {Pilla, Luiz},
+    title          = {[Correspondência]},
+    titleaddon     = {Destinatário: Moysés Vellinho},
+    location       = {Porto Alegre},
+    date           = {1979-06-06},
+    note           = {1 cartão pessoal},
+  }
+
+  @booklet{correspondencia:pilla:complementar,
+    keywords       = {7.5},
     author         = {Pilla, Luiz},
     title          = {[Correspondência]},
     titleaddon     = {Destinatário: Moysés Vellinho},
@@ -196,7 +351,7 @@
     note           = {1 cartão pessoal. Autografado},
   }
 
-  @letter{correspondencia:ex2,
+  @letter{correspondencia:ex1,
     author         = {Pilla, Luiz},
     title          = {[Correspondência]},
     titleaddon     = {Destinatário: Moysés Vellinho},
@@ -206,42 +361,138 @@
   }
 
 %%%%%%
-%%  Publicação periódica
+%%  Correspondência disponível em meio eletrônico
 %%%%%%
-  % Uma coleção de revistas
-  @periodical{revista:ibge,
-    title = {Revista Brasileira de Geografia},
+  @booklet{correspondencia:lispector,
+    keywords       = {7.6},
+    author         = {Clarice Lispector},
+    title          = {[Carta enviada para suas irmãs]},
+    titleaddon     = {Destinatário: Elisa e Tânia Lispector},
+    location       = {Lisboa},
+    date           = {1944-08-04},
+    note           = {1 carta},
+    url            = {http://www.claricelispector.com.br/manuscrito_minhasqueridas.aspx},
+    urlaccessdate  = {2010-09-04}
+  }
+
+%%%%%%
+%%  7.7 Publicação periódica
+%%%%%%
+  %%%
+  %  7.7.1 Coleção de publicação periódica
+  %%%
+  @periodical{revista:ibge:essencial,
+    keywords       = {7.7,7.7.1},
+    title          = {Revista Brasileira de Geografia},
     location       = {Rio de Janeiro},
-    publisher      = {IBGE},
-    year           = {1939-~.},
+    publisher      = {\mkbibacro{IBGE}},
+    year           = {1939-\space},
+    sortyear       = {1939},
     issn           = {0034-723X},
-    addendum       = {Trimestral. Absorveu Boletim Geográfco, do IBGE. Índice acumulado, 1939-1983.}
+  }
+
+  @periodical{revista:ibge:complementar,
+    keywords       = {7.7,7.7.1},
+    title          = {Revista Brasileira de Geografia},
+    location       = {Rio de Janeiro},
+    publisher      = {\mkbibacro{IBGE}},
+    year           = {1939-\space},
+    sortyear       = {1939},
+    issn           = {0034-723X},
+    note           = {Trimestral. Absorveu Boletim Geográfco, do \mkbibacro{IBGE}. Índice acumulado, 1939-1983}
+  }
+
+  @periodical{revista:nursing-1998,
+    keywords       = {7.7,7.7.1},
+    title          = {Nursing},
+    location       = {São Paulo},
+    publisher      = {Ferreira \& Bento},
+    year           = {1998-\space},
+    sortyear       = {1998},
+    issn           = {1415-8264}
+  }
+
+  @periodical{revista:nursing-1929,
+    keywords       = {7.7,7.7.1},
+    title          = {Nursing},
+    location       = {Bruxelles},
+    publisher      = {Association Nationale Catholique du Nursing},
+    year           = {1929},
+    endyear        = {1975},
+    sortyear       = {1929},
+    issn           = {0029-6457},
+    note           = {Bimestral}
+  }
+
+  %%%
+  %  7.7.2 Coleção de publicação periódica em meio eletrônico
+  %%%
+  @periodical{revista:acta-1997:essencial,
+    keywords       = {7.7,7.7.2},
+    title          = {Acta Cirúrgica Brasileira},
+    location       = {São Paulo},
+    publisher      = {Sociedade Brasileira para o Desenvolvimento da Pesquisa em Cirurgia},
+    year           = {1997-\space},
+    sortyear       = {1997},
+    issn           = {1678-2674 versão \textit{online}},
+    url            = {http://www.scielo.br/scielo.php?script=sci_serial&pid=0102-8650&lng=pt&nrm=iso},
+    urlaccessdate  = {2013-08-22}
+  }
+
+  @periodical{revista:acta-1997:complementar,
+    keywords       = {7.7,7.7.2},
+    title          = {Acta Cirúrgica Brasileira},
+    location       = {São Paulo},
+    publisher      = {Sociedade Brasileira para o Desenvolvimento da Pesquisa em Cirurgia},
+    year           = {1997-\space},
+    sortyear       = {1997},
+    issn           = {1678-2674 versão \textit{online}. Bimestral. A versão impressa iniciou em 1986},
+    url            = {http://www.scielo.br/scielo.php?script=sci_serial&pid=0102-8650&lng=pt&nrm=iso},
+    urlaccessdate  = {2013-08-22}
   }
 
   @periodical{revista:ufsc,
-    title = {Caderno Brasileiro de Ensino de Física},
+    keywords       = {7.7,7.7.2},
+    title          = {Caderno Brasileiro de Ensino de Física},
     location       = {Florianópolis},
     publisher      = {Universidade Federal de Santa Catarina},
-    year           = {2008-~.},
+    year           = {2008-\space},
     issn           = {2175-7941},
     doi            = {10.5007/2175-7941},
-    url            = {https://periodicos.ufsc.br/index.php/fsica/},
+    url            = {https://periodicos.ufsc.br/index.php/fisica/},
     urlaccessdate  = {2014-05-20}
   }
 
-  % Um fascículo de uma revista
-  DINHEIRO: revista semanal de negócios. São Paulo: Três, n. 148, 28 jun. 2000
+  %%%
+  %  7.7.3 Parte de coleção de publicação periódica
+  %%%
+  @periodical{revista:ibge:parte,
+    keywords       = {7.7,7.7.3},
+    title          = {Revista Brasileira de Geografia},
+    location       = {Rio de Janeiro},
+    publisher      = {\mkbibacro{IBGE}},
+    year           = {1939-\space},
+    sortyear       = {1939},
+    note           = {1982-1992},
+    issn           = {ISSN 0034-723X},
+  }
+
+  %%%
+  %  7.7.4 Fascículo, suplemento e outros
+  %%%
   @periodical{revista:tres,
-    title = {Dinheiro},
-    subtitle = {revista semanal de negócios},
+    keywords       = {7.7,7.7.4},
+    title          = {Dinheiro},
+    subtitle       = {revista semanal de negócios},
     location       = {São Paulo},
     publisher      = {Três},
     issue          = {148},
     date           = {2000-06-28},
   }
 
-  % O @periodical deveria ter seu uso para tal, mas a ABNT é bastante inconsistente em alguns exemplos. Então vai na gambiarra (tome cuidado)
+  % O @periodical deveria ter seu uso para mostrar fascículos, porém, parece que foi implementada apenas para periódicos inteiros. Mas como a ABNT sempre dá uns exemplos que fogem do comum, é necessário adaptar
   @misc{revista:fgv,
+    keywords       = {7.7,7.7.4},
     title          = {{As 500} maiores empresas do Brasil},
     titleaddon     = {\textbf{Conjuntura Econômica}},
     location       = {Rio de Janeiro},
@@ -250,17 +501,92 @@
     note           = {Edição especial}
   }
 
-  %Artigo, seção e/ou matéria de publicação periódica
+  %%%
+  %  7.7.5 Artigo, seção e/ou matéria de publicação periódica
+  %%%
+  @article{artigo:lucca-2009,
+    keywords          = {7.7,7.7.5},
+    author            = {Gabriella {De Lucca}},
+    title             = {Notas curtas},
+    journaltitle      = {Getulio},
+    location          = {São Paulo},
+    volume            = {ano 3},
+    pages             = {9},
+    % date              = {2009-07/2009-08},
+    issue             = {jul./ago.},
+    % month             = {07},
+    year              = {2009},
+    % endmonth          = {08},
+    % endyear           = {2009},
+    % pode-se utilizar date ou os campos de data com prefixo end
+  }
+
   @article{artigo:rocke-1985,
+    keywords        = {7.7,7.7.5},
     author          = {Rocke, Hans and Ross, Johanna C},
     title           = {Online catalogs for and by librarians},
     journal         = {Technical Services Quarterly},
     location        = {Greeley},
     volume          = {2},
     number          = {3/4},
-    pages           = {1--9},
+    pages           = {1-9},
     issue           = {Spring/Summer},
-    year            = {1985}
+    year            = {1985},
+    % endyear         = {1985},
+    % yeardivision    = {spring},
+    % endyeardivision = {summer},
+    langid={english},
+    hyphenation = {english},
+    % options           = {language=autolang},
+    % ignore essa linha acima, estava apenas testando
+  }
+
+  @article{artigo:costa-1998,
+    keywords          = {7.7,7.7.5},
+    author            = {Costa, V. R.},
+    title             = {À margem da lei},
+    subtitle          = {o Programa Comunidade Solidária},
+    journaltitle      = {Em Pauta},
+    journalsubtitle   = {revista da Faculdade de Serviço Social da \mkbibacro{UERJ}},
+    location          = {Rio de Janeiro},
+    number            = {12},
+    pages             = {131-148},
+    year              = {1998}
+  }
+
+  %%%
+  %  7.7.6 Artigo, seção e/ou matéria de publicação periódica em meio eletrônico
+  %%%
+  @article{artigo:vieira-1994,
+    keywords          = {7.7,7.7.6},
+    author            = {Vieira, Cássio Leite and Lopes Marcelo},
+    title             = {A queda do cometa},
+    journaltitle      = {Neo Interativa},
+    location          = {Rio de Janeiro},
+    number            = {2},
+    yeardivision      = {winter},
+    year              = {1994},
+    note              = {1 \mkbibacro{CD-ROM}},
+    langid = {english},
+  }
+
+  @article{artigo:alexandrescu-2009,
+    keywords          = {7.7,7.7.6},
+    author            = {Alexandrescu, D. T.},
+    title             = {Melanoma costs},
+    subtitle          = {a dynamic model comparing estimated overall costs of various clinical stages},
+    journaltitle      = {Dermatology Online Journal},
+    location          = {[\textit{s. l.}]},
+    volume            = {15},
+    number            = {11},
+    pages             = {1},
+    issue             = {Nov.},
+    date              = {2009},
+    % date              = {2009-11},
+    url               = {http://dermatology.cdlib.org/1511/originals/melanoma_costs/alexandrescu.html},
+    urlaccessdate     = {2009-11-03},
+    % langid = {english},
+    % O correto seria o biblatex mudar as palavras (bibstrings) para as versões dos outros idiomas, mas não sei como fazer isso. Em teoria, o hyphenation deveria suprir esse papel.
   }
 
   @article{artigo:moore-2018,
@@ -268,19 +594,21 @@
     title             = {Towards a Sociology of Institutional Transparency},
     subtitle          = {Openness, Deception and the Problem of Public Trust},
     journaltitle      = {Sociology},
+    location          = {[\textit{s. l.}]},
     volume            = {52},
     number            = {2},
-    pages             = {416--430},
+    pages             = {416-430},
     year              = {2018},
     doi               = {10.1177/0038038516686530},
     url               = {https://journals.sagepub.com/doi/10.1177/0038038516686530},
-    urlaccessdate     = {2022-02-10}
+    urlaccessdate     = {2022-02-10},
   }
 
   @article{artigo:antunes-2018,
     author          = {Antunes, Maciel Carlos},
     title           = {A efetividade informacional dos portais de transparência governamentais na perspectiva do cidadão},
     journal         = {Perspectivas em Gestão \& Conhecimento},
+    location          = {[\textit{s. l.}]},
     volume          = {8},
     number          = {2},
     pages           = {162--178},
@@ -290,8 +618,23 @@
     urlaccessdate   = {2022-02-11}
   }
 
-  % Artigo/matéria de jornal
+  %%%
+  %  7.7.7 Artigo e/ou matéria de jornal
+  %%%
+  @article{noticia:otta-2010,
+    keywords          = {7.7,7.7.7},
+    author          = {Otta, Lu Aiko},
+    title           = {Parcela do tesouro nos empréstimos do BNDES cresce 566 \% em oito anos},
+    journal         = {O Estado de S. Paulo},
+    location        = {São Paulo},
+    volume          = {ano 131},
+    number          = {42656},
+    date            = {2010-08-01},
+    note            = {Economia \& Negócios, p. B1.},
+  }
+
   @article{noticia:credito-2014,
+    keywords          = {7.7,7.7.7},
     title           = {Crédito à agropecuária será de R\$ 156 bilhões até 2015},
     journal         = {Jornal do Commercio},
     volume          = {ano 97},
@@ -300,8 +643,12 @@
     date            = {2014-05-20}
   }
 
+  %%%
+  %  7.7.8 Artigo e/ou matéria de jornal em meio eletrônico
+  %%%
   @article{noticia:verissimo-2010,
-    author          = {Verísisimo, L. F.},
+    keywords        = {7.7,7.7.8},
+    author          = {Veríssimo, L. F.},
     title           = {Um gosto pela ironia},
     journal         = {Zero Hora},
     location = {Porto Alegre},
@@ -313,73 +660,139 @@
     urlaccessdate = {2010-08-12},
   }
 
+  @article{noticia:professores-2010,
+    keywords          = {7.7,7.7.8},
+    title             = {Professores terão exame para ingressar na carreira},
+    journaltitle      = {Diário do Vale},
+    location          = {Volta Redonda},
+    volume            = {18},
+    number            = {5877},
+    date              = {2010-05-27},
+    note              = {Caderno Educação, p. 41},
+    url               = {http://www.bancadigital.com.br/diariodovale/reader2/Default.aspx?pID=1&eID=495&lP=38&rP=39&lT=page},
+    urlaccesdate      = {2010-09-29}
+  }
+
 %%%%%%
-%%  Eventos
+%%  7.8 Eventos
 %%%%%%
-  @proceedings{evento:ex1,
-    organization    = {International Symposium on Chemical Changes During Food Processing},
+  %%%
+  %  7.8.1 Evento no todo em monografia
+  %%%
+  @proceedings{evento:chemical-1984,
+    keywords        = {7.8,7.8.1},
+    eventtitle      = {International Symposium on Chemical Changes During Food Processing},
     number          = {2},
+    title           = {Proceedings\nopunct},
+    titleaddon      = {\bibellipsis},
     eventdate       = {1984},
     venue           = {Valencia},
-    title           = {Proceedings\nopunct},
-    titleaddon        = {\bibellipsis.},
+    date            = {1984},
     location        = {Valencia},
     publisher       = {Instituto de Agroquímica y Tecnología de Alimentos},
-    date            = {1984},
   }
 
-  % Fonte: https://github.com/abntex/biblatex-abnt/blob/dev/bibtex/bib/biblatex-abnt/NBR6023-2018.bib#L626
-  @proceedings{evento:ex2,
-      keywords        = {7.6.3},
-      eventtitle    = {Congresso de Iniciação Científica da {UFPe}},
-      number          = {4},
-      eventdate       = {1996},
-      venue           = {Recife},
-      title           = {Anais eletrônicos \nopunct},
-      titleaddon      = {\bibellipsis.},
-      location        = {Recife},
-      publisher       = {UFPe},
-      date            = {1996},
-      url             = {http://www.propesq.ufpe.br/anais/anais.htm},
-      urldate         = {1997-01-21},
-  }
-
-  % Sem condições. A ABNT dá uns exemplos esquisitos de "evento dentro de evento" (?) ou evento duplo. Eu não sei o que fazer para imprimir certo, sem uma boa de uma gambiarra
-  @proceedings{evento:ex3,
-    org-short = {CBSOJA},
-    organization    = {Congresso Brasileiro de Soja},
-    % eventtitle = {Congresso de Soja do Mercosul},
-    number          = {5.;\nopunct},
-    eventyear       = {CONGRESSO DE SOJA DO MERCOSUL, 2009},
-    venue           = {Goiânia},
+  @proceedings{evento:ines-2009,
+    keywords        = {7.8,7.8.1},
+    eventtitle      = {Congresso Internacional do INES},
+    number          = {8.;\nopunct},
+    eventyear       = {SEMINÁRIO NACIONAL DO INES, 14., 2009},
+    venue           = {Rio de Janeiro},
     title           = {Anais\nopunct},
-    titleaddon        = {\bibellipsis.},
-    location        = {Brasília, DF},
-    publisher       = {Embrapa},
+    titleaddon      = {\bibellipsis.},
+    location        = {Rio de Janeiro},
+    publisher       = {Instituto Nacional de Educação de Surdos},
     year            = {2009},
-    note            = {1 CD-ROM. Siglas dos eventos: CBSOJA e MERCOSOJA. Tema: Soja: fator de desenvolvimento do Cone Sul.},
+    pagetotal       = {160},
+    addendum        = {Tema: Múltiplos Atores e Saberes na Educação de Surdos. Inclui bibliografia},
   }
 
-  @proceedings{evento:ex4,
-    organization    = {Congresso Brasileiro de Olericultura},
+  %%%
+  %  7.8.2 Evento no todo em publicação periódica
+  %%%
+  @proceedings{evento:pet-2006,
+    keywords        = {7.8,7.8.2},
+    eventtitle      = {Congresso do Centro-Oeste de Clínicos Veterinários de Pequenos Animais},
+    number          = {3.;\nopunct},
+    eventyear       = {FEIRA DO CENTRO-OESTE DO MERCADO PET, 3., 2001},
+    venue           = {[Brasília, DF]. [Trabalhos científcos e casos clínicos]},
+    title           = {Ciência Animal Brasileira},
+    location        = {Goiânia},
+    publisher       = {UFG},
+    date            = {2006-11},
+    note            = {Suplemento 1},
+  }
+
+  @proceedings{evento:olericultura-2001,
+    keywords        = {7.8,7.8.2},
+    eventtitle      = {Congresso Brasileiro de Olericultura},
     number          = {41.;\nopunct},
-    eventyear       = {ENCONTRO SOBRE PLANTAS MEDICINAIS, AROMÁTICAS E CONDIMENTARES, 1., 2009},
-    venue           = {Brasília, DF},
-    maintitle       = {Horticultura Brasileira},
-    chapter       = {Apresentação, artigos, palestras, instruções...},
+    eventyear       = {ENCONTRO SOBRE PLANTAS MEDICINAIS, AROMÁTICAS E CONDIMENTARES, 1., 2001},
+    venue           = {Brasília, DF. Apresentação, artigos, palestras, instruções....},
+    title           = {Horticultura Brasileira},
     location        = {Brasília, DF},
     publisher       = {Sociedade de Olericultura do Brasil, v. 19, n. 2},
     date            = {2001-07},
     note            = {Suplemento. Tema: Dos orgânicos aos transgênicos.},
   }
 
-  % Parte de evento
-  % Fonte: https://github.com/abntex/biblatex-abnt/blob/dev/bibtex/bib/biblatex-abnt/NBR6023-2018.bib#L644
-  @inproceedings{parte-evento:ex1,
-      keywords        = {7.7.1},
+  %%%
+  %  7.8.3 Evento no todo em meio eletrônico
+  %%%
+  @proceedings{evento:ufpe-1996,
+    keywords        = {7.8,7.8.3},
+    eventtitle      = {Congresso de Iniciação Científica da {UFPE}},
+    number          = {4},
+    eventdate       = {1996},
+    venue           = {Recife},
+    title           = {Anais eletrônicos \nopunct},
+    titleaddon      = {\bibellipsis.},
+    location        = {Recife},
+    publisher       = {UFPE},
+    date            = {1996},
+    url             = {http://www.propesq.ufpe.br/anais/anais.htm},
+    urldate         = {1997-01-21},
+  }
+
+  @proceedings{evento:hotel-2004,
+    keywords        = {7.8,7.8.3},
+    eventtitle      = {Conferência de Gestão Hoteleira do Brasil},
+    number          = {2},
+    eventyear       = {2004},
+    venue           = {Rio de Janeiro},
+    title           = {Hotel management II},
+    location        = {Rio de Janeiro},
+    publisher       = {Senac/CPRTV},
+    year            = {[2004]},
+    sortyear        = {2004},
+    note            = {4 fitas de vídeo, VHS, NTSC},
+  }
+
+  @proceedings{evento:soja-2009,
+    keywords        = {7.8,7.8.3},
+    eventtitle      = {Congresso Brasileiro de Soja},
+    number          = {5.;\nopunct},
+    eventyear       = {CONGRESSO DE SOJA DO MERCOSUL, 2009},
+    venue           = {Goiânia},
+    title           = {Anais\nopunct},
+    titleaddon      = {\bibellipsis.},
+    location        = {Brasília, DF},
+    publisher       = {Embrapa},
+    year            = {2009},
+    note            = {1 \mkbibacro{CD-ROM}. Siglas dos eventos: \mkbibacro{CBSOJA} e \mkbibacro{MERCOSOJA}. Tema: Soja: fator de desenvolvimento do Cone Sul.},
+  }
+
+  %%%
+  %  7.8.4 Parte de evento
+  %%%
+
+  %%%
+  %  7.8.4.1 Parte de evento em monografia
+  %%%
+  @inproceedings{parte-evento:brayner-1994,
+      keywords        = {7.8,7.8.4,7.8.4.1},
       author          = {A. R. A. Brayner and C. B. Medeiros},
-      title           = {Incorporação do tempo em
-                        \mkbibacro{SGDB} orientado a objetos},
+      title           = {Incorporação do tempo em \mkbibacro{SGDB} orientado a objetos},
       eventtitle      = {Simpósio Brasileiro de Banco de Dados},
       number          = {9},
       eventdate       = {1994},
@@ -392,57 +805,127 @@
       pages           = {16-29},
   }
 
-  @inproceedings{parte-evento:ex2,
+  @inproceedings{parte-evento:martin-neto-1997,
+    keywords        = {7.8,7.8.4,7.8.4.1},
     author          = {{Martin Neto}, L. and Bayer, C. and Mielniczuk, J.},
     title           = {Alterações qualitativas da matéria orgânica e os fatores determinantes da sua estabilidade num solo podzólico vermelho-escuro em diferentes sistemas de manejo},
     eventtitle      = {Congresso Brasileiro de Ciência do Solo},
+    number          = {26},
+    eventdate       = {1997},
     venue           = {Rio de Janeiro},
     booktitle       = {Resumos\nopunct},
     booktitleaddon  = {\bibellipsis.},
-    number          = {26},
-    eventdate       = {1997},
     location        = {Rio de Janeiro},
     publisher       = {Sociedade Brasileira de Ciência do Solo},
     year            = {1997},
-    pages           = {p. 443, ref. 6-141},
+    note            = {p. 443, ref. 6-141},
   }
 
-  @article{parte-evento:ex3,
+  % todo:
+  ZUBEN, A. V.; CASANOVA, C.; BALDINI, M. B. D.; RANGEL, O.; ANGERAMI, R. N.; RODRIGUES, R. C. A.; PRESOTTO, D. Vigilância epidemiológica da leishmaniose visceral americana (LVA) em cães no município de Campinas, São Paulo. In: REUNIÃO DE PESQUISA APLICADA EM DOENÇAS DE CHAGAS, 26.; REUNIÃO DE PESQUISA APLICADA EM LEISHMANIOSES, 14., 2010, Uberaba. Anais [...]. Uberaba: Universidade Federal do Triangulo Mineiro, 2010. p. 135-175.
+
+  %%%
+  %  7.8.4.2 Parte de evento em publicação periódica
+  %%%
+  @article{parte-evento:goncalves-2006,
+    keywords        = {7.8,7.8.4,7.8.4.2},
     author          = {Gonçalvez, R. P. M. and XXX and YYY and ZZZ},
     title           = {Aspectos hematológicos de cães parasitados por Babesia canis na cidade de Niterói, RJ entre os anos de 1994 a 2005},
     subtitle        = {parte 1: eritrograma},
-    journal         = {Ciência Animal Brasileira},
+    journaltitle    = {Ciência Animal Brasileira},
     location        = {Goiânia},
-    pages           = {271--273},
+    pages           = {271-273},
     date            = {2006-11},
     note            = {Supl. 1. Trabalho apresentado no 3º Congresso do Centro-Oeste de Clínicos Veterinários de Pequenos Animais, 2006, [Brasília, DF]},
   }
 
-%%%%%%
-%%  Patentes
-%%%%%%
-  @patent{patente:medidor,
-      author          = {Bertazzoli, Rodnei and XXX, xx and YYY, yy and ZZZ, zz},
-      title           = {Eletrodos de difusão gasosa modifcados com catalisadores redox, processo e reator eletroquímico de síntese de peróxido de hidrogênio utilizando os mesmos},
-      titleaddon = {Depositante: Universidade Estadual de Campinas. Procurador: Maria Cristina Valim Lourenço Gomes},
-      number          = {BR n. PI0600460-1A},
-      note            = {Depósito: 27 jan. 2006. Concessão: 25 mar. 2008},
+  %%%
+  %  7.8.5 Parte de evento em meio eletrônico
+  %%%
+  @inproceedings{parte-evento:guncho-1998,
+    keywords        = {7.8,7.8.5},
+    author          = {Guncho, M. R.},
+    title           = {A educação à distância e a biblioteca universitária},
+    eventtitle      = {Seminário de Bibliotecas Universitárias},
+    number          = {10},
+    eventyear       = {1998},
+    venue           = {Fortaleza},
+    booktitle       = {Anais\nopunct},
+    booktitleaddon  = {\bibellipsis},
+    location        = {Fortaleza},
+    publisher       = {Tec Treina},
+    year            = {1998},
+    note            = {1 \mkbibacro{CD-ROM}},
   }
 
-  % Fonte: https://github.com/abntex/biblatex-abnt/blob/dev/bibtex/bib/biblatex-abnt/NBR6023-2018.bib#L773
-  @patent{patente:embrapa,
-      keywords        = {7.8},
-      holder          = {{Embrapa}},
-      nameaddon       = {Unidade de Apoio, Pesquisa e Desenvolvimento
-                        de Instrumentação Agropecuária (São Carlos, SP)},
-      author          = {Paulo Estevão Cruvinel},
-      title           = {Medidor digital multisensorial
-                        de temperatura para solos},
-      number          = {BR n. \mkbibacro{PI} 8903105-9},
-      note            = {26 jun. 1989, 30 maio 1995},
+  @inproceedings{parte-evento:badke-2006,
+    keywords        = {7.8,7.8.5},
+    author          = {Badke, T. and Zacarias, R.},
+    title           = {Certifcação e assinatura digital},
+    eventtitle      = {Interlogos},
+    eventyear       = {2006},
+    venue           = {Vitória},
+    booktitle       = {[Anais]},
+    location        = {Vitória},
+    publisher       = {AARQUES},
+    year            = {2006},
+    note            = {1 \mkbibacro{CD-ROM}. Diretório: $\backslash$Palestrates$\backslash$Palestras de 24 de Agosto.},
   }
 
-  @patent{patente:eletronico,
+  % todo:
+  PALETTA, F. A. C. et al. Biblioteca Digital de Teses e Dissertações da Biblioteca do Conjunto das Químicas/USP: digitalização retrospectiva: estudo de caso. In: SEMINÁRIO NACIONAL DE BIBLIOTECAS UNIVERSITÁRIAS, 16.; SEMINÁRIO INTERNACIONAL DE BIBLIOTECAS DIGITAIS, 2., 2010, Rio de Janeiro. Anais [...]. Rio de Janeiro: UFRJ; São Paulo: CRUESP, 2010. 1 pen drive.
+
+  @inproceedings{parte-evento:goncalves-2000,
+    keywords        = {7.8,7.8.5},
+    author          = {Gonçalves, Carmen Diego},
+    title           = {Estilo de pensamento na produção de conhecimento científico},
+    eventtitle      = {Congresso Português de Sociologia},
+    number          = {4},
+    eventyear       = {2000},
+    venue           = {Coimbra},
+    booktitle       = {Actas do\nopunct},
+    booktitleaddon  = {\bibellipsis},
+    location        = {Lisboa},
+    publisher       = {Associação Portuguesa de Sociologia},
+    year            = {2000},
+    note            = {Tema: Sociedade portuguesa: passados recentes, futuros próximos. Eixo temático: Reorganização dos saberes, ciência e educação, p. 1-18.},
+    url             = {http://aps.pt/wp-content/uploads/2017/08/DPR462de12f4bb03_1.pdf},
+    urlaccessdate   = {2010-05-03}
+  }
+
+%%%%%%
+%%  7.9 Patente
+%%%%%%
+
+  @patent{patente:bertazzoli,
+    keywords        = {7.9},
+    author          = {Bertazzoli, Rodnei and XXX, xx and YYY, yy and ZZZ, zz},
+    title           = {Eletrodos de difusão gasosa modifcados com catalisadores redox, processo e reator eletroquímico de síntese de peróxido de hidrogênio utilizando os mesmos},
+    titleaddon      = {Depositante: Universidade Estadual de Campinas. Procurador: Maria Cristina Valim Lourenço Gomes. BR n. PI0600460-1A. Depósito:\nopunct},
+    date            = {2006-01-27},
+    note            = {Concessão: 25 mar. 2008},
+  }
+
+  @patent{patente:vicente,
+    keywords        = {7.9},
+    author          = {Vicente, Marcos Fernandes},
+    title           = {Reservatório para sabão em pó com suporte para escova},
+    titleaddon      = {Depositante: Marcos Fernandes Vicente. MU8802281-1U2. Depósito: 15 out. 2008. Concessão: },
+    date            = {2010-06-29}
+  }
+
+  @patent{patente:oliveira,
+      author          = {Oliveira, Luiz Cláudio Marangoni de and Ferreira, Luiz Otávio Saraiva},
+      title           = {Scanner ressonante planar com atuação indutiva fortemente acoplada},
+      titleaddon = {Titular: Universidade Estadual de Campinas},
+      number          = {BR n. PI0801780-8 A2},
+      note            = {Depósito: 12 fev. 2008. Concessão: 29 set. 2009. Int. Ci. G02B 26/10 (2009.01), G02F 1/29 (2009.01).},
+  }
+
+%%%%%%
+%%  7.10 Patente em meio eletrônico
+%%%%%%
+  @patent{patente:galembeck,
     author = {Galembeck, Fernando; Souza, Maria de Fátima Brito},
     title = {Process to obtain an Intercalated or exfoliated polyester with clay hybrid nanocomposite material},
     titleaddon = {Depositante: Universidade Estadual de Campinas; Rhodia Ster S/A},
@@ -785,7 +1268,7 @@
     date         = {2017-06-24},
     year         = {2017},
     url          = {https://ctan.org/pkg/biblatex-cheatsheet},
-    urlaccessdate= {2022-30-12}
+    urlaccessdate= {2022-12-30}
   }
 
   @misc{pdf:biblatex-abnt,
@@ -794,7 +1277,7 @@
     date         = {2018-11-17},
     year         = {2018},
     url          = {https://www.ctan.org/pkg/biblatex-abnt},
-    urlaccessdate= {2022-30-12}
+    urlaccessdate= {2022-12-30}
   }
 
   @misc{pdf:biblatex,
@@ -804,7 +1287,7 @@
     date         = {2022-07-12},
     year         = {2022},
     url          = {https://www.ctan.org/pkg/biblatex},
-    urlaccessdate= {2022-30-12}
+    urlaccessdate= {2022-12-30}
   }
   
   @misc{bib:biblatex-abnt,
@@ -814,7 +1297,7 @@
     year         = {2020},
     note         = {1 arquivo, extensão BIB (107KB).},
     url          = {https://github.com/abntex/biblatex-abnt/blob/dev/bibtex/bib/biblatex-abnt/NBR6023-2018.bib},
-    urlaccessdate= {2022-30-12}
+    urlaccessdate= {2022-12-30}
   }
 
   @misc{pdf:resumo-aluisio,
@@ -826,7 +1309,7 @@
     year         = {[2015]},
     note         = {1 arquivo, extensão PDF (2,11MB).},
     url          = {https://escritacientifica.sc.usp.br/wp-content/uploads/MPCC_4_Resumos.pdf},
-    urlaccessdate= {2022-31-12}
+    urlaccessdate= {2022-12-31}
   }
 
   

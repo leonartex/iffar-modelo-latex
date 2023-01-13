@@ -1,14 +1,22 @@
 % Comando para imprimir no texto a referência utilizada de exemplo
 % ATENÇÃO: Esse comando possui apenas função didática, específica para o capítulo sobre referências, apesar que você pode utilizar para "debug", verificando rapidamente como sua referência está sendo impressa. Se quiser, pode remover tranquilamente
 \newcommand{\singlecite}[2]{%
-  \begin{FlushLeft}%
-    \begin{singlespace}
-      \setlength\parskip{\baselineskip}
-      \noindent%
-      #2\fullcite{#1}%
-    \end{singlespace}
-  \end{FlushLeft}
+\begin{FlushLeft}%
+  \begin{singlespace}%
+    % \setlength\parskip{\baselineskip}
+    \noindent%
+
+    #2\textcite{#1} ou \cite{#1}:
+
+    \fullcite{#1}%
+  \end{singlespace}
+\end{FlushLeft}
 }
+
+%Comandos só pra facilitar a escrita do capítulo 5
+\newcommand{\exEssencial}{\vspace{\baselineskip}\noindent --- Exemplo com elementos essenciais:}
+\newcommand{\exComplementar}{\vspace{\baselineskip}\noindent --- Exemplo com elementos complementares:}
+\newcommand{\exOutros}{\vspace{\baselineskip}\noindent --- Outros exemplos:}
 
 % Código adaptado das duas fontes para citar o nome completo dos autores, sem deixar em caixa alta o último sobrenome (não garanto o correto funcionamento em todas as situações)
 % Fonte 1: https://tex.stackexchange.com/a/537722
