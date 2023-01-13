@@ -18,7 +18,7 @@ Afazeres:
 		- Permitir utilizar uma configuração que: soma a indentação de listas dentro de listas (padrão alínea); ou deixa todas as listas internas como se fosse uma coisa só (talvez usando wide)
 		- Configurar para a lista genérica receber o segundo argumento, que são as opções, como start e tals
 		- Configurar para a lista genérica receber argumentos opcionais, para alternar entre o modo wide ou padrão
-	- Ajustas as referências para repetir o nome de autores, não utilizando o filete
+	- Ajustar as referências para repetir o nome de autores, não utilizando o filete
 	- Dar exemplo dos variados tipos de representação de termos no Índice
 	- Revisar os exemplos de referências para indicar as gambiarras
 	- Resolver a virgula a mais nos negócio de evento
@@ -26,6 +26,7 @@ Afazeres:
 	- Figura com código de programação
 	- Verificar se dá pra remover o pacote AlphAlph usando o \mknumalph do biblatex
 
+	Opcional:
 	- Criar um índice bonitinho, cobrindo todo o modelo
 	- Criar as referências do cap. 5 dando exemplos com elementos essenciais e o mesmo exemplo com elementos complementares.
 
@@ -41,19 +42,19 @@ Afazeres:
 		Texto
 	V		Cor preta
 	V		Fonte Arial ou Times
-			Tamanho 12
+	V		Tamanho 12
 				Verificar todos os elementos que vai 12
-			Tamanho 10
+	V		Tamanho 10
 				Verificar todos os elementos que vai 10
-		Margens
+	V	Margens
 	V		No anverso (frente da folha): superior e esquerda de 3 cm; inferior e direita de 2 cm;
 	V		No verso: superior e direita de 3 cm; inferior e esquerda de 2 cm.
-		Espaçamento entre linhas
-			1,5
+	V	Espaçamento entre linhas
+	V		1,5
 				Verificar todos os elementos que vai 1,5
-			Simples
+	V		Simples
 				Verificar todos os elementos que vai Simples
-		Alinhamento de parágrafo
+	V	Alinhamento de parágrafo
 			Justificado
 			Centralizado
 			À esquerda
@@ -64,20 +65,20 @@ Afazeres:
 	V	Contagem de folhas
 	V		Ignorar capa
 	V		Sem contagem no pré-textual, mas contabilizando a partir da folha de rosto, exceto a errata (que é no material impresso, não tenho nada a ver), até o sumário
-		Numeração
-			Arábico
-			No anverso: no canto superior direito (distante 2 cm da borda superior, com o último algarismo a 2 cm da borda direita da folha);
-			No verso: no canto superior à esquerda (distante 2 cm da borda superior, com o último algarismo a 2 cm da borda esquerda da folha).
-		Títulos
+	V	Numeração
+	V		Arábico
+	V		No anverso: no canto superior direito (distante 2 cm da borda superior, com o último algarismo a 2 cm da borda direita da folha);
+	V		No verso: no canto superior à esquerda (distante 2 cm da borda superior, com o último algarismo a 2 cm da borda esquerda da folha).
+	V	Títulos
 	V		5 níveis de seção
 	V		Usar algarismo arábico seguido de um espaço para separar do título
-			Destaque usando negrito, itálico ou sublinhado, que deve aparecer no sumário
+	V		Destaque usando negrito, itálico ou sublinhado, que deve aparecer no sumário
 	V		Alinhamento à esquerda
 	V		Espaçamento 1,5
 	V		Tamanho 12
 	V		Separação entre título e texto de 1,5
 
-		Títulos e indicativos numéricos das seções (tabelas, figuras, anexos, etc.)
+	V	Títulos e indicativos numéricos das seções (tabelas, figuras, anexos, etc.)
 	V		Identificação sequencial de itens: designados por seu nome específico, seguido de um espaço, um travessão, outro espaço e do respectivo título;
 	V		Apêndice e anexo: usar letra
 	V		Tabelas e ilustrações: algarismo arábico, espaço, travessão, espaço, título
@@ -97,11 +98,11 @@ Afazeres:
 	V Nota de rodapé
 
 	V Capa
-	Lombada?
+	  Lombada?
 
 	V Folha de rosto
-	Ficha catalográfica?
-	Errata
+	  Ficha catalográfica?
+	  Errata
 	V Folha de aprovação e/ou Folha de certificação
 	V Dedicatória
 	V Agradecimentos
@@ -115,9 +116,9 @@ Afazeres:
 	V Lista de símbolos
 	V Sumário
 
-	Introdução
-	Desenvolvimento
-	Conclusão
+	  Introdução
+	  Desenvolvimento
+	  Conclusão
 
 	V Referências
 	V Glossário
