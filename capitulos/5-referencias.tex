@@ -139,8 +139,11 @@ Para as citações simultâneas ou citações apud segue-se o mesmo padrão ao u
 \section{Exemplos de referências bibliográficas}
 A seguir são apresentados exemplos de referências para variados tipos de documentos, porém, não leve os exemplos dados como os de melhor qualidade. Para alguns exemplos foi necessário realizar um conjunto de adaptações, que fogem da boa prática, para conseguir o resultado desejado. Será alertado no exemplo quando isso ocorrer, mas, recomenda-se sempre uma certa cautela ao seguir os exemplos, além de que alguns podem ter passado despercebido na revisão, para receber o alerta. Além de que, é claro, sempre é recomendado que se procure seguir as boas práticas contidas nas documentações dos pacotes sobre referências.
 
-\subsection{Monografia no todo}
-\subsubsection{Livro e/ou folheto}
+% ABNT 7.1
+\subsection{Monografia no todo} % 7.1
+
+% ABNT 7.1.1
+\subsubsection{Livro e/ou folheto}% 7.1.1
   \exEssencial
   \singlecite{livro:luck-2010:essencial}{}
 
@@ -152,7 +155,8 @@ A seguir são apresentados exemplos de referências para variados tipos de docum
   \singlecite{livro:iffar-guia-normalizacao-2022}{\footnote{Adaptação em \texttt{editortype}.}}
   \singlecite{livro:abnt-nbr6023:2018}{}
 
-\subsubsection{Trabalhos acadêmicos}
+% ABNT 7.1.2
+\subsubsection{Trabalhos acadêmicos} % 7.1.2
   \exEssencial
   \singlecite{tese:rodrigues-2009:essencial}{}
 
@@ -163,15 +167,19 @@ A seguir são apresentados exemplos de referências para variados tipos de docum
   \singlecite{tese:aguiar-2009}{}
   \singlecite{tcc:alves-2008}{}
 
-\subsection{Monografia no todo em meio eletrônico}
-\subsubsection{Documentos em meio eletrônico}
+% ABNT 7.2
+\subsection{Monografia no todo em meio eletrônico} % 
+
+% ABNT 7.2.1
+\subsubsection{Documentos em meio eletrônico} % 7.2.1
   \exEssencial
   \singlecite{livro:koogan-1998}{\footnote{Adaptação em \texttt{editortype}.}}
 
   \exOutros
   \singlecite{livro:godinho-2014}{}
   
-\subsubsection{Documentos disponíveis online}
+% ABNT 7.2.2
+\subsubsection{Documentos disponíveis online} % 7.2.2
   \exEssencial
   \singlecite{livro:bavaresco-2011:essencial}{\footnote{Adaptação em \texttt{editortype}.}}
 
@@ -182,7 +190,8 @@ A seguir são apresentados exemplos de referências para variados tipos de docum
   \singlecite{tese:coelho-2009}{}
   \singlecite{tese:santos-2018}{}
 
-\subsection{Parte de monografia}
+% ABNT 7.3
+\subsection{Parte de monografia} % 7.3
   \exEssencial
   \singlecite{parte:romano:essencial}{\footnote{Adaptação em \texttt{editortype}.}}
 
@@ -193,25 +202,31 @@ A seguir são apresentados exemplos de referências para variados tipos de docum
   \singlecite{parte:manfroi-2010}{\footnote{Adaptação em \texttt{editortype}. Atenção no sobrenome do coordenador terminado em Filho.}}
   \singlecite{parte:santos-1994}{}
 
-\subsection{Parte de monografia em meio eletrônico}
+% ABNT 7.4
+\subsection{Parte de monografia em meio eletrônico} % 7.4
   \exEssencial
   \singlecite{parte:cancer-2010}{\footnote{Adaptação em \texttt{authortype} e \texttt{editortype}.}}
 
   \exOutros
   \singlecite{parte:politica-1998}{}
 
-\subsection{Correspondência}
+% ABNT 7.5
+\subsection{Correspondência} % 7.5
   \exEssencial
   \singlecite{correspondencia:pilla:essencial}{\footnote{O mais correto seria utilizar o tipo \texttt{@letter}, mas, aparentemente, não foi implementado o tipo para as normas da ABNT.}}
 
   \exComplementar
   \singlecite{correspondencia:pilla:complementar}{}
 
-\subsection{Correspondência disponível em meio eletrônico}
+% ABNT 7.6
+\subsection{Correspondência disponível em meio eletrônico} % 7.6
   \exEssencial
   \singlecite{correspondencia:lispector}{}
 
+% ABNT 7.7
 \subsection{Publicação periódica} % 7.7
+
+% ABNT 7.7.1
 \subsubsection{Coleção de publicação periódica} % 7.7.1
   \exEssencial
   \singlecite{revista:ibge:essencial}{\footnote{Atenção no ano da obra utilizado.}}
@@ -223,6 +238,7 @@ A seguir são apresentados exemplos de referências para variados tipos de docum
   \singlecite{revista:nursing-1998}{\footnote{É muito comum o \& passar despercebido e causar erro se não for utilizado o seu comando.}}
   \singlecite{revista:nursing-1929}{}
 
+% ABNT 7.7.2
 \subsubsection{Coleção de publicação periódica em meio eletrônico} % 7.7.2
   \exEssencial
   \singlecite{revista:acta-1997:essencial}{\footnote{Adaptação em \texttt{issn}.}}
@@ -233,16 +249,19 @@ A seguir são apresentados exemplos de referências para variados tipos de docum
   \exOutros
   \singlecite{revista:ufsc}{}
 
+% ABNT 7.7.3
 \subsubsection{Parte de coleção de publicação periódica} % 7.7.3
   \exEssencial
   \singlecite{revista:ibge:parte}{}
-  
+
+% ABNT 7.7.4
 \subsubsection{Fascículo, suplemento e outros} % 7.7.4
   \exEssencial
   \singlecite{revista:tres}{}
 
   \exOutros
   \singlecite{revista:fgv}{\footnote{Adaptação grande de tipo e em \texttt{titleaddon} e \texttt{publisher}.}}
+  \singlecite{as5001984}{\footnote{Adaptação grande de tipo e em \texttt{titleaddon} e \texttt{publisher}.}}
 
 % ABNT 7.7.5
 \subsubsection{Artigo, seção e/ou matéria de publicação periódica} % 7.7.5
@@ -423,76 +442,120 @@ O caso de referenciar patentes é um tanto confuso: a ABNT define como referenci
 
   \exOutros
   \singlecite{filme:central-1998}{}
-  \singlecite{serie:grande-familia}{}
 
 % ABNT 7.13.2
 \subsubsection{Filmes, vídeos, entre outros em meio eletrônico} % 7.13.2
+  \exEssencial
+  \singlecite{filme:john-2003}{}
 
-\singlecite{filme:bee-movie}{}
+  \exOutros
+  \singlecite{filme:blade-runner}{}
+  \singlecite{filme:book-2010}{}
+  \singlecite{filme:bee-movie}{}
+  \singlecite{serie:grande-familia}{}
+  \singlecite{serie:fullmetal}{}
 
-\singlecite{serie:fullmetal}{}
+% ABNT 7.13.3
+\subsubsection{Documentos sonoros} % 7.13.3
+  \exEssencial
+  \singlecite{sonoro:mosaico-2005}{}
 
-\singlecite{serie:grande-familia}{}
+  \exOutros
+  \singlecite{sonoro:beethoven}{}
+  \singlecite{sonoro:cid-moreira-2010}{}
+  \singlecite{sonoro:gomes-2011}{}
 
-\subsubsection{Documentos sonoros}
-\singlecite{sonoro:ex1}{}
+% ABNT 7.13.4
+\subsubsection{Parte de documento sonoro} % 7.13.4
+  \exEssencial
+  \singlecite{sonoro:jura-1977}{}
 
-\singlecite{sonoro:ex2}{}
+  \exOutros
+  \singlecite{sonoro:toque-1988}{}
 
-\singlecite{sonoro:ex3}{\footnote{Gambiarra}}
+% ABNT 7.13.5
+\subsubsection{Documento sonoro em meio eletrônico} % 7.13.5
+  \exEssencial
+  \singlecite{sonoro:podcast-2010}{}
 
-\singlecite{sonoro:ex4}{}
+  \exOutros
+  \singlecite{sonoro:podcast-2010}{}
 
-\subsubsection{Documentos iconográficos}
-\singlecite{imagem:ex1}{\footnote{Atenção para o uso do \texttt{noslsn} no campo \texttt{option}.}}
+% ABNT 7.14
+\subsection{Partitura} % 7.14
 
-\singlecite{imagem:ex2}{}
+%ABNT 7.14.1
+\subsubsection{Partitura impressa} % 7.14.1
+  \exEssencial
+  \singlecite{partitura:xenakis-1980}{}
 
-\singlecite{imagem:ex3}{\footnote{Pequena gambiarra}}
+  \exOutros
+  \singlecite{partitura:brahms-1977}{}
 
-\subsubsection{Documento de acesso exclusivo em meio eletrônico}
-\singlecite{software:ex1}{}
+%ABNT 7.14.2
+\subsubsection{Partitura em meio eletrônico} % 7.14.2
+  \exEssencial
+  \singlecite{partitura:beethoven-1863}{}
 
-\singlecite{software:ex2}{}
+  \exOutros
+  \singlecite{partitura:gonzaga-1997}{}
 
-\singlecite{tweet:ex1}{}
+% ABNT 7.15
+\subsection{Documento iconográfico} % 7.15
+  \exEssencial
+  \singlecite{imagem:kobayashi-1980}{\footnote{Atenção para o uso do \texttt{noslsn} no campo \texttt{option}.}}
 
-\singlecite{site:latex-impressora}{\footnote{Essa é a mesma formatação utilizada para citar artigos da Wikipédia.}}
+  \exOutros
+  \singlecite{imagem:levi-1997}{}
+  \singlecite{imagem:ferrari-1990}{}
 
+% ABNT 7.16
+\subsection{Documento iconográfico em meio eletrônico} % 7.16
+  \exEssencial
+  \singlecite{imagem:houte-2010}{\footnote{Adaptação em \texttt{titleaddon}.}}
 
-\subsection{Ajustando as referências para alcançar a formatação desejada}
-É muito importante que busque-se utilizar-se sempre da boa prática, ao realizar os registros de referências bibliográficas. Utilizar o tipo correto e os valores nos campos corretos é bastante relevante, pois, permite o uso das mesmas em outros padrões, contudo, nem sempre isso é possível. A ABNT apresenta algumas peculiaridades que fogem do comum em alguns exemplos e o \texttt{biblatex-abnt} também não prevê todos os casos de uso\footnote{Na maioria das vezes não vai ter mistério na hora de registrar a referência, é só mesmo que algumas situações são um tanto nebulosas por causa da ABNT e aí fica essa necessidade de fazer gambiarra, até mesmo por falta de algum conhecimento mais profundo sobre o \texttt{biblatex} e o \texttt{biblatex-abnt} (a documentação do pacote não é das melhores).}. Além disso, até o momento da escrita\footnote{30 de dezembro de 2022}, não está atualizado para todas as normas da segunda edição da NBR 6023, por isso é imporante saber adaptar, quando necessário. 
+  \exOutros
+  \singlecite{imagem:floripa-2011}{\footnote{Adaptação em \texttt{nameaddon}.}}
 
-Nos próprios exemplos apresentados anteriormente, foi realizada a anotação da ocorrência de adaptação, para alcançar a formatação necessária. Existem muitas formas de contornar as limitações das referências e, aqui, serão discutidas algumas delas. E esses métodos são são desde utilizar um tipo que formate o mais próximo possível até o desvirtuamento de campos, para inserir o valor formatado na posição desejada. Esse último, em especial, deve-se tomar bastante cuidado, para não afetar campos importantes na hora da citação, como o nome de autoria ou responsabilidade, título e data da referência.
+% ABNT 7.17
+\subsection{Documento cartográfico} % 7.17
+  \exEssencial
+  \singlecite{cartografico:igc-1994}{}
 
-\subsubsection{Utilização de tipo que possua a formatação mais semelhante possível}
-% Uso de tipos que dão a formatação mais próxima do desejado
-O método de utilizar um tipo de entrada que formate próximo do formato desejado é fácil de entender. Por exemplo, o \texttt{biblatex-abnt} não formata corretamente o tipo \texttt{@letter} existente, neste caso, como observado em \textcite{correspondencia:ex1}, no caso, foi utilizado o tipo \texttt{@booklet}, assim, garantindo a formatação destacada na NBR 6023. 
+  \exOutros
+  \singlecite{cartografico:cesp-1981}{}
 
-\subsubsection{Utilização dos campos editor e editortype}
-% Tirar proveito do editor e editortype
-  % Observar o tipo da entrada (alguns colocam em parênteses outro dois pontos)
-Outro método, que, de certa forma, ainda mantém uma boa prática é a utilização dos campos \texttt{editor} e \texttt{editortype}. O \texttt{biblatex} também apresenta outras três variações (\texttt{editora}, \texttt{editorb} e \texttt{editorc}) que podem ser utilizado da mesma forma. No caso, o campo \texttt{editortype} possui um conjunto de valores previamente estabelecidos, como: \textit{organizer}, \textit{editor}, \textit{translator}, etc. O \texttt{biblatex-abnt} também está configurado para tal, contudo, tem o porém de utilizar a inicial maíuscula na sigla, além de deixar em caixa alta o último sobrenome dos nomes, em algumas situações. A boa prática pede que seja utilizado esses termos definidos, mas o usuário pode colocar o termo que quiser no campo.
+% ABNT 7.18
+\subsection{Documento cartográfico em meio eletrônico} % 7.18
+  \exEssencial
+  \singlecite{cartografico:museum-2000}{}
 
-Um exemplo do método pode ser observado em \textcite{parte:ex1}, utilizado de forma a contornar a condição do nome do país entre parênteses\footnote{Também foi utilizado o \texttt{nameaddon} nessa situação.}. E o exemplo de contornar a formatação com inicial maíuscula da sigla pode ser visualizado em \textcite{parte:ex2} e \textcite{livro:iffar-guia-normalizacao-2022}. Porém, também existem tipo de entradas que adicionam os dados de \texttt{editor} antes de dois pontos, que seria a boa prática a se utilizar no caso de \textcite{filme:bee-movie} e \textcite{serie:grande-familia}, mas que, com o sobrenome ficando em caixa alta, foge da formatação utilizada na NBR 6023 para este tipo de documento.
+  \exOutros
+  \singlecite{cartografico:inpe-2014}{}
 
-\subsubsection{Utilização de nameaddon e titleaddon}
-% Uso de nameaddon e titleaddon (junto com \nopunct)
-Outra forma de contornar as limitações pode ser através do uso dos campos \texttt{nameaddon} e \texttt{titleaddon}: O primeiro adiciona informações após o nome do autor e o segundo após o título ou subtítulo, sendo que existem variantes para \texttt{booktitle}, \texttt{eventtitle} e \texttt{maintitle}. Junto com o método o comando \verb|\nopunct|, que retira a pontuação final de um campo para outro, aumenta ainda mais as possibilidades. E nos exemplos dados nas seções anteriores, são inúmeras as referências que utilizam, algumas por limitação, outras por necessidade.
+% ABNT 7.19
+\subsection{Documento tridimensional} % 7.19
+  \exEssencial
+  \singlecite{escultura:duchamp-1918-essencial}{}
 
-\subsubsection{Utilização de addendum e note}
-% Uso de addendum e note
-Utilizar addendum e note, para informações adicionais é uma necessidade para muitos documentos, principalmente para adicionar elementos complementares. Porém, além de permitir adicionar elementos complementares, em algumas situação, pode ser utilizado para adicionar informações essenciais em que não foi identificada a melhor forma de realizar o registro.
+  \exComplementar
+  \singlecite{escultura:duchamp-1918-complementar}{}
 
-\subsubsection{Uso de comandos dentro das referências}
-No registro de referências, muitos comandos continuam sendo válidos de se executar, podendo-se adicionar símbolos ou até mesmo formatar o conteúdo, em negrito ou itálico, por exemplo. Essa formatação deve sempre ser utilizada com bastante cuidado, principalmente se o objetivo for maquiar uma adaptação\footnote{Leia-se: ``gambiarra''.} de referência. Um exemplo desse tipo de ``adaptação'' pode ser observado em \textcite{sonoro:ex3}, quando não foi identificado como alcançar a formatação utilizando o tipo \texttt{@audio}, mas, que, porém, poderia ser melhor representado utilizando o \texttt{@inbook}, como no exemplo alternativo \textcite{sonoro:ex3-alt}:
+  \exOutros
+  \singlecite{escultura:bule-1800}{\footnote{Atenção em \texttt{year}, onde os hífens devem estar separados para o \LaTeX{} não transformá-los em um travessão.}}
 
-\singlecite{sonoro:ex3-alt}{}
+% ABNT 7.20
+\subsection{Documento de acesso exclusivo em meio eletrônico} % 7.20
+  \exEssencial
+  \singlecite{software:apple-2017}{}
 
-Outro comando que possui muita utilidade é o: \verb|\nopunct|. Esse comando remove a pontuação final utilizada no elemento (pode ser vírgula, ponto, depende da formatação utilizada pelo tipo de referência) e, por isso, pode ser usado, principalmente em conjunto com os campos \texttt{nameaddon} e \texttt{titleaddon}, e suas variantes, para alcançar a formatação desejada. Esse é o caso da situação com estados ou municípios homônimos, que devem ter seu indicativo do estado ou município entre parênteses.
-% Uso de comandos dentro de referências
-  % Usar \autocap
-  % Usar \nopunct
-  % Usar \mkbibacro
-
-Às vezes é necessário que duas ou mais palavras sejam identificadas como um termo só e, no arquivo de bibliografia, isto é alcançado ao adicioná-las dentro de um outro par de chaves. Por exemplo, isso acontece com: sobrenomes com designativo, como Neto, Filho, Júnior, etc., como no caso de \textcite{parte-evento:ex2}; ou obras sem indicação clara de autoria, ou de responsabilidade, que necessitam deixar em caixa alta a primeira palavra, incluindo artigo ou palavra monossilábica inicial, como no caso de \citetitle{filme:bee-movie} ou \citetitle{serie:grande-familia}.
+  \exOutros
+  \singlecite{software:ufp-word-1998}{}
+  \singlecite{software:got-2017}{\footnote{Adaptação em \texttt{titleaddon}}}
+  \singlecite{tweet:oliveira-2020}{}
+  \singlecite{site:wikipedia-2010}{\footnote{Por algumas limitações do \texttt{biblatex}, os colchetes adicionados se tornam um problema ao imprimir errado o ano quando citado.}}
+  \singlecite{facebook:fbn-2015}{}
+  \singlecite{blog:cid-2011}{}
+  \singlecite{mensagem:almeida-2002}{}
+  % \singlecite{tweet:guizin-2020}{}
+  % \singlecite{site:latex-impressora}{\footnote{Essa é a mesma formatação utilizada para citar artigos da Wikipédia.}}

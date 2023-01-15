@@ -1,9 +1,13 @@
 Alguns dos exemplos dados, que são apresentados na NBR 6023:2018, foram extraídos de:
 MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/biblatex-abnt/blob/dev/bibtex/bib/biblatex-abnt/NBR6023-2018.bib. Acesso em: 9 jan. 2023.
+Recomendo a consulta, caso se tenha dúvidas. Dependendo do tempo que você estiver lendo isso, o arquivo oficial no repositório do biblatex-abnt já pode ter sido atualizado, que pode ser consultado em: https://github.com/abntex/biblatex-abnt/blob/dev/bibtex/bib/biblatex-abnt/NBR6023-2018.bib
 
 %%%%%%
-%%  Livros, folhetos, etc.
+%%  7.1 Monografa no todo
 %%%%%%
+  %%%
+  %  7.1.1 Livro e/ou folheto
+  %%%
   @book{livro:luck-2010:essencial,
     keywords       = {7.1,7.1.1},
     author         = {Luck, Heloisa},
@@ -98,9 +102,9 @@ MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/
     isbn           = {978-85-07-02680-8},
   }
 
-%%%%%%
-%%  Trabalhos acadêmicos
-%%%%%%
+  %%%
+  %  7.1.2 Trabalho acadêmico
+  %%%
   @mastersthesis{tese:rodrigues-2009:essencial,
     keywords        = {7.1,7.1.2},
     author          = {Ana Lúcia Aquilas Rodrigues},
@@ -151,8 +155,11 @@ MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/
   }
 
 %%%%%%
-%%  Monografia no todo em meio eletrônico
+%%  7.2 Monografia no todo em meio eletrônico
 %%%%%%
+  %%%
+  %  7.2.1 Para documentos em meio eletrônico
+  %%%
   @book{livro:koogan-1998,
     keywords       = {7.2,7.2.1},
     editor         = {André Koogan and Antonio Houaiss},
@@ -176,6 +183,9 @@ MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/
     howpublished   = {\textit{E-book}},
   }
 
+  %%%
+  %  7.2.2 Para documentos disponíveis online
+  %%%
   @book{livro:bavaresco-2011:essencial,
     keywords       = {7.2,7.2.2},
     editor         = {Agemir Bavaresco and Evandro Barbosa and Karia Martin Etcheverry},
@@ -238,7 +248,7 @@ MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/
   }
 
 %%%%%%
-%%  Partes de monografias, livros, coleções
+%%  7.3 Parte de monografia
 %%%%%%
   @incollection{parte:romano:essencial,
     keywords        = {7.3},
@@ -302,6 +312,9 @@ MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/
     pages           = {15-24},
   }
 
+%%%%%%
+%%  7.4 Parte de monografia em meio eletrônico
+%%%%%%
   @incollection{parte:politica-1998,
     keywords        = {7.4},
     booktitle       = {Dicionário da língua portuguesa},
@@ -329,7 +342,7 @@ MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/
   }
 
 %%%%%%
-%%  Correspondência
+%%  7.5 Correspondência
 %%%%%%
   @letter{correspondencia:pilla:essencial,
     keywords       = {7.5},
@@ -354,7 +367,7 @@ MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/
   }
 
 %%%%%%
-%%  Correspondência disponível em meio eletrônico
+%%  7.6	Correspondência disponível em meio eletrônico
 %%%%%%
   @letter{correspondencia:lispector,
     keywords       = {7.6},
@@ -494,6 +507,17 @@ MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/
     date           = {1984-09},
     note           = {Edição especial}
   }
+
+  @article{as5001984,
+    keywords        = {7.5.3},
+    title           = {As 500 maiores empresas do Brasil},
+    journaltitle    = {Conjuntura Econômica},
+    location        = {Rio de Janeiro},
+    volume          = {38},
+    number          = {9},
+    date            = {1984-09},
+    note            = {Edição Especial},
+}
 
   %%%
   %  7.7.5 Artigo, seção e/ou matéria de publicação periódica
@@ -650,7 +674,7 @@ MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/
     number          = {16.414},
     pages           = {2},
     date = {2010-08-12},
-    url             = {http://www.clicrbs.com.br/zerohora/jsp/default.jspx?uf=1&action=fip},
+    url             = {http://www.clicrbs.com.br/zerohora/jsp/default.jspx?uf=1&action=flip},
     urlaccessdate = {2010-08-12},
   }
 
@@ -927,8 +951,8 @@ MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/
     titleaddon      = {Depositante: Universidade Estadual de Campinas; Rhodia Ster S/A},
     number          = {WO2005/030850 A1},
     note            = {Depósito: 1 Oct. 2003, Concessão: 7 Apr. 2005},
-    url             = {http://www.iprvillage.info/portal/servlet/DIIDirect?CC=WO&PN=2005030850&DT=A1&SrcAuth=Wila&Toke},
-    urlaccessdate   = {2010-07-27}
+    url             = {http://www.iprvillage.info/portal/servlet/DIIDirect?CC=WO&PN=2005030850&DT=A1&SrcAuth=Wila&Token=UtWHB3Mmc98t05i1AVPmaGE5dYhs00Nlt38dpA3EfnOosue2.GSz63ySsIiukTB8VQWW32lISV87n4_naNBY8lhYY30Rw1UeDo_8Yo8UVD0},
+    urlaccessdate   = {2010-08-27}
   }
 
 %%%%%%
@@ -1084,11 +1108,11 @@ MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/
     nameaddon         = {Supremo Tribunal Federal (2. Turma)},
     title             = {Recurso Extraordinário 313060/SP},
     titleaddon        = {Leis 10.927/91 e 11.262 do município de São Paulo. Seguro obrigatório contra furto e roubo de automóveis. Shopping centers, lojas de departamento, supermercados e empresas com estacionamento para mais de cinqüenta veículos. Inconstitucionalidade. Recorrente: Banco do Estado de São Paulo S/A -- BANESPA. Recorrido: Município de São Paulo.},
-    location          = {Relatora},
-    publisher         = {Min. Ellen Gracie},
+    publisher         = {Relatora: Min. Ellen Gracie},
     date              = {2005-11-29},
     url               = {http://redir.stf.jus.br/paginadorpub/paginador.jsp?docTP=AC&docID=260670},
     urlaccessdate     = {2011-08-19},
+    options           = {nosl}
   }
 
   @book{jurisprudencia:stj-eletronico,
@@ -1236,9 +1260,54 @@ MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/
     keywords     = {7.13,7.13.1},
     title        = {Central do Brasil},
     titleaddon   = {Direção: Walter Salles Júnior. Produção: Martire de Clermont-Tonnerre e Arthur Cohn. Intérpretes: Fernanda Montenegro, Marilia Pera, Vinicius de Oliveira, Sônia Lira, Othon Bastos, Matheus Nachtergaele \textit{et al}. Roteiro: Marcos Bernstein, João Emanuel Carneiro e Walter Salles Júnior},
-    publisher    = {Le Studio Canal; Rioflme; MACT Productions},
+    publisher    = {Le Studio Canal; Riofilme; MACT Productions},
     year         = {1998},
-    addendum     = {5 rolos de flme (106 min), son., color., 35 mm},
+    addendum     = {5 rolos de filme (106 min), son., color., 35 mm},
+  }
+
+  %%%
+  %  7.13.2 Filmes, vídeos, entre outros em meio eletrônico
+  %%%
+  @movie{filme:john-2003,
+    keywords     = {7.13,7.13.2},
+    title        = {John Mayall \& The Bluesbreakers and friends},
+    subtitle     = {Eric Clapton, Chris Barber, Mick Taylor: 70\textsuperscript{th} birthday concert},
+    titleaddon   = {Direção: Simon J. Smith, Steve Hickner},
+    location     = {[London]},
+    publisher    = {Eagle Rock Entertainment},
+    year         = {2003},
+    addendum     = {1 disco \textit{blu-ray} (ca. 159 min)},
+  }
+
+  @movie{filme:blade-runner,
+    keywords     = {7.13,7.13.2},
+    title        = {Blade Runner},
+    titleaddon   = {Direção: Ridley Scott. Produção: Michael Deeley. Intérpretes: Harrison Ford; Rutger Hauer; Sean Young; Edward James Olmos e outros. Roteiro: Hampton Fancher e David Peoples. Música: Vangelis},
+    location     = {Los Angeles},
+    publisher    = {Warner Brothers},
+    year         = {c1991},
+    sortyear     = {1991},
+    addendum     = {1 DVD (117 min), \textit{widescreen}, color. Baseado na novela ``Do androids dream of electric sheep?'', de Philip K. Dick},
+  }
+
+  @movie{filme:book-2010,
+    keywords     = {7.13,7.13.2},
+    title        = {Book},
+    year         = {2010},
+    addendum     = {1 vídeo (3 min). Publicado pelo canal Leerestademoda},
+    url          = {http://www.youtube.com/watch?v=iwPj0qgvfIs},
+    urlaccesdate = {2011-08-25}
+  }
+
+  % Bee é uma palavra monossilábica, logo, a palavra Movie vai junto
+  @movie{filme:bee-movie,
+    title        = {{Bee Movie}},
+    subtitle     = {A História de uma Abelha},
+    titleaddon   = {Direção: Simon J. Smith, Steve Hickner},
+    location     = {Estados Unidos},
+    publisher    = {DreamWorks},
+    year         = {2007},
+    addendum     = {1 vídeo (91min). Título original: Bee Movie. Acesso pelo serviço de streaming Netflix.},
   }
 
   % A GRANDE Família
@@ -1251,20 +1320,6 @@ MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/
     addendum     = {5 DVD. Temporada 2, 36 episódios.},
   }
 
-  %%%
-  %  7.13.2 Filmes, vídeos, entre outros em meio eletrônico
-  %%%
-  % Bee é uma palavra monossilábica, logo, a palavra Movie vai junto
-  @movie{filme:bee-movie,
-    title        = {{Bee Movie}},
-    subtitle     = {A História de uma Abelha},
-    edition      = {Direção: Simon J. Smith, Steve Hickner},
-    location     = {Estados Unidos},
-    publisher    = {DreamWorks},
-    year         = {2007},
-    addendum     = {1 vídeo (91min). Título original: Bee Movie. Acesso pelo serviço de streaming Netflix.},
-  }
-
   @movie{serie:fullmetal,
     title        = {Fullmetal Alchemist},
     subtitle     = {Brotherhood},
@@ -1275,64 +1330,165 @@ MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/
     addendum     = {1 vídeo (21min). Temporada 1, episódio 4. Título do episódio: A Angústia de um Alquimista.},
   }
 
-%%%%%%
-%%  Documentos sonoros
-%%%%%%
-  % Fonte: https://github.com/abntex/biblatex-abnt/blob/dev/bibtex/bib/biblatex-abnt/NBR6023-2018.bib#L1508
-  @audio{sonoro:ex1,
-    keywords        = {7.13},
-    author          = {Alcione},
-    title           = {Ouro e cobre},
+  %%%
+  %  7.13.3 Documento sonoro no todo
+  %%%
+  @audio{sonoro:mosaico-2005,
+    keywords      = {7.13,7.13.3},
+    title         = {Mosaico},
+    titleaddon    = {[Compositor e intérprete]: Toquinho},
+    location      = {Rio de Janeiro},
+    publisher     = {Biscoito Fino},
+    year          = {2005},
+    note          = {1 CD}
+  }
+  
+  @audio{sonoro:beethoven,
+    keywords        = {7.13,7.13.3},
+    title           = {{The nine} symphonies},
+    titleaddon      = {Compositor: Ludwig van Beethoven. Orquestra: Wiener Philharmoniker. Regente: Leonard Bernstein. Soprano: Gwyneth Jones. Contralto: Hanna Schwarz. Tenor: René Kollo. Baixo: Kurt Moll. Coro: Konzertvereinigung Wiener Staatsopernchor.},
+    location        = {Hamburg},
+    publisher       = {Deutsche Gramophon},
+    year            = {1980},
+    note            = {5 CD}
+  }
+  
+  @audio{sonoro:cid-moreira-2010,
+    keywords        = {7.13,7.13.3},
+    title           = {Bíblia em áudio},
+    subtitle        = {novo testamento},
+    titleaddon      = {Intérprete: Cid Moreira},
+    location        = {Brasília, DF},
+    publisher       = {Sociedade Bíblica do Brasil},
+    year            = {2010},
+    note            = {1 disco \textit{blue-ray}},
+  }
+
+  @audio{sonoro:gomes-2011,
+    keywords        = {7.13,7.13.3},
+    author          = {Gomes, Laurentino},
+    title           = {1822},
+    titleaddon      = {Na voz de Pedro Bial},
+    publisher       = {Plugme},
+    year            = {2011},
+    note            = {1 audiolivro (CD-ROM)},
+  }
+
+  %%%
+  %  7.13.4 Parte de documento sonoro
+  %%%
+  @inbook{sonoro:jura-1977,
+    keywords        = {7.13,7.13.4},
+    title           = {Jura secreta},
+    titleaddon      = {Intérprete: Simone. Compositores: S. Costa e A. Silva},
+    booktitle       = {Face a face},
+    booktitleaddon  = {Intérprete: Simone},
+    publisher       = {Emi-Odeon Brasil},
+    year            = {1977},
+    note            = {1 CD, faixa 7}
+  }
+
+  @inbook{sonoro:toque-1988,
+    keywords        = {7.13,7.13.4},
+    title           = {Toque Macio},
+    titleaddon      = {Intérprete: Alcione. Compositor: A. Gino},
+    booktitle       = {Ouro e cobre},
+    booktitleaddon  = {Intérprete: Alcione},
     location        = {São Paulo},
-    publisher       = {\mkbibacro{RCA} Victor},
-    year            = {p1988},
-    sortyear        = {1988},
-    note            = {1 disco sonoro},
+    publisher       = {RCA Victor},
+    year            = {1988},
+    note            = {1 disco vinil, lado A, faixa 1 (4 min)}
   }
 
-  @audio{sonoro:ex2,
-    title = {{The nine} symphonies},
-    titleaddon = {Compositor: Ludwig van Beethoven. Orquestra: Wiener Philharmoniker. Regente: Leonard Bernstein. Soprano: Gwyneth Jones. Contralto: Hanna Schwarz. Tenor: René Kollo. Baixo: Kurt Moll. Coro: Konzertvereinigung Wiener Staatsopernchor.},
-    location = {Hamburg},
-    publisher = {Deutsche Gramophon},
-    year = {1980},
-    note = {5 CD}
+  %%%
+  %  7.13.5 Documento sonoro em meio eletrônico
+  %%%
+  @audio{sonoro:podcast-2010,
+    keywords        = {7.13,7.13.5},
+    title           = {Podcasts LXX},
+    subtitle        = {Brasil: parte 3: a república},
+    titleaddon      = {[Locução de]: Christian Gutner},
+    publisher       = {Escriba Café},
+    date            = {2010-03-19},
+    note            = {\textit{Podcast}},
+    url             = {http://www.escribacafe.com/podcast-lxx-brasil-parte-3-a-republica/},
+    urlaccessdate   = {2010-10-04},
   }
 
-  % Gambiarra para parte de documento sonoro
-  @audio{sonoro:ex3,
-    title = {Jura secreta},
-    titleaddon = {Intérprete: Simone. Compositores: S. Costa e A. Silva. \textit{In}: {FACE} a face. Intérprete: Simone.},
-    publisher = {Emi-Odeon Brasil},
-    year = {1977},
-    note = {1 CD, faixa 7}
-  }
-  % Uma prova de que pode-se chegar no mesmo resultado tanto com gambiarra quanto sem (o melhor é tentar chegar sem gambiarra)
-  @inbook{sonoro:ex3-alt,
-    title = {Jura secreta},
-    titleaddon = {Intérprete: Simone. Compositores: S. Costa e A. Silva},
-    booktitle = {Face a face},
-    booktitleaddon = {Intérprete: Simone},
-    publisher = {Emi-Odeon Brasil},
-    year = {1977},
-    note = {1 CD, faixa 7. Versão alternativa da referência, sem muito desvirtuamento dos campos de texto, mais correta.}
-  }
-
-  @audio{sonoro:ex4,
-    title = {Anticast 66},
-    subtitle = {as histórias e teorias das cores},
-    titleaddon = {Entrevistadores: Ivan Mizanzuk, Rafael Ancara e Marcos Beccari. Entrevistada: Luciana Martha Silveira.},
-    publisher = {Brainstorm9},
-    date = {2013-01-31},
-    url = {https://soundcloud.com/anticastdesign/anticast-66-as-hist-rias-e/s-OImz9},
-    urlaccessdate = {2014-08-22},
+  @audio{sonoro:anticast-2013,
+    keywords        = {7.13,7.13.5},
+    title           = {Anticast 66},
+    subtitle        = {as histórias e teorias das cores},
+    titleaddon      = {Entrevistadores: Ivan Mizanzuk, Rafael Ancara e Marcos Beccari. Entrevistada: Luciana Martha Silveira},
+    publisher       = {Brainstorm9},
+    date            = {2013-01-31},
+    url             = {https://soundcloud.com/anticastdesign/anticast-66-as-hist-rias-e/s-OImz9},
+    urlaccessdate   = {2014-08-22},
   }
 
 %%%%%%
-%%  Documentos iconográficos
+%%  7.14 Partitura
 %%%%%%
-  KOBAYASHI, K. Doença dos xavantes. 1980. 1 fotografia.
-  @image{imagem:ex1,
+  %%%
+  %  7.14.1 Partitura impressa
+  %%%
+  @misc{partitura:xenakis-1980,
+    keywords        = {7.14,7.14.1},
+    author          = {Xenakis, Iannis},
+    title           = {Aïs},
+    titleaddon      = {Pour baryton amplifié, percussion solo et grand orchestre},
+    location        = {Paris},
+    publisher       = {Salabert},
+    date            = {1980},
+    note            = {1 partitura},
+  }
+
+  @misc{partitura:brahms-1977,
+    keywords        = {7.14,7.14.1},
+    author          = {Brahms, Johannes},
+    title           = {Sonate für Klavier und Violoncello},
+    subtitle        = {e-mol opus 38},
+    location        = {München},
+    publisher       = {G. Henle},
+    date            = {1977},
+    note            = {1 partitura},
+  }
+
+  %%%
+  %  7.14.2 Partitura em meio eletrônico
+  %%%
+  @misc{partitura:beethoven-1863,
+    keywords        = {7.14,7.14.2},
+    author          = {Ludwig van Beethoven},
+    title           = {Neunte symphonie},
+    subtitle        = {op. 125},
+    titleaddon      = {Orquestra},
+    location        = {Leipzig},
+    publisher       = {Breitkopf \& Härtel},
+    date            = {1863},
+    note            = {1 partitura},
+    url             = {http://imslp.org/wiki/File:TN-Beethoven_Breitkopf_Serie_1_Band_3_B_9.jpg},
+    urlaccessdate   = {2012-06-20}
+  }
+
+  @misc{partitura:gonzaga-1997,
+    keywords        = {7.14,7.14.2},
+    author          = {Chiquinha Gonzaga},
+    title           = {Gaúcho},
+    subtitle        = {o corta-jaca de cá e lá},
+    titleaddon      = {Piano},
+    date            = {1997},
+    note            = {1 partitura. Acervo digital Chiquinha Gonzaga},
+    url             = {http://www.chiquinhagonzaga.com/acervo/partituras/gaucho_ca-e-la_piano.pdf},
+    urlaccessdate   = {2012-06-20},
+    options         = {noslsn}
+  }
+
+%%%%%%
+%%  7.15 Documento iconográfico
+%%%%%%
+  @image{imagem:kobayashi-1980,
+    keywords    = {7.15},
     author      = {Kobayashi, K.},
     title       = {Doença dos xavantes},
     date        = {1980},
@@ -1340,15 +1496,29 @@ MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/
     options     = {noslsn}
   }
 
-  @image{imagem:ex2,
+  @image{imagem:ferrari-1990,
     author      = {Ferrari, León},
     title       = {[Sem título]},
     date        = {1990},
     note        = {Pintura, pastel e tinta acrílica sobre madeira, 160 × 220 × 5 cm.},
+    options     = {noslsn}
   }
 
-  % Gambiarra de data realizada por causa que adicionar o campo language={english} fazia imprimir um "Versão inglesa", sendo que o objetivo era apenas converter a data para o idioma.
-  @image{imagem:ex3,
+  @misc{imagem:levi-1997,
+    keywords    = {7.15},
+    author      = {Levi, R.},
+    title       = {Edifício Columbus de propriedade de Lamberto Ramengoni à Rua da Paz, esquina da Avenida Brigadeiro Luiz Antonio},
+    subtitle    = {n. 1930-1933},
+    date        = {1997},
+    note        = {Plantas diversas. 108 f. Originais em papel vegetal.},
+    options     = {noslsn}
+  }
+
+%%%%%%
+%%  7.16 Documento iconográfico em meio eletrônico
+%%%%%%
+  @image{imagem:houte-2010,
+    keywords    = {7.16},
     author      = {Houte, Jef Van den},
     title       = {Black hole},
     titleaddon  = {1 June\nopunct},
@@ -1359,19 +1529,133 @@ MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/
     options     = {noslsn}
   }
 
+  @misc{imagem:floripa-2011,
+    keywords     = {7.16},
+    author       = {{Florianópolis Audiovisual MERCOSUL}\nopunct},
+    nameaddon    = {2011, Florianópolis},
+    title        = {FAM2011},
+    subtitle     = {15 anos: festival + fórum},
+    location     = {Florianópolis},
+    publisher    = {Associação Cultural Panavision},
+    year         = {2011},
+    note         = {1 cartaz, 656 x 468 pixels, 72 dpi, 60,4 Kb, RGB, formato jpeg},
+    url          = {http://4.bp.blogspot.com/_YymekZ7g_7U/TUsA0-Gvy6I/AAAAAAAABAc/ekciNgFGxU/s1600/fam2011_postal_inscricoes.jpg},
+    urlaccessdate = {2011-08-21}
+  }
+
 %%%%%%
-%%  Documentos de acesso exclusivo em meio eletrônico
+%%  7.17 Documento cartográfico
 %%%%%%
-  @software{software:ex1,
-    organization = {Apple},
+  @misc{cartografico:igc-1994,
+    keywords     = {7.17},
+    author       = {{Instituto Geográfico e Cartográfico}},
+    authortype   = {São Paulo},
+    title        = {Regiões de governo do Estado de São Paulo},
+    location     = {São Paulo},
+    publisher    = {IGC},
+    year         = {1994},
+    note         = {1 atlas. Escala 1:2.000},
+  }
+
+  @misc{cartografico:cesp-1981,
+    keywords     = {7.17},
+    author       = {{CESP} and {Terrafoto}},
+    title        = {Recobrimento aerofotogramétrico do litoral sul},
+    location     = {São Paulo},
+    publisher    = {CESP},
+    year         = {1981},
+    note         = {1 foto índice, p\&b, papel fotogr., 89 × 69 cm. Escala voo 1:35.000; Escala foto-índice 1:100.000. Folha SG 23-V-C-I. Articulação Q28AA. Data do voo: 1980/81. Conteúdo: faixa 21, fotos: 024-029; faixa 22A, fotos: 008-013; faixa 23A, fotos: 007-011; faixa 24, fotos: 012-015; faixa 25, fotos: 010-011; faixa 26, fotos: 008-009; faixa 27, foto: 008},
+  }
+
+%%%%%%
+%%  7.18 Documento cartográfico em meio eletrônico
+%%%%%%
+  @misc{cartografico:museum-2000,
+    keywords     = {7.18},
+    author       = {{Florida Museum of Natural History}},
+    title        = {1931-2000 Brazil's confirmed unprovoked shark attacks},
+    location     = {Gainesville},
+    publisher    = {Florida Museum of Natural History},
+    year         = {[2000?]},
+    sortyear     = {2000},
+    note         = {1 mapa, color. Escala 1:40.000.000},
+    url          = {http://www.flmnh.ufl.edu/fish/Sharks/statistics/Gattack/map/Brazil.jpg},
+    urlaccessdate = {2002-01-15}
+  }
+
+  @misc{cartografico:inpe-2014,
+    keywords     = {7.18},
+    author       = {{Instituto de Pesquisas Espaciais}},
+    authortype   = {Brasil},
+    title        = {Adamantina, São Paulo},
+    location     = {São José dos Campos},
+    publisher    = {INPE},
+    year         = {2014},
+    note         = {1 imagem de satélite, color. Satélite CBERS 2B, instrumento CCD. Intervalo de tempo: de 29 maio 1973 a 26 nov. 2014. Lat. -21.741667, Long. -51.001667},
+    url          = {http://www.dgi.inpe.br/CDSR/},
+    urlaccessdate = {2014-11-26}
+  }
+
+%%%%%%
+%%  7.19 Documento tridimensional
+%%%%%%
+  @misc{escultura:duchamp-1918-essencial,
+    keywords     = {7.19},
+    author       = {Duchamp, Marcel},
+    title        = {Escultura para viajar},
+    year         = {1918},
+    note         = {1 escultura variável, borracha colorida e cordel},
+    options      = {noslsn}
+  }
+
+  @misc{escultura:duchamp-1918-complementar,
+    keywords     = {7.19},
+    author       = {Duchamp, Marcel},
+    title        = {Escultura para viajar},
+    year         = {1918},
+    note         = {1 escultura variável, borracha colorida e cordel. Original destruído. Cópia por Richard Hamilton, feita por ocasião da retrospectiva de Duchamp na Tate Gallery (Londres) em 1966. Coleção de Arturo Schwarz. Título original: Sculpture for travelling},
+    options      = {noslsn}
+  }
+
+  @misc{escultura:bule-1800,
+    keywords     = {7.19},
+    author       = {{Companhia das Índias}},
+    title        = {[Bule de porcelana]},
+    location     = {[China]},
+    publisher    = {Companhia das Índias},
+    year         = {[18{-}{-}]},
+    sortyear     = {1800},
+    note         = {1 bule. Família rosa, decorado com buquês e guirlandas de flores sobre fundo branco, pegador de tampa em formato de fruto},
+  }
+
+%%%%%%
+%%  7.20 Documento de acesso exclusivo em meio eletrônico
+%%%%%%
+  @software{software:apple-2017,
+    keywords        = {7.20},
+    author          = {{Apple}},
     title           = {OS X El Capitan},
     titleaddon      = {Versão 10.11.6},
     location        = {[Cupertino]},
     publisher       = {Apple},
     year            = {c2017},
+    sortyear        = {2017}
   }
 
-  @software{software:ex2,
+  @software{software:ufp-word-1998,
+    keywords        = {7.20},
+    author          = {{Universidade Federal do Paraná}},
+    nameaddon       = {Biblioteca Central},
+    title           = {Normas.doc},
+    subtitle        = {normas para apresentação de trabalhos},
+    location        = {Curitiba},
+    year            = {1998},
+    note            = {5 disquetes, 3 ½ pol. Word for Windows 7.0},
+    options         = {nosn}
+  }
+
+  @software{software:got-2017,
+    keywords        = {7.20},
     title           = {{A Game} of Thrones},
     subtitle        = {The board game},
     titleaddon      = {2nd. ed.},
@@ -1380,9 +1664,70 @@ MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/
     date            = {2017},
   }
 
-  @misc{tweet:ex1,
-    author       = {{guizin Ohh +Brabo!!}\nopunct},
-    nameaddon    = {(Original)},
+  @misc{tweet:oliveira-2020,
+    keywords     = {7.20},
+    author       = {Oliveira, José P. M.},
+    title        = {Repositório digital da UFRGS é destaque em ranking internacional},
+    date         = {2011-08-19},
+    note = {Twitter: @biblioufal},
+    url = {http://twitter.com/#!/biblioufal},
+    urlaccessdate = {2011-08-20},
+    options      = {nosn}
+  }
+
+  @inbook{site:wikipedia-2010,
+    keywords      = {7.20},
+    title         = {Laparotomia},
+    booktitle     = {Wikipedia},
+    booksubtitle  = {the free encyclopedia},
+    location      = {[San Francisco, CA},
+    publisher     = {Wikimedia Foundation},
+    year          = {2010]},
+    sortyear      = {2010},
+    url           = {http://en.wikipedia.org/wiki/Laparotomia},
+    urlaccessdate = {2010-03-18}
+  }
+
+  @misc{facebook:fbn-2015,
+    keywords     = {7.20},
+    author       = {{Fundação Biblioteca Nacional}},
+    authortype   = {Brasil},
+    title        = {BNDIGITAL I},
+    subtitle     = {Coleção Casa dos Contos},
+    location     = {Rio de Janeiro},
+    date         = {2015-02-23},
+    note         = {Facebook: bibliotecanacional.br},
+    url          = {https://www.facebook.com/bibliotecanacional.br/photos/a.241986499162080.73699.217561081604622/1023276264366429/?type=1&theater},
+    urlaccessdate = {2015-02-26},
+    options      = {nosn}
+  }
+
+  @inbook{blog:cid-2011,
+    keywords       = {7.20},
+    author         = {Rodrigo Cid},
+    title          = {Deus},
+    subtitle       = {argumentos da impossibilidade e da incompatibilidade},
+    bookauthor     = {Carvalho, Mário Augusto Queiroz and XXX and YYY and ZZZ},
+    booktitle      = {Blog investigação filosófica},
+    location       = {Rio de Janeiro},
+    date           = {2011-04-23},
+    url            = {http://investigacao-filosofica.blogspot.com/search/label/Postagens},
+    urlaccessdate  = {2011-08-23}
+  }
+
+  @misc{mensagem:almeida-2002,
+    keywords     = {7.20},
+    author       = {Almeida, M. P. S},
+    title        = {Fichas para MARC},
+    titleaddon   = {Destinatário: Maria Teresa Reis Mendes},
+    date         = {2002-01-12},
+    note         = {1 mensagem eletrônica},
+    options      = {nosn}
+  }
+
+  @misc{tweet:guizin-2020,
+    author       = {{guizin Ohh +Brabo!!}},
+    authortype   = {Pessoa},
     title        = {Pow Rabanada EH Bonzao Mas N Da Pra Come Com a Familia N Fi\nopunct},
     titleaddon   = {\bibellipsis.},
     date         = {2020-12-24},
@@ -1394,8 +1739,8 @@ MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/
 
   @misc{apud:obra-original,
     keywords     = {apud},
-    author       = {{guizin Ohh +Brabo!!}\nopunct},
-    nameaddon    = {(Original)},
+    author       = {{guizin Ohh +Brabo!!}},
+    authortype   = {Pessoa},
     title        = {Lendo um. \#Book ! Rs},
     % titleaddon   = {\bibellipsis.},
     date         = {2020-03-15},
@@ -1405,8 +1750,8 @@ MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/
   }
 
   @misc{apud:obra-acessada,
-    author       = {{{guizin Ohh +Brabo!!}{}}\nopunct},
-    nameaddon    = {(\textit{Bot})},
+    author       = {{{guizin Ohh +Brabo!!}{}}},
+    authortype   = {\textit{Bot}},
     title        = {Lendo um.  Book ! Rs},
     date         = {2022-11-24},
     note = {Twitter: @guizin{\_}botson},
@@ -1416,8 +1761,7 @@ MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/
   }
 
   @misc{site:iffar-identidade-visual-2021,
-    % org-short     = {IFFar},
-    organization  = {Instituto Federal Farroupilha},
+    author        = {{IFFar}},
     nameaddon     = {Assessoria de Comunicação},
     howpublished  = {\textit{online}},
     title         = {Sobre a Secom},
@@ -1431,7 +1775,7 @@ MARTINS, Héliton. NBR6023-2018.bib. Disponível em: https://github.com/hellmrf/
   @inbook{site:latex-impressora,
     howpublished  = {\textit{online}},
     title         = {LaTeX/Document Structure},
-    booktitle = {Wikibooks},
+    booktitle     = {Wikibooks},
     booksubtitle  = {Open books for an open world},
     location      = {[San Francisco, CA},
     publisher     = {Wikimedia Foundation]},

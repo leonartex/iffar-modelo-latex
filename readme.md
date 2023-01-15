@@ -39,29 +39,29 @@ Afazeres:
 	Formatação
 	V	Leiaute e formato
 	V		A4
-		Texto
+	V	Texto
 	V		Cor preta
 	V		Fonte Arial ou Times
 	V		Tamanho 12
-				Verificar todos os elementos que vai 12
+	V			Verificar todos os elementos que vai 12
 	V		Tamanho 10
-				Verificar todos os elementos que vai 10
+	V			Verificar todos os elementos que vai 10
 	V	Margens
 	V		No anverso (frente da folha): superior e esquerda de 3 cm; inferior e direita de 2 cm;
 	V		No verso: superior e direita de 3 cm; inferior e esquerda de 2 cm.
 	V	Espaçamento entre linhas
 	V		1,5
-				Verificar todos os elementos que vai 1,5
+	V			Verificar todos os elementos que vai 1,5
 	V		Simples
-				Verificar todos os elementos que vai Simples
+	V			Verificar todos os elementos que vai Simples
 	V	Alinhamento de parágrafo
-			Justificado
-			Centralizado
-			À esquerda
-			Recuo de 1,25cm
-			Recuo de 4cm
-			Alinhado no centro
-			Canto superior direito
+	V		Justificado
+	V		Centralizado
+	V		À esquerda
+	V		Recuo de 1,25cm
+	V		Recuo de 4cm
+	V		Alinhado no centro
+	V		Canto superior direito
 	V	Contagem de folhas
 	V		Ignorar capa
 	V		Sem contagem no pré-textual, mas contabilizando a partir da folha de rosto, exceto a errata (que é no material impresso, não tenho nada a ver), até o sumário
@@ -84,8 +84,8 @@ Afazeres:
 	V		Tabelas e ilustrações: algarismo arábico, espaço, travessão, espaço, título
 
 	V		Formatação do título: alinhamento ao centro, recurso de negrito; caixa alta.
-			Títulos sem indicativo numérico: errata, agradecimentos, listas em geral (de ilustrações, de abreviaturas e siglas, de símbolos, etc.), resumo, sumário, referências, glossário, apêndice(s), anexo(s) e índice(s);
-			Elementos sem título e sem indicativo numérico: folha de rosto, ficha catalográfica ou ficha de identificação da obra; folha de aprovação ou certificação, dedicatória e epígrafe(s).
+	V		Títulos sem indicativo numérico: errata, agradecimentos, listas em geral (de ilustrações, de abreviaturas e siglas, de símbolos, etc.), resumo, sumário, referências, glossário, apêndice(s), anexo(s) e índice(s);
+	V		Elementos sem título e sem indicativo numérico: folha de rosto, ficha catalográfica ou ficha de identificação da obra; folha de aprovação ou certificação, dedicatória e epígrafe(s).
 
 	V Alíneas e subalíneas
 
