@@ -152,7 +152,6 @@ A seguir são apresentados exemplos de referências para variados tipos de docum
 
   \exOutros
   \singlecite{livro:dom-casmurro}{}
-  \singlecite{livro:iffar-guia-normalizacao-2022}{\footnote{Adaptação em \texttt{editortype}.}}
   \singlecite{livro:abnt-nbr6023:2018}{}
 
 % ABNT 7.1.2
@@ -187,6 +186,7 @@ A seguir são apresentados exemplos de referências para variados tipos de docum
   \singlecite{livro:bavaresco-2011:complementar}{\footnote{Adaptação em \texttt{editortype} e \texttt{pages}.}}
 
   \exOutros
+  \singlecite{livro:iffar-guia-normalizacao-2022}{\footnote{Adaptação em \texttt{editortype}.}}
   \singlecite{tese:coelho-2009}{}
   \singlecite{tese:santos-2018}{}
 
@@ -261,7 +261,6 @@ A seguir são apresentados exemplos de referências para variados tipos de docum
 
   \exOutros
   \singlecite{revista:fgv}{\footnote{Adaptação grande de tipo e em \texttt{titleaddon} e \texttt{publisher}.}}
-  \singlecite{as5001984}{\footnote{Adaptação grande de tipo e em \texttt{titleaddon} e \texttt{publisher}.}}
 
 % ABNT 7.7.5
 \subsubsection{Artigo, seção e/ou matéria de publicação periódica} % 7.7.5
@@ -401,11 +400,11 @@ O caso de referenciar patentes é um tanto confuso: a ABNT define como referenci
 % ABNT 7.11.4
 \subsubsection{Jurisprudência em meio eletrônico} % 7.11.4
   \exEssencial
-  \singlecite{jurisprudencia:stf-eletronico}{\footnote{Adaptação em \texttt{location} e \texttt{publisher}.}}
+  \singlecite{jurisprudencia:stf-eletronico}{\footnote{Adaptação em \texttt{publisher} e uso de \texttt{options}.}}
 
   \exOutros
   \singlecite{jurisprudencia:stj-eletronico}{}
-  \singlecite{jurisprudencia:stj-2007-eletronico}{}
+  \singlecite{jurisprudencia:stj-2010-eletronico}{\footnote{Adaptação em \texttt{publisher} e uso de \texttt{options}.}}
 
 % ABNT 7.11.5
 \subsubsection{Atos administrativos normativos} % 7.11.5
@@ -427,10 +426,10 @@ O caso de referenciar patentes é um tanto confuso: a ABNT define como referenci
 % ABNT 7.12
 \subsection{Documentos civis e de cartórios} % 7.12
   \exEssencial
-  \singlecite{documento:certidao-essencial}{\footnote{Adaptação em \texttt{location} e uso de \texttt{nosn} em \texttt{options}.}}
+  \singlecite{documento:certidao-essencial}{\footnote{Adaptação em \texttt{location} e uso de \texttt{nosn} em \texttt{options} (o mesmo poderia ser feito utilizando \texttt{nosl} e adaptando pelo \texttt{publisher}).}}
 
   \exComplementar
-  \singlecite{documento:certidao-essencial}{}
+  \singlecite{documento:certidao-complementar}{}
 
 % ABNT 7.13
 \subsection{Documento audiovisual} % 7.13
@@ -438,7 +437,7 @@ O caso de referenciar patentes é um tanto confuso: a ABNT define como referenci
 % ABNT 7.13.1
 \subsubsection{Filmes, vídeos, entre outros} % 7.13.1
   \exEssencial
-  \singlecite{filme:toxico-1983}{}
+  \singlecite{filme:toxico-1983}{\footnote{Adaptação em \texttt{titleaddon}. O último sobrenome das pessoas é formatado em maiúsculas, então é necessário adaptar os nomes das pessoas nos filmes e outras obras que compartilhem essa característica.}}
 
   \exOutros
   \singlecite{filme:central-1998}{}
@@ -479,7 +478,7 @@ O caso de referenciar patentes é um tanto confuso: a ABNT define como referenci
   \singlecite{sonoro:podcast-2010}{}
 
   \exOutros
-  \singlecite{sonoro:podcast-2010}{}
+  \singlecite{sonoro:anticast-2013}{}
 
 % ABNT 7.14
 \subsection{Partitura} % 7.14
@@ -528,7 +527,7 @@ O caso de referenciar patentes é um tanto confuso: a ABNT define como referenci
 % ABNT 7.18
 \subsection{Documento cartográfico em meio eletrônico} % 7.18
   \exEssencial
-  \singlecite{cartografico:museum-2000}{}
+  \singlecite{cartografico:museum-2000}{\footnote{Adaptação em \texttt{note} devido a um bug, já que o ponto de interrogação é um caractere de pontuação, que leva a um tratamento diferente, o que confunde o \texttt{biblatex} na hora de formatar a referência.}}
 
   \exOutros
   \singlecite{cartografico:inpe-2014}{}
@@ -551,11 +550,11 @@ O caso de referenciar patentes é um tanto confuso: a ABNT define como referenci
 
   \exOutros
   \singlecite{software:ufp-word-1998}{}
-  \singlecite{software:got-2017}{\footnote{Adaptação em \texttt{titleaddon}}}
+  \singlecite{software:got-2017}{\footnote{Adaptação em \texttt{titleaddon}.}}
   \singlecite{tweet:oliveira-2020}{}
-  \singlecite{site:wikipedia-2010}{\footnote{Por algumas limitações do \texttt{biblatex}, os colchetes adicionados se tornam um problema ao imprimir errado o ano quando citado.}}
+  \singlecite{site:wikipedia-2010}{\footnote{Por algumas limitações do \texttt{biblatex}, os colchetes adicionados se tornam um problema ao imprimir errado o ano quando citado.}\footnote{A NBR 6023:2018 \cite{livro:abnt-nbr6023:2018} dá este exemplo para um artigo da Wikipédia, porém, o Guia de Normalização \cite[p. 75]{livro:iffar-guia-normalizacao-2022} exemplifica de uma maneira diferente, mais simples.}}
   \singlecite{facebook:fbn-2015}{}
-  \singlecite{blog:cid-2011}{}
+  \singlecite{blog:cid-2011}{\footnote{Atenção no uso de \texttt{options}.}}
   \singlecite{mensagem:almeida-2002}{}
   % \singlecite{tweet:guizin-2020}{}
   % \singlecite{site:latex-impressora}{\footnote{Essa é a mesma formatação utilizada para citar artigos da Wikipédia.}}
