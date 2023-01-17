@@ -1,16 +1,16 @@
 Dúvidas:
 
-	- Verificar a questão de divergência na formatação das seções quaternárias e quinárias
-	- Verificar o espaço necessário entre a nota de rodapé e seu índice
+	- A divergência na formatação das seções quaternárias e quinárias, que nas alíneas e e f da seção 4.1.4 indicam uma formatação e no exemplo da Figura 3 inverte a ordem de formatação. Qual seguir?
+	- Qual o espaço necessário entre a nota de rodapé e seu índice?
 	- Sobre epígrafes: "Sugere-se digitar com fonte 12, itálico, espaçamento simples, com recuo de 10 cm da margem esquerda, alinhado pela margem direita. O autor pode ser destacado em negrito."
 		A margem de 10cm é de 10cm de página inteira, restando 9cm dos 21cm da largura da A4? Ou é sobre a área do texto, restando 6cm dos 16cm que se tem ao considerar a margem de 3cm à esquerda e 2cm à direita?
 		Utiliza indentação?
 		Para a epígrafe do início da monografia: Utilizam-se essas mesmas recomendações?
-	- Tirar dúvida sobre a ficha catalográfica e ficha de identificação
-		- A primeira, os dados são feitos pelo bibliotecário, mas é ele também quem adiciona no documento, ou o aluno pega esses dados e adiciona ao documento?
-		- A segunda, não tenho ideia de como seja estruturada
+	- Dúvidas sobre a ficha catalográfica e ficha de identificação:
+		- A primeira, os dados são feitos pelo bibliotecário, mas é ele também quem adiciona a ficha no documento, ou o aluno pega esses dados e adiciona ao documento?
+		- A segunda, como que é estruturada uma finha de identificação? Não tenho exemplos.
 	- Quais são as margens utilizadas nos elementos de capa e folha de rosto?
-		- A natureza do trabalho deve iniciar em uma altura determinada da folha, ou apenas preencho o espaço que restar entre os outros elementos da folha? O mesmo vale pra título e tals.
+		- A natureza do trabalho deve iniciar em uma altura determinada da folha, ou apenas preencho o espaço que restar entre os outros elementos da folha? Qual seria o "grid" utilizado, as suas regras de margem? As mesmas perguntas valem para o título e outros elementos que apresentam uma margem grande entre itens.
 
 Afazeres: 
 
