@@ -38,3 +38,26 @@
 % Fonte: https://github.com/abntex/biblatex-abnt (dev-branch)
 % \DeclareFieldFormat{url}{\bibstring{urlfrom}\addcolon\addspace \url{#1}}
 % \DeclareFieldFormat{urldate}{\bibstring{urlseen}\addcolon\addspace #1}%
+
+% Substituindo a string para maio, que não é mais abreviada
+\DefineBibliographyStrings{brazilian}{%
+may              = {maio},%
+}
+
+% Adicionando um ponto no fim de cada referência utilizada
+\renewcommand*{\finentrypunct}{\adddot}
+\xpatchbibmacro{finentry}
+  {\finentry}
+  {\adddot}{}{}
+
+% Criando uma nova opção para ser utilizada por entrada, que define que o separador de períodos de datas é uma barra e não um travessão
+\DeclareEntryOption[boolean]{slashdaterangesep}[true]{
+  \renewrobustcmd*{\bibdaterangesep}{\slash}%
+}
+
+% Criando forma de contornar o bug que faz imprimir duas vírgulas entre o título do evento e o número
+\DeclareFieldFormat[% number >>>
+  proceedings,%
+  inproceedings,%
+]{number}{\addspace #1}%% <<<
+% <<<

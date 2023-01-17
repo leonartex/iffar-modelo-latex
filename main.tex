@@ -25,6 +25,8 @@
 % Pacotinho básico para adicionar algumas funcionalidades úteis
 \usepackage{config/funcoes}
 
+\usepackage{xpatch}
+
 %% Pacotes para formatação de fonte do documento
 % Obs.: Usando XeLaTeX, não é necessário usar os pacotes fontenc e inputenc
 \usepackage{fontspec}
@@ -34,8 +36,6 @@
 \setmainfont{Arial}
 \setsansfont{Arial}
 \setmonofont{Andale Mono} % Fonte utilizada no comando \verb, etc. É de uso opcional. Tem suporte no Overleaf
-
-\usepackage{keyval}
 
 % Responsável pela quebra silábica de palavras no final de linha de forma correta para o português
 \usepackage[brazil]{babel}
@@ -130,7 +130,7 @@
 
 \usepackage{config/epigrafe} % Pacotinho só pra criar o elemento de epigrafe
 
-\usepackage[backend=biber, style=abnt, repeatfields]{biblatex}
+\usepackage[backend=biber, style=abnt]{biblatex}
 \addbibresource{bibliografia.bib} % Você pode adicionar mais de um arquivo.bib, apenas adicione outra linha com o nome do segundo arquivo
 \usepackage{config/bibliografia} % Ajustes necessários por causa que o pacote biblatex-abnt não foi atualizado para algumas das mais novas normas da NBR 6023:2018
 
@@ -147,7 +147,7 @@
 \hypersetup{
   unicode=true,
   pdftitle={\tituloTrabalho\separadorTrabalho\subtituloTrabalho},
-  pdfsubject={[Insira o assunto/tema de seu trabalho (talvez um resuminho rápido?) Deve ser válido citar que se trata de um TCC, tese ou dissertação, de determinado curso, do IFFar. Esse tipo de coisa]},
+  pdfsubject={[Insira o assunto/tema de seu trabalho (talvez um resuminho rápido?) Deve ser válido citar que se trata de um TCC, tese ou dissertação, de determinado curso, que é do IFFar. Esse tipo de coisa]},
   pdfauthor={\autorTrabalho},
   pdfkeywords={[Insira suas palavras chaves]}
 }

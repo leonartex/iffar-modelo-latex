@@ -9,7 +9,7 @@ Dúvidas:
 	- Tirar dúvida sobre a ficha catalográfica e ficha de identificação
 		- A primeira, os dados são feitos pelo bibliotecário, mas é ele também quem adiciona no documento, ou o aluno pega esses dados e adiciona ao documento?
 		- A segunda, não tenho ideia de como seja estruturada
-	- Quais são as margens utilizados nos elementos de capa e folha de rosto?
+	- Quais são as margens utilizadas nos elementos de capa e folha de rosto?
 		- A natureza do trabalho deve iniciar em uma altura determinada da folha, ou apenas preencho o espaço que restar entre os outros elementos da folha? O mesmo vale pra título e tals.
 
 Afazeres: 
