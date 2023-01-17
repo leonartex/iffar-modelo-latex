@@ -26,10 +26,6 @@ Afazeres:
 	- Figura com código de programação
 	- Verificar se dá pra remover o pacote AlphAlph usando o \mknumalph do biblatex
 
-	Opcional:
-	- Criar um índice bonitinho, cobrindo todo o modelo
-	- Criar as referências do cap. 5 dando exemplos com elementos essenciais e o mesmo exemplo com elementos complementares.
-
 
 Afazeres:
 
