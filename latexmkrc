@@ -1,0 +1,1 @@
+$ENV{'TEXINPUTS'}='./latex-custom//:' . $ENV{'TEXINPUTS'};
