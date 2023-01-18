@@ -1,6 +1,10 @@
 % Crio o cabeçalho
 \makeindex[columns=1, title=Índice, intoc, options=-s config/indice.ist]
 
+\renewcommand{\@idxitem}{\par\hangindent 0\p@}
+\renewcommand{\subitem}{\par\hangindent 1.25cm \hspace*{1.25cm}}
+\renewcommand{\subsubitem}{\par\hangindent 2.5cm \hspace*{2.5cm}}
+
 % Altero o destaque para utilizar negrito (a NBR 6034 permite utilizar outros tipos de recursos tipográficos, como o itálico que já vem no imakeidx, porém, escolhi o negrito pois torna mais clara a distinção)
 \renewcommand*{\see}[2]{\textbf{\seename} #1}
 \renewcommand*{\seealso}[2]{\textbf{\alsoname} #1}
